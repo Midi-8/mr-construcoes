@@ -5,6 +5,11 @@
     --white: #ffffff;
     --muted: #77746e;
     --accent-orange: #ff7e1b;
+
+    /* Surface tokens */
+    --surface-dark: #1b1b1a;
+    --surface-darker: #161616;
+    --surface-black: #0d0d0d;
 }
 
 * {
@@ -57,6 +62,7 @@ button {
 .brand img {
     width: 38px;
     height: 38px;
+    aspect-ratio: 1;
     border-radius: 3px;
     object-fit: cover;
 }
@@ -613,7 +619,7 @@ button {
     gap: 8%;
     align-items: stretch;
     color: var(--white);
-    background: #1b1b1a;
+    background: var(--surface-dark);
 }
 
 .location-details {
@@ -667,7 +673,7 @@ button {
 .map-container {
     min-height: 510px;
     overflow: hidden;
-    background: #2d2d2d;
+    background: var(--surface-dark);
 }
 
 .map-container iframe {
@@ -680,7 +686,7 @@ button {
 
 .services-section {
     color: var(--white);
-    background: #161616;
+    background: var(--surface-darker);
 }
 
 .services-section .section-label {
@@ -856,13 +862,14 @@ footer {
     align-items: center;
     padding: 31px 8%;
     color: var(--white);
-    background: #0d0d0d;
+    background: var(--surface-black);
     font-size: 12px;
 }
 
 .footer-brand img {
     width: 27px;
     height: 27px;
+    aspect-ratio: 1;
     border-radius: 2px;
     object-fit: cover;
 }
@@ -882,13 +889,222 @@ footer p:last-child {
     text-align: right;
 }
 
+/* ─── Hambúrguer e Drawer de Navegação Mobile ───────────────────────────── */
+
+/* Botão hambúrguer — oculto em desktop */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 30;
+}
+
+.nav-toggle-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+    transform-origin: center;
+}
+
+/* Estado aberto: transforma barras em X */
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Hambúrguer escuro quando header está scrolled (fora do hero) */
+.site-header.scrolled .nav-toggle-bar {
+    background: var(--ink);
+}
+
+/* Header com fundo ao fazer scroll */
+.site-header.scrolled {
+    position: fixed;
+    background: rgba(241, 240, 235, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--ink);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header.scrolled .nav a {
+    color: var(--ink);
+}
+
+.site-header.scrolled .brand {
+    color: var(--ink);
+}
+
+/* Overlay semitransparente por baixo do drawer */
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.nav-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Drawer lateral — desliza da direita */
+.nav-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    width: min(80vw, 320px);
+    display: flex;
+    flex-direction: column;
+    padding: 28px 32px 48px;
+    background: var(--paper);
+    color: var(--ink);
+    box-shadow: -4px 0 32px rgba(0, 0, 0, 0.18);
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+}
+
+.nav-drawer.open {
+    transform: translateX(0);
+}
+
+/* Botão fechar dentro do drawer */
+.nav-drawer-close {
+    align-self: flex-end;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 36px;
+    padding: 0;
+    border: 1px solid rgba(21, 21, 21, 0.2);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-drawer-close:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--white);
+}
+
+/* Links dentro do drawer */
+.nav-drawer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-drawer-links li {
+    border-bottom: 1px solid rgba(21, 21, 21, 0.1);
+}
+
+.nav-drawer-links a {
+    display: block;
+    padding: 18px 0;
+    color: var(--ink);
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.nav-drawer-links a:hover {
+    color: var(--accent-orange);
+    padding-left: 8px;
+}
+
+/* ─── Hover nos serviços principais ────────────────────────────────────── */
+
+.services-grid article {
+    transition: border-color 0.25s ease;
+}
+
+.services-grid article:hover {
+    border-color: var(--accent-orange);
+}
+
+/* Linha superior com accent ao hover */
+.services-grid article::before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: var(--accent-orange);
+    margin-bottom: -2px;
+    margin-top: -1px;
+    transition: width 0.3s ease;
+}
+
+.services-grid article:hover::before {
+    width: 40px;
+}
+
+/* ─── Focus-visible acessível ───────────────────────────────────────────── */
+
+:focus-visible {
+    outline: 2px solid var(--accent-orange);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* ─── prefers-reduced-motion ────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 @media (max-width: 900px) {
     .site-header {
         padding: 20px 6%;
     }
 
+    /* Esconde a nav desktop, mostra o hambúrguer */
     .nav {
         display: none;
+    }
+
+    .nav-toggle {
+        display: flex;
     }
 
     .hero-topline {
@@ -921,7 +1137,7 @@ footer p:last-child {
     .location-section,
     .services-section,
     .contact-section {
-        padding: 92px 6%;
+        padding: clamp(64px, 10vw, 92px) 6%;
     }
 
     .intro-grid,
@@ -942,7 +1158,7 @@ footer p:last-child {
 
     .project-card,
     .project-card-large {
-        height: 330px;
+        height: clamp(240px, 55vw, 330px);
     }
 
     .before-after {
@@ -1000,5 +1216,21 @@ footer p:last-child {
 
     footer p:last-child {
         text-align: left;
+    }
+}
+
+/* Micro-breakpoint: viewports muito estreitas (360–400px)
+   Protege o Hero de sobreposições entre conteúdo e controlos */
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: clamp(38px, 12vw, 52px);
+    }
+
+    .hero-content {
+        bottom: 18%;
+    }
+
+    .hero-controls {
+        bottom: 8%;
     }
 }

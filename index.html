@@ -26,7 +26,7 @@
 <body>
     <header class="site-header">
         <a class="brand" href="#inicio" aria-label="MR Construções - voltar ao início">
-            <img src="imagens/logo-mr-construcoes.png" alt="Logótipo MR Construções">
+            <img src="imagens/logo-mr-construcoes.png" alt="Logótipo MR Construções" width="38" height="38">
             <span>MR<br>CONSTRUÇÕES</span>
         </a>
 
@@ -38,7 +38,31 @@
             <a href="#localizacao">Localização</a>
             <a href="#contactos">Contactos</a>
         </nav>
+
+        <!-- Botão hambúrguer (mobile) -->
+        <button class="nav-toggle" id="nav-toggle" type="button"
+            aria-expanded="false" aria-controls="nav-drawer"
+            aria-label="Abrir menu de navegação">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
     </header>
+
+    <!-- Drawer de navegação mobile -->
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+    <nav class="nav-drawer" id="nav-drawer" aria-label="Menu de navegação mobile" aria-hidden="true">
+        <button class="nav-drawer-close" id="nav-drawer-close" type="button" aria-label="Fechar menu">
+            <span aria-hidden="true">✕</span>
+        </button>
+        <ul class="nav-drawer-links">
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#empresa">Empresa</a></li>
+            <li><a href="#localizacao">Localização</a></li>
+            <li><a href="#contactos">Contactos</a></li>
+        </ul>
+    </nav>
 
 
     <main>
@@ -413,7 +437,7 @@
 
     <footer>
         <a class="footer-brand" href="#inicio">
-            <img src="imagens/logo-mr-construcoes.png" alt="Logótipo MR Construções" aria-hidden="true">
+            <img src="imagens/logo-mr-construcoes.png" alt="Logótipo MR Construções" aria-hidden="true" width="27" height="27">
             <span>MR CONSTRUÇÕES</span>
         </a>
 

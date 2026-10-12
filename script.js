@@ -171,3 +171,78 @@ document.getElementById("current-year").textContent = new Date().getFullYear();
 
 showSlide(0);
 startAutoplay();
+
+/* ─── Menu Mobile — Hambúrguer e Drawer ─────────────────────────────────── */
+
+const navToggle = document.getElementById("nav-toggle");
+const navDrawer = document.getElementById("nav-drawer");
+const navOverlay = document.getElementById("nav-overlay");
+const navDrawerClose = document.getElementById("nav-drawer-close");
+const siteHeader = document.querySelector(".site-header");
+
+function openDrawer() {
+    navDrawer.classList.add("open");
+    navOverlay.classList.add("open");
+    navDrawer.setAttribute("aria-hidden", "false");
+    navOverlay.setAttribute("aria-hidden", "false");
+    navToggle.setAttribute("aria-expanded", "true");
+    navToggle.setAttribute("aria-label", "Fechar menu de navegação");
+    document.body.style.overflow = "hidden";
+
+    // Foco no botão fechar ao abrir
+    navDrawerClose.focus();
+}
+
+function closeDrawer() {
+    navDrawer.classList.remove("open");
+    navOverlay.classList.remove("open");
+    navDrawer.setAttribute("aria-hidden", "true");
+    navOverlay.setAttribute("aria-hidden", "true");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Abrir menu de navegação");
+    document.body.style.overflow = "";
+
+    // Devolve o foco ao botão hambúrguer
+    navToggle.focus();
+}
+
+// Toggle ao clicar no hambúrguer
+navToggle.addEventListener("click", () => {
+    const isOpen = navDrawer.classList.contains("open");
+    isOpen ? closeDrawer() : openDrawer();
+});
+
+// Fechar ao clicar no overlay
+navOverlay.addEventListener("click", closeDrawer);
+
+// Fechar ao clicar no botão X dentro do drawer
+navDrawerClose.addEventListener("click", closeDrawer);
+
+// Fechar ao clicar num link do drawer
+navDrawer.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeDrawer);
+});
+
+// Fechar com tecla Esc
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navDrawer.classList.contains("open")) {
+        closeDrawer();
+    }
+});
+
+/* ─── Adaptação do header ao scroll ─────────────────────────────────────── */
+
+const heroSection = document.querySelector(".hero");
+
+function updateHeaderOnScroll() {
+    const heroBottom = heroSection ? heroSection.getBoundingClientRect().bottom : 0;
+    if (heroBottom <= 60) {
+        siteHeader.classList.add("scrolled");
+    } else {
+        siteHeader.classList.remove("scrolled");
+    }
+}
+
+window.addEventListener("scroll", updateHeaderOnScroll, { passive: true });
+// Verificação inicial (caso a página carregue com scroll)
+updateHeaderOnScroll();
