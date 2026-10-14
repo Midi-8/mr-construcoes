@@ -1,248 +1,140 @@
-const projects = [
-    {
-        category: "Remodelação",
-        title: "Casa de banho<br>Porto",
-        description: "Reestruturação completa de uma casa de banho, com atenção ao conforto, à funcionalidade e à qualidade dos acabamentos.",
-        link: "https://www.facebook.com/photo?fbid=506328185295516&set=pb.100077550159685.-2207520000"
-    },
-    {
-        category: "Construção exterior",
-        title: "Piscina<br>Famalicão",
-        description: "Construção de piscina integrada no espaço exterior, com uma solução adequada ao terreno e à utilização da habitação.",
-        link: "https://www.facebook.com/photo.php?fbid=310790821515921&set=pb.100077550159685.-2207520000&type=3"
-    },
-    {
-        category: "Remodelação",
-        title: "Habitação<br>Famalicão",
-        description: "Intervenção de remodelação numa habitação em Famalicão, melhorando a imagem, o conforto e a utilização do espaço.",
-        link: "https://www.facebook.com/p/MR-Constru%C3%A7%C3%B5es-100077550159685/"
-    }
-];
+/**
+ * MR Construções - Script Principal (script.js)
+ * Interações e funcionalidades dinâmicas do website
+ */
 
-const slides = document.querySelectorAll(".hero-slide");
-const category = document.getElementById("slide-category");
-const number = document.getElementById("slide-number");
-const title = document.getElementById("slide-title");
-const description = document.getElementById("slide-description");
-const link = document.getElementById("slide-link");
-const previousButton = document.getElementById("previous-slide");
-const nextButton = document.getElementById("next-slide");
-const autoplayButton = document.getElementById("toggle-autoplay");
-const detailsButton = document.getElementById("details-button");
-const detailsPanel = document.getElementById("project-details");
-
-let currentSlide = 0;
-let autoplay = true;
-let sliderTimer;
-
-function closeDetails() {
-    detailsButton.classList.remove("open");
-    detailsButton.setAttribute("aria-expanded", "false");
-    detailsPanel.classList.remove("open");
-    detailsPanel.setAttribute("aria-hidden", "true");
-}
-
-function showSlide(index) {
-    currentSlide = (index + projects.length) % projects.length;
-
-    slides.forEach((slide, slideIndex) => {
-        slide.classList.toggle("active", slideIndex === currentSlide);
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Tratamento de fallback para logotipo
+    document.querySelectorAll('.brand img').forEach(img => {
+        img.addEventListener('error', () => {
+            img.hidden = true;
+            const fallback = document.createElement('span');
+            fallback.className = 'brand-fallback';
+            fallback.textContent = 'MR Construções';
+            img.parentElement.appendChild(fallback);
+        }, { once: true });
     });
 
-    const project = projects[currentSlide];
-    category.textContent = project.category;
-    number.textContent = `${String(currentSlide + 1).padStart(2, "0")} / ${String(projects.length).padStart(2, "0")}`;
-    title.innerHTML = project.title;
-    description.textContent = project.description;
-    link.href = project.link;
+    // 2. Remover classe no-js quando o script estiver pronto
+    document.body.classList.remove('no-js');
 
-    closeDetails();
-}
-
-function startAutoplay() {
-    clearInterval(sliderTimer);
-
-    if (autoplay) {
-        sliderTimer = setInterval(() => {
-            showSlide(currentSlide + 1);
-        }, 5500);
-    }
-}
-
-previousButton.addEventListener("click", () => {
-    showSlide(currentSlide - 1);
-    startAutoplay();
-});
-
-nextButton.addEventListener("click", () => {
-    showSlide(currentSlide + 1);
-    startAutoplay();
-});
-
-autoplayButton.addEventListener("click", () => {
-    autoplay = !autoplay;
-    autoplayButton.textContent = autoplay ? "Ⅱ" : "▶";
-    autoplayButton.setAttribute(
-        "aria-label",
-        autoplay ? "Pausar apresentação" : "Retomar apresentação"
-    );
-    startAutoplay();
-});
-
-detailsButton.addEventListener("click", () => {
-    const isOpen = detailsButton.classList.toggle("open");
-    detailsButton.setAttribute("aria-expanded", String(isOpen));
-    detailsPanel.classList.toggle("open", isOpen);
-    detailsPanel.setAttribute("aria-hidden", String(!isOpen));
-});
-
-const comparisonContainer = document.getElementById("comparison");
-const comparisonRange = document.getElementById("comparison-range");
-const comparisonBefore = document.getElementById("comparison-before-wrap");
-const comparisonHandle = document.getElementById("comparison-handle");
-
-function updateComparison(value) {
-    const percentage = Math.max(0, Math.min(100, Number(value)));
-
-    if (comparisonContainer) {
-        comparisonContainer.style.setProperty("--position", `${percentage}%`);
-    }
-
-    if (comparisonBefore) {
-        comparisonBefore.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
-        comparisonBefore.style.webkitClipPath = `inset(0 ${100 - percentage}% 0 0)`;
-    }
-
-    if (comparisonHandle) {
-        comparisonHandle.style.left = `${percentage}%`;
-    }
-
-    if (comparisonRange && Number(comparisonRange.value) !== Math.round(percentage)) {
-        comparisonRange.value = percentage;
-    }
-}
-
-if (comparisonRange) {
-    comparisonRange.addEventListener("input", (event) => {
-        updateComparison(event.target.value);
-    });
-}
-
-if (comparisonContainer) {
-    let isDragging = false;
-
-    const setPositionFromPointer = (e) => {
-        const rect = comparisonContainer.getBoundingClientRect();
-        if (rect.width <= 0) return;
-        const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
-        const offsetX = clientX - rect.left;
-        const percentage = Math.max(0, Math.min(100, (offsetX / rect.width) * 100));
-        updateComparison(percentage);
+    // 3. Barra de navegação com estado no scroll
+    const topbar = document.querySelector('.topbar');
+    const heroSection = document.querySelector('.hero');
+    const updateTopbar = () => {
+        if (!topbar || !heroSection) return;
+        topbar.classList.toggle('is-scrolled', window.scrollY > Math.max(100, heroSection.offsetHeight - 100));
     };
+    window.addEventListener('scroll', updateTopbar, { passive: true });
+    updateTopbar();
 
-    comparisonContainer.addEventListener("pointerdown", (e) => {
-        isDragging = true;
-        comparisonContainer.setPointerCapture(e.pointerId);
-        setPositionFromPointer(e);
+    // 4. Menu mobile (abrir/fechar e acessibilidade)
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.navlinks');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Abrir menu' : 'Fechar menu');
+            const icon = menuToggle.querySelector('span');
+            if (icon) icon.textContent = isOpen ? '+' : '−';
+            navLinks.classList.toggle('open', !isOpen);
+        });
+
+        // Fechar menu ao clicar num link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Abrir menu');
+                const icon = menuToggle.querySelector('span');
+                if (icon) icon.textContent = '+';
+            });
+        });
+
+        // Fechar menu com a tecla Escape
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && navLinks.classList.contains('open')) {
+                navLinks.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Abrir menu');
+                const icon = menuToggle.querySelector('span');
+                if (icon) icon.textContent = '+';
+                menuToggle.focus();
+            }
+        });
+    }
+
+    // 5. Animação de revelação com scroll (Intersection Observer)
+    const revealItems = document.querySelectorAll('.reveal');
+    if (revealItems.length > 0) {
+        if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            revealItems.forEach(item => observer.observe(item));
+        } else {
+            revealItems.forEach(item => item.classList.add('is-visible'));
+        }
+    }
+
+    // 6. Controlo de comparação antes / depois
+    const compare = document.getElementById('compare');
+    const compareRange = document.getElementById('compare-range');
+    if (compare && compareRange) {
+        function updateCompare() {
+            const value = Number(compareRange.value);
+            compare.style.setProperty('--split', value + '%');
+            compareRange.setAttribute('aria-valuetext', value + ' por cento');
+        }
+        compareRange.addEventListener('input', updateCompare);
+        updateCompare();
+    }
+
+    // 7. Especialidades / Acordeão
+    document.querySelectorAll('.specialty-item').forEach(item => {
+        const summary = item.querySelector('summary');
+        if (summary) {
+            summary.setAttribute('aria-expanded', String(item.open));
+            item.addEventListener('toggle', () => {
+                summary.setAttribute('aria-expanded', String(item.open));
+            });
+        }
     });
 
-    comparisonContainer.addEventListener("pointermove", (e) => {
-        if (!isDragging) return;
-        setPositionFromPointer(e);
-    });
+    // 8. Ano dinâmico no rodapé
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
 
-    const stopDragging = (e) => {
-        if (!isDragging) return;
-        isDragging = false;
-        try {
-            comparisonContainer.releasePointerCapture(e.pointerId);
-        } catch (_) {}
-    };
-
-    comparisonContainer.addEventListener("pointerup", stopDragging);
-    comparisonContainer.addEventListener("pointercancel", stopDragging);
-}
-
-if (comparisonRange) {
-    updateComparison(comparisonRange.value || 50);
-}
-
-document.getElementById("current-year").textContent = new Date().getFullYear();
-
-showSlide(0);
-startAutoplay();
-
-/* ─── Menu Mobile — Hambúrguer e Drawer ─────────────────────────────────── */
-
-const navToggle = document.getElementById("nav-toggle");
-const navDrawer = document.getElementById("nav-drawer");
-const navOverlay = document.getElementById("nav-overlay");
-const navDrawerClose = document.getElementById("nav-drawer-close");
-const siteHeader = document.querySelector(".site-header");
-
-function openDrawer() {
-    navDrawer.classList.add("open");
-    navOverlay.classList.add("open");
-    navDrawer.setAttribute("aria-hidden", "false");
-    navOverlay.setAttribute("aria-hidden", "false");
-    navToggle.setAttribute("aria-expanded", "true");
-    navToggle.setAttribute("aria-label", "Fechar menu de navegação");
-    document.body.style.overflow = "hidden";
-
-    // Foco no botão fechar ao abrir
-    navDrawerClose.focus();
-}
-
-function closeDrawer() {
-    navDrawer.classList.remove("open");
-    navOverlay.classList.remove("open");
-    navDrawer.setAttribute("aria-hidden", "true");
-    navOverlay.setAttribute("aria-hidden", "true");
-    navToggle.setAttribute("aria-expanded", "false");
-    navToggle.setAttribute("aria-label", "Abrir menu de navegação");
-    document.body.style.overflow = "";
-
-    // Devolve o foco ao botão hambúrguer
-    navToggle.focus();
-}
-
-// Toggle ao clicar no hambúrguer
-navToggle.addEventListener("click", () => {
-    const isOpen = navDrawer.classList.contains("open");
-    isOpen ? closeDrawer() : openDrawer();
-});
-
-// Fechar ao clicar no overlay
-navOverlay.addEventListener("click", closeDrawer);
-
-// Fechar ao clicar no botão X dentro do drawer
-navDrawerClose.addEventListener("click", closeDrawer);
-
-// Fechar ao clicar num link do drawer
-navDrawer.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeDrawer);
-});
-
-// Fechar com tecla Esc
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && navDrawer.classList.contains("open")) {
-        closeDrawer();
+    // 9. Formulário de contacto via mailto
+    const form = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    if (form && formStatus) {
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            if (!form.reportValidity()) return;
+            const data = new FormData(form);
+            const name = String(data.get('name') || '').trim();
+            const reply = String(data.get('reply') || '').trim();
+            const type = String(data.get('type') || '').trim();
+            const description = String(data.get('description') || '').trim();
+            if (!name || !reply || !type || !description) {
+                formStatus.textContent = 'Preencha todos os campos para continuar.';
+                return;
+            }
+            const subject = encodeURIComponent('Pedido de orçamento: ' + type);
+            const body = encodeURIComponent(
+                'Nome: ' + name + '\nContacto: ' + reply + '\nTipo de obra: ' + type + '\n\nDescrição:\n' + description
+            );
+            formStatus.textContent = 'A abrir o seu programa de email. Confirme a mensagem para concluir o envio.';
+            window.location.href = 'mailto:mrconstrucoes@sapo.pt?subject=' + subject + '&body=' + body;
+        });
     }
 });
-
-/* ─── Adaptação do header ao scroll ─────────────────────────────────────── */
-
-const heroSection = document.querySelector(".hero");
-
-function updateHeaderOnScroll() {
-    const heroBottom = heroSection ? heroSection.getBoundingClientRect().bottom : 0;
-    if (heroBottom <= 60) {
-        siteHeader.classList.add("scrolled");
-    } else {
-        siteHeader.classList.remove("scrolled");
-    }
-}
-
-window.addEventListener("scroll", updateHeaderOnScroll, { passive: true });
-// Verificação inicial (caso a página carregue com scroll)
-updateHeaderOnScroll();
