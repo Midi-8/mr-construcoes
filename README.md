@@ -1,6 +1,5 @@
 # MR Construções — Website Institucional
 
-Site institucional da **MR Construções**, empresa de construção, remodelação e reparações com sede em Vila Nova de Famalicão.
 Website oficial da **MR Construções** (Marco Paulo Ribeiro Unipessoal, Lda.), empresa especializada em construção civil, remodelação e reparações com sede em Vila Nova de Famalicão.
 
 ---
@@ -13,6 +12,7 @@ Desenvolvido com foco em:
 - **Identidade Visual Contemporânea**: Tipografia cuidada, paleta de cores equilibrada e acabamentos estéticos refinados.
 - **Organização Modular**: Separação clara entre estrutura (HTML5), estilização (CSS3) e interatividade (JavaScript Vanilla).
 - **Acessibilidade & Responsividade**: Totalmente adaptado a dispositivos móveis, tablets e desktops, com suporte a preferências de movimento reduzido (`prefers-reduced-motion`).
+- **Otimizações Core Web Vitals**: Atributos explícitos de dimensão para eliminação de CLS (*Cumulative Layout Shift*) e alinhamento fluído de menus de navegação.
 
 ---
 
