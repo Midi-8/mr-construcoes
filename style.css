@@ -201,6 +201,15 @@
             cursor: pointer
         }
 
+        .nav-backdrop {
+            display: none
+        }
+
+        body.menu-open {
+            overflow: hidden !important;
+            touch-action: none
+        }
+
         main {
             padding-top: 0
         }
@@ -952,6 +961,12 @@
             color: var(--ink)
         }
 
+        .submit[disabled] {
+            opacity: .65;
+            cursor: not-allowed;
+            pointer-events: none
+        }
+
         .form-note {
             font-size: 11px;
             line-height: 1.7;
@@ -963,7 +978,91 @@
             font-size: 12px;
             line-height: 1.7;
             margin-top: 15px;
-            min-height: 1.5em
+            min-height: 1.5em;
+            transition: color .2s ease
+        }
+
+        .form-status.is-error {
+            color: #c62828;
+            font-weight: 500
+        }
+
+        .form-status.is-success {
+            color: #2e7d32;
+            font-weight: 500
+        }
+
+        /* Componente Toast acessível */
+        .toast {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            min-width: 280px;
+            max-width: calc(100% - 40px);
+            padding: 14px 18px;
+            background: var(--ink);
+            color: var(--paper);
+            border: 1px solid var(--dark);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .22);
+            font-size: 13px;
+            letter-spacing: .02em;
+            opacity: 0;
+            transform: translateY(14px);
+            pointer-events: none;
+            transition: opacity .3s ease, transform .3s ease
+        }
+
+        .toast.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto
+        }
+
+        .toast-content {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .toast-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #2e7d32;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700
+        }
+
+        .toast-message {
+            font-weight: 500
+        }
+
+        .toast-close {
+            background: none;
+            border: 0;
+            color: var(--line);
+            font-size: 20px;
+            line-height: 1;
+            padding: 2px 6px;
+            cursor: pointer;
+            transition: color .2s ease
+        }
+
+        .toast-close:hover {
+            color: #fff
+        }
+
+        .toast-close:focus-visible {
+            outline: 2px solid var(--paper)
         }
 
         footer {
@@ -1180,10 +1279,30 @@
                 display: block
             }
 
+            .nav-backdrop {
+                display: block;
+                position: fixed;
+                inset: 0;
+                background: rgba(22, 22, 22, .5);
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+                z-index: 15;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: opacity .25s ease, visibility .25s ease
+            }
+
+            .nav-backdrop.is-active {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto
+            }
+
             .navlinks {
                 display: none;
                 position: absolute;
-                top: 76px;
+                top: 66px;
                 left: 0;
                 right: 0;
                 background: var(--paper);
@@ -1191,7 +1310,11 @@
                 padding: 22px 20px 26px;
                 align-items: stretch;
                 gap: 0;
-                flex-direction: column
+                flex-direction: column;
+                max-height: calc(100svh - 66px);
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                z-index: 25
             }
 
             .navlinks.open {
@@ -1401,5 +1524,14 @@
 
             .footer-right {
                 text-align: left
+            }
+
+            .toast {
+                bottom: 20px;
+                left: 20px;
+                right: 20px;
+                min-width: 0;
+                max-width: none;
+                width: auto
             }
         }

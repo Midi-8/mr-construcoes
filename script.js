@@ -28,39 +28,97 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateTopbar, { passive: true });
     updateTopbar();
 
-    // 4. Menu mobile (abrir/fechar e acessibilidade)
+    // 4. Menu mobile (abrir/fechar, backdrop, bloqueio de scroll e acessibilidade)
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.navlinks');
+    const navBackdrop = document.getElementById('nav-backdrop');
+
     if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', String(!isOpen));
-            menuToggle.setAttribute('aria-label', isOpen ? 'Abrir menu' : 'Fechar menu');
+        let previousBodyOverflow = '';
+
+        const setMenuState = (open) => {
+            const isCurrentlyOpen = navLinks.classList.contains('open');
+            if (open === isCurrentlyOpen) return;
+
+            navLinks.classList.toggle('open', open);
+            menuToggle.setAttribute('aria-expanded', String(open));
+            menuToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
             const icon = menuToggle.querySelector('span');
-            if (icon) icon.textContent = isOpen ? '+' : '−';
-            navLinks.classList.toggle('open', !isOpen);
+            if (icon) icon.textContent = open ? '−' : '+';
+
+            if (navBackdrop) {
+                navBackdrop.classList.toggle('is-active', open);
+                navBackdrop.setAttribute('aria-hidden', String(!open));
+            }
+
+            if (open) {
+                previousBodyOverflow = document.body.style.overflow;
+                document.body.style.overflow = 'hidden';
+                document.body.classList.add('menu-open');
+                const firstLink = navLinks.querySelector('a');
+                if (firstLink) {
+                    firstLink.focus();
+                }
+            } else {
+                document.body.style.overflow = previousBodyOverflow;
+                document.body.classList.remove('menu-open');
+            }
+        };
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.contains('open');
+            setMenuState(!isOpen);
+            if (isOpen) {
+                menuToggle.focus();
+            }
         });
 
-        // Fechar menu ao clicar num link
+        if (navBackdrop) {
+            navBackdrop.addEventListener('click', () => {
+                setMenuState(false);
+                menuToggle.focus();
+            });
+        }
+
+        // Fechar menu ao clicar num link de navegação
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('open');
-                menuToggle.setAttribute('aria-expanded', 'false');
-                menuToggle.setAttribute('aria-label', 'Abrir menu');
-                const icon = menuToggle.querySelector('span');
-                if (icon) icon.textContent = '+';
+                setMenuState(false);
             });
         });
 
-        // Fechar menu com a tecla Escape
+        // Fechar com a tecla Escape e gestão de foco acessível (Tab trap)
         document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && navLinks.classList.contains('open')) {
-                navLinks.classList.remove('open');
-                menuToggle.setAttribute('aria-expanded', 'false');
-                menuToggle.setAttribute('aria-label', 'Abrir menu');
-                const icon = menuToggle.querySelector('span');
-                if (icon) icon.textContent = '+';
+            if (!navLinks.classList.contains('open')) return;
+
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                setMenuState(false);
                 menuToggle.focus();
+                return;
+            }
+
+            if (event.key === 'Tab') {
+                const focusableElements = [menuToggle, ...navLinks.querySelectorAll('a')];
+                if (focusableElements.length === 0) return;
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+
+                if (event.shiftKey && document.activeElement === firstElement) {
+                    event.preventDefault();
+                    lastElement.focus();
+                } else if (!event.shiftKey && document.activeElement === lastElement) {
+                    event.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        });
+
+        // Repor estado e scroll automaticamente ao passar para layout desktop
+        const desktopMedia = window.matchMedia('(min-width: 761px)');
+        desktopMedia.addEventListener('change', (e) => {
+            if (e.matches && navLinks.classList.contains('open')) {
+                setMenuState(false);
             }
         });
     }
@@ -113,28 +171,140 @@ document.addEventListener('DOMContentLoaded', () => {
         yearEl.textContent = new Date().getFullYear();
     }
 
-    // 9. Formulário de contacto via mailto
+    // 9. Componente Toast acessível
+    const toast = document.getElementById('toast');
+    const toastClose = document.getElementById('toast-close');
+    let toastTimeout = null;
+
+    const hideToast = () => {
+        if (!toast) return;
+        toast.classList.remove('is-visible');
+        clearTimeout(toastTimeout);
+        toastTimeout = null;
+        setTimeout(() => {
+            if (!toast.classList.contains('is-visible')) {
+                toast.hidden = true;
+            }
+        }, 300);
+    };
+
+    const showToast = (message = 'Mensagem Enviada') => {
+        if (!toast) return;
+        const msgEl = toast.querySelector('.toast-message');
+        if (msgEl) msgEl.textContent = message;
+
+        clearTimeout(toastTimeout);
+        toast.hidden = false;
+        // Forçar reflow para aplicar transição CSS
+        void toast.offsetWidth;
+        toast.classList.add('is-visible');
+
+        // Dispensa automática após 6 segundos
+        toastTimeout = setTimeout(() => {
+            hideToast();
+        }, 6000);
+    };
+
+    if (toast) {
+        if (toastClose) {
+            toastClose.addEventListener('click', hideToast);
+        }
+        // Pausar temporizador em hover/focus para leitura acessível
+        toast.addEventListener('mouseenter', () => clearTimeout(toastTimeout));
+        toast.addEventListener('mouseleave', () => {
+            if (toast.classList.contains('is-visible')) {
+                toastTimeout = setTimeout(hideToast, 3000);
+            }
+        });
+        toast.addEventListener('focusin', () => clearTimeout(toastTimeout));
+        toast.addEventListener('focusout', () => {
+            if (toast.classList.contains('is-visible')) {
+                toastTimeout = setTimeout(hideToast, 3000);
+            }
+        });
+    }
+
+    // 10. Envio real e fiável do formulário de contacto
     const form = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
-    if (form && formStatus) {
-        form.addEventListener('submit', event => {
+    const submitBtn = form ? form.querySelector('.submit') : null;
+
+    if (form && formStatus && submitBtn) {
+        const originalBtnHTML = submitBtn.innerHTML;
+
+        form.addEventListener('submit', async (event) => {
             event.preventDefault();
+
+            // Validação nativa do formulário
             if (!form.reportValidity()) return;
+
             const data = new FormData(form);
             const name = String(data.get('name') || '').trim();
             const reply = String(data.get('reply') || '').trim();
             const type = String(data.get('type') || '').trim();
             const description = String(data.get('description') || '').trim();
+
             if (!name || !reply || !type || !description) {
-                formStatus.textContent = 'Preencha todos os campos para continuar.';
+                formStatus.className = 'form-status is-error';
+                formStatus.textContent = 'Por favor, preencha todos os campos obrigatórios.';
                 return;
             }
-            const subject = encodeURIComponent('Pedido de orçamento: ' + type);
-            const body = encodeURIComponent(
-                'Nome: ' + name + '\nContacto: ' + reply + '\nTipo de obra: ' + type + '\n\nDescrição:\n' + description
-            );
-            formStatus.textContent = 'A abrir o seu programa de email. Confirme a mensagem para concluir o envio.';
-            window.location.href = 'mailto:mrconstrucoes@sapo.pt?subject=' + subject + '&body=' + body;
+
+            // Estado de envio e proteção contra submissões repetidas
+            submitBtn.disabled = true;
+            submitBtn.setAttribute('aria-disabled', 'true');
+            submitBtn.innerHTML = 'A enviar... <span aria-hidden="true">⏳</span>';
+            formStatus.className = 'form-status';
+            formStatus.textContent = '';
+
+            try {
+                // Envio real via AJAX/JSON para o destino oficial da empresa
+                const response = await fetch('https://formsubmit.co/ajax/mrconstrucoes@sapo.pt', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        reply: reply,
+                        type: type,
+                        description: description,
+                        _subject: `Novo pedido de orçamento: ${type} (${name})`,
+                        _template: 'table',
+                        _captcha: 'false'
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Erro de rede ou servidor (${response.status})`);
+                }
+
+                const result = await response.json();
+
+                // Confirmação estrita de sucesso pelo serviço
+                if (result.success === 'true' || result.success === true) {
+                    form.reset();
+                    formStatus.className = 'form-status is-success';
+                    formStatus.textContent = '';
+                    showToast('Mensagem Enviada');
+                } else if (result.message && result.message.toLowerCase().includes('activate')) {
+                    // Informação caso o serviço esteja a aguardar validação única inicial no email
+                    formStatus.className = 'form-status is-error';
+                    formStatus.textContent = 'O serviço de receção está a aguardar validação inicial no email da empresa. Por favor, tente mais tarde ou use os contactos diretos.';
+                } else {
+                    throw new Error(result.message || 'O serviço não confirmou a submissão.');
+                }
+            } catch (err) {
+                // Em caso de erro: preserva todos os dados e apresenta mensagem de erro clara
+                formStatus.className = 'form-status is-error';
+                formStatus.textContent = 'Não foi possível enviar a mensagem no momento. Por favor tente novamente ou contacte diretamente por telefone ou email.';
+            } finally {
+                // Restaura sempre o estado do botão
+                submitBtn.disabled = false;
+                submitBtn.removeAttribute('aria-disabled');
+                submitBtn.innerHTML = originalBtnHTML;
+            }
         });
     }
 });
