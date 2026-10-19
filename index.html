@@ -5,9 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#F6F4F0">
+    <title>MR Construções | Construir é transformar</title>
     <meta name="description"
         content="MR Construções, construção, remodelação e reparações em Vila Nova de Famalicão. Rigor no trabalho, proximidade nas relações e atenção ao detalhe.">
-    <title>MR Construções | Construir é transformar</title>
+    <link rel="canonical" href="https://midi-8.github.io/mr-construcoes/">
+
+    <!-- Open Graph / Redes Sociais (WhatsApp, LinkedIn, Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_PT">
+    <meta property="og:site_name" content="MR Construções">
+    <meta property="og:title" content="MR Construções | Construir é transformar">
+    <meta property="og:description"
+        content="MR Construções, construção, remodelação e reparações em Vila Nova de Famalicão. Rigor no trabalho, proximidade nas relações e atenção ao detalhe.">
+    <meta property="og:url" content="https://midi-8.github.io/mr-construcoes/">
+    <meta property="og:image" content="https://midi-8.github.io/mr-construcoes/imagens/logo-mr-construcoes.png">
+    <meta property="og:image:secure_url" content="https://midi-8.github.io/mr-construcoes/imagens/logo-mr-construcoes.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Logótipo oficial da MR Construções">
+    <meta property="og:image:width" content="1254">
+    <meta property="og:image:height" content="1254">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MR Construções | Construir é transformar">
+    <meta name="twitter:description"
+        content="MR Construções, construção, remodelação e reparações em Vila Nova de Famalicão. Rigor no trabalho, proximidade nas relações e atenção ao detalhe.">
+    <meta name="twitter:image" content="https://midi-8.github.io/mr-construcoes/imagens/logo-mr-construcoes.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +58,7 @@
             </div>
         </nav>
     </header>
+    <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
     <main>
         <section class="hero" id="inicio">
@@ -277,8 +301,7 @@
                             name="description" required placeholder="Conte-nos brevemente o que precisa."></textarea>
                     </div>
                     <button class="submit" type="submit">Enviar pedido <span aria-hidden="true">↗</span></button>
-                    <p class="form-note">O formulário prepara um email no seu dispositivo. O envio só fica concluído
-                        depois de confirmar a mensagem no seu programa de email.</p>
+                    <p class="form-note">Os seus dados serão enviados diretamente para a nossa equipa para preparação do orçamento.</p>
                     <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
                 </form>
             </div>
@@ -296,7 +319,15 @@
         </div>
     </footer>
 
-        <script src="script.js" defer></script>
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+        <div class="toast-content">
+            <span class="toast-icon" aria-hidden="true">✓</span>
+            <span class="toast-message">Mensagem Enviada</span>
+        </div>
+        <button type="button" class="toast-close" id="toast-close" aria-label="Fechar notificação">×</button>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
 
 </html>
