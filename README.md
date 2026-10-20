@@ -4,7 +4,7 @@ Website oficial da **MR Construções** (Marco Paulo Ribeiro Unipessoal, Lda.), 
 
 ---
 
-## 📋 Sobre o Projeto
+##  Sobre o Projeto
 
 Website institucional desenvolvido para divulgar os serviços, processos de trabalho, projetos e meios de contacto da empresa. 
 Desenvolvido com foco em:
@@ -16,7 +16,7 @@ Desenvolvido com foco em:
 
 ---
 
-## 🗂️ Estrutura do Repositório
+##  Estrutura do Repositório
 
 ```text
 mr-construcoes/
@@ -29,7 +29,7 @@ mr-construcoes/
 
 ---
 
-## ⚙️ Tecnologias e Recursos
+##  Tecnologias e Recursos
 
 - **HTML5**: Estrutura semântica (`header`, `main`, `section`, `article`, `details`, `footer`).
 - **CSS3**: Layouts flexíveis com CSS Grid e Flexbox, tipografia fluida com `clamp()`, tokens CSS via `:root` e media queries responsivas.
@@ -38,7 +38,7 @@ mr-construcoes/
 
 ---
 
-## 📄 Secções do Website
+##  Secções do Website
 
 | Secção | Descrição |
 |---|---|
@@ -53,7 +53,7 @@ mr-construcoes/
 
 ---
 
-## 🚀 Como Executar Localmente
+##  Como Executar Localmente
 
 Não requer instalação de gestores de pacotes ou compilação. Pode ser executado diretamente:
 
@@ -69,7 +69,7 @@ Depois, abra o endereço no browser: `http://localhost:8000`
 
 ---
 
-## 📞 Contactos da Empresa
+## Contactos da Empresa
 
 - **Telefone:** [+351 915 680 947](tel:+351915680947)
 - **Email:** [mrconstrucoes@sapo.pt](mailto:mrconstrucoes@sapo.pt)
