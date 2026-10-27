@@ -238,6 +238,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // Validação nativa do formulário
             if (!form.reportValidity()) return;
 
+            // Honeypot anti-spam: se o campo de despiste estiver preenchido, aborta imediatamente
+            const honeyField = form.querySelector('input[name="_honey"]');
+            const honeyValue = (honeyField ? honeyField.value : '').trim();
+            if (honeyValue !== '') {
+                // Aborta a submissão silenciosamente: sem pedidos ao serviço, sem alterar o botão,
+                // sem limpar os campos e sem apresentar notificação ou toast de sucesso.
+                return;
+            }
+
             const data = new FormData(form);
             const name = String(data.get('name') || '').trim();
             const reply = String(data.get('reply') || '').trim();
@@ -272,7 +281,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         description: description,
                         _subject: `Novo pedido de orçamento: ${type} (${name})`,
                         _template: 'table',
-                        _captcha: 'false'
+                        _captcha: 'false',
+                        _honey: ''
                     })
                 });
 
