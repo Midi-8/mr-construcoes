@@ -4,7 +4,7 @@ Website oficial da **MR Construções** (**Marco Paulo Ribeiro Unipessoal, Lda.*
 
 [![Status](https://img.shields.io/badge/Status-Produ%C3%A7%C3%A3o-success.svg)](#)
 [![Stack](https://img.shields.io/badge/Stack-Vanilla%20HTML5%20%7C%20CSS3%20%7C%20JS-blue.svg)](#)
-[![Alvará IMPIC](https://img.shields.io/badge/Alvar%C3%A1%20IMPIC-102434-orange.svg)](https://www.impic.pt)
+[![Alvará IMPIC](https://img.shields.io/badge/Alvar%C3%A1%20IMPIC-113987-orange.svg)](https://www.impic.pt)
 [![NIF](https://img.shields.io/badge/NIF-516590022-lightgrey.svg)](#)
 
 ---
@@ -30,7 +30,7 @@ O website institucional da MR Construções foi concebido e otimizado com foco n
   * Proteção nativa por **Honeypot** (`_honey`) invisível a humanos, abortando automaticamente submissões automatizadas de bots.
 * **Conformidade Legal (Portugal)**:
   * Rodapé corporativo completo em conformidade com o Decreto-Lei n.º 7/2004, Lei n.º 41/2015 e Decreto-Lei n.º 156/2005.
-  * Identificação fiscal (NIF/NIPC 516590022), Título/Alvará de Construção IMPIC N.º 102434 e ligação obrigatória ao **Livro de Reclamações Eletrónico**.
+  * Identificação fiscal (NIF/NIPC 516590022), Título/Alvará de Construção IMPIC N.º 113987 e ligação obrigatória ao **Livro de Reclamações Eletrónico**.
 
 ---
 
@@ -103,7 +103,7 @@ Aceda no navegador em: `http://localhost:8000`
 * **Denominação Social:** Marco Paulo Ribeiro Unipessoal, Lda.
 * **Marca Comercial:** MR Construções
 * **NIF / NIPC:** 516590022
-* **Alvará IMPIC N.º:** 102434
+* **Alvará IMPIC N.º:** 113987
 * **Sede:** Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal
 * **Telefone:** [+351 915 680 947](tel:+351915680947)
 * **Email:** [mrconstrucoes@sapo.pt](mailto:mrconstrucoes@sapo.pt)
