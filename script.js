@@ -235,17 +235,14 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
 
-            // Validação nativa do formulário
-            if (!form.reportValidity()) return;
-
-            // Honeypot anti-spam: se o campo de despiste estiver preenchido, aborta imediatamente
-            const honeyField = form.querySelector('input[name="_honey"]');
-            const honeyValue = (honeyField ? honeyField.value : '').trim();
-            if (honeyValue !== '') {
-                // Aborta a submissão silenciosamente: sem pedidos ao serviço, sem alterar o botão,
-                // sem limpar os campos e sem apresentar notificação ou toast de sucesso.
+            // Proteção Anti-Spam (Honeypot) - Bloqueia submissão de bots silenciosamente
+            const honey = form.querySelector('input[name="_honey"]');
+            if (honey && honey.value.trim() !== '') {
                 return;
             }
+
+            // Validação nativa do formulário
+            if (!form.reportValidity()) return;
 
             const data = new FormData(form);
             const name = String(data.get('name') || '').trim();
@@ -281,8 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         description: description,
                         _subject: `Novo pedido de orçamento: ${type} (${name})`,
                         _template: 'table',
-                        _captcha: 'false',
-                        _honey: ''
+                        _captcha: 'false'
                     })
                 });
 
@@ -314,6 +310,75 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.disabled = false;
                 submitBtn.removeAttribute('aria-disabled');
                 submitBtn.innerHTML = originalBtnHTML;
+            }
+        });
+    }
+
+    // 11. Lightbox para galeria de projetos
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const galleryImages = document.querySelectorAll('#projetos .project-visual img');
+
+    if (lightbox && lightboxImg && galleryImages.length > 0) {
+        let lastFocusedElement = null;
+
+        const openLightbox = (img) => {
+            lastFocusedElement = document.activeElement;
+            lightboxImg.src = img.currentSrc || img.src;
+            lightboxImg.alt = img.alt || 'Fotografia do projeto';
+            lightbox.hidden = false;
+            lightbox.classList.add('is-active');
+            document.body.style.overflow = 'hidden';
+            if (lightboxClose) lightboxClose.focus();
+        };
+
+        const closeLightbox = () => {
+            if (lightbox.hidden) return;
+            lightbox.classList.remove('is-active');
+            lightbox.hidden = true;
+            lightboxImg.src = '';
+            lightboxImg.alt = '';
+            document.body.style.overflow = '';
+            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+                lastFocusedElement.focus();
+            }
+        };
+
+        galleryImages.forEach(img => {
+            img.style.cursor = 'pointer';
+            img.setAttribute('tabindex', '0');
+            img.setAttribute('role', 'button');
+            img.setAttribute('aria-label', `${img.alt || 'Fotografia do projeto'} (clicar para ampliar)`);
+
+            img.addEventListener('click', () => openLightbox(img));
+            img.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openLightbox(img);
+                }
+            });
+        });
+
+        // Fechar ao clicar no botão de fecho
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeLightbox();
+            });
+        }
+
+        // Fechar ao clicar fora da imagem
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                closeLightbox();
+            }
+        });
+
+        // Fechar com a tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox.hidden) {
+                closeLightbox();
             }
         });
     }

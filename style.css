@@ -11,6 +11,8 @@
             --line: #DAD6CF;
             --dark: #30302D;
             --white: #fff;
+            --accent: #C8965A;
+            --accent-light: #D4A76A;
             --page: min(1440px, calc(100% - 9vw))
         }
 
@@ -20,7 +22,8 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 90px
+            scroll-padding-top: 90px;
+            -webkit-text-size-adjust: 100%
         }
 
         body {
@@ -76,7 +79,7 @@
             font: 600 10px/1.5 Archivo, sans-serif;
             letter-spacing: .16em;
             text-transform: uppercase;
-            color: var(--muted)
+            color: var(--accent)
         }
 
         .line {
@@ -93,7 +96,7 @@
             background: transparent;
             backdrop-filter: none;
             border-bottom: 1px solid transparent;
-            transition: background .25s, border-color .25s, backdrop-filter .25s
+            transition: background .35s ease, border-color .35s ease, backdrop-filter .35s ease
         }
 
         .topbar .navlinks a:not(.nav-cta) {
@@ -194,11 +197,42 @@
 
         .menu-toggle {
             display: none;
-            border: 0;
-            background: none;
-            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, .45);
+            background: rgba(255, 255, 255, .1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 10px 16px;
+            border-radius: 6px;
+            color: #fff;
+            cursor: pointer;
+            font: 600 11px/1 Archivo, sans-serif;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            transition: background .25s ease, border-color .25s ease, color .25s ease, transform .15s ease
+        }
+
+        .menu-toggle:hover {
+            background: rgba(255, 255, 255, .2);
+            border-color: rgba(255, 255, 255, .6)
+        }
+
+        .menu-toggle:active {
+            transform: scale(.96)
+        }
+
+        .topbar.is-scrolled .menu-toggle {
+            border-color: var(--line);
+            background: var(--white);
             color: var(--ink);
-            cursor: pointer
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            box-shadow: 0 1px 4px rgba(0,0,0,.06)
+        }
+
+        .topbar.is-scrolled .menu-toggle:hover {
+            background: var(--ink);
+            color: var(--white);
+            border-color: var(--ink)
         }
 
         .nav-backdrop {
@@ -238,7 +272,7 @@
             position: absolute;
             z-index: -2;
             inset: 0;
-            background: url("imagens/hero.jpg.JPG") center 54%/cover no-repeat;
+            background: url("imagens/hero.webp") center 54%/cover no-repeat;
             transform: scale(1.01);
             opacity: .78
         }
@@ -261,12 +295,16 @@
             gap: 12px;
             flex-wrap: wrap;
             margin: 0 0 clamp(30px, 4vw, 56px);
-            color: #fff !important
+            color: var(--accent-light) !important
         }
 
         .hero-meta strong {
             font-weight: 700;
             color: #fff
+        }
+
+        .hero .eyebrow {
+            color: var(--accent-light)
         }
 
         .hero h1 {
@@ -286,7 +324,8 @@
         .hero h1 em {
             font-style: normal;
             position: relative;
-            white-space: nowrap
+            white-space: nowrap;
+            color: var(--accent-light)
         }
 
         .hero h1 em:after {
@@ -503,7 +542,11 @@
             font: 600 9px Archivo, sans-serif;
             letter-spacing: .15em;
             text-transform: uppercase;
-            color: var(--muted)
+            color: var(--accent);
+            background: rgba(200, 150, 90, .1);
+            padding: 5px 10px;
+            border-radius: 3px;
+            display: inline-block
         }
 
         .marquee {
@@ -716,7 +759,7 @@
 
         .service-row .num {
             font: 500 11px Archivo, sans-serif;
-            color: var(--muted);
+            color: var(--accent);
             padding-top: 8px
         }
 
@@ -781,7 +824,7 @@
 
         .specialty-item summary .num {
             font: 500 10px Archivo, sans-serif;
-            color: var(--muted)
+            color: var(--accent)
         }
 
         .specialty-item summary .name {
@@ -793,11 +836,13 @@
             justify-self: end;
             font-size: 18px;
             font-weight: 300;
-            transition: transform .2s
+            color: var(--accent);
+            transition: transform .3s cubic-bezier(.4, 0, .2, 1), color .2s
         }
 
         .specialty-item[open] summary .plus {
-            transform: rotate(45deg)
+            transform: rotate(45deg);
+            color: var(--ink)
         }
 
         .specialty-item p {
@@ -891,11 +936,22 @@
             gap: 15px;
             padding: 17px 0;
             border-bottom: 1px solid #d2cec7;
-            font-size: 13px
+            font-size: 13px;
+            transition: padding-left .25s ease, color .2s ease
+        }
+
+        .contact-links a:hover {
+            padding-left: 8px;
+            color: var(--accent)
         }
 
         .contact-links a span:last-child {
-            color: var(--muted)
+            color: var(--muted);
+            transition: color .2s ease
+        }
+
+        .contact-links a:hover span:last-child {
+            color: var(--accent)
         }
 
         .contact-form {
@@ -908,8 +964,8 @@
 
         .field label {
             display: block;
-            font: 600 9px Archivo, sans-serif;
-            letter-spacing: .14em;
+            font: 600 12px Archivo, sans-serif;
+            letter-spacing: .12em;
             text-transform: uppercase;
             color: var(--muted);
             margin-bottom: 9px
@@ -921,12 +977,13 @@
             display: block;
             width: 100%;
             border: 0;
-            border-bottom: 1px solid #c9c5bd;
+            border-bottom: 2px solid #c9c5bd;
             background: transparent;
             border-radius: 0;
             padding: 12px 0;
             color: var(--ink);
-            font-size: 13px
+            font-size: 14px;
+            transition: border-color .3s ease
         }
 
         .field textarea {
@@ -938,52 +995,54 @@
         .field select:focus,
         .field textarea:focus {
             outline: none;
-            border-bottom-color: var(--ink)
+            border-bottom-color: var(--accent)
+        }
+
+        .field input:user-invalid,
+        .field select:user-invalid,
+        .field textarea:user-invalid {
+            border-bottom-color: #c62828
+        }
+
+        .field input:user-invalid:focus,
+        .field select:user-invalid:focus,
+        .field textarea:user-invalid:focus {
+            border-bottom-color: #c62828
         }
 
         .submit {
             border: 1px solid var(--ink);
             background: var(--ink);
             color: var(--paper);
-            padding: 15px 20px;
-            min-width: 160px;
+            padding: 16px 24px;
+            min-width: 180px;
             display: flex;
             justify-content: space-between;
             gap: 25px;
             align-items: center;
             cursor: pointer;
-            font-size: 12px;
-            transition: background .2s, color .2s
+            font: 600 12px/1 Archivo, sans-serif;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: background .3s ease, color .3s ease, transform .15s ease, box-shadow .3s ease
         }
 
         .submit:hover {
-            background: transparent;
-            color: var(--ink)
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--white);
+            box-shadow: 0 6px 20px rgba(200, 150, 90, .3)
+        }
+
+        .submit:active {
+            transform: scale(.97)
         }
 
         .submit[disabled] {
             opacity: .65;
             cursor: not-allowed;
             pointer-events: none
-        }
-
-        /* Campo Honeypot (despiste anti-spam acessível para humanos / oculto) */
-        .form-honey {
-            position: absolute !important;
-            left: -9999px !important;
-            top: -9999px !important;
-            width: 1px !important;
-            height: 1px !important;
-            padding: 0 !important;
-            margin: -1px !important;
-            border: 0 !important;
-            clip: rect(0, 0, 0, 0) !important;
-            clip-path: inset(50%) !important;
-            overflow: hidden !important;
-            white-space: nowrap !important;
-            opacity: 0 !important;
-            pointer-events: none !important;
-            z-index: -1 !important;
         }
 
         .form-note {
@@ -1085,142 +1144,98 @@
         }
 
         footer {
-            background: var(--surface);
-            padding: 26px 0 30px
+            background: var(--ink);
+            color: rgba(255, 255, 255, .7);
+            padding: 44px 0 48px
         }
 
         .footer-top {
-            border-top: 1px solid #d2cec7;
-            padding-top: 25px;
-            display: flex;
-            justify-content: space-between;
-            gap: 25px;
+            border-top: 1px solid rgba(255, 255, 255, .12);
+            padding-top: 36px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr) minmax(0, 1.1fr) minmax(0, .9fr);
+            gap: clamp(24px, 3.5vw, 44px);
             align-items: flex-start
         }
 
+        footer .brand img {
+            filter: brightness(0) invert(1);
+            opacity: .85
+        }
+
         .footer-description {
-            font-size: 10px;
+            font-size: 11px;
             line-height: 1.8;
-            color: var(--muted);
+            color: rgba(255, 255, 255, .45);
             max-width: 280px;
             margin-top: 12px
         }
 
-        .footer-col-legal {
-            font-size: 11px;
-            line-height: 1.7;
-            color: var(--muted);
-            max-width: 420px
-        }
-
-        .footer-legal-title {
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--ink);
-            letter-spacing: .04em;
+        .footer-heading {
+            display: block;
+            font: 600 11px/1 Archivo, sans-serif;
+            letter-spacing: .12em;
             text-transform: uppercase;
-            margin: 0 0 6px
+            color: rgba(255, 255, 255, .9);
+            margin-bottom: 14px
         }
 
-        .footer-legal-row {
-            margin: 2px 0;
+        .footer-legal-list,
+        .footer-links-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
             font-size: 11px;
             line-height: 1.6;
-            color: var(--muted)
+            color: rgba(255, 255, 255, .55)
         }
 
-        .footer-legal-row strong {
-            color: var(--dark);
-            font-weight: 600
+        .footer-legal-list strong {
+            color: rgba(255, 255, 255, .88);
+            font-weight: 500
         }
 
-        .footer-lre {
-            margin-top: 8px !important;
-            margin-bottom: 0
+        .footer-legal-list span {
+            color: rgba(255, 255, 255, .8)
         }
 
-        .footer-link-ext {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            color: var(--ink);
-            font-size: 11px;
-            font-weight: 600;
-            text-decoration: underline;
-            text-underline-offset: 3px;
+        .footer-links-list a {
+            color: rgba(255, 255, 255, .7);
+            text-decoration: none;
             transition: color .2s ease
         }
 
-        .footer-link-ext:hover {
-            color: var(--muted)
+        .footer-links-list a:hover {
+            color: var(--accent-light)
         }
 
-        .footer-link-ext:focus-visible {
-            outline: 2px solid var(--ink);
-            outline-offset: 2px
+        .footer-complaints-link {
+            font-weight: 500;
+            color: rgba(255, 255, 255, .85) !important
+        }
+
+        .footer-complaints-link:hover {
+            color: var(--accent-light) !important;
+            text-decoration: underline
         }
 
         .footer-right {
             text-align: right;
-            font-size: 10px;
+            font-size: 11px;
             line-height: 1.8;
-            color: var(--muted)
+            color: rgba(255, 255, 255, .45)
         }
 
-        /* Botão Flutuante de WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 32px;
-            right: 32px;
-            bottom: calc(32px + env(safe-area-inset-bottom, 0px));
-            right: calc(32px + env(safe-area-inset-right, 0px));
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background-color: #25D366;
-            color: #ffffff;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, .22);
-            z-index: 10;
-            text-decoration: none;
-            transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease
+        .footer-right a {
+            color: rgba(255, 255, 255, .7);
+            transition: color .2s ease
         }
 
-        .whatsapp-float:hover {
-            transform: translateY(-3px) scale(1.04);
-            box-shadow: 0 8px 24px rgba(37, 211, 102, .45);
-            color: #ffffff
-        }
-
-        .whatsapp-float:focus-visible {
-            outline: 3px solid var(--ink);
-            outline-offset: 3px
-        }
-
-        .whatsapp-float svg {
-            display: block;
-            width: 28px;
-            height: 28px
-        }
-
-        /* Ocultar botão WhatsApp quando o menu mobile está aberto para evitar sobreposições */
-        body.menu-open .whatsapp-float {
-            opacity: 0 !important;
-            pointer-events: none !important;
-            visibility: hidden !important;
-            transition: none !important
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .whatsapp-float {
-                transition: none
-            }
-
-            .whatsapp-float:hover {
-                transform: none
-            }
+        .footer-right a:hover {
+            color: var(--accent-light)
         }
 
         .reveal {
@@ -1300,8 +1315,8 @@
         }
 
         .projects .project:hover .project-grid {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 36px rgba(22, 22, 22, .09)
+            transform: translateY(-6px);
+            box-shadow: 0 20px 44px rgba(22, 22, 22, .12)
         }
 
         .projects .project-visual img {
@@ -1405,21 +1420,23 @@
             }
 
             .menu-toggle {
-                display: block
+                display: flex;
+                align-items: center;
+                gap: 8px
             }
 
             .nav-backdrop {
                 display: block;
                 position: fixed;
                 inset: 0;
-                background: rgba(22, 22, 22, .5);
-                backdrop-filter: blur(4px);
-                -webkit-backdrop-filter: blur(4px);
+                background: rgba(22, 22, 22, .55);
+                backdrop-filter: blur(6px);
+                -webkit-backdrop-filter: blur(6px);
                 z-index: 15;
                 opacity: 0;
                 visibility: hidden;
                 pointer-events: none;
-                transition: opacity .25s ease, visibility .25s ease
+                transition: opacity .3s ease, visibility .3s ease
             }
 
             .nav-backdrop.is-active {
@@ -1434,32 +1451,65 @@
                 top: 66px;
                 left: 0;
                 right: 0;
-                background: var(--paper);
+                background: var(--white);
                 border-bottom: 1px solid var(--line);
-                padding: 22px 20px 26px;
+                padding: 12px 20px 22px;
                 align-items: stretch;
                 gap: 0;
                 flex-direction: column;
                 max-height: calc(100svh - 66px);
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
-                z-index: 25
+                z-index: 25;
+                box-shadow: 0 16px 40px rgba(0, 0, 0, .12)
             }
 
             .navlinks.open {
-                display: flex
+                display: flex;
+                animation: menuSlideDown .3s cubic-bezier(.2, .7, .3, 1) forwards
+            }
+
+            @keyframes menuSlideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px)
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0)
+                }
             }
 
             .navlinks a {
-                padding: 13px 0;
-                border-bottom: 1px solid var(--line)
+                padding: 15px 12px;
+                border-bottom: 1px solid var(--line);
+                color: var(--ink) !important;
+                font-size: 14px;
+                font-weight: 500;
+                transition: padding-left .2s ease, color .2s ease
+            }
+
+            .navlinks a:hover {
+                padding-left: 18px;
+                color: var(--accent) !important
             }
 
             .navlinks .nav-cta {
                 margin-top: 16px;
                 text-align: center;
                 border: 1px solid var(--ink);
-                padding: 14px
+                color: var(--ink) !important;
+                padding: 15px;
+                border-radius: 4px;
+                font-weight: 600;
+                letter-spacing: .04em;
+                transition: background .25s ease, color .25s ease
+            }
+
+            .navlinks .nav-cta:hover {
+                background: var(--ink);
+                color: var(--white) !important;
+                padding-left: 15px
             }
 
             .hero {
@@ -1648,38 +1698,137 @@
             }
 
             .footer-top {
-                flex-direction: column;
-                gap: 20px
-            }
-
-            .footer-col-legal {
-                max-width: 100%
+                flex-direction: column
             }
 
             .footer-right {
                 text-align: left
             }
 
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-                bottom: calc(20px + env(safe-area-inset-bottom, 0px));
-                right: calc(20px + env(safe-area-inset-right, 0px));
-                width: 50px;
-                height: 50px
-            }
-
-            .whatsapp-float svg {
-                width: 26px;
-                height: 26px
-            }
-
             .toast {
-                bottom: 20px;
+                bottom: 84px;
                 left: 20px;
                 right: 20px;
                 min-width: 0;
                 max-width: none;
                 width: auto
+            }
+        }
+
+
+/* Lightbox Modal */
+.lightbox-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, .88);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+    cursor: zoom-out;
+}
+
+.lightbox-modal.is-active {
+    display: flex;
+}
+
+.lightbox-modal-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, .55);
+    cursor: default;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: rgba(255, 255, 255, .15);
+    border: none;
+    color: #fff;
+    font-size: 32px;
+    line-height: 1;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s ease, transform .2s ease;
+    z-index: 101;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, .3);
+    transform: scale(1.05);
+}
+
+.projects .project-visual img {
+    cursor: pointer;
+}
+
+        /* Botão Flutuante de Conversão WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 50;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background-color: #25D366;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, .28), 0 2px 6px rgba(37, 211, 102, .3);
+            text-decoration: none;
+            transition: transform .25s cubic-bezier(.34, 1.56, .64, 1), background-color .2s ease, box-shadow .25s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20ba5a;
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, .32), 0 4px 12px rgba(37, 211, 102, .45);
+            color: #ffffff;
+        }
+
+        .whatsapp-float:active {
+            transform: scale(.94);
+        }
+
+        .whatsapp-float:focus-visible {
+            outline: 3px solid #ffffff;
+            outline-offset: 3px;
+        }
+
+        .whatsapp-float svg {
+            display: block;
+            width: 28px;
+            height: 28px;
+        }
+
+        @media(max-width:960px) {
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+            .footer-right {
+                text-align: left;
+            }
+        }
+
+        @media(max-width:600px) {
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 28px;
             }
         }
