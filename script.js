@@ -22,11 +22,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const topbar = document.querySelector('.topbar');
     const heroSection = document.querySelector('.hero');
     const updateTopbar = () => {
-        if (!topbar || !heroSection) return;
+        if (!topbar) return;
+        if (document.body.classList.contains('is-project-open')) {
+            topbar.classList.add('is-scrolled');
+            return;
+        }
+        if (!heroSection) return;
         topbar.classList.toggle('is-scrolled', window.scrollY > Math.max(100, heroSection.offsetHeight - 100));
     };
     window.addEventListener('scroll', updateTopbar, { passive: true });
     updateTopbar();
+
+    // 3b. Indicador de secção ativa na navegação (ScrollSpy)
+    const trackedSections = document.querySelectorAll('section[id]');
+    const navAnchors = document.querySelectorAll('.navlinks a:not(.nav-cta)');
+
+    if ('IntersectionObserver' in window && trackedSections.length && navAnchors.length) {
+        const spyObserver = new IntersectionObserver((entries) => {
+            if (document.body.classList.contains('is-project-open')) {
+                navAnchors.forEach(a => a.classList.remove('is-active'));
+                return;
+            }
+
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navAnchors.forEach(a => {
+                        const href = a.getAttribute('href');
+                        a.classList.toggle('is-active', href === `#${id}`);
+                    });
+                }
+            });
+        }, {
+            rootMargin: '-25% 0px -65% 0px',
+            threshold: 0
+        });
+
+        trackedSections.forEach(sec => spyObserver.observe(sec));
+    }
 
     // 4. Menu mobile (abrir/fechar, backdrop, bloqueio de scroll e acessibilidade)
     const menuToggle = document.querySelector('.menu-toggle');
@@ -310,75 +343,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.disabled = false;
                 submitBtn.removeAttribute('aria-disabled');
                 submitBtn.innerHTML = originalBtnHTML;
-            }
-        });
-    }
-
-    // 11. Lightbox para galeria de projetos
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.getElementById('lightbox-close');
-    const galleryImages = document.querySelectorAll('#projetos .project-visual img');
-
-    if (lightbox && lightboxImg && galleryImages.length > 0) {
-        let lastFocusedElement = null;
-
-        const openLightbox = (img) => {
-            lastFocusedElement = document.activeElement;
-            lightboxImg.src = img.currentSrc || img.src;
-            lightboxImg.alt = img.alt || 'Fotografia do projeto';
-            lightbox.hidden = false;
-            lightbox.classList.add('is-active');
-            document.body.style.overflow = 'hidden';
-            if (lightboxClose) lightboxClose.focus();
-        };
-
-        const closeLightbox = () => {
-            if (lightbox.hidden) return;
-            lightbox.classList.remove('is-active');
-            lightbox.hidden = true;
-            lightboxImg.src = '';
-            lightboxImg.alt = '';
-            document.body.style.overflow = '';
-            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
-                lastFocusedElement.focus();
-            }
-        };
-
-        galleryImages.forEach(img => {
-            img.style.cursor = 'pointer';
-            img.setAttribute('tabindex', '0');
-            img.setAttribute('role', 'button');
-            img.setAttribute('aria-label', `${img.alt || 'Fotografia do projeto'} (clicar para ampliar)`);
-
-            img.addEventListener('click', () => openLightbox(img));
-            img.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    openLightbox(img);
-                }
-            });
-        });
-
-        // Fechar ao clicar no botão de fecho
-        if (lightboxClose) {
-            lightboxClose.addEventListener('click', (e) => {
-                e.stopPropagation();
-                closeLightbox();
-            });
-        }
-
-        // Fechar ao clicar fora da imagem
-        lightbox.addEventListener('click', (e) => {
-            if (e.target !== lightboxImg) {
-                closeLightbox();
-            }
-        });
-
-        // Fechar com a tecla Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !lightbox.hidden) {
-                closeLightbox();
             }
         });
     }

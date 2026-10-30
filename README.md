@@ -1,115 +1,94 @@
 # MR Construções — Website Institucional
 
-Website oficial da **MR Construções** (**Marco Paulo Ribeiro Unipessoal, Lda.**), empresa especializada em construção civil, remodelação e reparações com sede em Vila Nova de Famalicão, Portugal.
+Website institucional da MR Construções (Marco Paulo Ribeiro Unipessoal, Lda.), empresa de construção civil, remodelação e reparações com sede em Vila Nova de Famalicão, Portugal.
 
-[![Status](https://img.shields.io/badge/Status-Produ%C3%A7%C3%A3o-success.svg)](#)
-[![Stack](https://img.shields.io/badge/Stack-Vanilla%20HTML5%20%7C%20CSS3%20%7C%20JS-blue.svg)](#)
-[![Alvará IMPIC](https://img.shields.io/badge/Alvar%C3%A1%20IMPIC-113987-orange.svg)](https://www.impic.pt)
-[![NIF](https://img.shields.io/badge/NIF-516590022-lightgrey.svg)](#)
+Desenvolvido em Vanilla HTML5, CSS3 e JavaScript moderno, sem dependências externas nem frameworks pesadas, otimizado para carregamento rápido, SEO local e utilização em dispositivos móveis e desktop.
 
 ---
 
-## 🏗️ Sobre o Projeto
-
-O website institucional da MR Construções foi concebido e otimizado com foco na excelência visual, performance e conformidade técnica e legal. Funciona como a montra digital dos serviços, projetos, processos e canais de atendimento da empresa.
-
-### Principais Pilares
-
-* **Performance & Core Web Vitals**:
-  * Imagens otimizadas no formato WebP de alta densidade e baixo peso (redução de até 83% em assets chave).
-  * Dimensões intrínsecas e `loading="lazy"` para mitigar *Cumulative Layout Shift* (CLS).
-  * Arquitetura 100% nativa (Vanilla HTML5/CSS3/JavaScript), sem dependências externas ou frameworks pesadas.
-* **Experiência Visual & UX**:
-  * Galeria de projetos reais com **Lightbox Modal** imersivo, suporte para navegação por teclado (tecla <kbd>Esc</kbd>, <kbd>Enter</kbd>) e bloqueio inteligente de scroll.
-  * Comparador interativo de intervenções "Antes e Depois" com controlo tátil deslizante.
-  * Animações suaves de revelação com scroll através de `IntersectionObserver`, respeitando as preferências do sistema (`prefers-reduced-motion`).
-* **Conversão & CRO**:
-  * Botão de contacto flutuante permanente do **WhatsApp** com mensagem contextual pré-configurada para pedido de orçamento.
-  * Formulário de contacto assíncrono com feedback visual em tempo real (notificações Toast acessíveis).
-* **Segurança & Anti-Spam**:
-  * Proteção nativa por **Honeypot** (`_honey`) invisível a humanos, abortando automaticamente submissões automatizadas de bots.
-* **Conformidade Legal (Portugal)**:
-  * Rodapé corporativo completo em conformidade com o Decreto-Lei n.º 7/2004, Lei n.º 41/2015 e Decreto-Lei n.º 156/2005.
-  * Identificação fiscal (NIF/NIPC 516590022), Título/Alvará de Construção IMPIC N.º 113987 e ligação obrigatória ao **Livro de Reclamações Eletrónico**.
-
----
-
-## 📁 Estrutura do Repositório
+## Estrutura do Projeto
 
 ```text
 mr-construcoes/
-├── index.html        # Estrutura HTML5 semântica e acessível (ARIA, microdados)
-├── style.css         # Design system, tokens CSS, componentes e layouts responsivos
-├── script.js         # Lógica Vanilla JS (lightbox, formulário, honeypot, toast, navegação)
-├── imagens/          # Assets visuais otimizados (WebP e JPG de alta resolução)
-│   ├── hero.webp
-│   ├── logo-mr-construcoes.webp
-│   ├── casa-banho-porto.jpg
-│   ├── piscina-famalicao.jpg
-│   ├── casa-famalicao-depois.jpg
-│   └── casa-famalicao-antes.jpg
-└── README.md         # Documentação técnica e institucional
+├── index.html          Estrutura HTML5 semântica (página principal e template do projeto)
+├── style.css           Folha de estilos principal, variáveis de design e regras responsivas
+├── script.js           Lógica da página principal (menu mobile, scroll, formulário, toast)
+├── project-data.js     Base de dados em JavaScript com as informações e galerias dos projetos
+├── project-view.js     Gestor de rotas por hash (#projeto/id) e preenchimento da vista do projeto
+├── lightbox.js         Visualizador de imagens em ecrã inteiro (acessível, com teclado e gestos de swipe)
+├── imagens/            Fotografias, logotipo oficial e recursos gráficos
+└── README.md           Documentação técnica e instruções de manutenção
 ```
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Funcionalidades Principais
 
-* **HTML5 Semântico**: Tags nativas (`header`, `main`, `section`, `article`, `details`, `dialog`, `footer`), atributos de acessibilidade (ARIA) e metadados OpenGraph / Twitter Cards.
-* **CSS3 Moderno**: CSS Grid, Flexbox, tipografia fluida com `clamp()`, variáveis nativas (`:root`), transições aceleradas por hardware e media queries adaptáveis.
-* **JavaScript (ES6+)**:
-  * Manipulação nativa da DOM.
-  * Tratamento do comparador Antes/Depois via CSS custom properties (`--split`).
-  * Modal Lightbox com foco gerido.
-  * `fetch` assíncrono via FormSubmit com fallback e sanitização de campos.
-* **Google Fonts**: [Archivo](https://fonts.google.com/specimen/Archivo) e [Inter](https://fonts.google.com/specimen/Inter).
+### Navegação e Apresentação de Projetos
+- **Cartões de Projeto no Portfólio**: Cada cartão da página inicial liga diretamente à página detalhada da respetiva obra via hash da URL (`#projeto/casa-de-banho-porto`, `#projeto/piscina-famalicao`, `#projeto/casa-famalicao`).
+- **Vista Detalhada Dinâmica**: Apresenta contador, título, metadados, fotografia principal, descrição, lista de pontos-chave, ficha técnica com especificações da obra, galeria de fotografias e paginação anterior/seguinte.
+- **Título de Separador e Histórico**: Ao entrar num projeto, o título da aba do navegador é atualizado dinamicamente e restaurado ao regressar à página principal.
+- **WhatsApp Contextual**: O botão flutuante de contacto adapta automaticamente a mensagem com o nome do projeto que o visitante está a consultar.
 
----
+### Galeria e Lightbox
+- Ampliação de fotografias em ecrã inteiro.
+- Navegação entre fotos através de botões, setas do teclado (esquerda/direita), tecla Escape para fechar ou gestos táteis de deslize (swipe) em telemóveis.
+- Contador de imagens e legenda descritiva integrada.
 
-## 📑 Secções do Website
-
-| Secção | Descrição |
-|---|---|
-| **Início / Hero** | Apresentação institucional com imagem de fundo comprimida e proposta de valor clara |
-| **Manifesto** | Valores de atuação fundamentais: Rigor, Proximidade e Qualidade |
-| **Projetos** | Galeria de obras realizadas com visualizador em ecrã completo (Lightbox) |
-| **Antes e Depois** | Slider comparador dinâmico demonstrando a evolução de espaços intervencionados |
-| **Processo** | Guia em 4 etapas: Ouvir, Planear, Executar e Entregar |
-| **Especialidades** | Acordeão interativo com as 9 valências técnicas de construção e acabamento |
-| **Quem Somos** | Identificação institucional, história e dados da sede da empresa |
-| **Contactos** | Formulário funcional com proteção anti-spam e ligações telefónicas diretas |
-| **Rodapé Corporativo** | Dados jurídicos (NIF, Alvará IMPIC), link para Livro de Reclamações e copyright |
+### Outras Ferramentas
+- **Comparador Antes / Depois**: Controlo tátil deslizante para comparação visual de intervenções.
+- **Formulário de Contacto Seguro**: Envio assíncrono via FormSubmit com proteção anti-spam por campo honeypot oculto e notificação visual Toast.
+- **ScrollSpy**: Indicador visual na barra de navegação superior que acompanha a secção visível no ecrã.
+- **Otimização Mobile**: Blindagem contra desvios laterais horizontais e prevenção do zoom automático em formulários no iOS Safari.
 
 ---
 
-## 🚀 Como Executar Localmente
+## Como Adicionar ou Atualizar Projetos e Fotografias
 
-O projeto não requer transpiladores, Node.js ou instalação de pacotes:
+Toda a informação dos projetos e galerias está centralizada no ficheiro `project-data.js`. Não é necessário alterar a estrutura do HTML para adicionar ou editar imagens de obras.
 
-### Opção 1: Abrir no navegador
-Abra diretamente o ficheiro `index.html` em qualquer navegador web moderno.
+### 1. Adicionar uma nova fotografia a um projeto existente
+1. Copie o ficheiro de imagem para a pasta `imagens/` (formato JPG ou WebP, resolução recomendada ~1200x900px).
+2. Abra `project-data.js` e localize o projeto correspondente pelo seu `id`.
+3. Adicione um novo objeto na lista `gallery`:
+
+```javascript
+{
+  url: "imagens/nome-da-sua-foto.jpg",
+  caption: "Descrição breve da fotografia",
+  type: "horizontal"
+}
+```
+
+### 2. Adicionar um novo projeto
+1. Adicione um novo bloco no array `window.PROJECTS_DATA` em `project-data.js` com os campos: `id`, `title`, `tagline`, `category`, `categoryLabel`, `location`, `year`, `duration`, `area`, `description`, `highlights`, `heroImage` e `gallery`.
+2. Em `index.html`, adicione o cartão correspondente dentro da secção `<section class="projects">` com o link a apontar para `#projeto/seu-id`.
+
+---
+
+## Execução Local
+
+O projeto é estático e não requer instalação de dependências ou Node.js.
+
+### Opção 1: Abertura direta
+Abra o ficheiro `index.html` em qualquer navegador web.
 
 ### Opção 2: Servidor HTTP local (Python)
+No terminal, dentro da pasta do projeto:
 ```bash
-# Executar a partir da pasta raiz do projeto:
 python3 -m http.server 8000
 ```
-Aceda no navegador em: `http://localhost:8000`
+Aceda no navegador ao endereço: `http://localhost:8000`
 
 ---
 
-## 🏢 Dados Institucionais & Legais
+## Conformidade e Dados Legais
 
-* **Denominação Social:** Marco Paulo Ribeiro Unipessoal, Lda.
-* **Marca Comercial:** MR Construções
-* **NIF / NIPC:** 516590022
-* **Alvará IMPIC N.º:** 113987
-* **Sede:** Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal
-* **Telefone:** [+351 915 680 947](tel:+351915680947)
-* **Email:** [mrconstrucoes@sapo.pt](mailto:mrconstrucoes@sapo.pt)
-* **WhatsApp:** [+351 915 680 947](https://wa.me/351915680947?text=Ol%C3%A1,%20gostaria%20de%20pedir%20um%20or%C3%A7amento%20para%20uma%20obra.)
-* **Livro de Reclamações:** [livroreclamacoes.pt](https://www.livroreclamacoes.pt)
-
----
-
-*© MR Construções — Marco Paulo Ribeiro Unipessoal, Lda. Todos os direitos reservados.*
+- **Denominação Social**: Marco Paulo Ribeiro Unipessoal, Lda.
+- **Marca Comercial**: MR Construções
+- **NIF / NIPC**: 516590022
+- **Alvará IMPIC N.º**: 113987
+- **Sede**: Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal
+- **Telefone**: +351 915 680 947
+- **Email**: mrconstrucoes@sapo.pt
+- **Livro de Reclamações Eletrónico**: https://www.livroreclamacoes.pt

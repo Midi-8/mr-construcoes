@@ -72,8 +72,9 @@
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
 
+    <link rel="icon" type="image/png" href="imagens/logo-mr-construcoes.png">
     <link rel="icon" type="image/webp" href="imagens/logo-mr-construcoes.webp">
-    <link rel="apple-touch-icon" href="imagens/logo-mr-construcoes.webp">
+    <link rel="apple-touch-icon" href="imagens/logo-mr-construcoes.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -94,7 +95,7 @@
     </header>
     <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
-    <main>
+    <main id="main-content">
         <section class="hero" id="inicio">
             <div class="hero-meta eyebrow"><strong>MR Construções</strong><span>Vila Nova de Famalicão</span></div>
             <h1>Construir é <span class="second"><em>transformar.</em></span></h1>
@@ -133,40 +134,45 @@
             </div>
 
             <article class="project">
-                <div class="project-grid">
+                <a class="project-grid" href="#projeto/casa-de-banho-porto">
                     <div class="project-visual">
+                        <!-- Imagem do projeto 01 (4:3, ~1200×900) -->
                         <img src="imagens/casa-banho-porto.jpg" alt="Remodelação de interiores - Casa de banho no Porto" loading="lazy" width="1181" height="872">
                     </div>
                     <div class="project-info"><span class="project-number">Projeto 01</span>
                         <h3>Remodelação de interiores</h3>
                         <p>Renovação de espaços com foco no conforto, na funcionalidade e na qualidade dos acabamentos.
-                        </p><span class="project-tag">Remodelação</span>
+                        </p>
+                        <div class="project-foot"><span class="project-tag">Remodelação</span><span class="project-more">Ver projeto ↗</span></div>
                     </div>
-                </div>
+                </a>
             </article>
             <article class="project">
-                <div class="project-grid">
+                <a class="project-grid" href="#projeto/piscina-famalicao">
                     <div class="project-visual">
+                        <!-- Imagem do projeto 02 (4:3, ~1200×900) -->
                         <img src="imagens/piscina-famalicao.jpg" alt="Construção e renovação - Piscina exterior em Famalicão" loading="lazy" width="1296" height="1050">
                     </div>
                     <div class="project-info"><span class="project-number">Projeto 02</span>
                         <h3>Construção e renovação</h3>
-                        <p>Soluções pensadas para responder às necessidades de cada cliente e de cada edifício.</p><span
-                            class="project-tag">Construção</span>
+                        <p>Soluções pensadas para responder às necessidades de cada cliente e de cada edifício.</p>
+                        <div class="project-foot"><span class="project-tag">Construção</span><span class="project-more">Ver projeto ↗</span></div>
                     </div>
-                </div>
+                </a>
             </article>
             <article class="project">
-                <div class="project-grid">
+                <a class="project-grid" href="#projeto/casa-famalicao">
                     <div class="project-visual">
+                        <!-- Imagem do projeto 03 (4:3, ~1200×900) -->
                         <img src="imagens/casa-famalicao-depois.jpg" alt="Detalhes e acabamentos - Renovação e acabamentos em Famalicão" loading="lazy" width="1206" height="909">
                     </div>
                     <div class="project-info"><span class="project-number">Projeto 03</span>
                         <h3>Detalhes e acabamentos</h3>
                         <p>Trabalhos finais que contribuem para a coerência visual, o conforto e a qualidade do espaço.
-                        </p><span class="project-tag">Acabamentos</span>
+                        </p>
+                        <div class="project-foot"><span class="project-tag">Acabamentos</span><span class="project-more">Ver projeto ↗</span></div>
                     </div>
-                </div>
+                </a>
             </article>
         </section>
 
@@ -181,16 +187,14 @@
                 <div><span class="eyebrow">A diferença está no detalhe / 03</span>
                     <h2>Antes e depois</h2>
                 </div>
-                <p>Arraste o controlo para comparar os dois estados de um espaço. Substitua as imagens de exemplo pelas
-                    fotografias reais da obra.</p>
+                <p>Arraste o controlo para comparar os dois estados de um espaço.</p>
             </div>
             <div class="compare" id="compare">
-                <img class="before-image"
-                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85"
-                    alt="Exemplo de interior antes da intervenção">
-                <img class="after-image"
-                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85"
-                    alt="Exemplo de interior depois da intervenção">
+                <!-- Imagens antes / depois (mesmo enquadramento e dimensões) -->
+                <img class="before-image" src="imagens/casa-famalicao-antes.jpg"
+                    alt="Casa em Famalicão antes da intervenção" loading="lazy">
+                <img class="after-image" src="imagens/casa-famalicao-depois.jpg"
+                    alt="Casa em Famalicão depois da intervenção" loading="lazy">
                 <span class="compare-label before">Antes</span>
                 <span class="compare-label after">Depois</span>
                 <span class="compare-handle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"
@@ -288,9 +292,12 @@
 
         <section class="company wrap" id="empresa">
             <div class="company-grid">
-                <div class="company-image reveal"><img loading="lazy"
+                <div class="company-image reveal">
+                    <!-- Imagem da empresa / equipa (vertical ou 4:5, ~1400×1750) -->
+                    <img loading="lazy"
                         src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85"
-                        alt="Detalhe de arquitetura contemporânea com materiais naturais"></div>
+                        alt="Detalhe de arquitetura contemporânea com materiais naturais">
+                </div>
                 <div class="company-copy reveal">
                     <span class="eyebrow">Quem somos / 06</span>
                     <h2>Rigor no trabalho. Proximidade nas relações.</h2>
@@ -323,7 +330,7 @@
                     </div>
                 </div>
                 <form class="contact-form reveal" id="contact-form">
-                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                    <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <div class="field"><label for="name">Nome</label><input id="name" name="name" autocomplete="name"
                             required placeholder="O seu nome"></div>
                     <div class="field"><label for="reply">Telefone ou email</label><input id="reply" name="reply"
@@ -345,6 +352,53 @@
             </div>
         </section>
     </main>
+
+    <!-- Página de cada projeto (preenchida por project-view.js a partir de project-data.js) -->
+    <section class="project-page" id="project-page" aria-labelledby="pp-title" hidden>
+        <div class="wrap">
+            <div class="pp-bar">
+                <a class="pp-back" href="#projetos">← Voltar aos projetos</a>
+                <span class="eyebrow" id="pp-counter"></span>
+            </div>
+
+            <header class="pp-head">
+                <span class="eyebrow" id="pp-meta"></span>
+                <h2 id="pp-title"></h2>
+                <p class="pp-tagline" id="pp-tagline"></p>
+            </header>
+
+            <figure class="pp-cover">
+                <img id="pp-cover" src="" alt="">
+            </figure>
+
+            <div class="pp-body">
+                <div class="pp-text">
+                    <p class="pp-description" id="pp-description"></p>
+                    <ul class="pp-highlights" id="pp-highlights"></ul>
+                </div>
+                <div class="pp-data" id="pp-data"></div>
+            </div>
+
+            <div class="pp-gallery" id="pp-gallery"></div>
+
+            <div class="pp-cta">
+                <span class="eyebrow">Próximo passo</span>
+                <h3>Tem uma obra semelhante em mente?</h3>
+                <a class="pp-cta-link" href="#contacto">Pedir orçamento ↗</a>
+            </div>
+
+            <nav class="pp-pager" aria-label="Navegação entre projetos">
+                <a class="pp-pager-link" id="pp-prev" href="#projetos">
+                    <span class="eyebrow">← Projeto anterior</span>
+                    <span class="pp-pager-title" id="pp-prev-title"></span>
+                </a>
+                <a class="pp-pager-link next" id="pp-next" href="#projetos">
+                    <span class="eyebrow">Próximo projeto →</span>
+                    <span class="pp-pager-title" id="pp-next-title"></span>
+                </a>
+            </nav>
+        </div>
+    </section>
 
     <footer>
         <div class="wrap footer-top">
@@ -407,6 +461,23 @@
         <button type="button" class="toast-close" id="toast-close" aria-label="Fechar notificação">×</button>
     </div>
 
+    <!-- Lightbox de fotografias em ecrã inteiro -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotografia ampliada" hidden>
+        <button type="button" class="lightbox-btn lightbox-close" id="lightbox-close" aria-label="Fechar">×</button>
+        <button type="button" class="lightbox-btn lightbox-prev" id="lightbox-prev" aria-label="Fotografia anterior">←</button>
+        <button type="button" class="lightbox-btn lightbox-next" id="lightbox-next" aria-label="Fotografia seguinte">→</button>
+        <figure class="lightbox-figure">
+            <img id="lightbox-img" src="" alt="">
+            <figcaption class="lightbox-caption">
+                <span id="lightbox-caption-text"></span>
+                <span id="lightbox-counter" class="lightbox-counter"></span>
+            </figcaption>
+        </figure>
+    </div>
+
+    <script src="project-data.js" defer></script>
+    <script src="lightbox.js" defer></script>
+    <script src="project-view.js" defer></script>
     <script src="script.js" defer></script>
 </body>
 
