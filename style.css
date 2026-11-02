@@ -965,9 +965,18 @@
 
         .project-card-visual {
             position: relative;
+            display: block;
             aspect-ratio: 16 / 11;
             overflow: hidden;
             background: #ebe7df;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project-card-visual:focus-visible {
+            outline: 2px solid var(--ink, #121212);
+            outline-offset: -2px;
         }
 
         .project-card-visual img {
@@ -1018,7 +1027,7 @@
         }
 
         .project-card-meta {
-            padding: 22px 22px 20px;
+            padding: 22px 22px 24px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -1026,7 +1035,6 @@
 
         .meta-row {
             display: flex;
-            justify-content: space-between;
             align-items: center;
             margin-bottom: 12px;
         }
@@ -1072,14 +1080,14 @@
             letter-spacing: .06em;
             text-transform: uppercase;
             color: var(--ink);
-            transition: color .2s ease;
+            text-decoration: none;
         }
 
         .project-card:hover .card-action {
             color: var(--accent);
         }
 
-        .action-arrow {
+        .project-card-meta p {
             font-size: 13px;
             color: var(--accent);
             transition: transform .25s ease, color .25s ease;
@@ -2996,9 +3004,9 @@
     }
 }
 
-/* Página Detalhada de Cada Projeto */
+/* Página Detalhada de Cada Projeto — Layout em 2 Colunas */
 .project-page {
-    padding-top: 128px;
+    padding-top: 120px;
     padding-bottom: 96px;
     background-color: var(--paper);
     min-height: 100vh;
@@ -3013,7 +3021,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--line);
 }
@@ -3022,18 +3030,26 @@
     font-family: var(--font-body);
     font-size: 13px;
     font-weight: 600;
-    color: var(--ink-muted);
+    color: var(--muted);
     text-decoration: none;
     letter-spacing: -.01em;
     transition: color .2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .pp-back:hover {
     color: var(--ink);
 }
 
-.pp-head {
-    margin-bottom: 36px;
+/* Grelha Principal: Galeria à esquerda, Informação à direita */
+.pp-main-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: clamp(32px, 3.8vw, 56px);
+    align-items: start;
+    margin-bottom: 56px;
 }
 
 .pp-head h2 {
@@ -3046,64 +3062,166 @@
     margin: 10px 0 14px;
 }
 
-.pp-tagline {
-    font-size: clamp(16px, 2vw, 20px);
-    line-height: 1.45;
-    color: var(--ink-muted);
-    max-width: 65ch;
+.pp-gallery-showcase {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: flex-start;
 }
 
-.pp-cover {
-    margin: 0 0 56px;
-    border-radius: 4px;
+/* Miniaturas verticais em desktop */
+.pp-thumbs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 82px;
+    flex-shrink: 0;
+}
+
+.pp-thumbs[hidden] {
+    display: none !important;
+}
+
+.pp-thumb-btn {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    background: var(--surface);
     overflow: hidden;
-    background: #E7E3DC;
-    aspect-ratio: 16/9;
-    max-height: 600px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, .04);
+    cursor: pointer;
+    opacity: 0.72;
+    transition: opacity .2s ease, border-color .2s ease, transform .2s ease;
+    display: block;
 }
 
-.pp-cover img {
+.pp-thumb-btn:hover {
+    opacity: 1;
+    border-color: rgba(22, 22, 22, 0.35);
+}
+
+.pp-thumb-btn.is-active,
+.pp-thumb-btn[aria-current="true"] {
+    opacity: 1;
+    border-color: var(--ink);
+    box-shadow: 0 0 0 1px var(--ink);
+}
+
+.pp-thumb-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.pp-thumb-btn img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    pointer-events: none;
 }
 
-.pp-body {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 48px;
-    align-items: start;
-    margin-bottom: 64px;
-}
-
-.pp-description {
-    font-size: 17px;
-    line-height: 1.65;
-    color: var(--ink);
-    margin-bottom: 28px;
-}
-
-.pp-highlights {
-    list-style: none;
-    padding: 0;
+/* Moldura da Imagem Principal */
+.pp-main-photo-frame {
+    flex: 1;
+    min-width: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
 }
 
-.pp-highlights[hidden] {
-    display: none !important;
-}
-
-.pp-highlights li {
-    font-size: 14.5px;
-    line-height: 1.55;
-    color: var(--ink-muted);
-    padding-left: 22px;
+.pp-zoom-btn {
     position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 0;
+    cursor: zoom-in;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.pp-zoom-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pp-zoom-btn:hover img {
+    transform: scale(1.025);
+}
+
+.pp-zoom-hint {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    background: rgba(22, 22, 22, 0.75);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity .25s ease, transform .25s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    pointer-events: none;
+}
+
+.pp-zoom-btn:hover .pp-zoom-hint,
+.pp-zoom-btn:focus-visible .pp-zoom-hint {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pp-zoom-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.pp-photo-caption {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 10px;
+    line-height: 1.45;
+    font-style: italic;
+    min-height: 19px;
+}
+
+.pp-photo-caption[hidden] {
+    display: none;
+}
+
+/* Coluna Direita: Informações do Projeto */
+.pp-info-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.pp-info-header {
+    margin-bottom: 8px;
+}
+
+.pp-category-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #44413c;
+    background: rgba(22, 22, 22, 0.06);
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-bottom: 14px;
 }
 
 .pp-highlights li::before {
@@ -3114,19 +3232,59 @@
     font-weight: 600;
 }
 
-.pp-data {
+.pp-tagline {
+    font-size: clamp(14.5px, 1.25vw, 16.5px);
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 0;
+}
+
+.pp-divider {
+    height: 1px;
+    background: var(--line);
+    margin: 22px 0;
+}
+
+.pp-subheading {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.pp-overview {
+    margin-bottom: 24px;
+}
+
+.pp-description {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #383531;
+    margin: 0;
+}
+
+/* Caixa de Ficha Técnica / Especificações na Coluna Esquerda */
+.pp-specs-box {
+    margin: 0;
+    width: 100%;
+}
+
+.pp-specs {
     border: 1px solid var(--line);
-    border-radius: 4px;
-    padding: 28px;
+    border-radius: 6px;
+    padding: 16px 20px;
     background: #FFFFFF;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, .02);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .02);
 }
 
 .pp-data-row {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 13px 0;
+    padding: 10px 0;
     border-bottom: 1px solid var(--line);
     font-size: 13.5px;
 }
@@ -3141,10 +3299,10 @@
 }
 
 .pp-data-label {
-    color: var(--ink-muted);
+    color: var(--muted);
     text-transform: uppercase;
     font-size: 11px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     font-weight: 600;
     font-family: var(--font-body);
 }
@@ -3155,66 +3313,63 @@
     text-align: right;
 }
 
-.pp-gallery {
-    margin: 64px 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+/* Botão de Contacto / Ação na Coluna de Informações */
+.pp-info-action {
+    margin-top: 8px;
 }
 
-.pp-gallery[hidden] {
+.pp-btn-quote {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 16px 24px;
+    background: var(--ink);
+    color: #FFFFFF;
+    border: 1px solid var(--ink);
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.pp-btn-quote:hover,
+.project-page .pp-btn-quote:hover {
+    background: var(--ink) !important;
+    color: #FFFFFF !important;
+    border-color: var(--ink) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
+.pp-btn-quote:focus-visible,
+.project-page .pp-btn-quote:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Secção Abaixo das Duas Colunas: Trabalhos Realizados & Destaques Técnicos */
+.pp-highlights-section {
+    padding: 40px 0;
+    border-top: 1px solid var(--line);
+    margin-top: 16px;
+    margin-bottom: 40px;
+}
+
+.pp-highlights-section[hidden] {
     display: none !important;
 }
 
-.pp-gallery-item {
-    margin: 0;
-    position: relative;
-}
-
-.pp-gallery-item.full-width {
-    grid-column: 1 / -1;
-}
-
-.pp-gallery-btn {
-    width: 100%;
-    padding: 0;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    border-radius: 4px;
-    overflow: hidden;
-    display: block;
-    position: relative;
-}
-
-.pp-gallery-btn img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    display: block;
-    transition: transform .35s ease;
-}
-
-.pp-gallery-btn:hover img {
-    transform: scale(1.025);
-}
-
-.pp-gallery-item figcaption {
-    font-size: 12.5px;
-    color: var(--ink-muted);
-    margin-top: 10px;
-    line-height: 1.4;
-}
-
-.pp-cta {
-    padding: 48px 32px;
-    background: #FFFFFF;
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    text-align: center;
-    margin: 56px 0 32px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, .02);
+.pp-highlights-header {
+    margin-bottom: 24px;
 }
 
 .pp-cta h3 {
@@ -3224,7 +3379,7 @@
     letter-spacing: -.025em;
     line-height: 1.2;
     color: var(--ink);
-    margin: 10px 0 24px;
+    margin: 6px 0 0;
 }
 
 .pp-cta-link {
@@ -3244,10 +3399,23 @@
     transition: background .2s ease, transform .2s ease;
 }
 
-.pp-cta-link:hover {
-    background: var(--accent);
-    transform: translateY(-2px);
+.pp-highlights li {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: #4a4742;
+    padding-left: 22px;
+    position: relative;
 }
+
+.pp-highlights li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* Pager Navigation */
 
 .pp-pager {
     display: grid;
@@ -3406,22 +3574,47 @@
     transform: translateY(-50%) scale(1.08);
 }
 
-@media(max-width:760px) {
+@media(max-width:960px) {
+    .pp-main-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+    .pp-highlights {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+}
+
+@media(max-width:768px) {
     .project-page {
         padding-top: 100px;
         padding-bottom: 64px;
     }
-    .pp-body {
-        grid-template-columns: 1fr;
-        gap: 36px;
-    }
-    .pp-gallery {
-        grid-template-columns: 1fr;
+    .pp-gallery-col {
         gap: 20px;
-        margin: 48px 0;
+    }
+    .pp-gallery-showcase {
+        flex-direction: column-reverse;
+        gap: 12px;
+    }
+    .pp-thumbs {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
+    }
+    .pp-thumb-btn {
+        width: 76px;
+        flex-shrink: 0;
+    }
+    .pp-highlights-section {
+        padding: 32px 0;
     }
     .pp-pager {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
     .pp-pager-link.next {
         text-align: left;
