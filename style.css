@@ -168,8 +168,8 @@
 
         .topbar .navlinks a:not(.nav-cta) {
             color: rgba(255, 255, 255, 0.92);
-            font: 700 12px/1 var(--font-heading);
-            letter-spacing: .04em;
+            font: 500 13px/1 var(--font-heading);
+            letter-spacing: .02em;
             transition: color .2s ease;
         }
 
@@ -178,8 +178,8 @@
         }
 
         .topbar .nav-cta {
-            font: 700 11.5px/1 var(--font-heading);
-            letter-spacing: .05em;
+            font: 600 12px/1 var(--font-heading);
+            letter-spacing: .03em;
             text-transform: uppercase;
             border: 1px solid rgba(255, 255, 255, 0.6);
             background: rgba(255, 255, 255, 0.08);
@@ -264,7 +264,7 @@
         }
 
         .brand-text {
-            font: 700 12px/1 var(--font-heading);
+            font: 600 12.5px/1 var(--font-heading);
             letter-spacing: .08em;
             text-transform: uppercase;
             color: #ffffff;
@@ -424,8 +424,8 @@
 
         .hero-title {
             margin: 0;
-            font: 700 clamp(3rem, 8.4vw, 8.2rem)/.92 var(--font-heading);
-            letter-spacing: -0.03em;
+            font: 700 clamp(2.8rem, 7.2vw, 5.6rem)/1.0 var(--font-heading);
+            letter-spacing: -0.025em;
             color: #fff;
         }
 
@@ -515,14 +515,14 @@
         }
 
         .hero-stat-val {
-            font: 700 clamp(13px, 1.1vw, 15px)/1.2 var(--font-heading);
-            letter-spacing: -.01em;
+            font: 700 clamp(18px, 1.8vw, 24px)/1.15 var(--font-heading);
+            letter-spacing: -.02em;
             color: #ffffff;
         }
 
         .hero-stat-lbl {
-            font: 400 clamp(11px, 0.8vw, 12px)/1.45 var(--font-body);
-            color: rgba(255, 255, 255, .78);
+            font: 400 clamp(11.5px, 0.85vw, 12.5px)/1.45 var(--font-body);
+            color: rgba(255, 255, 255, .82);
             max-width: 280px;
         }
 
@@ -637,8 +637,8 @@
         }
 
         .manifesto-top h2 {
-            font: 700 clamp(2.3rem, 4.8vw, 4.4rem)/1.04 var(--font-heading);
-            letter-spacing: -0.01em;
+            font: 700 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--font-heading);
+            letter-spacing: -0.025em;
             margin: 0;
             color: var(--ink);
         }
@@ -714,8 +714,8 @@
         }
 
         .work-pillar-card h3 {
-            font: 700 clamp(1.25rem, 1.55vw, 1.48rem)/1.2 var(--font-heading);
-            letter-spacing: -.03em;
+            font: 600 clamp(1.2rem, 1.45vw, 1.38rem)/1.25 var(--font-heading);
+            letter-spacing: -0.015em;
             margin: 0 0 14px;
             color: var(--ink);
         }
@@ -751,8 +751,8 @@
 
         .section-heading h2,
         .split-title {
-            font: 700 clamp(2.4rem, 5.5vw, 5.2rem)/.96 var(--font-heading);
-            letter-spacing: -0.01em;
+            font: 700 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--font-heading);
+            letter-spacing: -0.025em;
             margin: 0;
             color: var(--ink);
         }
@@ -883,7 +883,7 @@
 
         .project-card-meta h3 {
             font: 600 clamp(1.2rem, 1.45vw, 1.4rem)/1.22 var(--font-heading);
-            letter-spacing: -.03em;
+            letter-spacing: -0.015em;
             margin: 0 0 8px;
             color: var(--ink);
         }
@@ -977,8 +977,8 @@
         }
 
         .comparison-head h2 {
-            font: 500 clamp(2.2rem, 5.2vw, 5.2rem)/.95 var(--font-heading);
-            letter-spacing: -.075em;
+            font: 700 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--font-heading);
+            letter-spacing: -0.025em;
             margin: 12px 0 0;
             max-width: 760px
         }
@@ -1116,8 +1116,8 @@
         }
 
         .process-head h2 {
-            font: 600 clamp(2.3rem, 5vw, 4.8rem)/.96 var(--font-heading);
-            letter-spacing: -.06em;
+            font: 700 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--font-heading);
+            letter-spacing: -0.025em;
             margin: 0;
             color: var(--ink);
         }
@@ -1178,8 +1178,8 @@
         }
 
         .process-card h3 {
-            font: 600 clamp(1.15rem, 1.4vw, 1.35rem)/1.2 var(--font-heading);
-            letter-spacing: -.03em;
+            font: 600 clamp(1.15rem, 1.35vw, 1.3rem)/1.25 var(--font-heading);
+            letter-spacing: -0.015em;
             margin: 0 0 10px;
             color: var(--ink);
         }
@@ -1211,8 +1211,8 @@
         }
 
         .service-row h3 {
-            font: 600 clamp(1.8rem, 4vw, 3.8rem)/.95 var(--font-heading);
-            letter-spacing: -.06em;
+            font: 600 clamp(1.4rem, 2.4vw, 2.2rem)/1.15 var(--font-heading);
+            letter-spacing: -0.02em;
             margin: 0;
         }
 
@@ -1235,8 +1235,8 @@
         }
 
         .specialty-intro h2 {
-            font: 500 clamp(2.6rem, 6vw, 5.6rem)/.93 var(--font-heading);
-            letter-spacing: -.08em;
+            font: 700 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--font-heading);
+            letter-spacing: -0.025em;
             margin: 15px 0 25px
         }
 
@@ -1317,8 +1317,8 @@
         }
 
         .company-copy h2 {
-            font: 500 clamp(2.7rem, 6.6vw, 6rem)/.93 var(--font-heading);
-            letter-spacing: -.08em;
+            font: 700 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--font-heading);
+            letter-spacing: -0.025em;
             margin: 16px 0 28px
         }
 
@@ -1360,8 +1360,8 @@
         }
 
         .contact h2 {
-            font: 700 clamp(3.4rem, 9vw, 9rem)/.88 var(--font-heading);
-            letter-spacing: -0.01em;
+            font: 700 clamp(2.4rem, 5vw, 4.4rem)/1.0 var(--font-heading);
+            letter-spacing: -0.025em;
             margin: 16px 0 28px
         }
 
@@ -2268,11 +2268,11 @@
 }
 
 .pp-head h2 {
-    font-family: var(--font-body);
-    font-size: clamp(32px, 5.5vw, 60px);
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 4.5vw, 48px);
     font-weight: 700;
-    letter-spacing: -.05em;
-    line-height: 1.05;
+    letter-spacing: -.025em;
+    line-height: 1.1;
     color: var(--ink);
     margin: 10px 0 14px;
 }
@@ -2449,10 +2449,10 @@
 }
 
 .pp-cta h3 {
-    font-family: var(--font-body);
-    font-size: clamp(22px, 3.2vw, 32px);
+    font-family: var(--font-heading);
+    font-size: clamp(20px, 2.8vw, 28px);
     font-weight: 700;
-    letter-spacing: -.04em;
+    letter-spacing: -.02em;
     color: var(--ink);
     margin: 10px 0 24px;
 }
@@ -2759,16 +2759,16 @@
 }
 
 .trust-val {
-    font: 800 clamp(2rem, 3.4vw, 3rem)/1 var(--font-heading);
+    font: 700 clamp(1.8rem, 3vw, 2.6rem)/1.1 var(--font-heading);
     color: var(--ink);
-    letter-spacing: -.05em;
+    letter-spacing: -.02em;
 }
 
 .trust-lbl {
-    font-size: 12px;
-    line-height: 1.65;
+    font-size: 12.5px;
+    line-height: 1.6;
     color: var(--muted);
-    font-weight: 500;
+    font-weight: 400;
 }
 
 /* 3. Filtros Interativos de Projetos */
@@ -2784,8 +2784,8 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font: 600 12px var(--font-heading);
-    letter-spacing: -.01em;
+    font: 500 12.5px/1 var(--font-heading);
+    letter-spacing: .02em;
     padding: 8px 18px;
     border-radius: 999px;
     background: transparent;
