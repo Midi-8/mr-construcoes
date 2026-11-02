@@ -3085,27 +3085,17 @@
 .pp-category-tag {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
     font: 500 11px/1 var(--font-heading);
     letter-spacing: .08em;
     text-transform: uppercase;
     color: #1a1a1a;
     background: #ffffff;
     border: 1.5px solid rgba(18, 18, 18, 0.08);
-    padding: 6px 14px;
+    padding: 7px 14px;
     border-radius: 999px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
     margin-bottom: 18px;
     width: fit-content;
-}
-
-.pp-category-tag::before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    display: inline-block;
 }
 
 .pp-category-tag[hidden] {
@@ -3661,7 +3651,7 @@
         gap: 20px;
     }
     .pp-gallery-showcase {
-        flex-direction: column-reverse;
+        flex-direction: column;
         gap: 12px;
     }
     .pp-thumbs {
