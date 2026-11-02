@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
 
 /* ==========================================================================
-   Tipografia: Manrope (A mais equilibrada, moderna, limpa e sóbria)
-   H1 / H2: font-weight: 700 / 800, letter-spacing: -0.02em
-   Texto: font-weight: 400 / 500
+   Tipografia: General Sans (Fontshare / Indian Type Foundry)
+   A mais corporativa, refinada e sóbria - inspiração no design suíço puro
+   H1 / H2: font-weight: 600 / 700, letter-spacing: -0.01em
+   Texto: font-weight: 400
    ========================================================================== */
 
 /* ==========================================================================
@@ -12,8 +13,8 @@
    ========================================================================== */
 
 :root {
-            --font-heading: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --font-body: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-heading: "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-body: "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             --paper: #F6F4F0;
             --surface: #ECE9E3;
             --ink: #161616;
@@ -425,12 +426,12 @@
         .hero-title {
             margin: 0;
             font: 700 clamp(3rem, 8.4vw, 8.2rem)/.92 var(--font-heading);
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
             color: #fff;
         }
 
         .hero-title span {
-            font-weight: 800;
+            font-weight: 700;
         }
 
         .hero-lead {
@@ -637,8 +638,8 @@
         }
 
         .manifesto-top h2 {
-            font: 800 clamp(2.3rem, 4.8vw, 4.4rem)/1.04 var(--font-heading);
-            letter-spacing: -0.02em;
+            font: 700 clamp(2.3rem, 4.8vw, 4.4rem)/1.04 var(--font-heading);
+            letter-spacing: -0.01em;
             margin: 0;
             color: var(--ink);
         }
@@ -752,7 +753,7 @@
         .section-heading h2,
         .split-title {
             font: 700 clamp(2.4rem, 5.5vw, 5.2rem)/.96 var(--font-heading);
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
             margin: 0;
             color: var(--ink);
         }
@@ -1360,8 +1361,8 @@
         }
 
         .contact h2 {
-            font: 800 clamp(3.4rem, 9vw, 9rem)/.88 var(--font-heading);
-            letter-spacing: -0.02em;
+            font: 700 clamp(3.4rem, 9vw, 9rem)/.88 var(--font-heading);
+            letter-spacing: -0.01em;
             margin: 16px 0 28px
         }
 
