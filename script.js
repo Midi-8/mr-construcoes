@@ -74,10 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (open === isCurrentlyOpen) return;
 
             navLinks.classList.toggle('open', open);
+            menuToggle.classList.toggle('is-active', open);
             menuToggle.setAttribute('aria-expanded', String(open));
             menuToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
-            const icon = menuToggle.querySelector('span');
-            if (icon) icon.textContent = open ? '−' : '+';
 
             if (navBackdrop) {
                 navBackdrop.classList.toggle('is-active', open);
