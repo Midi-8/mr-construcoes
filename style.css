@@ -134,10 +134,10 @@
             position: fixed;
             z-index: 20;
             inset: 0 0 auto;
-            background: rgba(14, 14, 14, 0.22);
-            -webkit-backdrop-filter: blur(6px);
-            backdrop-filter: blur(6px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(10, 10, 10, 0.12);
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease, box-shadow .3s ease;
         }
 
@@ -175,8 +175,8 @@
 
         .topbar.is-scrolled {
             background: rgba(248, 246, 242, 0.94);
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
             border-bottom-color: rgba(218, 214, 207, 0.7);
             box-shadow: 0 2px 14px rgba(0, 0, 0, 0.03);
         }
@@ -239,8 +239,8 @@
         }
 
         .brand-text {
-            font: 700 12px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
-            letter-spacing: .08em;
+            font: 400 12px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            letter-spacing: .09em;
             text-transform: uppercase;
             color: #ffffff;
             white-space: nowrap;
@@ -327,7 +327,7 @@
         }
 
         /* ==========================================================================
-           Hero Section — Mobile-First (Ocupa 100% do ecrã com imagem ajustada)
+           Hero Section — Minimalista, Moderno e Estético
            ========================================================================== */
         .hero {
             position: relative;
@@ -335,13 +335,12 @@
             min-height: 100vh;
             min-height: 100dvh;
             margin: 0;
-            padding: clamp(92px, 12vh, 114px) 20px clamp(24px, 4vh, 36px);
-            color: #fff;
+            padding: clamp(96px, 14vh, 120px) 0 clamp(36px, 5vh, 60px);
+            color: #ffffff;
             isolation: isolate;
             overflow: hidden;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            align-items: flex-end;
             box-sizing: border-box;
         }
 
@@ -352,13 +351,12 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            background-image: url("imagens/hero.jpg");
-            background-image: url("imagens/hero.webp");
+            background-image: url("imagens/hero.webp"), url("imagens/hero.jpg");
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
-            opacity: .84;
-            transform: scale(1.02);
+            opacity: .92;
+            transform: scale(1.01);
         }
 
         .hero:after {
@@ -368,186 +366,161 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            /* Gradiente vertical mobile-first para máxima legibilidade do título e dos botões */
-            background: linear-gradient(180deg, rgba(15, 15, 14, .82) 0%, rgba(15, 15, 14, .42) 48%, rgba(15, 15, 14, .92) 100%);
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0.45) 0%, rgba(10, 10, 10, 0.16) 42%, rgba(10, 10, 10, 0.82) 100%);
         }
 
-        .hero>* {
+        .hero-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
             position: relative;
             z-index: 1;
         }
 
-        .hero-meta {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin: 0 0 16px;
-            color: var(--accent-light) !important;
-            font-size: 11px;
-            letter-spacing: .12em;
+        .hero-tagline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: clamp(16px, 2.5vh, 24px);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            padding: 6px 14px 6px 10px;
+            border-radius: 999px;
+            width: fit-content;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
         }
 
-        .hero-meta strong {
-            font-weight: 700;
-            color: #fff;
+        .hero-pulse {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #ffffff;
         }
 
-        .hero .eyebrow {
-            color: var(--accent-light);
+        .hero-tag-text {
+            font: 500 11px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.95);
         }
 
-        .hero h1 {
-            font: 600 clamp(2.6rem, 11vw, 4.4rem)/.96 "Helvetica Neue", Helvetica, Arial, sans-serif;
-            letter-spacing: -.065em;
-            margin: 0;
-            color: #fff;
-            text-wrap: balance;
+        .hero-title {
+            font: 600 clamp(2.4rem, 6.4vw, 5.8rem)/1.02 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            letter-spacing: -.05em;
+            margin: 0 0 clamp(20px, 3vh, 32px);
+            color: #ffffff;
+            max-width: 980px;
         }
 
-        .hero h1 .second {
-            display: block;
-            margin-left: 0;
-        }
-
-        .hero h1 em {
-            font-style: italic;
+        .hero-title-sub {
             font-weight: 300;
-            color: var(--accent-light);
+            color: rgba(255, 255, 255, 0.85);
         }
 
-        .hero h1 em:after {
-            display: none;
+        .hero-footer-bar {
+            display: grid;
+            grid-template-columns: minmax(0, 480px) 1fr;
+            gap: clamp(24px, 4vw, 56px);
+            align-items: flex-end;
+            padding-top: clamp(16px, 2.5vh, 28px);
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
         }
 
-        .hero-bottom {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            margin-top: auto;
-            padding-top: 24px;
-            width: 100%;
-        }
-
-        .hero-left-col {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            width: 100%;
-        }
-
-        .hero-copy {
-            font-size: 13px;
-            line-height: 1.65;
-            max-width: 520px;
+        .hero-description {
+            font: 400 clamp(13px, 1.05vw, 15px)/1.7 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: rgba(255, 255, 255, 0.88);
             margin: 0;
-            color: rgba(255, 255, 255, .9);
-            text-wrap: pretty;
         }
 
-        .hero-actions {
+        .hero-controls {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 100%;
-            margin-top: 4px;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        .hero-btn {
+        .hero-btns-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .hero-cta-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font: 600 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
-            letter-spacing: -.01em;
-            padding: 13px 20px;
-            border-radius: 4px;
+            font: 600 12px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            padding: 13px 22px;
+            border-radius: 999px;
+            background: #ffffff;
+            color: var(--ink);
             text-decoration: none;
-            width: 100%;
-            box-sizing: border-box;
-            transition: transform .25s cubic-bezier(.2, 0, .2, 1), background-color .2s ease, border-color .2s ease, box-shadow .25s ease;
+            transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
         }
 
-        .scroll-note {
-            display: flex;
+        .hero-cta-btn:hover {
+            background: rgba(255, 255, 255, 0.92);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-ghost-btn {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            font: 600 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
-            letter-spacing: .15em;
+            font: 500 12px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            letter-spacing: .04em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, .75);
-            margin-top: 6px;
-            align-self: center;
+            padding: 13px 20px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            text-decoration: none;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            transition: border-color .2s ease, background .2s ease, transform .2s ease;
         }
 
-        .scroll-note i {
-            display: block;
-            width: 1px;
-            height: 26px;
-            background: rgba(255, 255, 255, .75);
-            transform-origin: top;
-            animation: scrollline 1.8s ease-in-out infinite;
+        .hero-ghost-btn:hover {
+            border-color: #ffffff;
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
         }
 
-        /* Melhoria progressiva para Tablets e Desktop */
-        @media(min-width: 768px) {
-            .hero {
-                padding: clamp(110px, 14vh, 144px) max(4.5vw, calc((100% - 1440px)/2)) clamp(36px, 5vh, 64px);
+        .hero-stamp {
+            font: 500 11px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        @media(max-width: 768px) {
+            .hero-footer-bar {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
 
-            .hero:after {
-                background: linear-gradient(90deg, rgba(15, 15, 14, .82) 0%, rgba(15, 15, 14, .48) 58%, rgba(15, 15, 14, .2) 100%),
-                            linear-gradient(0deg, rgba(15, 15, 14, .5) 0%, transparent 60%);
+            .hero-controls {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
             }
 
-            .hero-meta {
-                margin-bottom: 24px;
-                font-size: 12px;
+            .hero-btns-row {
+                width: 100%;
             }
 
-            .hero h1 {
-                font-size: clamp(3.6rem, 7.5vw, 7.4rem);
-                line-height: .93;
-                letter-spacing: -.08em;
-                max-width: 1200px;
-            }
-
-            .hero h1 .second {
-                margin-left: clamp(24px, 7vw, 120px);
-            }
-
-            .hero-bottom {
-                display: grid;
-                grid-template-columns: minmax(0, 560px) 1fr;
-                gap: 40px;
-                align-items: end;
-            }
-
-            .hero-copy {
-                font-size: clamp(13px, 1.05vw, 15px);
-                line-height: 1.75;
-            }
-
-            .hero-actions {
-                flex-direction: row;
-                width: auto;
-                gap: 14px;
-            }
-
-            .hero-btn {
-                width: auto;
-                padding: 13px 24px;
-            }
-
-            .scroll-note {
-                justify-self: end;
-                align-self: flex-end;
-                margin-top: 0;
-                color: #ffffff;
-            }
-
-            .scroll-note i {
-                height: 42px;
-                background: #ffffff;
+            .hero-cta-btn,
+            .hero-ghost-btn {
+                flex: 1;
+                text-align: center;
             }
         }
 
@@ -2667,37 +2640,7 @@
    Melhorias de Conversão, Credibilidade e Prova Social (Pontos 1, 2, 3 e 5)
    ========================================================================== */
 
-/* 1. Botões de Ação no Hero (Temas Visuais) */
-
-
-.hero-btn-primary {
-    background-color: var(--accent);
-    color: #ffffff !important;
-    border: 1px solid var(--accent);
-    box-shadow: 0 4px 14px rgba(200, 150, 90, .3);
-}
-
-.hero-btn-primary:hover {
-    background-color: #b88547;
-    border-color: #b88547;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(200, 150, 90, .45);
-    color: #ffffff !important;
-}
-
-.hero-btn-secondary {
-    background-color: rgba(255, 255, 255, .1);
-    color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, .32);
-    backdrop-filter: blur(8px);
-}
-
-.hero-btn-secondary:hover {
-    background-color: rgba(255, 255, 255, .2);
-    border-color: rgba(255, 255, 255, .6);
-    transform: translateY(-2px);
-    color: #ffffff !important;
-}
+/* 1. Botões de Ação no Hero (Integrados no layout minimalista da secção Hero) */
 
 /* 2. Barra de Credibilidade e Garantias (Trust Bar) */
 .trust-bar {
