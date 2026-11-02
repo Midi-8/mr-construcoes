@@ -551,6 +551,13 @@
             background: var(--accent);
         }
 
+        .hero-kicker-dot {
+            color: var(--accent);
+            display: inline-block;
+            margin: 0 4px;
+            font-weight: 700;
+        }
+
         .hero-title {
             margin: 0;
             font: 300 clamp(3rem, 8.4vw, 8.2rem)/.92 var(--font-heading);
