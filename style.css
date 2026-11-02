@@ -1,25 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 /* ==========================================================================
-   Tipografia: Plus Jakarta Sans (Tokyo Type Studio)
-   - Geométrica contemporânea de alta precisão
-   - Solidez estrutural, cortes limpos e elegância de gabinete de arquitetura
-   ========================================================================== */
-
-/* ==========================================================================
-   MR Construções - Folha de Estilos Principal (style.css)
-   Organizado e modularizado para fácil manutenção
+   Tipografia: Inter (Rasmus Andersson)
+   - Estética minimalista, técnica e industrial inspirada na SIDI (sidi.pt)
+   - Pesos carregados: 400 (Regular), 500 (Medium), 600 (Semi-Bold)
+   - Títulos com tracking condensado (-0.025em) e entrelinha compacta (1.15 a 1.2)
+   - Navegação, botões e etiquetas em caixa alta, compactos e tracking aberto (0.06em)
    ========================================================================== */
 
 :root {
-            --font-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             --paper: #F6F4F0;
             --surface: #ECE9E3;
-            --ink: #161616;
-            --muted: #77736D;
+            --ink: #1a1a1a;
+            --muted: #706c66;
             --line: #DAD6CF;
-            --dark: #30302D;
+            --dark: #2d2b27;
             --white: #fff;
             --accent: #C8965A;
             --accent-light: #D4A76A;
@@ -42,7 +40,10 @@
             background: var(--paper);
             color: var(--ink);
             font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.65;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
             width: 100%
         }
@@ -114,7 +115,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font: 700 10.5px/1 var(--font-heading);
+            font: 600 10.5px/1 var(--font-heading);
             background: #141414;
             color: #ffffff;
             padding: 5px 9px;
@@ -149,15 +150,15 @@
         }
 
         .section-badge .badge-title {
-            font: 700 11px/1 var(--font-heading);
-            letter-spacing: .14em;
+            font: 500 11px/1 var(--font-heading);
+            letter-spacing: .08em;
             text-transform: uppercase;
             color: #171717;
         }
 
         .eyebrow {
-            font: 600 11px/1.4 var(--font-heading);
-            letter-spacing: .12em;
+            font: 500 11px/1.4 var(--font-heading);
+            letter-spacing: .08em;
             text-transform: uppercase;
             color: #55524d;
         }
@@ -182,8 +183,9 @@
 
         .topbar .navlinks a:not(.nav-cta) {
             color: rgba(255, 255, 255, 0.92);
-            font: 500 13px/1 var(--font-heading);
-            letter-spacing: .02em;
+            font: 500 12px/1 var(--font-heading);
+            letter-spacing: .06em;
+            text-transform: uppercase;
             transition: color .2s ease;
         }
 
@@ -195,12 +197,12 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            font: 600 12.5px/1 var(--font-heading);
-            letter-spacing: .01em;
-            text-transform: none;
+            font: 500 12px/1 var(--font-heading);
+            letter-spacing: .06em;
+            text-transform: uppercase;
             border: 1.5px solid #ffffff;
             background: #ffffff;
-            color: #141414 !important;
+            color: #1a1a1a !important;
             padding: 10px 20px;
             border-radius: 999px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -307,8 +309,8 @@
         }
 
         .brand-fallback {
-            font: 700 16px/1 var(--font-heading);
-            letter-spacing: -.03em;
+            font: 600 15px/1 var(--font-heading);
+            letter-spacing: -.02em;
             color: inherit;
         }
 
@@ -336,7 +338,7 @@
         }
 
         .footer-brand-text {
-            font: 700 13px/1 var(--font-heading);
+            font: 500 12px/1 var(--font-heading);
             letter-spacing: .08em;
             text-transform: uppercase;
             color: #ffffff;
@@ -539,10 +541,10 @@
             align-items: center;
             gap: 14px;
             margin: 0 0 28px;
-            font: 400 11px/1 var(--font-heading);
-            letter-spacing: .18em;
+            font: 500 11.5px/1 var(--font-heading);
+            letter-spacing: .08em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, .75);
+            color: rgba(255, 255, 255, .82);
         }
 
         .hero-kicker-line {
@@ -555,24 +557,24 @@
             color: var(--accent);
             display: inline-block;
             margin: 0 4px;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .hero-title {
             margin: 0;
-            font: 300 clamp(3rem, 8.4vw, 8.2rem)/.92 var(--font-heading);
-            letter-spacing: -0.03em;
+            font: 500 clamp(2.8rem, 7.5vw, 7.2rem)/1.15 var(--font-heading);
+            letter-spacing: -0.025em;
             color: #fff;
         }
 
         .hero-title span {
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .hero-lead {
             max-width: 480px;
-            margin: 32px 0 0;
-            font: 400 clamp(14px, 1.1vw, 16px)/1.65 var(--font-body);
+            margin: 28px 0 0;
+            font: 400 clamp(14px, 1.05vw, 15.5px)/1.65 var(--font-body);
             color: rgba(255, 255, 255, .82);
         }
 
@@ -586,14 +588,15 @@
         .hero-btn-solid {
             display: inline-flex;
             align-items: center;
-            gap: 14px;
-            padding: 15px 28px;
+            gap: 12px;
+            padding: 14px 26px;
             background: #ffffff;
-            color: #141414;
+            color: #1a1a1a;
             border: 1.5px solid #ffffff;
             border-radius: 999px;
-            font: 600 13px/1 var(--font-heading);
-            letter-spacing: .01em;
+            font: 500 12px/1 var(--font-heading);
+            letter-spacing: .06em;
+            text-transform: uppercase;
             transition: background .25s ease, color .25s ease, border-color .25s ease, transform .2s ease, box-shadow .25s ease;
         }
 
@@ -617,7 +620,9 @@
         .hero-btn-link {
             position: relative;
             padding: 6px 0;
-            font: 400 13px/1 var(--font-heading);
+            font: 500 12px/1 var(--font-heading);
+            letter-spacing: .06em;
+            text-transform: uppercase;
             color: #fff;
             transition: color .25s ease;
         }
@@ -659,13 +664,13 @@
         }
 
         .hero-stat-val {
-            font: 700 clamp(18px, 1.8vw, 24px)/1.15 var(--font-heading);
+            font: 600 clamp(18px, 1.8vw, 24px)/1.15 var(--font-heading);
             letter-spacing: -.02em;
             color: #ffffff;
         }
 
         .hero-stat-lbl {
-            font: 400 clamp(11.5px, 0.85vw, 12.5px)/1.45 var(--font-body);
+            font: 400 clamp(11.5px, 0.85vw, 12.5px)/1.5 var(--font-body);
             color: rgba(255, 255, 255, .82);
             max-width: 280px;
         }
@@ -797,16 +802,15 @@
         }
 
         .manifesto-top h2 {
-            font: 700 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--font-heading);
+            font: 600 clamp(2.1rem, 3.8vw, 3.5rem)/1.18 var(--font-heading);
             letter-spacing: -0.025em;
             margin: 0;
             color: var(--ink);
         }
 
         .manifesto-top p {
-            font-size: clamp(14px, 1.15vw, 16px);
-            line-height: 1.7;
-            color: #5c5954;
+            font: 400 clamp(14px, 1.1vw, 15.5px)/1.65 var(--font-body);
+            color: #403e3b;
             margin: 0;
             max-width: 640px;
         }
@@ -854,9 +858,9 @@
             border-radius: 999px;
             background: #ffffff;
             border: 1.5px solid rgba(18, 18, 18, 0.1);
-            font: 700 15px/1 var(--font-heading);
+            font: 600 15px/1 var(--font-heading);
             letter-spacing: -.02em;
-            color: #141414;
+            color: #1a1a1a;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
             transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
         }
@@ -870,31 +874,30 @@
         }
 
         .pillar-kicker {
-            font: 700 11px/1 var(--font-heading);
-            letter-spacing: .12em;
+            font: 500 11px/1 var(--font-heading);
+            letter-spacing: .08em;
             text-transform: uppercase;
-            color: #736f68;
+            color: #706c66;
         }
 
         .work-pillar-card h3 {
-            font: 600 clamp(1.2rem, 1.45vw, 1.38rem)/1.25 var(--font-heading);
-            letter-spacing: -0.015em;
+            font: 600 clamp(1.2rem, 1.45vw, 1.35rem)/1.2 var(--font-heading);
+            letter-spacing: -0.025em;
             margin: 0 0 14px;
             color: var(--ink);
         }
 
         .work-pillar-card p {
-            font-size: 13.5px;
-            line-height: 1.7;
-            color: #55524d;
+            font: 400 13.5px/1.65 var(--font-body);
+            color: #403e3b;
             margin: 0 0 24px;
             flex-grow: 1;
         }
 
         .pillar-bottom {
-            font: 700 10.5px/1 var(--font-heading);
-            letter-spacing: .08em;
-            color: #8c8880;
+            font: 500 10.5px/1 var(--font-heading);
+            letter-spacing: .06em;
+            color: #706c66;
             text-transform: uppercase;
             padding-top: 16px;
             border-top: 1px dashed rgba(18, 18, 18, 0.09);
@@ -914,7 +917,7 @@
 
         .section-heading h2,
         .split-title {
-            font: 700 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--font-heading);
+            font: 600 clamp(2.1rem, 3.8vw, 3.5rem)/1.18 var(--font-heading);
             letter-spacing: -0.025em;
             margin: 0;
             color: var(--ink);
@@ -922,9 +925,8 @@
 
         .section-heading p {
             max-width: 640px;
-            color: #5c5954;
-            font-size: 13.5px;
-            line-height: 1.7;
+            color: #403e3b;
+            font: 400 13.5px/1.65 var(--font-body);
             margin: 0;
         }
 
@@ -991,8 +993,8 @@
         }
 
         .card-badge-cat {
-            font: 600 10px/1 var(--font-heading);
-            letter-spacing: .1em;
+            font: 500 10px/1 var(--font-heading);
+            letter-spacing: .08em;
             text-transform: uppercase;
             background: rgba(18, 18, 18, 0.8);
             color: #ffffff;
@@ -1003,10 +1005,10 @@
         }
 
         .card-badge-loc {
-            font: 600 10px/1 var(--font-heading);
+            font: 500 10px/1 var(--font-heading);
             letter-spacing: .06em;
             background: rgba(255, 255, 255, 0.92);
-            color: #171717;
+            color: #1a1a1a;
             padding: 6px 11px;
             border-radius: 999px;
             backdrop-filter: blur(8px);
@@ -1028,15 +1030,15 @@
         }
 
         .card-project-index {
-            font: 600 11px/1 var(--font-heading);
+            font: 500 11px/1 var(--font-heading);
             letter-spacing: .08em;
-            color: #8c8880;
+            color: #706c66;
             text-transform: uppercase;
         }
 
         .card-project-tag {
-            font: 600 10px/1 var(--font-heading);
-            letter-spacing: .1em;
+            font: 500 10px/1 var(--font-heading);
+            letter-spacing: .08em;
             color: #44413c;
             background: rgba(18, 18, 18, 0.05);
             padding: 3px 8px;
@@ -1045,16 +1047,15 @@
         }
 
         .project-card-meta h3 {
-            font: 600 clamp(1.2rem, 1.45vw, 1.4rem)/1.22 var(--font-heading);
-            letter-spacing: -0.015em;
+            font: 600 clamp(1.2rem, 1.45vw, 1.38rem)/1.2 var(--font-heading);
+            letter-spacing: -0.025em;
             margin: 0 0 8px;
             color: var(--ink);
         }
 
         .project-card-meta p {
-            font-size: 13px;
-            line-height: 1.6;
-            color: #635f58;
+            font: 400 13px/1.65 var(--font-body);
+            color: #403e3b;
             margin: 0 0 18px;
             flex-grow: 1;
         }
@@ -1065,8 +1066,8 @@
             align-items: center;
             padding-top: 14px;
             border-top: 1px solid rgba(18, 18, 18, 0.06);
-            font: 600 11px/1 var(--font-heading);
-            letter-spacing: .08em;
+            font: 500 11.5px/1 var(--font-heading);
+            letter-spacing: .06em;
             text-transform: uppercase;
             color: var(--ink);
             transition: color .2s ease;
@@ -1101,16 +1102,15 @@
         }
 
         .comparison-head h2 {
-            font: 700 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--font-heading);
+            font: 600 clamp(2.1rem, 3.8vw, 3.5rem)/1.18 var(--font-heading);
             letter-spacing: -0.025em;
             margin: 0;
             max-width: 760px;
         }
 
         .comparison-head p {
-            font-size: 13.5px;
-            line-height: 1.7;
-            color: #5c5954;
+            font: 400 13.5px/1.65 var(--font-body);
+            color: #403e3b;
             max-width: 640px;
             margin: 0;
         }
@@ -1167,8 +1167,8 @@
             position: absolute;
             z-index: 3;
             top: 18px;
-            font: 700 10.5px/1 var(--font-heading);
-            letter-spacing: .12em;
+            font: 500 11px/1 var(--font-heading);
+            letter-spacing: .06em;
             text-transform: uppercase;
             color: var(--ink);
             background: rgba(255, 255, 255, 0.9);
@@ -1268,7 +1268,7 @@
         }
 
         .process-head h2 {
-            font: 700 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--font-heading);
+            font: 600 clamp(2.1rem, 3.8vw, 3.5rem)/1.18 var(--font-heading);
             letter-spacing: -0.025em;
             margin: 0;
             color: var(--ink);
@@ -1276,9 +1276,8 @@
 
         .process-head p {
             max-width: 640px;
-            color: #5c5954;
-            font-size: 13.5px;
-            line-height: 1.7;
+            color: #403e3b;
+            font: 400 13.5px/1.65 var(--font-body);
             margin: 0;
         }
 
@@ -1314,14 +1313,14 @@
         }
 
         .process-step-num {
-            font: 700 28px/1 var(--font-heading);
-            letter-spacing: -.04em;
+            font: 600 26px/1 var(--font-heading);
+            letter-spacing: -.03em;
             color: var(--accent);
         }
 
         .process-step-tag {
-            font: 600 10px/1 var(--font-heading);
-            letter-spacing: .1em;
+            font: 500 10px/1 var(--font-heading);
+            letter-spacing: .08em;
             text-transform: uppercase;
             padding: 4px 9px;
             border-radius: 999px;
@@ -1330,16 +1329,15 @@
         }
 
         .process-card h3 {
-            font: 600 clamp(1.15rem, 1.35vw, 1.3rem)/1.25 var(--font-heading);
-            letter-spacing: -0.015em;
+            font: 600 clamp(1.15rem, 1.35vw, 1.3rem)/1.2 var(--font-heading);
+            letter-spacing: -0.025em;
             margin: 0 0 10px;
             color: var(--ink);
         }
 
         .process-card p {
-            font-size: 13px;
-            line-height: 1.65;
-            color: #5e5b55;
+            font: 400 13px/1.65 var(--font-body);
+            color: #403e3b;
             margin: 0;
         }
 
@@ -1357,22 +1355,22 @@
         }
 
         .service-row .num {
-            font: 600 11px var(--font-heading);
+            font: 500 11px var(--font-heading);
+            letter-spacing: .06em;
             color: var(--accent);
             padding-top: 8px;
         }
 
         .service-row h3 {
-            font: 600 clamp(1.4rem, 2.4vw, 2.2rem)/1.15 var(--font-heading);
-            letter-spacing: -0.02em;
+            font: 600 clamp(1.35rem, 2.2vw, 2.05rem)/1.18 var(--font-heading);
+            letter-spacing: -0.025em;
             margin: 0;
         }
 
         .service-row p {
             max-width: 360px;
-            font-size: 13px;
-            line-height: 1.8;
-            color: #5c5954;
+            font: 400 13px/1.65 var(--font-body);
+            color: #403e3b;
             margin: 4px 0 0;
         }
 
@@ -1394,16 +1392,15 @@
         }
 
         .specialty-intro h2 {
-            font: 700 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--font-heading);
+            font: 600 clamp(2.1rem, 3.8vw, 3.5rem)/1.18 var(--font-heading);
             letter-spacing: -0.025em;
             margin: 0;
             color: var(--ink);
         }
 
         .specialty-intro p {
-            font-size: 13.5px;
-            line-height: 1.7;
-            color: #5c5954;
+            font: 400 13.5px/1.65 var(--font-body);
+            color: #403e3b;
             max-width: 640px;
             margin: 0;
         }
@@ -1478,15 +1475,14 @@
         }
 
         .company-copy h2 {
-            font: 700 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--font-heading);
+            font: 600 clamp(2.1rem, 4vw, 3.6rem)/1.18 var(--font-heading);
             letter-spacing: -0.025em;
             margin: 16px 0 28px
         }
 
         .company-copy>p {
-            font-size: 13px;
-            line-height: 1.9;
-            color: #5c5954;
+            font: 400 13.5px/1.65 var(--font-body);
+            color: #403e3b;
             max-width: 460px
         }
 
@@ -1521,16 +1517,16 @@
         }
 
         .contact h2 {
-            font: 700 clamp(2.4rem, 5vw, 4.4rem)/1.0 var(--font-heading);
+            font: 600 clamp(2.2rem, 4.2vw, 3.8rem)/1.15 var(--font-heading);
             letter-spacing: -0.025em;
-            margin: 16px 0 28px
+            margin: 16px 0 24px;
+            color: var(--ink);
         }
 
         .contact-intro {
             max-width: 330px;
-            font-size: 13px;
-            line-height: 1.8;
-            color: #5c5954
+            font: 400 13.5px/1.65 var(--font-body);
+            color: #403e3b;
         }
 
         .contact-links {
@@ -1574,10 +1570,10 @@
 
         .field label {
             display: block;
-            font: 600 12px var(--font-heading);
-            letter-spacing: .12em;
+            font: 500 11.5px/1 var(--font-heading);
+            letter-spacing: .08em;
             text-transform: uppercase;
-            color: var(--muted);
+            color: #706c66;
             margin-bottom: 9px
         }
 
@@ -1623,17 +1619,17 @@
         .submit {
             border: 1.5px solid rgba(18, 18, 18, 0.12);
             background: #ffffff;
-            color: #141414;
-            padding: 15px 28px;
+            color: #1a1a1a;
+            padding: 14px 26px;
             min-width: 190px;
             display: inline-flex;
             justify-content: space-between;
             gap: 20px;
             align-items: center;
             cursor: pointer;
-            font: 600 13px/1 var(--font-heading);
-            letter-spacing: .02em;
-            text-transform: none;
+            font: 500 12px/1 var(--font-heading);
+            letter-spacing: .06em;
+            text-transform: uppercase;
             border-radius: 999px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             transition: background .25s ease, color .25s ease, border-color .25s ease, transform .2s ease, box-shadow .25s ease;
@@ -1740,7 +1736,7 @@
             background: #2e7d32;
             color: #fff;
             font-size: 11px;
-            font-weight: 700
+            font-weight: 600
         }
 
         .toast-message {
@@ -1787,20 +1783,19 @@
         }
 
         .footer-description {
-            font-size: 11px;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, .45);
+            font: 400 11.5px/1.7 var(--font-body);
+            color: rgba(255, 255, 255, .55);
             max-width: 280px;
-            margin-top: 12px
+            margin-top: 12px;
         }
 
         .footer-heading {
             display: block;
-            font: 600 11px/1 var(--font-heading);
-            letter-spacing: .12em;
+            font: 500 11px/1 var(--font-heading);
+            letter-spacing: .08em;
             text-transform: uppercase;
             color: rgba(255, 255, 255, .9);
-            margin-bottom: 14px
+            margin-bottom: 14px;
         }
 
         .footer-legal-list,
@@ -1811,19 +1806,18 @@
             display: flex;
             flex-direction: column;
             gap: 7px;
-            font-size: 11px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, .55)
+            font: 400 11px/1.65 var(--font-body);
+            color: rgba(255, 255, 255, .55);
         }
 
         .footer-legal-list strong {
             color: var(--accent);
-            font-weight: 600;
-            letter-spacing: .03em;
+            font-weight: 500;
+            letter-spacing: .05em;
         }
 
         .footer-legal-list span {
-            color: rgba(255, 255, 255, .8)
+            color: rgba(255, 255, 255, .8);
         }
 
         .footer-links-list a {
@@ -2441,7 +2435,7 @@
                 height: 36px !important;
                 border-radius: 999px !important;
                 font-size: 13px !important;
-                font-weight: 700 !important;
+                font-weight: 600 !important;
                 background: #ffffff !important;
                 border: 1.5px solid rgba(18, 18, 18, 0.1) !important;
                 color: #141414 !important;
@@ -2460,8 +2454,9 @@
 
             .pillar-kicker {
                 font-size: 10px !important;
-                letter-spacing: .1em !important;
-                font-weight: 700 !important;
+                letter-spacing: .08em !important;
+                font-weight: 500 !important;
+                text-transform: uppercase !important;
             }
 
             .work-pillar-card h3 {
@@ -2978,10 +2973,10 @@
 
 .pp-head h2 {
     font-family: var(--font-heading);
-    font-size: clamp(28px, 4.5vw, 48px);
-    font-weight: 700;
+    font-size: clamp(28px, 4.5vw, 44px);
+    font-weight: 600;
     letter-spacing: -.025em;
-    line-height: 1.1;
+    line-height: 1.15;
     color: var(--ink);
     margin: 10px 0 14px;
 }
@@ -3051,7 +3046,7 @@
     position: absolute;
     left: 0;
     color: var(--accent);
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .pp-data {
@@ -3159,9 +3154,10 @@
 
 .pp-cta h3 {
     font-family: var(--font-heading);
-    font-size: clamp(20px, 2.8vw, 28px);
-    font-weight: 700;
-    letter-spacing: -.02em;
+    font-size: clamp(20px, 2.8vw, 26px);
+    font-weight: 600;
+    letter-spacing: -.025em;
+    line-height: 1.2;
     color: var(--ink);
     margin: 10px 0 24px;
 }
@@ -3170,15 +3166,16 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 15px 32px;
+    padding: 14px 28px;
     background: var(--ink);
     color: #FFFFFF;
     text-decoration: none;
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: -.01em;
-    border-radius: 2px;
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    border-radius: 999px;
     transition: background .2s ease, transform .2s ease;
 }
 
@@ -3219,9 +3216,10 @@
 }
 
 .pp-pager-title {
-    font-family: var(--font-body);
-    font-size: 16px;
-    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
     color: var(--ink);
     letter-spacing: -.02em;
 }
@@ -3468,9 +3466,9 @@
 }
 
 .trust-val {
-    font: 700 clamp(1.8rem, 3vw, 2.6rem)/1.1 var(--font-heading);
+    font: 600 clamp(1.8rem, 3vw, 2.6rem)/1.15 var(--font-heading);
     color: var(--ink);
-    letter-spacing: -.02em;
+    letter-spacing: -0.025em;
 }
 
 .trust-lbl {
@@ -3493,8 +3491,9 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font: 500 12.5px/1 var(--font-heading);
-    letter-spacing: .02em;
+    font: 500 11.5px/1 var(--font-heading);
+    letter-spacing: .06em;
+    text-transform: uppercase;
     padding: 8px 18px;
     border-radius: 999px;
     background: transparent;
@@ -3612,7 +3611,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font: 700 13px var(--font-heading);
+    font: 600 13px var(--font-heading);
     letter-spacing: .03em;
     flex-shrink: 0;
 }
