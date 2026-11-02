@@ -66,11 +66,7 @@
     }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+
 
     <link rel="icon" type="image/png" href="imagens/logo-mr-construcoes.png">
     <link rel="icon" type="image/webp" href="imagens/logo-mr-construcoes.webp">
@@ -82,7 +78,7 @@
     <header class="topbar">
         <nav class="nav wrap" aria-label="Navegação principal">
             <a class="brand" href="#inicio" aria-label="MR Construções, início"><img src="imagens/logo-mr-construcoes.webp"
-                    alt="MR Construções" width="125" height="125"></a>
+                    alt="MR Construções" width="125" height="125"><span class="brand-text">MR CONSTRUÇÕES</span></a>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navlinks"
                 aria-label="Abrir menu">Menu <span aria-hidden="true">+</span></button>
             <div class="navlinks" id="navlinks">
@@ -134,30 +130,63 @@
         </section>
 
         <section class="manifesto wrap" id="manifesto">
-            <div class="manifesto-top">
-                <span class="eyebrow">A nossa forma de trabalhar / 01</span>
-                <p>Cada projeto começa com uma conversa e ganha forma através de planeamento, experiência e compromisso.
-                </p>
+            <div class="section-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-title">A nossa forma de trabalhar</span>
+                <span class="badge-num">01</span>
             </div>
-            <div class="manifesto-lines">
-                <div class="manifesto-line"><small>01</small>
-                    <p>Rigor em cada detalhe.</p>
+            <div class="manifesto-top">
+                <h2>Arquitetura com rigor.<br>Execução sem compromissos.</h2>
+                <p>Cada projeto começa com escuta ativa e ganha forma através de engenharia sólida, materiais nobres e proximidade diária em obra.</p>
+            </div>
+            <div class="work-pillars-grid">
+                <div class="work-pillar-card">
+                    <div class="pillar-top">
+                        <span class="pillar-num">01</span>
+                        <span class="pillar-kicker">Planeamento &amp; Métrica</span>
+                    </div>
+                    <h3>Rigor em cada detalhe</h3>
+                    <p>Estudo métrico aprofundado, orçamentação transparente e controlo rigoroso de cronograma para garantir prazos sem imprevistos.</p>
+                    <div class="pillar-bottom">
+                        <span>Alvará IMPIC N.º 113987</span>
+                    </div>
                 </div>
-                <div class="manifesto-line"><small>02</small>
-                    <p>Proximidade em cada decisão.</p>
+                <div class="work-pillar-card">
+                    <div class="pillar-top">
+                        <span class="pillar-num">02</span>
+                        <span class="pillar-kicker">Direção de Obra</span>
+                    </div>
+                    <h3>Proximidade em cada decisão</h3>
+                    <p>Acompanhamento presencial contínuo pelo diretor de obra, diálogo permanente com o cliente e alinhamento com a arquitetura.</p>
+                    <div class="pillar-bottom">
+                        <span>Comunicação direta e contínua</span>
+                    </div>
                 </div>
-                <div class="manifesto-line"><small>03</small>
-                    <p>Qualidade que se vê.</p>
+                <div class="work-pillar-card">
+                    <div class="pillar-top">
+                        <span class="pillar-num">03</span>
+                        <span class="pillar-kicker">Materiais &amp; Acabamentos</span>
+                    </div>
+                    <h3>Qualidade que se vê e perdura</h3>
+                    <p>Cantaria aparelhada, betão armado, impermeabilizações técnicas e acabamentos nobres concebidos para durar décadas.</p>
+                    <div class="pillar-bottom">
+                        <span>Garantia integral de execução</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="projects wrap" id="projetos">
             <div class="section-heading">
-                <div><span class="eyebrow">Trabalhos selecionados / 02</span>
+                <div>
+                    <div class="section-badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-title">Trabalhos selecionados</span>
+                        <span class="badge-num">02</span>
+                    </div>
                     <h2>Projetos</h2>
                 </div>
-                <p>Uma seleção de trabalhos e soluções que refletem o nosso cuidado em cada fase da obra.</p>
+                <p>Uma seleção de obras residenciais e remodelações contemporâneas executadas com rigor e excelência.</p>
             </div>
 
             <div class="project-filters" role="tablist" aria-label="Filtrar projetos por categoria">
@@ -175,97 +204,183 @@
                 </button>
             </div>
 
-            <article class="project" data-category="construcao">
-                <a class="project-grid" href="#projeto/moradia-pedra-famalicao">
-                    <div class="project-visual">
-                        <img src="imagens/moradia-pedra-natural.webp" alt="Construção contemporânea - Moradia em pedra natural em Famalicão" loading="lazy" width="1440" height="1080">
-                    </div>
-                    <div class="project-info"><span class="project-number">Projeto 01</span>
-                        <h3>Moradia em pedra natural</h3>
-                        <p>Construção de raiz de moradia contemporânea com cantaria nobre e arranjos paisagísticos.</p>
-                        <div class="project-foot"><span class="project-tag">Construção</span><span class="project-more">Ver projeto ↗</span></div>
-                    </div>
-                </a>
-            </article>
+            <div class="projects-grid-modern">
+                <article class="project" data-category="construcao">
+                    <a class="project-card" href="#projeto/moradia-pedra-famalicao">
+                        <div class="project-card-visual">
+                            <img src="imagens/moradia-pedra-natural.webp" alt="Construção contemporânea - Moradia em pedra natural em Famalicão" loading="lazy" width="1440" height="1080">
+                            <div class="card-badges">
+                                <span class="card-badge-cat">Construção</span>
+                                <span class="card-badge-loc">Famalicão</span>
+                            </div>
+                        </div>
+                        <div class="project-card-meta">
+                            <div class="meta-row">
+                                <span class="card-project-index">Projeto 01</span>
+                                <span class="card-project-tag">Construção</span>
+                            </div>
+                            <h3>Moradia em pedra natural</h3>
+                            <p>Construção de raiz de moradia contemporânea com cantaria nobre e arranjos paisagísticos.</p>
+                            <div class="card-action">
+                                <span>Ver projeto</span>
+                                <span class="action-arrow">↗</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
 
-            <article class="project" data-category="construcao">
-                <a class="project-grid" href="#projeto/moradia-minimalista">
-                    <div class="project-visual">
-                        <img src="imagens/moradia-minimalista.webp" alt="Construção contemporânea - Moradia minimalista" loading="lazy" width="1440" height="1085">
-                    </div>
-                    <div class="project-info"><span class="project-number">Projeto 02</span>
-                        <h3>Moradia minimalista</h3>
-                        <p>Volumes geométricos puros, isolamento térmico de alta eficiência e contraste moderno.</p>
-                        <div class="project-foot"><span class="project-tag">Construção</span><span class="project-more">Ver projeto ↗</span></div>
-                    </div>
-                </a>
-            </article>
+                <article class="project" data-category="construcao">
+                    <a class="project-card" href="#projeto/moradia-minimalista">
+                        <div class="project-card-visual">
+                            <img src="imagens/moradia-minimalista.webp" alt="Construção contemporânea - Moradia minimalista" loading="lazy" width="1440" height="1085">
+                            <div class="card-badges">
+                                <span class="card-badge-cat">Construção</span>
+                                <span class="card-badge-loc">Vila do Conde</span>
+                            </div>
+                        </div>
+                        <div class="project-card-meta">
+                            <div class="meta-row">
+                                <span class="card-project-index">Projeto 02</span>
+                                <span class="card-project-tag">Construção</span>
+                            </div>
+                            <h3>Moradia minimalista</h3>
+                            <p>Volumes geométricos puros, isolamento térmico de alta eficiência e contraste moderno.</p>
+                            <div class="card-action">
+                                <span>Ver projeto</span>
+                                <span class="action-arrow">↗</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
 
-            <article class="project" data-category="remodelacao">
-                <a class="project-grid" href="#projeto/interiores-sala-ripado">
-                    <div class="project-visual">
-                        <img src="imagens/interiores-sala-ripado.webp" alt="Remodelação de interiores - Sala open space com painel ripado" loading="lazy" width="1064" height="1329">
-                    </div>
-                    <div class="project-info"><span class="project-number">Projeto 03</span>
-                        <h3>Remodelação de interiores</h3>
-                        <p>Espaço open space com divisória ripada em madeira maciça, piso flutuante e iluminação embutida.</p>
-                        <div class="project-foot"><span class="project-tag">Remodelação</span><span class="project-more">Ver projeto ↗</span></div>
-                    </div>
-                </a>
-            </article>
+                <article class="project" data-category="remodelacao">
+                    <a class="project-card" href="#projeto/interiores-sala-ripado">
+                        <div class="project-card-visual">
+                            <img src="imagens/interiores-sala-ripado.webp" alt="Remodelação de interiores - Sala open space com painel ripado" loading="lazy" width="1064" height="1329">
+                            <div class="card-badges">
+                                <span class="card-badge-cat">Remodelação</span>
+                                <span class="card-badge-loc">Famalicão</span>
+                            </div>
+                        </div>
+                        <div class="project-card-meta">
+                            <div class="meta-row">
+                                <span class="card-project-index">Projeto 03</span>
+                                <span class="card-project-tag">Remodelação</span>
+                            </div>
+                            <h3>Remodelação de interiores</h3>
+                            <p>Espaço open space com divisória ripada em madeira maciça, piso flutuante e iluminação embutida.</p>
+                            <div class="card-action">
+                                <span>Ver projeto</span>
+                                <span class="action-arrow">↗</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
 
-            <article class="project" data-category="remodelacao">
-                <a class="project-grid" href="#projeto/casa-de-banho-porto">
-                    <div class="project-visual">
-                        <img src="imagens/casa-banho-marmore.webp" alt="Remodelação de interiores - Casa de banho e suite de luxo" loading="lazy" width="1181" height="872">
-                    </div>
-                    <div class="project-info"><span class="project-number">Projeto 04</span>
-                        <h3>Casa de banho de luxo</h3>
-                        <p>Revestimento marmoreado Calacatta de grande formato, louças suspensas e iluminação indireta.</p>
-                        <div class="project-foot"><span class="project-tag">Remodelação</span><span class="project-more">Ver projeto ↗</span></div>
-                    </div>
-                </a>
-            </article>
+                <article class="project" data-category="remodelacao">
+                    <a class="project-card" href="#projeto/casa-de-banho-porto">
+                        <div class="project-card-visual">
+                            <img src="imagens/casa-banho-marmore.webp" alt="Remodelação de interiores - Casa de banho e suite de luxo" loading="lazy" width="1181" height="872">
+                            <div class="card-badges">
+                                <span class="card-badge-cat">Remodelação</span>
+                                <span class="card-badge-loc">Porto</span>
+                            </div>
+                        </div>
+                        <div class="project-card-meta">
+                            <div class="meta-row">
+                                <span class="card-project-index">Projeto 04</span>
+                                <span class="card-project-tag">Remodelação</span>
+                            </div>
+                            <h3>Casa de banho de luxo</h3>
+                            <p>Revestimento marmoreado Calacatta de grande formato, louças suspensas e iluminação indireta.</p>
+                            <div class="card-action">
+                                <span>Ver projeto</span>
+                                <span class="action-arrow">↗</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
 
-            <article class="project" data-category="construcao">
-                <a class="project-grid" href="#projeto/piscina-famalicao">
-                    <div class="project-visual">
-                        <img src="imagens/piscina-famalicao.jpg" alt="Construção exterior - Piscina em Famalicão" loading="lazy" width="1296" height="1050">
-                    </div>
-                    <div class="project-info"><span class="project-number">Projeto 05</span>
-                        <h3>Piscina exterior e envolvente</h3>
-                        <p>Construção de estrutura em betão armado e envolvente com pavimento antiderrapante.</p>
-                        <div class="project-foot"><span class="project-tag">Construção</span><span class="project-more">Ver projeto ↗</span></div>
-                    </div>
-                </a>
-            </article>
+                <article class="project" data-category="construcao">
+                    <a class="project-card" href="#projeto/piscina-famalicao">
+                        <div class="project-card-visual">
+                            <img src="imagens/piscina-famalicao.jpg" alt="Construção exterior - Piscina em Famalicão" loading="lazy" width="1296" height="1050">
+                            <div class="card-badges">
+                                <span class="card-badge-cat">Construção</span>
+                                <span class="card-badge-loc">Famalicão</span>
+                            </div>
+                        </div>
+                        <div class="project-card-meta">
+                            <div class="meta-row">
+                                <span class="card-project-index">Projeto 05</span>
+                                <span class="card-project-tag">Construção</span>
+                            </div>
+                            <h3>Piscina exterior e envolvente</h3>
+                            <p>Construção de estrutura em betão armado e envolvente com pavimento antiderrapante.</p>
+                            <div class="card-action">
+                                <span>Ver projeto</span>
+                                <span class="action-arrow">↗</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
 
-            <article class="project" data-category="acabamentos">
-                <a class="project-grid" href="#projeto/casa-famalicao">
-                    <div class="project-visual">
-                        <img src="imagens/casa-famalicao-depois.jpg" alt="Reabilitação e acabamentos - Moradia em Famalicão" loading="lazy" width="1206" height="909">
-                    </div>
-                    <div class="project-info"><span class="project-number">Projeto 06</span>
-                        <h3>Reabilitação de moradia</h3>
-                        <p>Recuperação integral de fachadas, isolamento térmico e pintura técnica de durabilidade.</p>
-                        <div class="project-foot"><span class="project-tag">Acabamentos</span><span class="project-more">Ver projeto ↗</span></div>
-                    </div>
-                </a>
-            </article>
+                <article class="project" data-category="acabamentos">
+                    <a class="project-card" href="#projeto/casa-famalicao">
+                        <div class="project-card-visual">
+                            <img src="imagens/casa-famalicao-depois.jpg" alt="Reabilitação e acabamentos - Moradia em Famalicão" loading="lazy" width="1206" height="909">
+                            <div class="card-badges">
+                                <span class="card-badge-cat">Acabamentos</span>
+                                <span class="card-badge-loc">Famalicão</span>
+                            </div>
+                        </div>
+                        <div class="project-card-meta">
+                            <div class="meta-row">
+                                <span class="card-project-index">Projeto 06</span>
+                                <span class="card-project-tag">Acabamentos</span>
+                            </div>
+                            <h3>Reabilitação de moradia</h3>
+                            <p>Recuperação integral de fachadas, isolamento térmico e pintura técnica de durabilidade.</p>
+                            <div class="card-action">
+                                <span>Ver projeto</span>
+                                <span class="action-arrow">↗</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
         </section>
 
         <div class="marquee" aria-hidden="true">
             <div class="marquee-track">
-                <span>Construção</span><b>✳</b><span>Remodelação</span><b>✳</b><span>Reparações</span><b>✳</b><span>Qualidade</span><b>✳</b><span>Construção</span><b>✳</b><span>Remodelação</span><b>✳</b><span>Reparações</span><b>✳</b><span>Qualidade</span><b>✳</b>
+                <span class="marquee-item"><span class="m-diamond">✦</span> Construção Contemporânea</span>
+                <span class="marquee-item"><span class="m-diamond">✦</span> Remodelações de Interiores</span>
+                <span class="marquee-item"><span class="m-diamond">✦</span> Alvará IMPIC N.º 113987</span>
+                <span class="marquee-item"><span class="m-diamond">✦</span> Acabamentos de Alta Precisão</span>
+                <span class="marquee-item"><span class="m-diamond">✦</span> Famalicão · Braga · Porto</span>
+                <span class="marquee-item"><span class="m-diamond">✦</span> Soluções Chave na Mão</span>
+                <span class="marquee-item"><span class="m-diamond">✦</span> Rigor Estrutural &amp; Engenharia</span>
+                <span class="marquee-item"><span class="m-diamond">✦</span> Construção Contemporânea</span>
+                <span class="marquee-item"><span class="m-diamond">✦</span> Remodelações de Interiores</span>
+                <span class="marquee-item"><span class="m-diamond">✦</span> Alvará IMPIC N.º 113987</span>
+                <span class="marquee-item"><span class="m-diamond">✦</span> Acabamentos de Alta Precisão</span>
+                <span class="marquee-item"><span class="m-diamond">✦</span> Famalicão · Braga · Porto</span>
+                <span class="marquee-item"><span class="m-diamond">✦</span> Soluções Chave na Mão</span>
+                <span class="marquee-item"><span class="m-diamond">✦</span> Rigor Estrutural &amp; Engenharia</span>
             </div>
         </div>
 
         <section class="comparison wrap">
             <div class="comparison-head">
-                <div><span class="eyebrow">A diferença está no detalhe / 03</span>
+                <div>
+                    <div class="section-badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-title">A diferença está no detalhe</span>
+                        <span class="badge-num">03</span>
+                    </div>
                     <h2>Antes e depois</h2>
                 </div>
-                <p>Arraste o controlo para comparar os dois estados de um espaço.</p>
+                <p>Arraste o controlo para comparar o rigor e a transformação técnica executada.</p>
             </div>
             <div class="compare" id="compare">
                 <!-- Imagens antes / depois (mesmo enquadramento e dimensões) -->
@@ -287,34 +402,62 @@
 
         <section class="process wrap" id="processo">
             <div class="process-head">
-                <div><span class="eyebrow">Como trabalhamos / 04</span>
+                <div>
+                    <div class="section-badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-title">Como trabalhamos</span>
+                        <span class="badge-num">04</span>
+                    </div>
                     <h2>Do primeiro contacto<br>ao resultado final.</h2>
                 </div>
-                <p>Um processo claro ajuda a tomar decisões com confiança e a acompanhar cada etapa do trabalho.</p>
+                <p>Um método transparente, rigoroso e previsível para que acompanhe cada etapa da sua obra com total tranquilidade.</p>
             </div>
-            <div class="service-row"><span class="num">01</span>
-                <h3>Ouvir e compreender</h3>
-                <p>Conhecemos as suas necessidades, ideias, prioridades e objetivos para o projeto.</p>
-            </div>
-            <div class="service-row"><span class="num">02</span>
-                <h3>Planear a solução</h3>
-                <p>Definimos o âmbito do trabalho e os passos necessários para avançar com clareza.</p>
-            </div>
-            <div class="service-row"><span class="num">03</span>
-                <h3>Executar com rigor</h3>
-                <p>Acompanhamos a execução com atenção aos materiais, aos acabamentos e aos detalhes.</p>
-            </div>
-            <div class="service-row"><span class="num">04</span>
-                <h3>Entregar com confiança</h3>
-                <p>Verificamos o resultado e asseguramos que o trabalho corresponde ao que foi acordado.</p>
+            <div class="process-grid-modern">
+                <div class="process-card">
+                    <div class="process-card-top">
+                        <span class="process-step-num">01</span>
+                        <span class="process-step-tag">Diagnóstico</span>
+                    </div>
+                    <h3>Ouvir e compreender</h3>
+                    <p>Reunião inicial e visita ao local para compreender em detalhe as suas necessidades, expetativas funcionais e orçamento estimado.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-card-top">
+                        <span class="process-step-num">02</span>
+                        <span class="process-step-tag">Planeamento</span>
+                    </div>
+                    <h3>Planear a solução</h3>
+                    <p>Elaboração de proposta técnica minuciosa, caderno de encargos discriminado e cronograma realista com marcos claros.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-card-top">
+                        <span class="process-step-num">03</span>
+                        <span class="process-step-tag">Execução</span>
+                    </div>
+                    <h3>Executar com rigor</h3>
+                    <p>Estaleiro limpo e organizado, materiais de qualidade certificada e acompanhamento diário com controlo métrico rigoroso.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-card-top">
+                        <span class="process-step-num">04</span>
+                        <span class="process-step-tag">Conclusão</span>
+                    </div>
+                    <h3>Entregar com confiança</h3>
+                    <p>Vistoria final conjunta de todos os remates, entrega formal das chaves e garantia documentada da obra.</p>
+                </div>
             </div>
         </section>
 
         <section class="specialties wrap">
             <div class="specialty-layout">
-                <div class="specialty-intro"><span class="eyebrow">O que fazemos / 05</span>
+                <div class="specialty-intro">
+                    <div class="section-badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-title">O que fazemos</span>
+                        <span class="badge-num">05</span>
+                    </div>
                     <h2>Soluções para cada fase da obra.</h2>
-                    <p>Trabalhamos em diferentes áreas da construção, remodelação e manutenção de espaços.</p>
+                    <p>Da fundação estrutural aos acabamentos de luxo, dominamos todas as especialidades da construção civil.</p>
                 </div>
                 <div class="specialty-list">
                     <details class="specialty-item">
@@ -371,7 +514,11 @@
         <section class="testimonials wrap" id="testemunhos">
             <div class="section-heading">
                 <div>
-                    <span class="eyebrow">A voz de quem confia em nós / 06</span>
+                    <div class="section-badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-title">A voz de quem confia em nós</span>
+                        <span class="badge-num">06</span>
+                    </div>
                     <h2>Testemunhos</h2>
                 </div>
                 <p>O rigor do nosso trabalho reflete-se na satisfação e na recomendação de quem nos escolhe.</p>
@@ -440,7 +587,11 @@
                     </picture>
                 </div>
                 <div class="company-copy reveal">
-                    <span class="eyebrow">Quem somos / 07</span>
+                    <div class="section-badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-title">Quem somos</span>
+                        <span class="badge-num">07</span>
+                    </div>
                     <h2>Rigor no trabalho. Proximidade nas relações.</h2>
                     <p>A MR Construções atua nas áreas da construção, remodelação e reparação de espaços, com uma
                         abordagem assente no rigor, na proximidade e na atenção ao detalhe. Cada projeto merece
@@ -460,32 +611,21 @@
         <section class="contact" id="contacto">
             <div class="wrap contact-grid">
                 <div class="contact-copy reveal">
-                    <span class="eyebrow">Vamos conversar / 08</span>
+                    <div class="section-badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-title">Vamos conversar</span>
+                        <span class="badge-num">08</span>
+                    </div>
                     <h2>Tem uma obra em mente?</h2>
                     <p class="contact-intro">Partilhe o que está a imaginar. Estamos disponíveis para conversar sobre o
                         seu projeto e perceber como podemos ajudar.</p>
                     <div class="contact-links">
                         <a href="tel:+351915680947"><span>+351 915 680 947</span><span>Telefone ↗</span></a>
                         <a href="mailto:mrconstrucoes@sapo.pt"><span>mrconstrucoes@sapo.pt</span><span>Email ↗</span></a>
-                        <a href="https://wa.me/351915680947?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20um%20or%C3%A7amento%20para%20uma%20obra." 
-                           target="_blank" rel="noopener noreferrer" class="contact-whatsapp-link">
-                            <span>WhatsApp Direto</span>
-                            <span>Mensagem rápida ↗</span>
+                        <a href="https://wa.me/351915680947?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20um%20or%C3%A7amento%20para%20uma%20obra." target="_blank" rel="noopener noreferrer">
+                            <span>+351 915 680 947</span>
+                            <span>WhatsApp Direto ↗</span>
                         </a>
-                    </div>
-
-                    <div class="whatsapp-prompt-box">
-                        <div class="wp-icon" aria-hidden="true">
-                            <svg viewBox="0 0 32 32" width="22" height="22" fill="currentColor">
-                                <path d="M16 2a13.9 13.9 0 0 0-12 21L2 30l7.2-1.9A13.9 13.9 0 1 0 16 2zm0 25.4c-2.3 0-4.5-.6-6.4-1.7l-.5-.3-4.3 1.1 1.2-4.2-.3-.5A11.5 11.5 0 1 1 27.5 16 11.5 11.5 0 0 1 16 27.4zm6.3-8.6c-.3-.2-2-1-2.3-1.1-.3-.1-.6-.2-.8.2s-.9 1.1-1.1 1.3-.4.2-.7.1a9.2 9.2 0 0 1-5.4-4.7c-.2-.4 0-.6.2-.8l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6s-.8-2-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.7.1-1.1.5s-1.5 1.5-1.5 3.6 1.5 4.1 1.7 4.4c.2.3 3 4.6 7.4 6.4 1 .4 1.9.7 2.5.9 1.1.3 2 .3 2.8.2.8-.1 2.5-1 2.8-2 .4-.9.4-1.8.3-2 0-.2-.3-.3-.6-.5z"/>
-                            </svg>
-                        </div>
-                        <div class="wp-text">
-                            <strong>Tem plantas ou fotografias do espaço?</strong>
-                            <p>Envie-nos diretamente por WhatsApp para receber uma estimativa mais célere e detalhada da sua obra.</p>
-                            <a href="https://wa.me/351915680947?text=Ol%C3%A1!%20Tenho%20fotografias/plantas%20da%20minha%20obra%20para%20or%C3%A7amento." 
-                               target="_blank" rel="noopener noreferrer" class="wp-action-link">Enviar ficheiros por WhatsApp ↗</a>
-                        </div>
                     </div>
                 </div>
                 <form class="contact-form reveal" id="contact-form">
