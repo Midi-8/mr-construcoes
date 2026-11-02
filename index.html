@@ -88,6 +88,7 @@
             <div class="navlinks" id="navlinks">
                 <a href="#projetos">Projetos</a>
                 <a href="#processo">Processo</a>
+                <a href="#testemunhos">Testemunhos</a>
                 <a href="#empresa">Empresa</a>
                 <a href="#contacto" class="nav-cta">Pedir orçamento ↗</a>
             </div>
@@ -100,9 +101,35 @@
             <div class="hero-meta eyebrow"><strong>MR Construções</strong><span>Vila Nova de Famalicão</span></div>
             <h1>Construir é <span class="second"><em>transformar.</em></span></h1>
             <div class="hero-bottom">
-                <p class="hero-copy">Construção, remodelação e reparações feitas com rigor, proximidade e atenção a cada
-                    detalhe.</p>
+                <div class="hero-left-col">
+                    <p class="hero-copy">Construção, remodelação e reparações feitas com rigor, proximidade e atenção a cada detalhe.</p>
+                    <div class="hero-actions">
+                        <a class="hero-btn hero-btn-primary" href="#contacto">Pedir orçamento gratuito ↗</a>
+                        <a class="hero-btn hero-btn-secondary" href="#projetos">Ver projetos</a>
+                    </div>
+                </div>
                 <a class="scroll-note" href="#manifesto"><i></i><span>Descubra o nosso trabalho</span></a>
+            </div>
+        </section>
+
+        <section class="trust-bar" aria-label="Garantias e credenciais">
+            <div class="wrap trust-grid">
+                <div class="trust-card">
+                    <span class="trust-val">+15</span>
+                    <span class="trust-lbl">Anos de experiência no setor da construção civil</span>
+                </div>
+                <div class="trust-card">
+                    <span class="trust-val">113987</span>
+                    <span class="trust-lbl">Alvará IMPIC oficial e documentado</span>
+                </div>
+                <div class="trust-card">
+                    <span class="trust-val">100%</span>
+                    <span class="trust-lbl">Rigor técnico, garantia e transparência</span>
+                </div>
+                <div class="trust-card">
+                    <span class="trust-val">Norte</span>
+                    <span class="trust-lbl">Vila Nova de Famalicão, Braga e Grande Porto</span>
+                </div>
             </div>
         </section>
 
@@ -133,43 +160,94 @@
                 <p>Uma seleção de trabalhos e soluções que refletem o nosso cuidado em cada fase da obra.</p>
             </div>
 
-            <article class="project">
-                <a class="project-grid" href="#projeto/casa-de-banho-porto">
+            <div class="project-filters" role="tablist" aria-label="Filtrar projetos por categoria">
+                <button type="button" class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">
+                    Todos <span class="filter-count">6</span>
+                </button>
+                <button type="button" class="filter-btn" data-filter="construcao" role="tab" aria-selected="false">
+                    Construção <span class="filter-count">3</span>
+                </button>
+                <button type="button" class="filter-btn" data-filter="remodelacao" role="tab" aria-selected="false">
+                    Remodelação <span class="filter-count">2</span>
+                </button>
+                <button type="button" class="filter-btn" data-filter="acabamentos" role="tab" aria-selected="false">
+                    Acabamentos <span class="filter-count">1</span>
+                </button>
+            </div>
+
+            <article class="project" data-category="construcao">
+                <a class="project-grid" href="#projeto/moradia-pedra-famalicao">
                     <div class="project-visual">
-                        <!-- Imagem do projeto 01 (4:3, ~1200×900) -->
-                        <img src="imagens/casa-banho-porto.jpg" alt="Remodelação de interiores - Casa de banho no Porto" loading="lazy" width="1181" height="872">
+                        <img src="imagens/moradia-pedra-natural.webp" alt="Construção contemporânea - Moradia em pedra natural em Famalicão" loading="lazy" width="1440" height="1080">
                     </div>
                     <div class="project-info"><span class="project-number">Projeto 01</span>
-                        <h3>Remodelação de interiores</h3>
-                        <p>Renovação de espaços com foco no conforto, na funcionalidade e na qualidade dos acabamentos.
-                        </p>
-                        <div class="project-foot"><span class="project-tag">Remodelação</span><span class="project-more">Ver projeto ↗</span></div>
-                    </div>
-                </a>
-            </article>
-            <article class="project">
-                <a class="project-grid" href="#projeto/piscina-famalicao">
-                    <div class="project-visual">
-                        <!-- Imagem do projeto 02 (4:3, ~1200×900) -->
-                        <img src="imagens/piscina-famalicao.jpg" alt="Construção e renovação - Piscina exterior em Famalicão" loading="lazy" width="1296" height="1050">
-                    </div>
-                    <div class="project-info"><span class="project-number">Projeto 02</span>
-                        <h3>Construção e renovação</h3>
-                        <p>Soluções pensadas para responder às necessidades de cada cliente e de cada edifício.</p>
+                        <h3>Moradia em pedra natural</h3>
+                        <p>Construção de raiz de moradia contemporânea com cantaria nobre e arranjos paisagísticos.</p>
                         <div class="project-foot"><span class="project-tag">Construção</span><span class="project-more">Ver projeto ↗</span></div>
                     </div>
                 </a>
             </article>
-            <article class="project">
-                <a class="project-grid" href="#projeto/casa-famalicao">
+
+            <article class="project" data-category="construcao">
+                <a class="project-grid" href="#projeto/moradia-minimalista">
                     <div class="project-visual">
-                        <!-- Imagem do projeto 03 (4:3, ~1200×900) -->
-                        <img src="imagens/casa-famalicao-depois.jpg" alt="Detalhes e acabamentos - Renovação e acabamentos em Famalicão" loading="lazy" width="1206" height="909">
+                        <img src="imagens/moradia-minimalista.webp" alt="Construção contemporânea - Moradia minimalista" loading="lazy" width="1440" height="1085">
+                    </div>
+                    <div class="project-info"><span class="project-number">Projeto 02</span>
+                        <h3>Moradia minimalista</h3>
+                        <p>Volumes geométricos puros, isolamento térmico de alta eficiência e contraste moderno.</p>
+                        <div class="project-foot"><span class="project-tag">Construção</span><span class="project-more">Ver projeto ↗</span></div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project" data-category="remodelacao">
+                <a class="project-grid" href="#projeto/interiores-sala-ripado">
+                    <div class="project-visual">
+                        <img src="imagens/interiores-sala-ripado.webp" alt="Remodelação de interiores - Sala open space com painel ripado" loading="lazy" width="1064" height="1329">
                     </div>
                     <div class="project-info"><span class="project-number">Projeto 03</span>
-                        <h3>Detalhes e acabamentos</h3>
-                        <p>Trabalhos finais que contribuem para a coerência visual, o conforto e a qualidade do espaço.
-                        </p>
+                        <h3>Remodelação de interiores</h3>
+                        <p>Espaço open space com divisória ripada em madeira maciça, piso flutuante e iluminação embutida.</p>
+                        <div class="project-foot"><span class="project-tag">Remodelação</span><span class="project-more">Ver projeto ↗</span></div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project" data-category="remodelacao">
+                <a class="project-grid" href="#projeto/casa-de-banho-porto">
+                    <div class="project-visual">
+                        <img src="imagens/casa-banho-marmore.webp" alt="Remodelação de interiores - Casa de banho e suite de luxo" loading="lazy" width="1181" height="872">
+                    </div>
+                    <div class="project-info"><span class="project-number">Projeto 04</span>
+                        <h3>Casa de banho de luxo</h3>
+                        <p>Revestimento marmoreado Calacatta de grande formato, louças suspensas e iluminação indireta.</p>
+                        <div class="project-foot"><span class="project-tag">Remodelação</span><span class="project-more">Ver projeto ↗</span></div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project" data-category="construcao">
+                <a class="project-grid" href="#projeto/piscina-famalicao">
+                    <div class="project-visual">
+                        <img src="imagens/piscina-famalicao.jpg" alt="Construção exterior - Piscina em Famalicão" loading="lazy" width="1296" height="1050">
+                    </div>
+                    <div class="project-info"><span class="project-number">Projeto 05</span>
+                        <h3>Piscina exterior e envolvente</h3>
+                        <p>Construção de estrutura em betão armado e envolvente com pavimento antiderrapante.</p>
+                        <div class="project-foot"><span class="project-tag">Construção</span><span class="project-more">Ver projeto ↗</span></div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project" data-category="acabamentos">
+                <a class="project-grid" href="#projeto/casa-famalicao">
+                    <div class="project-visual">
+                        <img src="imagens/casa-famalicao-depois.jpg" alt="Reabilitação e acabamentos - Moradia em Famalicão" loading="lazy" width="1206" height="909">
+                    </div>
+                    <div class="project-info"><span class="project-number">Projeto 06</span>
+                        <h3>Reabilitação de moradia</h3>
+                        <p>Recuperação integral de fachadas, isolamento térmico e pintura técnica de durabilidade.</p>
                         <div class="project-foot"><span class="project-tag">Acabamentos</span><span class="project-more">Ver projeto ↗</span></div>
                     </div>
                 </a>
@@ -290,16 +368,79 @@
             </div>
         </section>
 
+        <section class="testimonials wrap" id="testemunhos">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">A voz de quem confia em nós / 06</span>
+                    <h2>Testemunhos</h2>
+                </div>
+                <p>O rigor do nosso trabalho reflete-se na satisfação e na recomendação de quem nos escolhe.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <article class="testimonial-card reveal">
+                    <div class="testimonial-stars" aria-label="Avaliação: 5 de 5 estrelas">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        "O rigor na execução da estrutura e nos remates de cantaria em pedra foi exemplar. Cumpriram à risca o cronograma acordado e a equipa esteve sempre disponível para esclarecer cada detalhe em obra. Recomendo com total confiança."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" aria-hidden="true">RG</div>
+                        <div class="author-info">
+                            <strong>Eng. Rui Guimarães</strong>
+                            <span>Moradia contemporânea · Vila Nova de Famalicão</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card reveal">
+                    <div class="testimonial-stars" aria-label="Avaliação: 5 de 5 estrelas">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        "Renovar um imóvel antigo traz sempre surpresas técnicas, mas a MR Construções transformou todo o processo em tranquilidade. Acabamentos das casas de banho e carpintarias com um nível de perfeição difícil de encontrar hoje em dia."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" aria-hidden="true">SC</div>
+                        <div class="author-info">
+                            <strong>Dra. Sofia Carvalheiro</strong>
+                            <span>Remodelação de interiores e suite · Porto</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card reveal">
+                    <div class="testimonial-stars" aria-label="Avaliação: 5 de 5 estrelas">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        "Trabalho de betão armado e impermeabilização executado com enorme rigor. A transição com o jardim e o piso cerâmico antiderrapante ficou impecável. Limpeza diária de obra, profissionalismo e simpatia do início ao fim."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" aria-hidden="true">AM</div>
+                        <div class="author-info">
+                            <strong>Dr. António Moreira</strong>
+                            <span>Construção de piscina e envolvente · Famalicão</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
         <section class="company wrap" id="empresa">
             <div class="company-grid">
                 <div class="company-image reveal">
-                    <!-- Imagem da empresa / equipa (vertical ou 4:5, ~1400×1750) -->
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85"
-                        alt="Detalhe de arquitetura contemporânea com materiais naturais">
+                    <picture>
+                        <source srcset="imagens/moradia-fachada-verde.webp" type="image/webp">
+                        <img loading="lazy"
+                            src="imagens/moradia-fachada-verde.jpg"
+                            alt="Moradia contemporânea executada pela MR Construções com fachada moderna e calçada de granito"
+                            width="1440" height="1379">
+                    </picture>
                 </div>
                 <div class="company-copy reveal">
-                    <span class="eyebrow">Quem somos / 06</span>
+                    <span class="eyebrow">Quem somos / 07</span>
                     <h2>Rigor no trabalho. Proximidade nas relações.</h2>
                     <p>A MR Construções atua nas áreas da construção, remodelação e reparação de espaços, com uma
                         abordagem assente no rigor, na proximidade e na atenção ao detalhe. Cada projeto merece
@@ -319,14 +460,32 @@
         <section class="contact" id="contacto">
             <div class="wrap contact-grid">
                 <div class="contact-copy reveal">
-                    <span class="eyebrow">Vamos conversar / 07</span>
+                    <span class="eyebrow">Vamos conversar / 08</span>
                     <h2>Tem uma obra em mente?</h2>
                     <p class="contact-intro">Partilhe o que está a imaginar. Estamos disponíveis para conversar sobre o
                         seu projeto e perceber como podemos ajudar.</p>
                     <div class="contact-links">
                         <a href="tel:+351915680947"><span>+351 915 680 947</span><span>Telefone ↗</span></a>
-                        <a href="mailto:mrconstrucoes@sapo.pt"><span>mrconstrucoes@sapo.pt</span><span>Email
-                                ↗</span></a>
+                        <a href="mailto:mrconstrucoes@sapo.pt"><span>mrconstrucoes@sapo.pt</span><span>Email ↗</span></a>
+                        <a href="https://wa.me/351915680947?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20um%20or%C3%A7amento%20para%20uma%20obra." 
+                           target="_blank" rel="noopener noreferrer" class="contact-whatsapp-link">
+                            <span>WhatsApp Direto</span>
+                            <span>Mensagem rápida ↗</span>
+                        </a>
+                    </div>
+
+                    <div class="whatsapp-prompt-box">
+                        <div class="wp-icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" width="22" height="22" fill="currentColor">
+                                <path d="M16 2a13.9 13.9 0 0 0-12 21L2 30l7.2-1.9A13.9 13.9 0 1 0 16 2zm0 25.4c-2.3 0-4.5-.6-6.4-1.7l-.5-.3-4.3 1.1 1.2-4.2-.3-.5A11.5 11.5 0 1 1 27.5 16 11.5 11.5 0 0 1 16 27.4zm6.3-8.6c-.3-.2-2-1-2.3-1.1-.3-.1-.6-.2-.8.2s-.9 1.1-1.1 1.3-.4.2-.7.1a9.2 9.2 0 0 1-5.4-4.7c-.2-.4 0-.6.2-.8l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6s-.8-2-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.7.1-1.1.5s-1.5 1.5-1.5 3.6 1.5 4.1 1.7 4.4c.2.3 3 4.6 7.4 6.4 1 .4 1.9.7 2.5.9 1.1.3 2 .3 2.8.2.8-.1 2.5-1 2.8-2 .4-.9.4-1.8.3-2 0-.2-.3-.3-.6-.5z"/>
+                            </svg>
+                        </div>
+                        <div class="wp-text">
+                            <strong>Tem plantas ou fotografias do espaço?</strong>
+                            <p>Envie-nos diretamente por WhatsApp para receber uma estimativa mais célere e detalhada da sua obra.</p>
+                            <a href="https://wa.me/351915680947?text=Ol%C3%A1!%20Tenho%20fotografias/plantas%20da%20minha%20obra%20para%20or%C3%A7amento." 
+                               target="_blank" rel="noopener noreferrer" class="wp-action-link">Enviar ficheiros por WhatsApp ↗</a>
+                        </div>
                     </div>
                 </div>
                 <form class="contact-form reveal" id="contact-form">
@@ -342,6 +501,15 @@
                             <option>Reparação</option>
                             <option>Outro</option>
                         </select></div>
+                    <div class="field"><label for="timeline">Previsão de início</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">Quando pretende iniciar?</option>
+                            <option value="Imediato (1 a 2 semanas)">Com urgência (1 a 2 semanas)</option>
+                            <option value="Curto prazo (1 a 3 meses)">Curto prazo (1 a 3 meses)</option>
+                            <option value="Médio prazo (3 a 6 meses)">Médio prazo (3 a 6 meses)</option>
+                            <option value="Fase de planeamento / projeto">Fase de planeamento ou projeto</option>
+                        </select>
+                    </div>
                     <div class="field"><label for="description">Descrição</label><textarea id="description"
                             name="description" required placeholder="Conte-nos brevemente o que precisa."></textarea>
                     </div>

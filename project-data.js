@@ -1,54 +1,163 @@
 /**
  * MR CONSTRUÇÕES — Base de Dados dos Projetos
  * 
- * Este ficheiro contém os dados dos projetos apresentados no website.
- * Para adicionar fotografias ou novos projetos, basta editar este ficheiro:
- * - 'heroImage': caminho da imagem principal de capa (ex.: 'imagens/meu-projeto.jpg')
+ * Ficheiro de dados dos projetos apresentados no website:
+ * - 'heroImage': caminho da imagem principal de capa
  * - 'gallery': lista de fotografias que aparecem na página do projeto e abrem na galeria/lightbox
  */
 
 window.PROJECTS_DATA = [
   {
+    id: "moradia-pedra-famalicao",
+    title: "Moradia contemporânea em pedra natural",
+    tagline: "Construção de raiz de moradia unifamiliar e arranjos paisagísticos",
+    category: "construcao",
+    categoryLabel: "Construção",
+    location: "Vila Nova de Famalicão",
+    year: "2024",
+    duration: "8 Meses",
+    area: "280 m²",
+    description: "Execução integral de moradia unifamiliar de traço contemporâneo com revestimento nobre em cantaria de pedra natural, vãos envidraçados com estores térmicos embutidos e integração harmoniosa com os arranjos exteriores e zonas ajardinadas. Uma obra onde a nobreza dos materiais tradicionais se funde com o rigor da construção moderna.",
+    highlights: [
+      "Revestimento de fachada com cantaria de pedra natural recortada",
+      "Isolamento térmico e acústico de alta performance (sistema ETICS)",
+      "Caixilharia de alumínio com corte térmico e vidro duplo com controlo solar",
+      "Sistemas de estores elétricos térmicos embutidos na alvenaria",
+      "Arranjos exteriores e modelação paisagística com elementos rochosos e relvado",
+      "Acabamentos de excelência com garantia técnica de durabilidade"
+    ],
+    heroImage: "imagens/moradia-pedra-natural.webp",
+    gallery: [
+      {
+        url: "imagens/moradia-pedra-natural.webp",
+        caption: "Fachada principal com revestimento em cantaria de pedra natural e arranjos paisagísticos",
+        type: "horizontal"
+      },
+      {
+        url: "imagens/moradia-fachada-verde.webp",
+        caption: "Pormenor da transição de volumes, caixilharia escura e calçada portuguesa em cubos de granito",
+        type: "horizontal"
+      },
+      {
+        url: "imagens/moradia-minimalista.webp",
+        caption: "Muros envolventes em cinzento grafite e integração arquitetónica",
+        type: "horizontal"
+      }
+    ]
+  },
+  {
+    id: "moradia-minimalista",
+    title: "Moradia contemporânea minimalista",
+    tagline: "Construção residencial de arquitetura moderna e linhas retas",
+    category: "construcao",
+    categoryLabel: "Construção",
+    location: "Braga",
+    year: "2024",
+    duration: "7 Meses",
+    area: "220 m²",
+    description: "Construção de moradia unifamiliar de arquitetura contemporânea e linhas geométricas puras. O projeto destaca-se pelo contraste elegante entre a pureza do branco das fachadas e os apontamentos em cinzento antracite dos muros envolventes, estores de lâminas térmicas e caixilharias de alta gama.",
+    highlights: [
+      "Estrutura em betão armado e alvenarias de elevado desempenho térmico",
+      "Aplicação de sistema ETICS (Capoto) com acabamento texturado hidrófugo",
+      "Vãos com estores de lâminas térmicas motorizadas",
+      "Muro de vedação perimetral com acabamento contemporâneo e portão integrado",
+      "Impermeabilização contínua de coberturas planas não acessíveis",
+      "Eficiência energética e conforto ambiental superior"
+    ],
+    heroImage: "imagens/moradia-minimalista.webp",
+    gallery: [
+      {
+        url: "imagens/moradia-minimalista.webp",
+        caption: "Arquitetura contemporânea de linhas retas e volumes geométricos em branco e antracite",
+        type: "horizontal"
+      },
+      {
+        url: "imagens/moradia-fachada-verde.webp",
+        caption: "Fachada lateral com calçada de granito cinzento e vãos envidraçados",
+        type: "horizontal"
+      },
+      {
+        url: "imagens/moradia-pedra-natural.webp",
+        caption: "Enquadramento paisagístico e relação com o espaço exterior",
+        type: "horizontal"
+      }
+    ]
+  },
+  {
+    id: "interiores-sala-ripado",
+    title: "Remodelação de interiores e sala open space",
+    tagline: "Design de interiores, divisória ripada em madeira e acabamentos de requinte",
+    category: "remodelacao",
+    categoryLabel: "Remodelação",
+    location: "Vila Nova de Famalicão",
+    year: "2024",
+    duration: "4 Semanas",
+    area: "65 m²",
+    description: "Transformação e modernização integral de área social, criando um conceito fluído de open space entre a sala de estar, a zona de refeições e a cozinha. O destaque vai para a conceção e montagem da divisória ripada em madeira maciça, tetos falsos com iluminação LED técnica e pavimento flutuante de elevada resistência.",
+    highlights: [
+      "Divisória personalizada com painel ripado em madeira maciça do chão ao teto",
+      "Tetos falsos em gesso cartonado com sancas e projetores LED embutidos",
+      "Instalação de pavimento flutuante com isolamento acústico de impacto",
+      "Vão de passagem e passa-pratos emoldurado em madeira",
+      "Pintura técnica de interiores lavável com acabamento mate sedoso",
+      "Otimização da luminosidade natural e amplitude visual do espaço"
+    ],
+    heroImage: "imagens/interiores-sala-ripado.webp",
+    gallery: [
+      {
+        url: "imagens/interiores-sala-ripado.webp",
+        caption: "Sala de jantar e estar em open space com elegante divisória ripada em madeira",
+        type: "vertical"
+      },
+      {
+        url: "imagens/casa-banho-marmore.webp",
+        caption: "Casa de banho privativa renovada com revestimento Calacatta e iluminação indireta",
+        type: "horizontal"
+      }
+    ]
+  },
+  {
     id: "casa-de-banho-porto",
-    title: "Casa de banho no Porto",
-    tagline: "Remodelação completa de interiores e modernização",
+    title: "Casa de banho e suite de luxo",
+    tagline: "Remodelação completa com cerâmico mármore Calacatta e louças suspensas",
     category: "remodelacao",
     categoryLabel: "Remodelação",
     location: "Porto",
     year: "2023",
     duration: "3 Semanas",
-    area: "9 m²",
-    description: "Renovação completa de casa de banho com substituição integral das redes de canalização de águas e esgotos, aplicação de novos revestimentos cerâmicos de grande formato, instalação de louças suspensas, base de duche à medida com resguardo em vidro temperado e iluminação embutida. Execução focada no rigor técnico, no conforto e na durabilidade dos acabamentos.",
+    area: "12 m²",
+    description: "Renovação completa de casa de banho principal com substituição integral de redes técnicas de águas e esgotos. Aplicação de revestimento cerâmico Calacatta retificado de grande formato no chão e paredes com continuidade de veios, móvel suspenso à medida com cuba dupla, torneiras pretas de embutir na parede, sanitários suspensos e iluminação perimetral oculta em fita LED.",
     highlights: [
-      "Substituição total das redes de água e saneamento",
-      "Aplicação de impermeabilização técnica nas zonas húmidas",
-      "Revestimento e pavimento cerâmico retificado",
-      "Base de duche encastrada com resguardo em vidro temperado",
-      "Móvel à medida com lavatório e torneiras de embutir",
-      "Iluminação embutida com proteção contra humidade"
+      "Substituição total das redes de canalização multicamada e esgotos acústicos",
+      "Impermeabilização técnica contínua nas zonas húmidas de banho e duche",
+      "Revestimento e pavimento em placas cerâmicas retificadas com efeito mármore Calacatta",
+      "Móvel de lavatório suspenso com gavetas ocultas e duas cubas de sobrepor",
+      "Torneiras de embutir na parede e acessórios em preto mate termolacado",
+      "Iluminação indireta em sanca de teto e perímetro de espelho"
     ],
-    // Imagem principal de capa (dimensões recomendadas ~1200×900px)
-    heroImage: "imagens/casa-banho-porto.jpg",
-    // Galeria de fotografias do projeto (adicione aqui as fotografias adicionais)
+    heroImage: "imagens/casa-banho-marmore.webp",
     gallery: [
       {
+        url: "imagens/casa-banho-marmore.webp",
+        caption: "Vista panorâmica com revestimento marmoreado contínuo, lavatórios suspensos duplos e torneiras embutidas",
+        type: "horizontal"
+      },
+      {
         url: "imagens/casa-banho-porto.jpg",
-        caption: "Vista geral da casa de banho após intervenção e montagem final",
+        caption: "Pormenor do alinhamento dos sanitários suspensos e iluminação perimetral oculta",
         type: "horizontal"
+      },
+      {
+        url: "imagens/interiores-sala-ripado.webp",
+        caption: "Harmonia com os restantes acabamentos interiores da habitação",
+        type: "vertical"
       }
-      /* Para adicionar mais fotos a este projeto, descomente e preencha:
-      ,{
-        url: "imagens/casa-banho-porto-detalhe-1.jpg",
-        caption: "Detalhe dos acabamentos e torneiras de embutir",
-        type: "horizontal"
-      }
-      */
     ]
   },
   {
     id: "piscina-famalicao",
-    title: "Piscina exterior em Famalicão",
-    tagline: "Construção de estrutura em betão e espaço exterior envolvente",
+    title: "Piscina exterior e envolvente",
+    tagline: "Construção de estrutura em betão armado e arranjos exteriores",
     category: "construcao",
     categoryLabel: "Construção",
     location: "Vila Nova de Famalicão",
@@ -64,27 +173,24 @@ window.PROJECTS_DATA = [
       "Iluminação subaquática LED de baixo consumo",
       "Pavimento exterior envolvente antiderrapante e resistente a intempéries"
     ],
-    // Imagem principal de capa (dimensões recomendadas ~1200×900px)
     heroImage: "imagens/piscina-famalicao.jpg",
     gallery: [
       {
         url: "imagens/piscina-famalicao.jpg",
-        caption: "Piscina exterior concluída com envolvente e jardim",
+        caption: "Piscina exterior concluída com estrutura em betão armado e deck cerâmico antiderrapante",
+        type: "horizontal"
+      },
+      {
+        url: "imagens/moradia-pedra-natural.webp",
+        caption: "Envolvente paisagística e arquitetura da habitação com jardim relvado",
         type: "horizontal"
       }
-      /* Adicione aqui mais fotografias do projeto:
-      ,{
-        url: "imagens/piscina-famalicao-2.jpg",
-        caption: "Pormenor da iluminação noturna e deck envolvente",
-        type: "horizontal"
-      }
-      */
     ]
   },
   {
     id: "casa-famalicao",
-    title: "Renovação e acabamentos em Famalicão",
-    tagline: "Recuperação de moradia residencial e acabamentos de detalhe",
+    title: "Reabilitação de moradia e fachadas",
+    tagline: "Recuperação total de moradia unifamiliar com comparação antes e depois",
     category: "acabamentos",
     categoryLabel: "Acabamentos",
     location: "Vila Nova de Famalicão",
@@ -94,31 +200,28 @@ window.PROJECTS_DATA = [
     description: "Obra de reabilitação e acabamentos de moradia unifamiliar. A intervenção incluiu a recuperação total de fachadas exteriores com tratamento de fissuras e pintura técnica, substituição de elementos degradados, isolamento e renovação de espaços interiores. Uma intervenção que devolveu a integridade construtiva e o conforto visual ao imóvel.",
     highlights: [
       "Tratamento e recuperação estrutural de alvenarias e rebocos",
-      "Esquema de pintura exterior de elevada durabilidade e proteção contra humidades",
+      "Esquema de pintura exterior de elevada durabilidade e proteção contra intempéries",
       "Renovação e tratamento de pavimentos e carpintarias",
       "Trabalhos de gesso cartonado e sanca de iluminação indireta",
       "Acabamentos interiores executados com precisão e materiais laváveis"
     ],
-    // Imagem principal de capa (dimensões recomendadas ~1200×900px)
     heroImage: "imagens/casa-famalicao-depois.jpg",
     gallery: [
       {
         url: "imagens/casa-famalicao-depois.jpg",
-        caption: "Resultado final após obras de recuperação e pintura",
+        caption: "Resultado final após obras de recuperação, isolamento e pintura",
         type: "horizontal"
       },
       {
         url: "imagens/casa-famalicao-antes.jpg",
         caption: "Estado inicial do edifício antes do início da intervenção",
         type: "horizontal"
-      }
-      /* Adicione aqui mais fotografias do projeto:
-      ,{
-        url: "imagens/casa-famalicao-detalhe.jpg",
-        caption: "Detalhe da pintura e acabamentos da fachada",
+      },
+      {
+        url: "imagens/moradia-fachada-verde.webp",
+        caption: "Pormenor do acabamento de fachada, calçada exterior e remates de caixilharia",
         type: "horizontal"
       }
-      */
     ]
   }
 ];

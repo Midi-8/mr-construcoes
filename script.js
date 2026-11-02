@@ -283,6 +283,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const type = String(data.get('type') || '').trim();
             const description = String(data.get('description') || '').trim();
 
+            const timeline = String(data.get('timeline') || '').trim();
+
             if (!name || !reply || !type || !description) {
                 formStatus.className = 'form-status is-error';
                 formStatus.textContent = 'Por favor, preencha todos os campos obrigatórios.';
@@ -308,6 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         name: name,
                         reply: reply,
                         type: type,
+                        timeline: timeline || 'Não especificado',
                         description: description,
                         _subject: `Novo pedido de orçamento: ${type} (${name})`,
                         _template: 'table',
@@ -344,6 +347,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.removeAttribute('aria-disabled');
                 submitBtn.innerHTML = originalBtnHTML;
             }
+        });
+    }
+
+    // 11. Filtro Interativo de Projetos por Categoria
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.projects article.project');
+
+    if (filterBtns.length && projectCards.length) {
+        filterBtns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const targetFilter = btn.getAttribute('data-filter') || 'all';
+
+                filterBtns.forEach((b) => {
+                    const isActive = b === btn;
+                    b.classList.toggle('is-active', isActive);
+                    b.setAttribute('aria-selected', String(isActive));
+                });
+
+                projectCards.forEach((card) => {
+                    const cat = card.getAttribute('data-category');
+                    const isVisible = targetFilter === 'all' || cat === targetFilter;
+
+                    if (isVisible) {
+                        card.hidden = false;
+                        card.classList.remove('is-hidden');
+                        card.classList.add('is-fade-in');
+                    } else {
+                        card.hidden = true;
+                        card.classList.add('is-hidden');
+                        card.classList.remove('is-fade-in');
+                    }
+                });
+            });
         });
     }
 });
