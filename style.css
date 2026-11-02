@@ -282,9 +282,34 @@
             color: inherit;
         }
 
+        .footer-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
         .footer-brand img {
-            width: clamp(135px, 16vw, 180px);
-            max-height: 55px;
+            width: 36px;
+            height: 36px;
+            max-height: 36px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .footer-brand-divider {
+            width: 1px;
+            height: 16px;
+            background: rgba(255, 255, 255, 0.22);
+        }
+
+        .footer-brand-text {
+            font: 700 13px/1 var(--font-heading);
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: #ffffff;
+            white-space: nowrap;
         }
 
         .navlinks {
@@ -424,8 +449,8 @@
 
         .hero-title {
             margin: 0;
-            font: 700 clamp(2.8rem, 7.2vw, 5.6rem)/1.0 var(--font-heading);
-            letter-spacing: -0.025em;
+            font: 300 clamp(3rem, 8.4vw, 8.2rem)/.92 var(--font-heading);
+            letter-spacing: -0.03em;
             color: #fff;
         }
 
