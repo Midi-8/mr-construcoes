@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 /* ==========================================================================
-   Tipografia: Linha Funcional de Precisão Arquitetónica (CAD / Desenho Técnico)
-   Títulos & Números: Space Grotesk / Syne (Traço mecânico, pormenores angulares)
-   Corpo de Texto: DM Sans / Space Grotesk (Espaçamento uniforme, neutro e direto)
+   Tipografia: Manrope (A mais equilibrada, moderna, limpa e sóbria)
+   H1 / H2: font-weight: 700 / 800, letter-spacing: -0.02em
+   Texto: font-weight: 400 / 500
    ========================================================================== */
 
 /* ==========================================================================
@@ -12,8 +12,8 @@
    ========================================================================== */
 
 :root {
-            --font-heading: "Space Grotesk", "Syne", sans-serif;
-            --font-body: "DM Sans", "Space Grotesk", sans-serif;
+            --font-heading: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-body: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             --paper: #F6F4F0;
             --surface: #ECE9E3;
             --ink: #161616;
@@ -424,13 +424,13 @@
 
         .hero-title {
             margin: 0;
-            font: 300 clamp(3rem, 8.4vw, 8.2rem)/.92 var(--font-heading);
-            letter-spacing: -.055em;
+            font: 700 clamp(3rem, 8.4vw, 8.2rem)/.92 var(--font-heading);
+            letter-spacing: -0.02em;
             color: #fff;
         }
 
         .hero-title span {
-            font-weight: 500;
+            font-weight: 800;
         }
 
         .hero-lead {
@@ -637,8 +637,8 @@
         }
 
         .manifesto-top h2 {
-            font: 600 clamp(2.3rem, 4.8vw, 4.4rem)/1.04 var(--font-heading);
-            letter-spacing: -.05em;
+            font: 800 clamp(2.3rem, 4.8vw, 4.4rem)/1.04 var(--font-heading);
+            letter-spacing: -0.02em;
             margin: 0;
             color: var(--ink);
         }
@@ -751,8 +751,8 @@
 
         .section-heading h2,
         .split-title {
-            font: 600 clamp(2.4rem, 5.5vw, 5.2rem)/.96 var(--font-heading);
-            letter-spacing: -.06em;
+            font: 700 clamp(2.4rem, 5.5vw, 5.2rem)/.96 var(--font-heading);
+            letter-spacing: -0.02em;
             margin: 0;
             color: var(--ink);
         }
@@ -1360,8 +1360,8 @@
         }
 
         .contact h2 {
-            font: 500 clamp(3.4rem, 9vw, 9rem)/.88 var(--font-heading);
-            letter-spacing: -.09em;
+            font: 800 clamp(3.4rem, 9vw, 9rem)/.88 var(--font-heading);
+            letter-spacing: -0.02em;
             margin: 16px 0 28px
         }
 
