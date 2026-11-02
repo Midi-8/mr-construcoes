@@ -820,19 +820,20 @@
         .work-pillar-card {
             position: relative;
             background: #ffffff;
-            border: 1px solid rgba(18, 18, 18, 0.08);
-            border-radius: 14px;
+            border: 1.5px solid rgba(18, 18, 18, 0.08);
+            border-radius: 16px;
             padding: clamp(28px, 3vw, 38px);
             display: flex;
             flex-direction: column;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, .025);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .03);
             transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .35s ease, border-color .35s ease;
         }
 
         .work-pillar-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
-            border-color: rgba(18, 18, 18, 0.2);
+            background: #ffffff;
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 16px 38px rgba(200, 150, 90, 0.18), 0 2px 8px rgba(0, 0, 0, 0.03);
         }
 
         .pillar-top {
@@ -850,20 +851,22 @@
             justify-content: center;
             width: 44px;
             height: 44px;
-            border-radius: 10px;
-            background: rgba(200, 150, 90, 0.06);
-            border: 1px solid rgba(200, 150, 90, 0.22);
-            font: 700 16px/1 var(--font-heading);
+            border-radius: 999px;
+            background: #ffffff;
+            border: 1.5px solid rgba(18, 18, 18, 0.1);
+            font: 700 15px/1 var(--font-heading);
             letter-spacing: -.02em;
-            color: var(--accent);
-            transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
+            color: #141414;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
         }
 
         .work-pillar-card:hover .pillar-num {
-            background: var(--accent);
-            color: #ffffff;
+            background: #ffffff;
+            color: var(--accent);
             border-color: var(--accent);
-            transform: scale(1.05);
+            box-shadow: 0 4px 14px rgba(200, 150, 90, 0.25);
+            transform: scale(1.06);
         }
 
         .pillar-kicker {
@@ -2410,11 +2413,18 @@
 
             .work-pillar-card {
                 padding: 20px 18px !important;
-                border-radius: 12px !important;
-                border: 1px solid rgba(18, 18, 18, 0.08) !important;
+                border-radius: 14px !important;
+                border: 1.5px solid rgba(18, 18, 18, 0.08) !important;
                 background: #ffffff !important;
                 box-shadow: 0 3px 12px rgba(0, 0, 0, 0.025) !important;
                 transform: none !important;
+                transition: border-color .25s ease, box-shadow .25s ease !important;
+            }
+
+            .work-pillar-card:hover,
+            .work-pillar-card:active {
+                border-color: var(--accent) !important;
+                box-shadow: 0 8px 24px rgba(200, 150, 90, 0.16) !important;
             }
 
             .pillar-top {
@@ -2427,15 +2437,25 @@
             }
 
             .pillar-num {
-                width: 34px !important;
-                height: 34px !important;
-                border-radius: 8px !important;
+                width: 36px !important;
+                height: 36px !important;
+                border-radius: 999px !important;
                 font-size: 13px !important;
                 font-weight: 700 !important;
-                background: rgba(200, 150, 90, 0.08) !important;
-                border: 1px solid rgba(200, 150, 90, 0.25) !important;
-                color: var(--accent) !important;
+                background: #ffffff !important;
+                border: 1.5px solid rgba(18, 18, 18, 0.1) !important;
+                color: #141414 !important;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
                 transform: none !important;
+                transition: border-color .25s ease, color .25s ease, box-shadow .25s ease !important;
+            }
+
+            .work-pillar-card:hover .pillar-num,
+            .work-pillar-card:active .pillar-num {
+                background: #ffffff !important;
+                border-color: var(--accent) !important;
+                color: var(--accent) !important;
+                box-shadow: 0 4px 14px rgba(200, 150, 90, 0.25) !important;
             }
 
             .pillar-kicker {
