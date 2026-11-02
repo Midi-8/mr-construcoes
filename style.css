@@ -1123,13 +1123,16 @@
             --split: 50%;
             position: relative;
             width: min(100%, 1120px);
-            height: clamp(260px, 42vw, 520px);
+            height: clamp(300px, 44vw, 540px);
             margin-inline: auto;
             overflow: hidden;
-            background: var(--surface);
+            background: #e8e5df;
+            border-radius: 16px;
+            border: 1px solid rgba(18, 18, 18, 0.08);
+            box-shadow: 0 16px 44px rgba(0, 0, 0, 0.07), 0 2px 8px rgba(0, 0, 0, 0.03);
             isolation: isolate;
             touch-action: pan-y;
-            user-select: none
+            user-select: none;
         }
 
         .compare img {
@@ -1137,15 +1140,17 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none
+            object-fit: cover;
+            object-position: center;
+            pointer-events: none;
         }
 
         .compare .after-image {
-            clip-path: inset(0 0 0 var(--split))
+            clip-path: inset(0 0 0 var(--split));
         }
 
         .compare .before-image {
-            clip-path: inset(0 calc(100% - var(--split)) 0 0)
+            clip-path: inset(0 calc(100% - var(--split)) 0 0);
         }
 
         .compare:before {
@@ -1155,30 +1160,37 @@
             top: 0;
             bottom: 0;
             left: var(--split);
-            width: 1px;
-            background: white;
-            transform: translateX(-.5px);
-            pointer-events: none
+            width: 2px;
+            background: #ffffff;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+            transform: translateX(-1px);
+            pointer-events: none;
         }
 
         .compare-label {
             position: absolute;
             z-index: 3;
-            top: 14px;
-            font: 600 8px var(--font-heading);
-            letter-spacing: .13em;
+            top: 18px;
+            font: 700 10.5px/1 var(--font-heading);
+            letter-spacing: .12em;
             text-transform: uppercase;
             color: var(--ink);
-            background: rgba(246, 244, 240, .92);
-            padding: 7px 9px
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+            padding: 8px 16px;
+            border-radius: 999px;
+            user-select: none;
         }
 
         .compare-label.before {
-            left: 14px
+            left: 18px;
         }
 
         .compare-label.after {
-            right: 14px
+            right: 18px;
         }
 
         .compare-handle {
@@ -1187,20 +1199,29 @@
             left: var(--split);
             top: 50%;
             transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255, 255, 255, .9);
+            width: 44px;
+            height: 44px;
+            border: 2px solid #ffffff;
             border-radius: 50%;
-            background: rgba(22, 22, 22, .82);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22), 0 0 0 4px rgba(255, 255, 255, 0.4);
             display: grid;
             place-items: center;
-            color: #fff;
-            pointer-events: none
+            color: var(--ink);
+            pointer-events: none;
+            transition: transform .2s ease, box-shadow .2s ease;
         }
 
         .compare-handle svg {
-            width: 20px;
-            height: 20px
+            width: 18px;
+            height: 18px;
+            color: var(--ink);
+        }
+
+        .compare:hover .compare-handle,
+        .compare:active .compare-handle {
+            transform: translate(-50%, -50%) scale(1.08);
+            box-shadow: 0 8px 26px rgba(0, 0, 0, 0.28), 0 0 0 6px rgba(255, 255, 255, 0.5);
         }
 
         .compare-range {
@@ -1220,15 +1241,22 @@
             outline-offset: -5px
         }
 
-        .compare-caption {
+        .compare-hint {
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            width: min(100%, 1120px);
-            margin-inline: auto;
-            padding-top: 11px;
-            font-size: 9px;
-            color: var(--muted)
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #7a766f;
+            letter-spacing: .02em;
+        }
+
+        .compare-hint-icon {
+            font-size: 13px;
+            color: var(--accent);
+            letter-spacing: -0.05em;
         }
 
         .process {
@@ -2272,14 +2300,35 @@
             }
 
             .compare {
-                height: 62vw;
-                min-height: 240px;
-                max-height: 420px
+                height: 68vw;
+                min-height: 260px;
+                max-height: 440px;
+                border-radius: 14px;
+            }
+
+            .compare-label {
+                top: 12px;
+                padding: 6px 12px;
+                font-size: 9.5px;
+            }
+
+            .compare-label.before {
+                left: 12px;
+            }
+
+            .compare-label.after {
+                right: 12px;
             }
 
             .compare-handle {
-                width: 36px;
-                height: 36px
+                width: 38px;
+                height: 38px;
+                box-shadow: 0 3px 16px rgba(0, 0, 0, 0.22), 0 0 0 3px rgba(255, 255, 255, 0.45);
+            }
+
+            .compare-handle svg {
+                width: 16px;
+                height: 16px;
             }
 
             .service-row {
