@@ -2075,7 +2075,14 @@
                 padding: 10px 0;
             }
 
-            .navlinks-list a {
+            .navlinks a::after {
+                display: none !important;
+            }
+
+            .navlinks-list a,
+            .navlinks-list a.is-active,
+            .topbar.is-scrolled .navlinks-list a,
+            .topbar.is-scrolled .navlinks-list a.is-active {
                 display: inline-block;
                 color: rgba(255, 255, 255, 0.92) !important;
                 font: 700 clamp(32px, 8.8vw, 44px)/1.15 var(--font-heading);
@@ -2088,7 +2095,9 @@
             }
 
             .navlinks-list a:hover,
-            .navlinks-list a:active {
+            .navlinks-list a:active,
+            .topbar.is-scrolled .navlinks-list a:hover,
+            .topbar.is-scrolled .navlinks-list a:active {
                 color: #ffffff !important;
                 transform: scale(1.05);
             }
@@ -2389,33 +2398,35 @@
     color: var(--ink);
 }
 
-/* Indicador de secção ativa na navegação */
-.navlinks a:not(.nav-cta) {
-    position: relative;
-    padding-bottom: 2px;
-}
+/* Indicador de secção ativa na navegação (Desktop) */
+@media(min-width: 761px) {
+    .navlinks a:not(.nav-cta) {
+        position: relative;
+        padding-bottom: 2px;
+    }
 
-.navlinks a:not(.nav-cta)::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 1.5px;
-    background-color: var(--accent);
-    transition: width .25s ease;
-}
+    .navlinks a:not(.nav-cta)::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1.5px;
+        background-color: var(--accent);
+        transition: width .25s ease;
+    }
 
-.navlinks a.is-active:not(.nav-cta)::after {
-    width: 100%;
-}
+    .navlinks a.is-active:not(.nav-cta)::after {
+        width: 100%;
+    }
 
-.topbar:not(.is-scrolled) .navlinks a.is-active:not(.nav-cta) {
-    color: #FFFFFF !important;
-}
+    .topbar:not(.is-scrolled) .navlinks a.is-active:not(.nav-cta) {
+        color: #FFFFFF !important;
+    }
 
-.topbar.is-scrolled .navlinks a.is-active:not(.nav-cta) {
-    color: var(--ink) !important;
+    .topbar.is-scrolled .navlinks a.is-active:not(.nav-cta) {
+        color: var(--ink) !important;
+    }
 }
 
 /* Página Detalhada de Cada Projeto */
