@@ -418,8 +418,32 @@
             transform: translateY(-6.125px) rotate(-45deg);
         }
 
+        body.menu-open .topbar {
+            background: transparent !important;
+            border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+            box-shadow: none !important;
+        }
+
+        body.menu-open .topbar .brand-text {
+            color: #ffffff !important;
+        }
+
+        body.menu-open .topbar .brand-divider {
+            background: rgba(255, 255, 255, 0.28) !important;
+        }
+
         body.menu-open .menu-toggle {
             color: #ffffff !important;
+        }
+
+        body.menu-open .navlinks {
+            background: radial-gradient(circle at 50% 35%, rgba(24, 23, 21, 0.98), rgba(12, 12, 11, 0.99)) !important;
+            backdrop-filter: blur(32px) !important;
+            -webkit-backdrop-filter: blur(32px) !important;
+        }
+
+        body.menu-open .navlinks a {
+            color: rgba(255, 255, 255, 0.92) !important;
         }
 
         .nav-backdrop {
@@ -1966,9 +1990,7 @@
                 height: 60px;
             }
 
-            .topbar.is-scrolled .navlinks {
-                background: var(--paper);
-            }
+
 
             main {
                 padding-top: 0;
