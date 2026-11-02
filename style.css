@@ -335,11 +335,17 @@
             min-height: 100dvh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            padding-top: 120px;
+            justify-content: space-between;
+            padding-top: clamp(88px, 12vh, 124px);
             color: #fff;
             isolation: isolate;
             overflow: hidden;
+        }
+
+        .hero .wrap {
+            width: min(1560px, calc(100% - clamp(32px, 6vw, 100px)));
+            margin-left: clamp(24px, 4vw, 68px);
+            margin-right: auto;
         }
 
         .hero:before {
@@ -358,8 +364,8 @@
             z-index: -1;
             inset: 0;
             background:
-                linear-gradient(90deg, rgba(12, 12, 11, .78) 0%, rgba(12, 12, 11, .45) 45%, rgba(12, 12, 11, .1) 100%),
-                linear-gradient(0deg, rgba(12, 12, 11, .7) 0%, rgba(12, 12, 11, 0) 45%);
+                linear-gradient(90deg, rgba(12, 12, 11, .84) 0%, rgba(12, 12, 11, .55) 45%, rgba(12, 12, 11, .15) 100%),
+                linear-gradient(0deg, rgba(12, 12, 11, .75) 0%, rgba(12, 12, 11, 0) 50%);
         }
 
         @keyframes heroZoom {
@@ -368,8 +374,10 @@
 
         .hero-inner {
             display: block;
-            max-width: 920px;
-            padding-bottom: clamp(40px, 7vh, 72px);
+            max-width: 960px;
+            margin-top: clamp(16px, 4vh, 48px);
+            margin-bottom: auto;
+            padding-bottom: clamp(24px, 4vh, 40px);
         }
 
         .hero-kicker {
@@ -492,6 +500,21 @@
         }
 
         @media(max-width: 600px) {
+            .hero {
+                padding-top: 96px;
+            }
+
+            .hero .wrap {
+                width: calc(100% - 40px);
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .hero-inner {
+                margin-top: 16px;
+                padding-bottom: 24px;
+            }
+
             .hero:after {
                 background: linear-gradient(0deg, rgba(12, 12, 11, .88) 0%, rgba(12, 12, 11, .45) 55%, rgba(12, 12, 11, .3) 100%);
             }
