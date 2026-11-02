@@ -591,6 +591,7 @@
             padding: 6px 0;
             font: 400 13px/1 var(--font-heading);
             color: #fff;
+            transition: color .25s ease;
         }
 
         .hero-btn-link:after {
@@ -599,14 +600,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            height: 1px;
-            background: currentColor;
-            transform-origin: right;
-            transition: transform .35s ease;
+            height: 1.5px;
+            background: var(--accent);
+            transform-origin: left;
+            transition: transform .35s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .hero-btn-link:hover:after {
-            transform: scaleX(0);
+            transform: scaleX(1.08);
         }
 
         .hero-bar {
@@ -2832,11 +2833,12 @@
     color: var(--ink);
 }
 
-/* Indicador de secção ativa na navegação (Desktop) */
+/* Indicador de secção ativa e hover na navegação (Desktop) */
 @media(min-width: 761px) {
     .navlinks a:not(.nav-cta) {
         position: relative;
-        padding-bottom: 2px;
+        padding-top: 4px;
+        padding-bottom: 4px;
     }
 
     .navlinks a:not(.nav-cta)::after {
@@ -2844,21 +2846,27 @@
         position: absolute;
         bottom: -2px;
         left: 0;
-        width: 0;
+        right: 0;
         height: 1.5px;
         background-color: var(--accent);
-        transition: width .25s ease;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .3s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
+    .navlinks a:not(.nav-cta):hover::after,
+    .navlinks a:not(.nav-cta):focus-visible::after,
     .navlinks a.is-active:not(.nav-cta)::after {
-        width: 100%;
+        transform: scaleX(1);
     }
 
-    .topbar:not(.is-scrolled) .navlinks a.is-active:not(.nav-cta) {
+    .topbar:not(.is-scrolled) .navlinks a.is-active:not(.nav-cta),
+    .topbar:not(.is-scrolled) .navlinks a:not(.nav-cta):hover {
         color: #FFFFFF !important;
     }
 
-    .topbar.is-scrolled .navlinks a.is-active:not(.nav-cta) {
+    .topbar.is-scrolled .navlinks a.is-active:not(.nav-cta),
+    .topbar.is-scrolled .navlinks a:not(.nav-cta):hover {
         color: var(--ink) !important;
     }
 }
