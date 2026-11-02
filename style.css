@@ -2347,6 +2347,299 @@
                 max-width: none;
                 width: auto
             }
+
+            /* --- Elegância Mobile: Pilares de Trabalho (Manifesto) --- */
+            .work-pillars-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 14px !important;
+                margin-top: 24px !important;
+            }
+
+            .work-pillar-card {
+                padding: 20px 18px !important;
+                border-radius: 12px !important;
+                border: 1px solid rgba(18, 18, 18, 0.08) !important;
+                background: #ffffff !important;
+                box-shadow: 0 3px 12px rgba(0, 0, 0, 0.025) !important;
+                transform: none !important;
+            }
+
+            .pillar-top {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                margin-bottom: 14px !important;
+                padding-bottom: 12px !important;
+                border-bottom: 1px solid rgba(18, 18, 18, 0.06) !important;
+            }
+
+            .pillar-num {
+                width: 34px !important;
+                height: 34px !important;
+                border-radius: 8px !important;
+                font-size: 13px !important;
+                font-weight: 700 !important;
+                background: rgba(18, 18, 18, 0.04) !important;
+                border: 1px solid rgba(18, 18, 18, 0.07) !important;
+                transform: none !important;
+            }
+
+            .pillar-kicker {
+                font-size: 10px !important;
+                letter-spacing: .1em !important;
+                font-weight: 700 !important;
+            }
+
+            .work-pillar-card h3 {
+                font-size: 1.15rem !important;
+                line-height: 1.25 !important;
+                margin: 0 0 8px !important;
+            }
+
+            .work-pillar-card p {
+                font-size: 13px !important;
+                line-height: 1.6 !important;
+                color: #55524d !important;
+                margin: 0 0 14px !important;
+            }
+
+            .pillar-bottom {
+                font-size: 10px !important;
+                letter-spacing: .06em !important;
+                padding-top: 12px !important;
+                border-top: 1px dashed rgba(18, 18, 18, 0.08) !important;
+            }
+
+            /* --- Elegância Mobile: Projetos em Destaque --- */
+            .project-filters {
+                display: flex !important;
+                overflow-x: auto !important;
+                flex-wrap: nowrap !important;
+                gap: 8px !important;
+                padding-bottom: 10px !important;
+                margin-top: 20px !important;
+                margin-bottom: 22px !important;
+                -webkit-overflow-scrolling: touch !important;
+                scrollbar-width: none !important;
+            }
+
+            .project-filters::-webkit-scrollbar {
+                display: none !important;
+            }
+
+            .filter-btn {
+                flex-shrink: 0 !important;
+                padding: 8px 16px !important;
+                font-size: 12px !important;
+                border-radius: 999px !important;
+                white-space: nowrap !important;
+            }
+
+            .projects-grid-modern {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 18px !important;
+                margin-top: 0 !important;
+            }
+
+            .project-card {
+                border-radius: 14px !important;
+                border: 1px solid rgba(18, 18, 18, 0.08) !important;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.035) !important;
+                background: #ffffff !important;
+                transform: none !important;
+            }
+
+            .project-card-visual {
+                aspect-ratio: 16 / 10 !important;
+            }
+
+            .card-badges {
+                top: 10px !important;
+                left: 10px !important;
+                right: 10px !important;
+            }
+
+            .card-badge-cat,
+            .card-badge-loc {
+                font-size: 9px !important;
+                padding: 4px 9px !important;
+                letter-spacing: .05em !important;
+            }
+
+            .project-card-meta {
+                padding: 16px 16px 14px !important;
+            }
+
+            .meta-row {
+                margin-bottom: 8px !important;
+            }
+
+            .card-project-index {
+                font-size: 10px !important;
+                letter-spacing: .06em !important;
+            }
+
+            .card-project-tag {
+                font-size: 9px !important;
+                padding: 2px 7px !important;
+            }
+
+            .project-card-meta h3 {
+                font-size: 1.15rem !important;
+                line-height: 1.25 !important;
+                margin: 0 0 6px !important;
+            }
+
+            .project-card-meta p {
+                font-size: 12.5px !important;
+                line-height: 1.55 !important;
+                color: #5e5a54 !important;
+                margin: 0 0 12px !important;
+            }
+
+            .card-action {
+                padding-top: 10px !important;
+                font-size: 10.5px !important;
+            }
+
+            /* --- Elegância Mobile: Processo ("Do primeiro contacto ao resultado final") --- */
+            .process-grid-modern {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 12px !important;
+                margin-top: 24px !important;
+            }
+
+            .process-card {
+                border-radius: 12px !important;
+                border: 1px solid rgba(18, 18, 18, 0.08) !important;
+                padding: 18px 16px !important;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+                background: #ffffff !important;
+                transform: none !important;
+            }
+
+            .process-card-top {
+                margin-bottom: 12px !important;
+            }
+
+            .process-step-num {
+                font-size: 22px !important;
+                line-height: 1 !important;
+            }
+
+            .process-step-tag {
+                font-size: 9.5px !important;
+                padding: 3px 8px !important;
+            }
+
+            .process-card h3 {
+                font-size: 1.1rem !important;
+                line-height: 1.25 !important;
+                margin: 0 0 6px !important;
+            }
+
+            .process-card p {
+                font-size: 12.5px !important;
+                line-height: 1.55 !important;
+                color: #5a5752 !important;
+            }
+
+            /* --- Elegância Mobile: Especialidades ("Soluções para cada fase da obra") --- */
+            .specialties {
+                padding: 0 0 64px !important;
+            }
+
+            .specialty-layout {
+                gap: 28px !important;
+            }
+
+            .specialty-intro h2 {
+                font-size: clamp(1.8rem, 7vw, 2.4rem) !important;
+                line-height: 1.15 !important;
+                margin: 10px 0 14px !important;
+            }
+
+            .specialty-intro p {
+                font-size: 12.5px !important;
+                line-height: 1.6 !important;
+                max-width: 100% !important;
+            }
+
+            .specialty-item summary {
+                padding: 15px 4px !important;
+                grid-template-columns: 32px 1fr 20px !important;
+                gap: 10px !important;
+            }
+
+            .specialty-item summary .num {
+                font-size: 10px !important;
+                font-weight: 600 !important;
+            }
+
+            .specialty-item summary .name {
+                font-size: 1.02rem !important;
+                font-weight: 500 !important;
+            }
+
+            .specialty-item p {
+                margin: 0 0 16px 42px !important;
+                font-size: 12px !important;
+                line-height: 1.65 !important;
+                color: #5c5852 !important;
+            }
+
+            /* --- Elegância Mobile: Testemunhos --- */
+            .testimonials-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 14px !important;
+                margin-top: 24px !important;
+            }
+
+            .testimonial-card {
+                padding: 18px 16px !important;
+                border-radius: 12px !important;
+                border: 1px solid rgba(18, 18, 18, 0.08) !important;
+                box-shadow: 0 3px 12px rgba(0, 0, 0, 0.025) !important;
+                background: #ffffff !important;
+                gap: 12px !important;
+                transform: none !important;
+            }
+
+            .testimonial-stars {
+                font-size: 13px !important;
+                letter-spacing: 1.5px !important;
+            }
+
+            .testimonial-text {
+                font-size: 12.5px !important;
+                line-height: 1.65 !important;
+                color: #35332f !important;
+            }
+
+            .testimonial-author {
+                padding-top: 12px !important;
+                gap: 12px !important;
+                border-top: 1px solid rgba(18, 18, 18, 0.07) !important;
+            }
+
+            .author-avatar {
+                width: 36px !important;
+                height: 36px !important;
+                font-size: 11.5px !important;
+            }
+
+            .author-info strong {
+                font-size: 12px !important;
+            }
+
+            .author-info span {
+                font-size: 10.5px !important;
+                color: #76726b !important;
+            }
         }
 
 
