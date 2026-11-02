@@ -1,10 +1,9 @@
-@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 /* ==========================================================================
-   Tipografia: General Sans (Fontshare / Indian Type Foundry)
-   A mais corporativa, refinada e sóbria - inspiração no design suíço puro
-   H1 / H2: font-weight: 600 / 700, letter-spacing: -0.01em
-   Texto: font-weight: 400
+   Tipografia: Plus Jakarta Sans (Tokyo Type Studio)
+   - Geométrica contemporânea de alta precisão
+   - Solidez estrutural, cortes limpos e elegância de gabinete de arquitetura
    ========================================================================== */
 
 /* ==========================================================================
@@ -13,8 +12,8 @@
    ========================================================================== */
 
 :root {
-            --font-heading: "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --font-body: "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             --paper: #F6F4F0;
             --surface: #ECE9E3;
             --ink: #161616;
@@ -426,7 +425,7 @@
         .hero-title {
             margin: 0;
             font: 700 clamp(3rem, 8.4vw, 8.2rem)/.92 var(--font-heading);
-            letter-spacing: -0.01em;
+            letter-spacing: -0.03em;
             color: #fff;
         }
 
