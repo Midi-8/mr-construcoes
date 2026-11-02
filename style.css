@@ -758,17 +758,9 @@
 
         .manifesto-top {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: flex-start;
-            gap: 30px;
-            margin-bottom: clamp(50px, 8vw, 110px)
-        }
-
-        .manifesto-top {
-            display: grid;
-            grid-template-columns: 1.25fr .75fr;
-            gap: clamp(24px, 4vw, 54px);
-            align-items: end;
+            gap: 16px;
             margin-bottom: clamp(36px, 5vw, 56px);
         }
 
@@ -784,7 +776,7 @@
             line-height: 1.7;
             color: #5c5954;
             margin: 0;
-            max-width: 480px;
+            max-width: 640px;
         }
 
         .work-pillars-grid {
@@ -879,9 +871,9 @@
 
         .section-heading {
             display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 30px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 14px;
             margin-bottom: 36px;
         }
 
@@ -894,11 +886,11 @@
         }
 
         .section-heading p {
-            max-width: 320px;
+            max-width: 640px;
             color: #5c5954;
-            font-size: 13px;
+            font-size: 13.5px;
             line-height: 1.7;
-            margin: 0 0 4px;
+            margin: 0;
         }
 
         .projects-grid-modern {
@@ -1103,28 +1095,28 @@
         }
 
         .comparison-head {
-            display: grid;
-            grid-template-columns: 1fr .65fr;
-            gap: 30px;
-            align-items: end;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 14px;
             margin-bottom: 28px;
             max-width: 1120px;
-            margin-inline: auto
+            margin-inline: auto;
         }
 
         .comparison-head h2 {
             font: 700 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--font-heading);
             letter-spacing: -0.025em;
-            margin: 12px 0 0;
-            max-width: 760px
+            margin: 0;
+            max-width: 760px;
         }
 
         .comparison-head p {
-            font-size: 12px;
-            line-height: 1.8;
-            color: var(--muted);
-            max-width: 280px;
-            margin: 0 0 5px
+            font-size: 13.5px;
+            line-height: 1.7;
+            color: #5c5954;
+            max-width: 640px;
+            margin: 0;
         }
 
         .compare {
@@ -1245,9 +1237,9 @@
 
         .process-head {
             display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            align-items: end;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 14px;
             margin-bottom: 36px;
         }
 
@@ -1259,9 +1251,9 @@
         }
 
         .process-head p {
-            max-width: 320px;
+            max-width: 640px;
             color: #5c5954;
-            font-size: 13px;
+            font-size: 13.5px;
             line-height: 1.7;
             margin: 0;
         }
@@ -1365,22 +1357,31 @@
         }
 
         .specialty-layout {
-            display: grid;
-            grid-template-columns: .75fr 1.25fr;
-            gap: 8vw
+            display: flex;
+            flex-direction: column;
+            gap: clamp(28px, 4vw, 42px);
+        }
+
+        .specialty-intro {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 14px;
         }
 
         .specialty-intro h2 {
             font: 700 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--font-heading);
             letter-spacing: -0.025em;
-            margin: 15px 0 25px
+            margin: 0;
+            color: var(--ink);
         }
 
         .specialty-intro p {
-            font-size: 12px;
-            line-height: 1.8;
-            color: var(--muted);
-            max-width: 280px
+            font-size: 13.5px;
+            line-height: 1.7;
+            color: #5c5954;
+            max-width: 640px;
+            margin: 0;
         }
 
         .specialty-list {
