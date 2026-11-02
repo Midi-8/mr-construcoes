@@ -562,7 +562,7 @@
 
         .hero-title {
             margin: 0;
-            font: 400 clamp(2.8rem, 7.5vw, 7.2rem)/1.15 var(--font-heading);
+            font: 600 clamp(2.8rem, 7.5vw, 7.2rem)/1.15 var(--font-heading);
             letter-spacing: -0.025em;
             color: #fff;
         }
