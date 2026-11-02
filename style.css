@@ -81,39 +81,54 @@
         .section-badge {
             display: inline-flex;
             align-items: center;
-            gap: 9px;
-            background: rgba(18, 18, 18, 0.04);
-            border: 1px solid rgba(18, 18, 18, 0.08);
-            padding: 6px 14px 6px 11px;
+            gap: 10px;
+            background: #ffffff;
+            border: 1px solid rgba(18, 18, 18, 0.1);
+            padding: 5px 14px 5px 6px;
             border-radius: 999px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             width: fit-content;
             vertical-align: middle;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+            transition: border-color .25s ease, box-shadow .25s ease, transform .2s ease;
         }
 
-        .section-badge .badge-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #171717;
-            flex-shrink: 0;
-        }
-
-        .section-badge .badge-title {
-            font: 600 11px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            color: #2b2926;
+        .section-badge:hover {
+            border-color: rgba(18, 18, 18, 0.25);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            transform: translateY(-1px);
         }
 
         .section-badge .badge-num {
-            font: 700 10px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
-            background: #171717;
+            order: -2;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font: 700 10.5px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: #141414;
             color: #ffffff;
-            padding: 3px 8px;
+            padding: 5px 9px;
             border-radius: 999px;
-            letter-spacing: .06em;
-            margin-left: 2px;
+            letter-spacing: .08em;
+            margin-left: 0;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-badge .badge-dot {
+            order: -1;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgba(18, 18, 18, 0.35);
+            flex-shrink: 0;
+            margin: 0 -1px;
+        }
+
+        .section-badge .badge-title {
+            font: 700 11px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: #171717;
         }
 
         .eyebrow {
@@ -605,20 +620,21 @@
         }
 
         .work-pillar-card {
+            position: relative;
             background: #ffffff;
             border: 1px solid rgba(18, 18, 18, 0.08);
-            border-radius: 12px;
-            padding: clamp(26px, 2.8vw, 36px);
+            border-radius: 14px;
+            padding: clamp(28px, 3vw, 38px);
             display: flex;
             flex-direction: column;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, .02);
-            transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .025);
+            transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .35s ease, border-color .35s ease;
         }
 
         .work-pillar-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 36px rgba(0, 0, 0, .07);
-            border-color: rgba(18, 18, 18, 0.18);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
+            border-color: rgba(18, 18, 18, 0.2);
         }
 
         .pillar-top {
@@ -626,45 +642,61 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 22px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid rgba(18, 18, 18, 0.06);
+            padding-bottom: 18px;
+            border-bottom: 1px solid rgba(18, 18, 18, 0.07);
         }
 
         .pillar-num {
-            font: 700 24px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
-            letter-spacing: -.04em;
-            color: #171717;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(18, 18, 18, 0.04);
+            border: 1px solid rgba(18, 18, 18, 0.08);
+            font: 700 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            letter-spacing: -.02em;
+            color: #121212;
+            transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
+        }
+
+        .work-pillar-card:hover .pillar-num {
+            background: #141414;
+            color: #ffffff;
+            border-color: #141414;
+            transform: scale(1.05);
         }
 
         .pillar-kicker {
-            font: 600 10px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font: 700 11px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
             letter-spacing: .12em;
             text-transform: uppercase;
-            color: #7a7670;
+            color: #736f68;
         }
 
         .work-pillar-card h3 {
-            font: 600 clamp(1.22rem, 1.5vw, 1.45rem)/1.2 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font: 700 clamp(1.25rem, 1.55vw, 1.48rem)/1.2 "Helvetica Neue", Helvetica, Arial, sans-serif;
             letter-spacing: -.03em;
-            margin: 0 0 12px;
+            margin: 0 0 14px;
             color: var(--ink);
         }
 
         .work-pillar-card p {
             font-size: 13.5px;
             line-height: 1.7;
-            color: #5e5b55;
+            color: #55524d;
             margin: 0 0 24px;
             flex-grow: 1;
         }
 
         .pillar-bottom {
-            font: 600 11px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
-            letter-spacing: .06em;
+            font: 700 10.5px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            letter-spacing: .08em;
             color: #8c8880;
             text-transform: uppercase;
-            padding-top: 14px;
-            border-top: 1px dashed rgba(18, 18, 18, 0.08);
+            padding-top: 16px;
+            border-top: 1px dashed rgba(18, 18, 18, 0.09);
         }
 
         .projects {
