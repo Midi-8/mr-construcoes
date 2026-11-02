@@ -1986,8 +1986,9 @@
                 --page: calc(100% - 40px)
             }
 
-            .topbar {
-                height: 60px;
+            .topbar,
+            .topbar.is-scrolled {
+                height: 60px !important;
             }
 
 
@@ -2085,21 +2086,28 @@
             .topbar.is-scrolled .navlinks-list a.is-active {
                 display: inline-block;
                 color: rgba(255, 255, 255, 0.92) !important;
-                font: 700 clamp(32px, 8.8vw, 44px)/1.15 var(--font-heading);
-                letter-spacing: -0.03em;
+                font: 700 clamp(30px, 8vw, 38px)/1.2 var(--font-heading) !important;
+                letter-spacing: -0.025em;
                 text-decoration: none !important;
                 border: none !important;
                 border-bottom: none !important;
-                padding: 4px 16px;
-                transition: color .2s ease, transform .2s ease, opacity .2s ease;
+                padding: 6px 16px;
+                transform: none !important;
+                transition: color .2s ease, opacity .2s ease;
             }
 
             .navlinks-list a:hover,
             .navlinks-list a:active,
+            .navlinks-list a:focus,
+            .navlinks-list a:focus-visible,
             .topbar.is-scrolled .navlinks-list a:hover,
-            .topbar.is-scrolled .navlinks-list a:active {
+            .topbar.is-scrolled .navlinks-list a:active,
+            .topbar.is-scrolled .navlinks-list a:focus,
+            .topbar.is-scrolled .navlinks-list a:focus-visible {
                 color: #ffffff !important;
-                transform: scale(1.05);
+                opacity: 1 !important;
+                transform: none !important;
+                outline: none;
             }
 
             .nav-idx {
