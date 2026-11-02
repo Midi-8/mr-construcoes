@@ -625,12 +625,43 @@
     <section class="project-page" id="project-page" aria-labelledby="pp-title" hidden>
         <div class="wrap">
             <div class="pp-bar">
-                <a class="pp-back" href="#projetos">← Voltar aos projetos</a>
+                <a class="pp-back" href="#projetos">
+                    <span class="pp-back-arrow" aria-hidden="true">←</span>
+                    <span>Voltar aos projetos</span>
+                </a>
                 <span class="eyebrow" id="pp-counter"></span>
             </div>
 
             <div class="pp-main-grid">
-                <!-- Coluna Esquerda: Galeria e Ficha Técnica -->
+                <!-- Coluna Esquerda: Informações e Ação -->
+                <div class="pp-info-col">
+                    <div class="pp-info-header">
+                        <span class="pp-category-tag" id="pp-cat-tag"></span>
+                        <h1 class="pp-title" id="pp-title"></h1>
+                        <p class="pp-tagline" id="pp-tagline"></p>
+                    </div>
+
+                    <div class="pp-divider"></div>
+
+                    <div class="pp-overview">
+                        <div class="section-badge pp-badge-sub">
+                            <span class="badge-dot"></span>
+                            <span class="badge-title">Visão Geral</span>
+                        </div>
+                        <h3 class="pp-overview-title">Sobre a Obra</h3>
+                        <p class="pp-description" id="pp-description"></p>
+                    </div>
+
+                    <!-- Botão Pedir Orçamento oficial da MR Construções -->
+                    <div class="pp-info-action">
+                        <a class="pp-btn-quote" href="#contacto">
+                            <span>Pedir orçamento</span>
+                            <span class="pp-btn-arrow" aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Galeria e Miniaturas -->
                 <div class="pp-gallery-col">
                     <div class="pp-gallery-showcase">
                         <div class="pp-thumbs" id="pp-thumbs" role="tablist" aria-label="Miniaturas do projeto" hidden></div>
@@ -649,44 +680,35 @@
                             <figcaption class="pp-photo-caption" id="pp-photo-caption"></figcaption>
                         </figure>
                     </div>
-
-                    <!-- Ficha Técnica na Coluna Esquerda, alinhada sob a galeria -->
-                    <div class="pp-specs-box">
-                        <span class="pp-subheading">Ficha Técnica</span>
-                        <div class="pp-specs" id="pp-data"></div>
-                    </div>
-                </div>
-
-                <!-- Coluna Direita: Informações e Ação -->
-                <div class="pp-info-col">
-                    <div class="pp-info-header">
-                        <span class="pp-category-tag" id="pp-cat-tag"></span>
-                        <h1 class="pp-title" id="pp-title"></h1>
-                        <p class="pp-tagline" id="pp-tagline"></p>
-                    </div>
-
-                    <div class="pp-divider"></div>
-
-                    <div class="pp-overview">
-                        <span class="pp-subheading">Sobre a Obra</span>
-                        <p class="pp-description" id="pp-description"></p>
-                    </div>
-
-                    <!-- Botão Pedir Orçamento no espaço onde estava a Ficha Técnica -->
-                    <div class="pp-info-action">
-                        <a class="pp-btn-quote" href="#contacto">Pedir orçamento ↗</a>
-                    </div>
                 </div>
             </div>
 
-            <!-- Secção Abaixo das Duas Colunas: Trabalhos Realizados & Destaques -->
-            <section class="pp-highlights-section" id="pp-highlights-section" aria-labelledby="pp-highlights-heading">
-                <div class="pp-highlights-header">
-                    <span class="eyebrow">Rigor e Execução</span>
-                    <h2 id="pp-highlights-heading">Trabalhos Realizados &amp; Destaques Técnicos</h2>
-                </div>
-                <ul class="pp-highlights" id="pp-highlights"></ul>
-            </section>
+            <!-- Secção Abaixo da Grelha Principal: Rigor e Execução & Ficha Técnica lado a lado -->
+            <div class="pp-details-grid">
+                <!-- Coluna 1: Rigor e Execução (Trabalhos Realizados & Destaques Técnicos) -->
+                <section class="pp-card-block pp-highlights-card" id="pp-highlights-section" aria-labelledby="pp-highlights-heading">
+                    <div class="pp-card-header">
+                        <div class="section-badge pp-badge-sub">
+                            <span class="badge-dot"></span>
+                            <span class="badge-title">Rigor e Execução</span>
+                        </div>
+                        <h2 id="pp-highlights-heading" class="pp-card-title">Trabalhos Realizados &amp; Destaques</h2>
+                    </div>
+                    <ul class="pp-highlights" id="pp-highlights"></ul>
+                </section>
+
+                <!-- Coluna 2: Ficha Técnica -->
+                <section class="pp-card-block pp-specs-card" aria-labelledby="pp-specs-heading">
+                    <div class="pp-card-header">
+                        <div class="section-badge pp-badge-sub">
+                            <span class="badge-dot"></span>
+                            <span class="badge-title">Especificações</span>
+                        </div>
+                        <h2 id="pp-specs-heading" class="pp-card-title">Ficha Técnica</h2>
+                    </div>
+                    <div class="pp-specs" id="pp-data"></div>
+                </section>
+            </div>
 
             <nav class="pp-pager" aria-label="Navegação entre projetos">
                 <a class="pp-pager-link" id="pp-prev" href="#projetos">
