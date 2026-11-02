@@ -1,44 +1,63 @@
-@import url('https://fonts.cdnfonts.com/css/canela');
-@import url('https://fonts.cdnfonts.com/css/canela-text-trial');
+/* ==========================================================================
+   Tipografia: Orelo (Orelo Semi Wide / Orelo Variable)
+   Designer: Adrien Midzic
+   Fundição (Foundry): Pizza Typefaces
+   Classificação: Display Sans-Serif de alto contraste (Peignotian / Flared)
+   ========================================================================== */
 
 @font-face {
-    font-family: 'Canela';
+    font-family: 'Orelo';
     font-style: normal;
-    font-weight: 300;
+    font-weight: 300 900;
     font-display: swap;
-    src: local('Canela Light'), local('Canela-Light'), local('Canela'), local('canela'), url('https://fonts.cdnfonts.com/s/15211/canela_light.woff') format('woff');
+    src: local('Orelo Variable'),
+         local('OreloVariable'),
+         local('Orelo Semi Wide'),
+         local('Orelo SemiWide'),
+         local('Orelo Standard'),
+         local('Orelo'),
+         local('Orelo-Regular'),
+         url('fonts/OreloVariable.woff2') format('woff2-variations'),
+         url('fonts/Orelo-Regular.woff2') format('woff2'),
+         url('fonts/Orelo-Regular.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Canela';
+    font-family: 'Orelo Semi Wide';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: local('Canela Regular'), local('Canela-Regular'), local('canela'), local('Canela'), url('https://fonts.cdnfonts.com/s/15211/canela_roman.woff') format('woff');
+    src: local('Orelo Semi Wide'),
+         local('Orelo SemiWide'),
+         local('OreloSemiWide-Regular'),
+         local('Orelo-Regular'),
+         local('Orelo'),
+         url('fonts/Orelo-SemiWide-Regular.woff2') format('woff2'),
+         url('fonts/Orelo-SemiWide-Regular.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Canela';
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: local('Canela Medium'), local('Canela-Medium'), local('canela'), local('Canela'), url('https://fonts.cdnfonts.com/s/86518/Canela-Medium-Trial.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Canela';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: local('Canela Bold'), local('Canela-Bold'), local('canela'), local('Canela'), url('https://fonts.cdnfonts.com/s/15211/canela_bold.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Canela';
+    font-family: 'Orelo Semi Wide';
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: local('Canela Bold'), local('Canela-Bold'), local('canela'), local('Canela'), url('https://fonts.cdnfonts.com/s/15211/canela_bold.woff') format('woff');
+    src: local('Orelo Semi Wide Bold'),
+         local('Orelo SemiWide Bold'),
+         local('OreloSemiWide-Bold'),
+         local('Orelo-Bold'),
+         local('Orelo'),
+         url('fonts/Orelo-SemiWide-Bold.woff2') format('woff2'),
+         url('fonts/Orelo-SemiWide-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Orelo Variable';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: local('Orelo Variable'),
+         local('OreloVariable'),
+         url('fonts/OreloVariable.woff2') format('woff2-variations');
 }
 
 /* ==========================================================================
@@ -74,7 +93,7 @@
             margin: 0;
             background: var(--paper);
             color: var(--ink);
-            font-family: "Canela", "canela", "Canela Trial", Georgia, serif;
+            font-family: "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
             width: 100%
@@ -147,7 +166,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font: 700 10.5px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 700 10.5px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             background: #141414;
             color: #ffffff;
             padding: 5px 9px;
@@ -168,14 +187,14 @@
         }
 
         .section-badge .badge-title {
-            font: 700 11px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 700 11px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .14em;
             text-transform: uppercase;
             color: #171717;
         }
 
         .eyebrow {
-            font: 600 11px/1.4 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 11px/1.4 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .12em;
             text-transform: uppercase;
             color: #55524d;
@@ -201,7 +220,7 @@
 
         .topbar .navlinks a:not(.nav-cta) {
             color: rgba(255, 255, 255, 0.92);
-            font: 700 12px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 700 12px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .04em;
             transition: color .2s ease;
         }
@@ -211,7 +230,7 @@
         }
 
         .topbar .nav-cta {
-            font: 700 11.5px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 700 11.5px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .05em;
             text-transform: uppercase;
             border: 1px solid rgba(255, 255, 255, 0.6);
@@ -297,7 +316,7 @@
         }
 
         .brand-text {
-            font: 700 12px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 700 12px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .08em;
             text-transform: uppercase;
             color: #ffffff;
@@ -310,7 +329,7 @@
         }
 
         .brand-fallback {
-            font: 700 16px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 700 16px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.03em;
             color: inherit;
         }
@@ -337,7 +356,7 @@
             border-radius: 6px;
             color: #fff;
             cursor: pointer;
-            font: 700 11px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 700 11px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .1em;
             text-transform: uppercase;
             transition: background .25s ease, border-color .25s ease, color .25s ease, transform .15s ease
@@ -443,7 +462,7 @@
             align-items: center;
             gap: 14px;
             margin: 0 0 28px;
-            font: 400 11px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 400 11px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .18em;
             text-transform: uppercase;
             color: rgba(255, 255, 255, .75);
@@ -457,7 +476,7 @@
 
         .hero-title {
             margin: 0;
-            font: 300 clamp(3rem, 8.4vw, 8.2rem)/.92 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 300 clamp(3rem, 8.4vw, 8.2rem)/.92 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.055em;
             color: #fff;
         }
@@ -469,7 +488,7 @@
         .hero-lead {
             max-width: 480px;
             margin: 32px 0 0;
-            font: 300 clamp(14px, 1.1vw, 16px)/1.65 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 300 clamp(14px, 1.1vw, 16px)/1.65 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             color: rgba(255, 255, 255, .82);
         }
 
@@ -488,7 +507,7 @@
             background: #fff;
             color: #141414;
             border-radius: 999px;
-            font: 600 13px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 13px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .01em;
             transition: background .25s ease, color .25s ease, transform .2s ease;
         }
@@ -509,7 +528,7 @@
         .hero-btn-link {
             position: relative;
             padding: 6px 0;
-            font: 400 13px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 400 13px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             color: #fff;
         }
 
@@ -548,13 +567,13 @@
         }
 
         .hero-stat-val {
-            font: 700 clamp(13px, 1.1vw, 15px)/1.2 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 700 clamp(13px, 1.1vw, 15px)/1.2 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.01em;
             color: #ffffff;
         }
 
         .hero-stat-lbl {
-            font: 400 clamp(11px, 0.8vw, 12px)/1.45 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 400 clamp(11px, 0.8vw, 12px)/1.45 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             color: rgba(255, 255, 255, .78);
             max-width: 280px;
         }
@@ -670,7 +689,7 @@
         }
 
         .manifesto-top h2 {
-            font: 600 clamp(2.3rem, 4.8vw, 4.4rem)/1.04 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 clamp(2.3rem, 4.8vw, 4.4rem)/1.04 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.05em;
             margin: 0;
             color: var(--ink);
@@ -726,7 +745,7 @@
             border-radius: 10px;
             background: rgba(18, 18, 18, 0.04);
             border: 1px solid rgba(18, 18, 18, 0.08);
-            font: 700 16px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 700 16px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.02em;
             color: #121212;
             transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
@@ -740,14 +759,14 @@
         }
 
         .pillar-kicker {
-            font: 700 11px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 700 11px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .12em;
             text-transform: uppercase;
             color: #736f68;
         }
 
         .work-pillar-card h3 {
-            font: 700 clamp(1.25rem, 1.55vw, 1.48rem)/1.2 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 700 clamp(1.25rem, 1.55vw, 1.48rem)/1.2 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.03em;
             margin: 0 0 14px;
             color: var(--ink);
@@ -762,7 +781,7 @@
         }
 
         .pillar-bottom {
-            font: 700 10.5px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 700 10.5px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .08em;
             color: #8c8880;
             text-transform: uppercase;
@@ -784,7 +803,7 @@
 
         .section-heading h2,
         .split-title {
-            font: 600 clamp(2.4rem, 5.5vw, 5.2rem)/.96 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 clamp(2.4rem, 5.5vw, 5.2rem)/.96 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.06em;
             margin: 0;
             color: var(--ink);
@@ -861,7 +880,7 @@
         }
 
         .card-badge-cat {
-            font: 600 10px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 10px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .1em;
             text-transform: uppercase;
             background: rgba(18, 18, 18, 0.8);
@@ -873,7 +892,7 @@
         }
 
         .card-badge-loc {
-            font: 600 10px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 10px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .06em;
             background: rgba(255, 255, 255, 0.92);
             color: #171717;
@@ -898,14 +917,14 @@
         }
 
         .card-project-index {
-            font: 600 11px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 11px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .08em;
             color: #8c8880;
             text-transform: uppercase;
         }
 
         .card-project-tag {
-            font: 600 10px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 10px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .1em;
             color: #44413c;
             background: rgba(18, 18, 18, 0.05);
@@ -915,7 +934,7 @@
         }
 
         .project-card-meta h3 {
-            font: 600 clamp(1.2rem, 1.45vw, 1.4rem)/1.22 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 clamp(1.2rem, 1.45vw, 1.4rem)/1.22 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.03em;
             margin: 0 0 8px;
             color: var(--ink);
@@ -935,7 +954,7 @@
             align-items: center;
             padding-top: 14px;
             border-top: 1px solid rgba(18, 18, 18, 0.06);
-            font: 600 11px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 11px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .08em;
             text-transform: uppercase;
             color: var(--ink);
@@ -983,7 +1002,7 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            font: 500 clamp(13px, 1.25vw, 15.5px)/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 500 clamp(13px, 1.25vw, 15.5px)/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .08em;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.92);
@@ -1010,7 +1029,7 @@
         }
 
         .comparison-head h2 {
-            font: 500 clamp(2.2rem, 5.2vw, 5.2rem)/.95 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 500 clamp(2.2rem, 5.2vw, 5.2rem)/.95 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.075em;
             margin: 12px 0 0;
             max-width: 760px
@@ -1070,7 +1089,7 @@
             position: absolute;
             z-index: 3;
             top: 14px;
-            font: 600 8px "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 8px "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .13em;
             text-transform: uppercase;
             color: var(--ink);
@@ -1149,7 +1168,7 @@
         }
 
         .process-head h2 {
-            font: 600 clamp(2.3rem, 5vw, 4.8rem)/.96 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 clamp(2.3rem, 5vw, 4.8rem)/.96 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.06em;
             margin: 0;
             color: var(--ink);
@@ -1195,13 +1214,13 @@
         }
 
         .process-step-num {
-            font: 700 28px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 700 28px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.04em;
             color: #171717;
         }
 
         .process-step-tag {
-            font: 600 10px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 10px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .1em;
             text-transform: uppercase;
             padding: 4px 9px;
@@ -1211,7 +1230,7 @@
         }
 
         .process-card h3 {
-            font: 600 clamp(1.15rem, 1.4vw, 1.35rem)/1.2 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 clamp(1.15rem, 1.4vw, 1.35rem)/1.2 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.03em;
             margin: 0 0 10px;
             color: var(--ink);
@@ -1238,13 +1257,13 @@
         }
 
         .service-row .num {
-            font: 600 11px "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 11px "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             color: #171717;
             padding-top: 8px;
         }
 
         .service-row h3 {
-            font: 600 clamp(1.8rem, 4vw, 3.8rem)/.95 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 clamp(1.8rem, 4vw, 3.8rem)/.95 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.06em;
             margin: 0;
         }
@@ -1268,7 +1287,7 @@
         }
 
         .specialty-intro h2 {
-            font: 500 clamp(2.6rem, 6vw, 5.6rem)/.93 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 500 clamp(2.6rem, 6vw, 5.6rem)/.93 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.08em;
             margin: 15px 0 25px
         }
@@ -1303,12 +1322,12 @@
         }
 
         .specialty-item summary .num {
-            font: 500 10px "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 500 10px "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             color: var(--accent)
         }
 
         .specialty-item summary .name {
-            font: 500 clamp(1rem, 2vw, 1.3rem) "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 500 clamp(1rem, 2vw, 1.3rem) "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.025em
         }
 
@@ -1350,7 +1369,7 @@
         }
 
         .company-copy h2 {
-            font: 500 clamp(2.7rem, 6.6vw, 6rem)/.93 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 500 clamp(2.7rem, 6.6vw, 6rem)/.93 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.08em;
             margin: 16px 0 28px
         }
@@ -1393,7 +1412,7 @@
         }
 
         .contact h2 {
-            font: 500 clamp(3.4rem, 9vw, 9rem)/.88 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 500 clamp(3.4rem, 9vw, 9rem)/.88 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: -.09em;
             margin: 16px 0 28px
         }
@@ -1444,7 +1463,7 @@
 
         .field label {
             display: block;
-            font: 600 12px "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 12px "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .12em;
             text-transform: uppercase;
             color: var(--muted);
@@ -1501,7 +1520,7 @@
             gap: 25px;
             align-items: center;
             cursor: pointer;
-            font: 600 12px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 12px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .06em;
             text-transform: uppercase;
             border-radius: 4px;
@@ -1653,7 +1672,7 @@
 
         .footer-heading {
             display: block;
-            font: 600 11px/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 600 11px/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .12em;
             text-transform: uppercase;
             color: rgba(255, 255, 255, .9);
@@ -1818,7 +1837,7 @@
         }
 
         .placeholder-visual span {
-            font: 500 12px/1.8 "Canela", "canela", "Canela Trial", Georgia, serif;
+            font: 500 12px/1.8 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
             letter-spacing: .08em;
             text-transform: uppercase
         }
@@ -2215,7 +2234,7 @@
 }
 
 .project-more {
-    font-family: "Canela", "canela", "Canela Trial", Georgia, serif;
+    font-family: "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
     font-size: 13px;
     font-weight: 600;
     color: var(--accent);
@@ -2283,7 +2302,7 @@
 }
 
 .pp-back {
-    font-family: "Canela", "canela", "Canela Trial", Georgia, serif;
+    font-family: "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
     font-size: 13px;
     font-weight: 600;
     color: var(--ink-muted);
@@ -2301,7 +2320,7 @@
 }
 
 .pp-head h2 {
-    font-family: "Canela", "canela", "Canela Trial", Georgia, serif;
+    font-family: "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
     font-size: clamp(32px, 5.5vw, 60px);
     font-weight: 700;
     letter-spacing: -.05em;
@@ -2410,7 +2429,7 @@
     font-size: 11px;
     letter-spacing: .08em;
     font-weight: 600;
-    font-family: "Canela", "canela", "Canela Trial", Georgia, serif;
+    font-family: "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
 }
 
 .pp-data-val {
@@ -2482,7 +2501,7 @@
 }
 
 .pp-cta h3 {
-    font-family: "Canela", "canela", "Canela Trial", Georgia, serif;
+    font-family: "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
     font-size: clamp(22px, 3.2vw, 32px);
     font-weight: 700;
     letter-spacing: -.04em;
@@ -2498,7 +2517,7 @@
     background: var(--ink);
     color: #FFFFFF;
     text-decoration: none;
-    font-family: "Canela", "canela", "Canela Trial", Georgia, serif;
+    font-family: "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: -.01em;
@@ -2543,7 +2562,7 @@
 }
 
 .pp-pager-title {
-    font-family: "Canela", "canela", "Canela Trial", Georgia, serif;
+    font-family: "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
     font-size: 16px;
     font-weight: 700;
     color: var(--ink);
@@ -2609,7 +2628,7 @@
 .lightbox-counter {
     color: var(--accent);
     font-weight: 600;
-    font-family: "Canela", "canela", "Canela Trial", Georgia, serif;
+    font-family: "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
     font-size: 13px;
     white-space: nowrap;
 }
@@ -2792,7 +2811,7 @@
 }
 
 .trust-val {
-    font: 800 clamp(2rem, 3.4vw, 3rem)/1 "Canela", "canela", "Canela Trial", Georgia, serif;
+    font: 800 clamp(2rem, 3.4vw, 3rem)/1 "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
     color: var(--ink);
     letter-spacing: -.05em;
 }
@@ -2817,7 +2836,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font: 600 12px "Canela", "canela", "Canela Trial", Georgia, serif;
+    font: 600 12px "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
     letter-spacing: -.01em;
     padding: 8px 18px;
     border-radius: 999px;
@@ -2930,14 +2949,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font: 700 13px "Canela", "canela", "Canela Trial", Georgia, serif;
+    font: 700 13px "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
     letter-spacing: .03em;
     flex-shrink: 0;
 }
 
 .author-info strong {
     display: block;
-    font: 600 13px "Canela", "canela", "Canela Trial", Georgia, serif;
+    font: 600 13px "Orelo", "Orelo Semi Wide", "Orelo Variable", "Orelo Standard", "Syne", "Italiana", sans-serif;
     color: var(--ink);
 }
 
