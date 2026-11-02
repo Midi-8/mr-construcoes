@@ -965,18 +965,9 @@
 
         .project-card-visual {
             position: relative;
-            display: block;
             aspect-ratio: 16 / 11;
             overflow: hidden;
             background: #ebe7df;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .project-card-visual:focus-visible {
-            outline: 2px solid var(--ink, #121212);
-            outline-offset: -2px;
         }
 
         .project-card-visual img {
@@ -1027,7 +1018,7 @@
         }
 
         .project-card-meta {
-            padding: 22px 22px 24px;
+            padding: 22px 22px 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -1035,6 +1026,7 @@
 
         .meta-row {
             display: flex;
+            justify-content: space-between;
             align-items: center;
             margin-bottom: 12px;
         }
@@ -1080,14 +1072,14 @@
             letter-spacing: .06em;
             text-transform: uppercase;
             color: var(--ink);
-            text-decoration: none;
+            transition: color .2s ease;
         }
 
         .project-card:hover .card-action {
             color: var(--accent);
         }
 
-        .project-card-meta p {
+        .action-arrow {
             font-size: 13px;
             color: var(--accent);
             transition: transform .25s ease, color .25s ease;
@@ -1096,10 +1088,6 @@
         .project-card:hover .action-arrow {
             transform: translateX(4px);
             color: var(--accent);
-        }
-
-        .project-card:hover .action-arrow {
-            transform: translate(3px, -3px);
         }
 
         .comparison {
