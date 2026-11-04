@@ -17,6 +17,8 @@ mr-construcoes/
 ├── project-view.js     Gestor de rotas por hash (#projeto/id) e preenchimento da vista do projeto
 ├── lightbox.js         Visualizador de imagens em ecrã inteiro (acessível, com teclado e gestos de swipe)
 ├── imagens/            Fotografias, logotipo oficial e recursos gráficos
+├── robots.txt          Instruções de indexação para motores de busca (Google, Bing)
+├── sitemap.xml         Mapa do site para indexação SEO
 └── README.md           Documentação técnica e instruções de manutenção
 ```
 

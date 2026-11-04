@@ -1,0 +1,7 @@
+# Robots.txt - MR Construções
+User-agent: *
+Allow: /
+
+# Sitemap oficial
+Sitemap: https://midi-8.github.io/mr-construcoes/sitemap.xml
+
