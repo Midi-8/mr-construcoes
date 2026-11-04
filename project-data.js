@@ -17,7 +17,7 @@ window.PROJECTS_DATA = [
     year: "2024",
     duration: "8 Meses",
     area: "280 m²",
-    description: "Execução integral de moradia unifamiliar de traço contemporâneo com revestimento nobre em cantaria de pedra natural, vãos envidraçados com estores térmicos embutidos e integração harmoniosa com os arranjos exteriores e zonas ajardinadas. Uma obra onde a nobreza dos materiais tradicionais se funde com o rigor da construção moderna.",
+    description: "Execução integral de moradia unifamiliar contemporânea com revestimento nobre em cantaria de pedra natural, vãos envidraçados com estores térmicos embutidos e integração harmoniosa com os arranjos exteriores e zonas ajardinadas. Uma obra onde a nobreza dos materiais tradicionais se alia ao rigor da execução construtiva.",
     highlights: [
       "Revestimento de fachada com cantaria de pedra natural recortada",
       "Isolamento térmico e acústico de alta performance (sistema ETICS)",
@@ -40,7 +40,7 @@ window.PROJECTS_DATA = [
       },
       {
         url: "imagens/moradia-minimalista.webp",
-        caption: "Muros envolventes em cinzento grafite e integração arquitetónica",
+        caption: "Muros envolventes em cinzento grafite e integração com a envolvente exterior",
         type: "horizontal"
       }
     ]
@@ -48,14 +48,14 @@ window.PROJECTS_DATA = [
   {
     id: "moradia-minimalista",
     title: "Moradia contemporânea minimalista",
-    tagline: "Construção residencial de arquitetura moderna e linhas retas",
+    tagline: "Construção residencial contemporânea de linhas retas",
     category: "construcao",
     categoryLabel: "Construção",
     location: "Braga",
     year: "2024",
     duration: "7 Meses",
     area: "220 m²",
-    description: "Construção de moradia unifamiliar de arquitetura contemporânea e linhas geométricas puras. O projeto destaca-se pelo contraste elegante entre a pureza do branco das fachadas e os apontamentos em cinzento antracite dos muros envolventes, estores de lâminas térmicas e caixilharias de alta gama.",
+    description: "Construção de moradia unifamiliar contemporânea e linhas geométricas puras. A obra destaca-se pelo contraste elegante entre a pureza do branco das fachadas e os apontamentos em cinzento antracite dos muros envolventes, estores de lâminas térmicas e caixilharias de alta gama.",
     highlights: [
       "Estrutura em betão armado e alvenarias de elevado desempenho térmico",
       "Aplicação de sistema ETICS (Capoto) com acabamento texturado hidrófugo",
@@ -68,7 +68,7 @@ window.PROJECTS_DATA = [
     gallery: [
       {
         url: "imagens/moradia-minimalista.webp",
-        caption: "Arquitetura contemporânea de linhas retas e volumes geométricos em branco e antracite",
+        caption: "Moradia contemporânea de linhas retas e volumes geométricos em branco e antracite",
         type: "horizontal"
       },
       {
@@ -86,14 +86,14 @@ window.PROJECTS_DATA = [
   {
     id: "interiores-sala-ripado",
     title: "Remodelação de interiores e sala open space",
-    tagline: "Design de interiores, divisória ripada em madeira e acabamentos de requinte",
+    tagline: "Remodelação de interiores, divisória ripada em madeira e acabamentos de requinte",
     category: "remodelacao",
     categoryLabel: "Remodelação",
     location: "Vila Nova de Famalicão",
     year: "2024",
     duration: "4 Semanas",
     area: "65 m²",
-    description: "Transformação e modernização integral de área social, criando um conceito fluído de open space entre a sala de estar, a zona de refeições e a cozinha. O destaque vai para a conceção e montagem da divisória ripada em madeira maciça, tetos falsos com iluminação LED técnica e pavimento flutuante de elevada resistência.",
+    description: "Transformação e modernização integral de área social, criando um espaço fluído em open space entre a sala de estar, a zona de refeições e a cozinha. O destaque vai para a execução e montagem da divisória ripada em madeira maciça, tetos falsos com iluminação LED técnica e pavimento flutuante de elevada resistência.",
     highlights: [
       "Divisória personalizada com painel ripado em madeira maciça do chão ao teto",
       "Tetos falsos em gesso cartonado com sancas e projetores LED embutidos",
@@ -182,7 +182,7 @@ window.PROJECTS_DATA = [
       },
       {
         url: "imagens/moradia-pedra-natural.webp",
-        caption: "Envolvente paisagística e arquitetura da habitação com jardim relvado",
+        caption: "Envolvente exterior e enquadramento da habitação com jardim relvado",
         type: "horizontal"
       }
     ]
