@@ -257,9 +257,13 @@
         }
 
         if (hash && hash.length > 1) {
-          const target = document.querySelector(hash);
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
+          try {
+            const target = document.querySelector(hash);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          } catch (_) {
+            // Ignora seletor de hash inválido
           }
         }
         window.dispatchEvent(new Event('scroll'));
