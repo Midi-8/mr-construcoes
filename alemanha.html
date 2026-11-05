@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="no-js">
     <header class="topbar is-scrolled">
         <nav class="nav wrap" aria-label="Navegação principal">
             <a class="brand" href="index.html" aria-label="MR Construções, página inicial">
@@ -59,10 +59,11 @@
             <div class="navlinks" id="navlinks">
                 <div class="navlinks-inner">
                     <div class="navlinks-list">
-                        <a href="alemanha.html" class="is-active">Serviços</a>
+                        <a href="index.html">Início</a>
                         <a href="index.html#projetos">Projetos</a>
-                        <a href="index.html#processo">Processo</a>
-                        <a href="index.html#empresa">Empresa</a>
+                        <a href="alemanha.html" class="is-active">Serviços</a>
+                        <a href="#especialidades">Especialidades</a>
+                        <a href="#parceria">Parceria</a>
                     </div>
                     <div class="nav-mobile-bottom">
                         <a href="#contacto-proposta" class="nav-cta">Pedir proposta <span aria-hidden="true">→</span></a>
@@ -91,7 +92,7 @@
             </a>
 
             <!-- Dossier Hero Layout -->
-            <div class="dossier-hero">
+            <div class="dossier-hero reveal">
                 <div class="dossier-hero-left">
                     <span class="dossier-label">Dossier Operacional · Mercado Externo</span>
                     <h1>Alemanha: Subempreitadas e Construção Civil</h1>
@@ -103,11 +104,10 @@
                             href="https://wa.me/351915680947?text=Ola!%20Gostaria%20de%20conversar%20sobre%20obras%20na%20Alemanha."
                             target="_blank" rel="noopener noreferrer">Falar sobre a Alemanha <span
                                 aria-hidden="true">→</span></a>
-                        <a class="hero-btn-link" href="#especialidades">Consultar especialidades</a>
                     </div>
                 </div>
 
-                <div class="dossier-sheet">
+                <div class="dossier-sheet reveal">
                     <div class="dossier-sheet-title">Ficha Técnica de Operação no Exterior</div>
                     <div class="dossier-table">
                         <div class="dossier-row">
@@ -146,7 +146,7 @@
                 </div>
 
                 <div class="dossier-grid-5">
-                    <div class="dossier-trade-card">
+                    <div class="dossier-trade-card reveal">
                         <div>
                             <span class="trade-code">Gewerke 01</span>
                             <h3>Alvenaria e Estruturas</h3>
@@ -156,7 +156,7 @@
                         <div class="trade-standard">Normas DIN 1053 · Estabilidade e Rigor Métrico</div>
                     </div>
 
-                    <div class="dossier-trade-card">
+                    <div class="dossier-trade-card reveal">
                         <div>
                             <span class="trade-code">Gewerke 02</span>
                             <h3>Isolamento Térmico (Capoto)</h3>
@@ -166,7 +166,7 @@
                         <div class="trade-standard">Normas DIN 55699 / GEG · Eficiência Energética</div>
                     </div>
 
-                    <div class="dossier-trade-card">
+                    <div class="dossier-trade-card reveal">
                         <div>
                             <span class="trade-code">Gewerke 03</span>
                             <h3>Construção a Seco e Pladur</h3>
@@ -176,7 +176,7 @@
                         <div class="trade-standard">Normas DIN 18181 · Acabamentos Q1 a Q4</div>
                     </div>
 
-                    <div class="dossier-trade-card">
+                    <div class="dossier-trade-card reveal">
                         <div>
                             <span class="trade-code">Gewerke 04</span>
                             <h3>Pintura e Revestimentos</h3>
@@ -186,7 +186,7 @@
                         <div class="trade-standard">Normas DIN 18363 · Acabamentos Técnicos Finos</div>
                     </div>
 
-                    <div class="dossier-trade-card">
+                    <div class="dossier-trade-card reveal">
                         <div>
                             <span class="trade-code">Gewerke 05</span>
                             <h3>Remodelações e Reabilitação</h3>
@@ -199,8 +199,8 @@
             </section>
 
             <!-- Painel Bilateral de Parceria -->
-            <div class="dossier-split-panel">
-                <div class="split-box">
+            <div class="dossier-split-panel" id="parceria">
+                <div class="split-box reveal">
                     <span class="split-box-tag">Método de Trabalho</span>
                     <h3>Como operamos em subempreitadas</h3>
                     <p>Garantimos previsibilidade e rigor em cada metro quadrado executado:</p>
@@ -211,7 +211,7 @@
                     </ul>
                 </div>
 
-                <div class="split-box dark">
+                <div class="split-box dark reveal">
                     <span class="split-box-tag">Für deutsche Baupartner</span>
                     <h3>Informationen für Generalunternehmer</h3>
                     <p>Eingespielte portugiesische Facharbeiter-Teams für Bauvorhaben in Deutschland:</p>
@@ -224,7 +224,7 @@
             </div>
 
             <!-- Banner de Contacto Técnico -->
-            <div class="dossier-contact-banner" id="contacto-proposta">
+            <div class="dossier-contact-banner reveal" id="contacto-proposta">
                 <div class="dossier-contact-info">
                     <h2>Pedir proposta ou enviar caderno de encargos</h2>
                     <p>Tem um projeto residencial ou comercial na Alemanha? Entre em contacto para análise de projeto ou proposta técnica detalhada de subempreitada.</p>
