@@ -10,16 +10,19 @@ Desenvolvido em Vanilla HTML5, CSS3 e JavaScript moderno, sem dependências exte
 
 ```text
 mr-construcoes/
+├── css/
+│   └── style.css       Folha de estilos principal, variáveis de design e regras responsivas
+├── js/
+│   ├── script.js       Lógica da página principal (menu mobile, scroll, formulário, toast)
+│   ├── project-data.js Base de dados em JavaScript com as informações e galerias dos projetos
+│   ├── project-view.js Gestor de rotas por hash (#projeto/id) e preenchimento da vista do projeto
+│   └── lightbox.js     Visualizador de imagens em ecrã inteiro (acessível, com teclado e gestos de swipe)
+├── imagens/            Fotografias, logotipo oficial e recursos gráficos
 ├── index.html          Estrutura HTML5 semântica (página principal e template do projeto)
 ├── alemanha.html       Página dedicada para serviços internacionais e subempreitadas na Alemanha
-├── style.css           Folha de estilos principal, variáveis de design e regras responsivas
-├── script.js           Lógica da página principal (menu mobile, scroll, formulário, toast)
-├── project-data.js     Base de dados em JavaScript com as informações e galerias dos projetos
-├── project-view.js     Gestor de rotas por hash (#projeto/id) e preenchimento da vista do projeto
-├── lightbox.js         Visualizador de imagens em ecrã inteiro (acessível, com teclado e gestos de swipe)
-├── imagens/            Fotografias, logotipo oficial e recursos gráficos
 ├── robots.txt          Instruções de indexação para motores de busca (Google, Bing)
 ├── sitemap.xml         Mapa do site para indexação SEO
+├── site.webmanifest    Manifest de aplicação web móvel e ícones
 └── README.md           Documentação técnica e instruções de manutenção
 ```
 
@@ -50,11 +53,11 @@ mr-construcoes/
 
 ## Como Adicionar ou Atualizar Projetos e Fotografias
 
-Toda a informação dos projetos e galerias está centralizada no ficheiro `project-data.js`. Não é necessário alterar a estrutura do HTML para adicionar ou editar imagens de obras.
+Toda a informação dos projetos e galerias está centralizada no ficheiro `js/project-data.js`. Não é necessário alterar a estrutura do HTML para adicionar ou editar imagens de obras.
 
 ### 1. Adicionar uma nova fotografia a um projeto existente
 1. Copie o ficheiro de imagem para a pasta `imagens/` (formato JPG ou WebP, resolução recomendada ~1200x900px).
-2. Abra `project-data.js` e localize o projeto correspondente pelo seu `id`.
+2. Abra `js/project-data.js` e localize o projeto correspondente pelo seu `id`.
 3. Adicione um novo objeto na lista `gallery`:
 
 ```javascript
@@ -66,7 +69,7 @@ Toda a informação dos projetos e galerias está centralizada no ficheiro `proj
 ```
 
 ### 2. Adicionar um novo projeto
-1. Adicione um novo bloco no array `window.PROJECTS_DATA` em `project-data.js` com os campos: `id`, `title`, `tagline`, `category`, `categoryLabel`, `location`, `year`, `duration`, `area`, `description`, `highlights`, `heroImage` e `gallery`.
+1. Adicione um novo bloco no array `window.PROJECTS_DATA` em `js/project-data.js` com os campos: `id`, `title`, `tagline`, `category`, `categoryLabel`, `location`, `year`, `duration`, `area`, `description`, `highlights`, `heroImage` e `gallery`.
 2. Em `index.html`, adicione o cartão correspondente dentro da secção `<section class="projects">` com o link a apontar para `#projeto/seu-id`.
 
 ---
