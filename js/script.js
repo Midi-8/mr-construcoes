@@ -293,13 +293,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // Estado de envio e proteção contra submissões repetidas
             submitBtn.disabled = true;
             submitBtn.setAttribute('aria-disabled', 'true');
-            submitBtn.innerHTML = 'A enviar... <span aria-hidden="true">⏳</span>';
+            submitBtn.innerHTML = 'A enviar...';
             formStatus.className = 'form-status';
             formStatus.textContent = '';
 
             try {
                 // Envio real via AJAX/JSON para o destino oficial da empresa
-                const response = await fetch('https://formsubmit.co/ajax/mrconstrucoes@sapo.pt', {
+                const response = await fetch('https://formsubmit.co/ajax/geral@marcoribeiroconstrucoes.pt', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -312,6 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         timeline: timeline || 'Não especificado',
                         description: description,
                         _subject: `Novo pedido de orçamento: ${type} (${name})`,
+                        _cc: 'mr@marcoribeiroconstrucoes.pt',
                         _template: 'table',
                         _captcha: 'false'
                     })

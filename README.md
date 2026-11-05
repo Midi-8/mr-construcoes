@@ -98,5 +98,5 @@ Aceda no navegador ao endereço: `http://localhost:8000`
 - **Alvará IMPIC N.º**: 113987
 - **Sede**: Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal
 - **Telefone**: +351 915 680 947
-- **Email**: mrconstrucoes@sapo.pt
+- **Email**: geral@marcoribeiroconstrucoes.pt / mr@marcoribeiroconstrucoes.pt
 - **Livro de Reclamações Eletrónico**: https://www.livroreclamacoes.pt
