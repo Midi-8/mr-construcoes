@@ -11,6 +11,7 @@ Desenvolvido em Vanilla HTML5, CSS3 e JavaScript moderno, sem dependências exte
 ```text
 mr-construcoes/
 ├── index.html          Estrutura HTML5 semântica (página principal e template do projeto)
+├── alemanha.html       Página dedicada para serviços internacionais e subempreitadas na Alemanha
 ├── style.css           Folha de estilos principal, variáveis de design e regras responsivas
 ├── script.js           Lógica da página principal (menu mobile, scroll, formulário, toast)
 ├── project-data.js     Base de dados em JavaScript com as informações e galerias dos projetos
