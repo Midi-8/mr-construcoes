@@ -842,7 +842,8 @@
         }
 
         .section-heading h2,
-        .process-head h2 {
+        .process-head h2,
+        .comparison-head h2 {
             font: 600 clamp(2.1rem, 3.8vw, 3.5rem)/1.18 var(--font-heading);
             letter-spacing: -0.025em;
             margin: 0;
@@ -1032,14 +1033,11 @@
         }
 
         .comparison-head h2 {
-            font: 600 clamp(1.8rem, 3.2vw, 2.6rem)/1.18 var(--font-heading);
-            letter-spacing: -0.025em;
-            margin: 0;
             max-width: 760px;
         }
 
         .comparison-head p {
-            font: 400 13px/1.6 var(--font-body);
+            font: 400 13.5px/1.65 var(--font-body);
             color: #403e3b;
             max-width: 640px;
             margin: 0;
@@ -2048,12 +2046,9 @@
             }
 
             .section-heading h2,
-            .process-head h2 {
-                font-size: clamp(2.8rem, 11vw, 5rem)
-            }
-
+            .process-head h2,
             .comparison-head h2 {
-                font-size: clamp(2.3rem, 9vw, 4rem)
+                font-size: clamp(2.8rem, 11vw, 5rem)
             }
 
 
