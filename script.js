@@ -329,6 +329,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     formStatus.className = 'form-status is-success';
                     formStatus.textContent = '';
                     showToast('Mensagem Enviada');
+                    if (typeof window.trackConversion === 'function') {
+                        window.trackConversion('form_submit_success', 'lead_form', type);
+                    }
                 } else if (result.message && result.message.toLowerCase().includes('activate')) {
                     // Informação caso o serviço esteja a aguardar validação única inicial no email
                     formStatus.className = 'form-status is-error';
@@ -381,4 +384,73 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 12. Rastreio de Métricas e Eventos de Conversão (Privacy-Friendly / Sem Cookies)
+    function trackConversion(action, category = 'contact', label = '') {
+        const payload = {
+            event: action,
+            category: category,
+            label: label,
+            timestamp: new Date().toISOString()
+        };
+
+        // Despacha evento customizado para o DOM
+        window.dispatchEvent(new CustomEvent('mr:conversion', { detail: payload }));
+
+        // Compatibilidade com Google Tag Manager / GA4 (se configurado)
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', action, {
+                event_category: category,
+                event_label: label
+            });
+        }
+        if (Array.isArray(window.dataLayer)) {
+            window.dataLayer.push({
+                event: action,
+                event_category: category,
+                event_label: label
+            });
+        }
+
+        // Compatibilidade com Plausible Analytics (se ativo)
+        if (typeof window.plausible === 'function') {
+            window.plausible(action, { props: { category: category, label: label } });
+        }
+    }
+
+    // Expor globalmente para uso modular
+    window.trackConversion = trackConversion;
+
+    // Rastrear cliques no WhatsApp flutuante e nos links diretos
+    document.querySelectorAll('a[href*="wa.me"]').forEach(waLink => {
+        waLink.addEventListener('click', () => {
+            const isFloating = waLink.classList.contains('whatsapp-float');
+            const label = isFloating ? 'whatsapp_floating_button' : (waLink.textContent || 'whatsapp_link').trim().substring(0, 50);
+            trackConversion('click_whatsapp', 'lead_contact', label);
+        });
+    });
+
+    // Rastrear cliques em chamadas telefónicas
+    document.querySelectorAll('a[href^="tel:"]').forEach(telLink => {
+        telLink.addEventListener('click', () => {
+            const tel = telLink.getAttribute('href').replace('tel:', '');
+            trackConversion('click_phone', 'lead_contact', tel);
+        });
+    });
+
+    // Rastrear cliques em envio de email direto
+    document.querySelectorAll('a[href^="mailto:"]').forEach(mailLink => {
+        mailLink.addEventListener('click', () => {
+            const email = mailLink.getAttribute('href').replace('mailto:', '');
+            trackConversion('click_email', 'lead_contact', email);
+        });
+    });
+
+    // Rastrear pedidos de orçamento via botões CTA
+    document.querySelectorAll('.hero-btn-solid, .nav-cta, .pp-btn-quote').forEach(ctaBtn => {
+        ctaBtn.addEventListener('click', () => {
+            const label = ctaBtn.textContent.trim().substring(0, 30);
+            trackConversion('click_quote_cta', 'engagement', label);
+        });
+    });
 });

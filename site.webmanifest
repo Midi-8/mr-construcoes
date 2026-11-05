@@ -1,0 +1,21 @@
+{
+  "name": "MR Construções",
+  "short_name": "MR Construções",
+  "description": "MR Construções - Construção civil, remodelação e reparações em Vila Nova de Famalicão",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F6F4F0",
+  "theme_color": "#F6F4F0",
+  "icons": [
+    {
+      "src": "imagens/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "imagens/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
