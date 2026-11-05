@@ -832,7 +832,8 @@
             padding: 0 0 clamp(90px, 12vw, 160px);
         }
 
-        .section-heading {
+        .section-heading,
+        .process-head {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -840,14 +841,16 @@
             margin-bottom: 36px;
         }
 
-        .section-heading h2 {
+        .section-heading h2,
+        .process-head h2 {
             font: 600 clamp(2.1rem, 3.8vw, 3.5rem)/1.18 var(--font-heading);
             letter-spacing: -0.025em;
             margin: 0;
             color: var(--ink);
         }
 
-        .section-heading p {
+        .section-heading p,
+        .process-head p {
             max-width: 640px;
             color: #403e3b;
             font: 400 13.5px/1.65 var(--font-body);
@@ -1186,28 +1189,6 @@
 
         .process {
             padding: 0 0 clamp(90px, 12vw, 160px);
-        }
-
-        .process-head {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 14px;
-            margin-bottom: 36px;
-        }
-
-        .process-head h2 {
-            font: 600 clamp(2.1rem, 3.8vw, 3.5rem)/1.18 var(--font-heading);
-            letter-spacing: -0.025em;
-            margin: 0;
-            color: var(--ink);
-        }
-
-        .process-head p {
-            max-width: 640px;
-            color: #403e3b;
-            font: 400 13.5px/1.65 var(--font-body);
-            margin: 0;
         }
 
         .process-grid-modern {
