@@ -1749,6 +1749,20 @@
             color: var(--accent-light)
         }
 
+        .footer-credit {
+            display: inline-block;
+            margin-top: 3px;
+            color: rgba(255, 255, 255, .5);
+            font-size: 10.5px;
+            letter-spacing: .02em;
+        }
+
+        .credit-brand {
+            color: var(--accent-light);
+            font-weight: 600;
+            letter-spacing: .06em;
+        }
+
         .reveal {
             opacity: 0;
             transform: translateY(22px);
