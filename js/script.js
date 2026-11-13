@@ -1,43 +1,77 @@
 /**
- * MR Construções - Script Principal (script.js)
- * Interações e funcionalidades dinâmicas do website
+ * MR Construções — Script Principal (js/script.js)
+ * Navegação, animações reveal & typewriter sem salto de layout, comparador antes/depois,
+ * filtro discreto de projetos e submissão dos formulários (Orçamento PT e Candidatura DE).
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Tratamento de fallback para logotipo
-    document.querySelectorAll('.brand img').forEach(img => {
-        img.addEventListener('error', () => {
-            img.hidden = true;
-            const fallback = document.createElement('span');
-            fallback.className = 'brand-fallback';
-            fallback.textContent = 'MR Construções';
-            img.parentElement.appendChild(fallback);
-        }, { once: true });
-    });
-
-    // 2. Remover classe no-js quando o script estiver pronto
+    // 1. Ativa estado JS no documento
     document.body.classList.remove('no-js');
 
-    // 3. Barra de navegação com estado no scroll
+    // 2. Rastreio de Conversões
+    window.trackConversion = (eventName, category, label) => {
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', eventName, {
+                event_category: category || 'engagement',
+                event_label: label || ''
+            });
+        }
+        if (Array.isArray(window.dataLayer)) {
+            window.dataLayer.push({
+                event: eventName,
+                category: category || 'engagement',
+                label: label || ''
+            });
+        }
+    };
+
+    // 2b. Ativação inteligente do vídeo de entrada no Hero (quando imagens/hero-video.mp4 existir)
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+        const videoSrc = heroVideo.getAttribute('data-video-src');
+        if (videoSrc) {
+            fetch(videoSrc, { method: 'HEAD' })
+                .then((res) => {
+                    if (res.ok) {
+                        heroVideo.src = videoSrc;
+                        heroVideo.addEventListener('canplay', () => {
+                            heroVideo.classList.add('is-ready');
+                            heroVideo.play().catch(() => {});
+                        }, { once: true });
+                        heroVideo.load();
+                    }
+                })
+                .catch(() => {
+                    // Mantém a sequência cinematográfica .hero-reel ativa caso o ficheiro .mp4 ainda não esteja presente
+                });
+        }
+    }
+
+    // 3. Comportamento da barra de navegação no scroll
     const topbar = document.querySelector('.topbar');
     const heroSection = document.querySelector('.hero');
+    const isLightHeaderPage = document.body.classList.contains('page-light-header');
+
     const updateTopbar = () => {
         if (!topbar) return;
-        if (document.body.classList.contains('is-project-open')) {
+        if (isLightHeaderPage || document.body.classList.contains('is-project-open')) {
             topbar.classList.add('is-scrolled');
             return;
         }
-        if (!heroSection) return;
-        topbar.classList.toggle('is-scrolled', window.scrollY > Math.max(100, heroSection.offsetHeight - 100));
+        if (!heroSection) {
+            topbar.classList.add('is-scrolled');
+            return;
+        }
+        topbar.classList.toggle('is-scrolled', window.scrollY > Math.max(80, heroSection.offsetHeight - 120));
     };
     window.addEventListener('scroll', updateTopbar, { passive: true });
     updateTopbar();
 
     // 3b. Indicador de secção ativa na navegação (ScrollSpy)
     const trackedSections = document.querySelectorAll('section[id]');
-    const navAnchors = document.querySelectorAll('.navlinks a:not(.nav-cta)');
+    const navAnchors = document.querySelectorAll('.navlinks-list a');
 
-    if ('IntersectionObserver' in window && trackedSections.length && navAnchors.length) {
+    if ('IntersectionObserver' in window && trackedSections.length && navAnchors.length && !isLightHeaderPage) {
         const spyObserver = new IntersectionObserver((entries) => {
             if (document.body.classList.contains('is-project-open')) {
                 navAnchors.forEach(a => a.classList.remove('is-active'));
@@ -79,226 +113,270 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
 
             if (navBackdrop) {
-                navBackdrop.classList.toggle('is-active', open);
-                navBackdrop.setAttribute('aria-hidden', String(!open));
+                navBackdrop.classList.toggle('is-visible', open);
             }
 
             if (open) {
                 previousBodyOverflow = document.body.style.overflow;
                 document.body.style.overflow = 'hidden';
-                document.body.classList.add('menu-open');
-                const firstLink = navLinks.querySelector('a');
-                if (firstLink) {
-                    firstLink.focus();
-                }
             } else {
-                document.body.style.overflow = previousBodyOverflow;
-                document.body.classList.remove('menu-open');
+                document.body.style.overflow = previousBodyOverflow || '';
             }
         };
 
-        menuToggle.addEventListener('click', () => {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             const isOpen = navLinks.classList.contains('open');
             setMenuState(!isOpen);
-            if (isOpen) {
-                menuToggle.focus();
-            }
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => setMenuState(false));
         });
 
         if (navBackdrop) {
-            navBackdrop.addEventListener('click', () => {
-                setMenuState(false);
-                menuToggle.focus();
-            });
+            navBackdrop.addEventListener('click', () => setMenuState(false));
         }
 
-        // Fechar menu ao clicar num link de navegação
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                setMenuState(false);
-            });
-        });
-
-        // Fechar com a tecla Escape e gestão de foco acessível (Tab trap)
-        document.addEventListener('keydown', (event) => {
-            if (!navLinks.classList.contains('open')) return;
-
-            if (event.key === 'Escape') {
-                event.preventDefault();
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('open')) {
                 setMenuState(false);
                 menuToggle.focus();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 860 && navLinks.classList.contains('open')) {
+                setMenuState(false);
+            }
+        });
+    }
+
+    // 5. Animações de revelação ao fazer scroll (IntersectionObserver)
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+        reveals.forEach((el) => io.observe(el));
+    } else {
+        reveals.forEach((el) => el.classList.add('is-visible'));
+    }
+
+    // 6. Animação de Escrever (Typewriter) depois de cada título ou secção (Pág. 2 do PDF)
+    const typewriterTargets = document.querySelectorAll('.typewriter-target');
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if ('IntersectionObserver' in window && typewriterTargets.length && !prefersReducedMotion) {
+        const twObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    twObserver.unobserve(el);
+                    runTypewriter(el);
+                }
+            });
+        }, { threshold: 0.25, rootMargin: '0px 0px -20px 0px' });
+
+        typewriterTargets.forEach((el) => {
+            const initialText = el.getAttribute('data-tw-full') || el.textContent.trim();
+            el.setAttribute('data-tw-full', initialText);
+            // Reserva a altura antes de ocultar o texto para evitar qualquer salto de layout
+            const h = el.offsetHeight;
+            if (h > 0) {
+                el.style.minHeight = `${h}px`;
+            }
+            el.classList.add('tw-pending');
+            el.textContent = '';
+            twObserver.observe(el);
+        });
+    }
+
+    function runTypewriter(el) {
+        if (el.dataset.twRunning === 'true' || el.dataset.twDone === 'true') return;
+        const fullText = el.getAttribute('data-tw-full') || '';
+        if (!fullText) {
+            el.classList.remove('tw-pending');
+            return;
+        }
+
+        el.dataset.twRunning = 'true';
+        el.classList.remove('tw-pending');
+        el.classList.add('is-typing');
+        el.textContent = '';
+
+        let i = 0;
+        const totalLen = fullText.length;
+        const stepDelay = Math.max(9, Math.min(20, Math.floor(1150 / Math.max(1, totalLen))));
+
+        const timer = setInterval(() => {
+            const currentExpected = el.getAttribute('data-tw-full') || fullText;
+            if (currentExpected !== fullText || el.dataset.twDone === 'true') {
+                clearInterval(timer);
+                el.textContent = currentExpected;
+                el.classList.remove('is-typing', 'tw-pending');
+                el.style.minHeight = '';
+                el.dataset.twRunning = 'false';
+                el.dataset.twDone = 'true';
                 return;
             }
 
-            if (event.key === 'Tab') {
-                const focusableElements = [menuToggle, ...navLinks.querySelectorAll('a')];
-                if (focusableElements.length === 0) return;
-                const firstElement = focusableElements[0];
-                const lastElement = focusableElements[focusableElements.length - 1];
+            i += 1;
+            el.textContent = fullText.slice(0, i);
 
-                if (event.shiftKey && document.activeElement === firstElement) {
-                    event.preventDefault();
-                    lastElement.focus();
-                } else if (!event.shiftKey && document.activeElement === lastElement) {
-                    event.preventDefault();
-                    firstElement.focus();
-                }
+            if (i >= totalLen) {
+                clearInterval(timer);
+                el.classList.remove('is-typing', 'tw-pending');
+                el.style.minHeight = '';
+                el.dataset.twRunning = 'false';
+                el.dataset.twDone = 'true';
             }
-        });
-
-        // Repor estado e scroll automaticamente ao passar para layout desktop
-        const desktopMedia = window.matchMedia('(min-width: 761px)');
-        desktopMedia.addEventListener('change', (e) => {
-            if (e.matches && navLinks.classList.contains('open')) {
-                setMenuState(false);
-            }
-        });
+        }, stepDelay);
     }
 
-    // 5. Animação de revelação com scroll (Intersection Observer)
-    const revealItems = document.querySelectorAll('.reveal');
-    if (revealItems.length > 0) {
-        if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-            revealItems.forEach(item => observer.observe(item));
-        } else {
-            revealItems.forEach(item => item.classList.add('is-visible'));
-        }
-    }
-
-    // 6. Controlo de comparação antes / depois
+    // 7. Comparador interativo Antes e Depois
     const compare = document.getElementById('compare');
-    const compareRange = document.getElementById('compare-range');
-    if (compare && compareRange) {
-        function updateCompare() {
-            const value = Number(compareRange.value);
-            compare.style.setProperty('--split', value + '%');
-            compareRange.setAttribute('aria-valuetext', value + ' por cento');
-        }
-        compareRange.addEventListener('input', updateCompare);
-        updateCompare();
+    const range = document.getElementById('compare-range');
+    if (compare && range) {
+        let rafId = null;
+        const syncCompare = (val) => {
+            const clamped = Math.max(0, Math.min(100, Number(val)));
+            compare.style.setProperty('--pos', clamped + '%');
+            range.value = clamped;
+        };
+
+        range.addEventListener('input', (e) => {
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => syncCompare(e.target.value));
+        });
+
+        let dragging = false;
+        const updateFromPointer = (clientX) => {
+            const rect = compare.getBoundingClientRect();
+            if (!rect.width) return;
+            const pct = ((clientX - rect.left) / rect.width) * 100;
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => syncCompare(pct));
+        };
+
+        compare.addEventListener('pointerdown', (e) => {
+            if (e.target === range) return;
+            dragging = true;
+            updateFromPointer(e.clientX);
+        });
+
+        window.addEventListener('pointermove', (e) => {
+            if (!dragging) return;
+            updateFromPointer(e.clientX);
+        }, { passive: true });
+
+        window.addEventListener('pointerup', () => {
+            dragging = false;
+        }, { passive: true });
+
+        syncCompare(range.value);
     }
 
-    // 7. Especialidades / Acordeão
-    document.querySelectorAll('.specialty-item').forEach(item => {
-        const summary = item.querySelector('summary');
-        if (summary) {
-            summary.setAttribute('aria-expanded', String(item.open));
-            item.addEventListener('toggle', () => {
-                summary.setAttribute('aria-expanded', String(item.open));
-            });
-        }
-    });
+    // 8. Filtro Discreto de Projetos (Seletor Minimalista - Pág. 3 e Categorias da Pág. 5 do PDF)
+    const categorySelect = document.getElementById('project-category-select');
+    const projectItems = document.querySelectorAll('.ooda-grid article.project');
 
-    // 8. Ano dinâmico no rodapé
+    if (categorySelect && projectItems.length) {
+        categorySelect.addEventListener('change', () => {
+            const filter = categorySelect.value || 'all';
+            projectItems.forEach((card) => {
+                const rawCats = card.getAttribute('data-category') || '';
+                const cats = rawCats.split(/\s+/).filter(Boolean);
+                const match = filter === 'all' || cats.includes(filter);
+                if (match) {
+                    card.classList.remove('is-hidden');
+                    requestAnimationFrame(() => {
+                        card.classList.remove('is-fading');
+                    });
+                } else {
+                    card.classList.add('is-fading');
+                    setTimeout(() => {
+                        if (card.classList.contains('is-fading')) {
+                            card.classList.add('is-hidden');
+                        }
+                    }, 240);
+                }
+            });
+        });
+    }
+
+    // 9. Atualização automática do ano no rodapé
     const yearEl = document.getElementById('year');
     if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
     }
 
-    // 9. Componente Toast acessível
+    // 10. Notificação Toast
     const toast = document.getElementById('toast');
-    const toastClose = document.getElementById('toast-close');
-    let toastTimeout = null;
+    let toastTimer = null;
 
-    const hideToast = () => {
+    const showToast = (titleText) => {
         if (!toast) return;
-        toast.classList.remove('is-visible');
-        clearTimeout(toastTimeout);
-        toastTimeout = null;
-        setTimeout(() => {
-            if (!toast.classList.contains('is-visible')) {
-                toast.hidden = true;
-            }
-        }, 300);
-    };
+        const strong = toast.querySelector('strong');
+        if (strong && titleText) strong.textContent = titleText;
 
-    const showToast = (message = 'Mensagem Enviada') => {
-        if (!toast) return;
-        const msgEl = toast.querySelector('.toast-message');
-        if (msgEl) msgEl.textContent = message;
-
-        clearTimeout(toastTimeout);
         toast.hidden = false;
-        // Forçar reflow para aplicar transição CSS
-        void toast.offsetWidth;
-        toast.classList.add('is-visible');
+        requestAnimationFrame(() => {
+            toast.classList.add('show');
+        });
 
-        // Dispensa automática após 6 segundos
-        toastTimeout = setTimeout(() => {
-            hideToast();
-        }, 6000);
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => {
+                toast.hidden = true;
+            }, 350);
+        }, 4500);
     };
 
-    if (toast) {
-        if (toastClose) {
-            toastClose.addEventListener('click', hideToast);
-        }
-        // Pausar temporizador em hover/focus para leitura acessível
-        toast.addEventListener('mouseenter', () => clearTimeout(toastTimeout));
-        toast.addEventListener('mouseleave', () => {
-            if (toast.classList.contains('is-visible')) {
-                toastTimeout = setTimeout(hideToast, 3000);
-            }
-        });
-        toast.addEventListener('focusin', () => clearTimeout(toastTimeout));
-        toast.addEventListener('focusout', () => {
-            if (toast.classList.contains('is-visible')) {
-                toastTimeout = setTimeout(hideToast, 3000);
-            }
-        });
-    }
-
-    // 10. Envio real e fiável do formulário de contacto
-    const form = document.getElementById('contact-form');
+    // 11. Submissão do Formulário de Pedido de Orçamento (Portugal - index.html)
+    const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
-    const submitBtn = form ? form.querySelector('.submit') : null;
 
-    if (form && formStatus && submitBtn) {
-        const originalBtnHTML = submitBtn.innerHTML;
+    if (contactForm && formStatus) {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnHTML = submitBtn ? submitBtn.innerHTML : 'Enviar pedido ↗';
 
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault();
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-            // Proteção Anti-Spam (Honeypot) - Bloqueia submissão de bots silenciosamente
-            const honey = form.querySelector('input[name="_honey"]');
-            if (honey && honey.value.trim() !== '') {
-                return;
-            }
+            const honey = contactForm.querySelector('input[name="_honey"]');
+            if (honey && honey.value.trim() !== '') return;
 
-            // Validação nativa do formulário
-            if (!form.reportValidity()) return;
+            if (!contactForm.reportValidity()) return;
 
-            const data = new FormData(form);
+            const data = new FormData(contactForm);
             const name = String(data.get('name') || '').trim();
             const reply = String(data.get('reply') || '').trim();
+            const location = String(data.get('location') || '').trim();
             const type = String(data.get('type') || '').trim();
-            const description = String(data.get('description') || '').trim();
 
-            const timeline = String(data.get('timeline') || '').trim();
-
-            if (!name || !reply || !type || !description) {
+            if (!name || !reply || !location || !type) {
                 formStatus.className = 'form-status is-error';
-                formStatus.textContent = 'Por favor, preencha todos os campos obrigatórios.';
+                formStatus.textContent = 'Por favor, preencha os campos principais do pedido.';
                 return;
             }
 
-            // Estado de envio e proteção contra submissões repetidas
-            submitBtn.disabled = true;
-            submitBtn.setAttribute('aria-disabled', 'true');
-            submitBtn.innerHTML = 'A enviar...';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.setAttribute('aria-disabled', 'true');
+                submitBtn.innerHTML = 'A enviar...';
+            }
             formStatus.className = 'form-status';
             formStatus.textContent = '';
 
             try {
-                // Envio real via AJAX/JSON para o destino oficial da empresa
                 const response = await fetch('https://formsubmit.co/ajax/geral@marcoribeiroconstrucoes.pt', {
                     method: 'POST',
                     headers: {
@@ -306,12 +384,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         'Accept': 'application/json'
                     },
                     body: JSON.stringify({
-                        name: name,
-                        reply: reply,
-                        type: type,
-                        timeline: timeline || 'Não especificado',
-                        description: description,
-                        _subject: `Novo pedido de orçamento: ${type} (${name})`,
+                        Nome: name,
+                        Telefone_ou_Email: reply,
+                        Localizacao_da_Obra: location,
+                        Tipo_de_Intervencao: type,
+                        _subject: `Novo Pedido de Orçamento (PT): ${type} - ${location} (${name})`,
                         _cc: 'mr@marcoribeiroconstrucoes.pt',
                         _template: 'table',
                         _captcha: 'false'
@@ -319,139 +396,112 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (!response.ok) {
-                    throw new Error(`Erro de rede ou servidor (${response.status})`);
+                    throw new Error(`Erro de servidor (${response.status})`);
                 }
 
                 const result = await response.json();
-
-                // Confirmação estrita de sucesso pelo serviço
                 if (result.success === 'true' || result.success === true) {
-                    form.reset();
+                    contactForm.reset();
                     formStatus.className = 'form-status is-success';
                     formStatus.textContent = '';
-                    showToast('Mensagem Enviada');
-                    if (typeof window.trackConversion === 'function') {
-                        window.trackConversion('form_submit_success', 'lead_form', type);
-                    }
-                } else if (result.message && result.message.toLowerCase().includes('activate')) {
-                    // Informação caso o serviço esteja a aguardar validação única inicial no email
-                    formStatus.className = 'form-status is-error';
-                    formStatus.textContent = 'O serviço de receção está a aguardar validação inicial no email da empresa. Por favor, tente mais tarde ou use os contactos diretos.';
+                    showToast('Pedido Enviado');
+                    window.trackConversion('form_submit_success', 'quote_pt', type);
                 } else {
-                    throw new Error(result.message || 'O serviço não confirmou a submissão.');
+                    throw new Error(result.message || 'Submissão não confirmada.');
                 }
-            } catch (err) {
-                // Em caso de erro: preserva todos os dados e apresenta mensagem de erro clara
+            } catch (_) {
                 formStatus.className = 'form-status is-error';
-                formStatus.textContent = 'Não foi possível enviar a mensagem no momento. Por favor tente novamente ou contacte diretamente por telefone ou email.';
+                formStatus.textContent = 'Não foi possível submeter o formulário no momento. Por favor utilize o botão de WhatsApp acima ou contacte geral@marcoribeiroconstrucoes.pt.';
             } finally {
-                // Restaura sempre o estado do botão
-                submitBtn.disabled = false;
-                submitBtn.removeAttribute('aria-disabled');
-                submitBtn.innerHTML = originalBtnHTML;
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.removeAttribute('aria-disabled');
+                    submitBtn.innerHTML = originalBtnHTML;
+                }
             }
         });
     }
 
-    // 11. Filtro Interativo de Projetos por Categoria
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.projects article.project');
+    // 12. Submissão do Formulário de Candidatura (Alemanha - alemanha.html)
+    const recForm = document.getElementById('recruitment-form');
+    const recStatus = document.getElementById('rec-form-status');
 
-    if (filterBtns.length && projectCards.length) {
-        filterBtns.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                const targetFilter = btn.getAttribute('data-filter') || 'all';
+    if (recForm && recStatus) {
+        const submitBtn = recForm.querySelector('button[type="submit"]');
+        const originalBtnHTML = submitBtn ? submitBtn.innerHTML : 'Enviar candidatura ↗';
 
-                filterBtns.forEach((b) => {
-                    const isActive = b === btn;
-                    b.classList.toggle('is-active', isActive);
-                    b.setAttribute('aria-selected', String(isActive));
+        recForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const honey = recForm.querySelector('input[name="_honey"]');
+            if (honey && honey.value.trim() !== '') return;
+
+            if (!recForm.reportValidity()) return;
+
+            const data = new FormData(recForm);
+            const name = String(data.get('name') || '').trim();
+            const phone = String(data.get('phone') || '').trim();
+            const specialty = String(data.get('specialty') || '').trim();
+            const residence = String(data.get('residence') || '').trim();
+
+            if (!name || !phone || !specialty || !residence) {
+                recStatus.className = 'form-status is-error';
+                recStatus.textContent = 'Por favor, preencha todos os campos da candidatura.';
+                return;
+            }
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.setAttribute('aria-disabled', 'true');
+                submitBtn.innerHTML = 'A enviar...';
+            }
+            recStatus.className = 'form-status';
+            recStatus.textContent = '';
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/geral@marcoribeiroconstrucoes.pt', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        Candidato: name,
+                        Telefone_WhatsApp: phone,
+                        Especialidade: specialty,
+                        Local_de_Residencia: residence,
+                        Mercado: 'Alemanha — Carpintaria de Cofragem',
+                        _subject: `Nova Candidatura (Alemanha): ${specialty} - ${name}`,
+                        _cc: 'mr@marcoribeiroconstrucoes.pt',
+                        _template: 'table',
+                        _captcha: 'false'
+                    })
                 });
 
-                projectCards.forEach((card) => {
-                    const cat = card.getAttribute('data-category');
-                    const isVisible = targetFilter === 'all' || cat === targetFilter;
+                if (!response.ok) {
+                    throw new Error(`Erro de servidor (${response.status})`);
+                }
 
-                    if (isVisible) {
-                        card.hidden = false;
-                        card.classList.remove('is-hidden');
-                        card.classList.add('is-fade-in');
-                    } else {
-                        card.hidden = true;
-                        card.classList.add('is-hidden');
-                        card.classList.remove('is-fade-in');
-                    }
-                });
-            });
+                const result = await response.json();
+                if (result.success === 'true' || result.success === true) {
+                    recForm.reset();
+                    recStatus.className = 'form-status is-success';
+                    recStatus.textContent = '';
+                    showToast('Candidatura Enviada');
+                    window.trackConversion('recruitment_submit_success', 'recruitment_de', specialty);
+                } else {
+                    throw new Error(result.message || 'Submissão não confirmada.');
+                }
+            } catch (_) {
+                recStatus.className = 'form-status is-error';
+                recStatus.textContent = 'Não foi possível enviar a candidatura no momento. Por favor contacte diretamente pelo botão de WhatsApp acima.';
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.removeAttribute('aria-disabled');
+                    submitBtn.innerHTML = originalBtnHTML;
+                }
+            }
         });
     }
-
-    // 12. Rastreio de Métricas e Eventos de Conversão (Privacy-Friendly / Sem Cookies)
-    function trackConversion(action, category = 'contact', label = '') {
-        const payload = {
-            event: action,
-            category: category,
-            label: label,
-            timestamp: new Date().toISOString()
-        };
-
-        // Despacha evento customizado para o DOM
-        window.dispatchEvent(new CustomEvent('mr:conversion', { detail: payload }));
-
-        // Compatibilidade com Google Tag Manager / GA4 (se configurado)
-        if (typeof window.gtag === 'function') {
-            window.gtag('event', action, {
-                event_category: category,
-                event_label: label
-            });
-        }
-        if (Array.isArray(window.dataLayer)) {
-            window.dataLayer.push({
-                event: action,
-                event_category: category,
-                event_label: label
-            });
-        }
-
-        // Compatibilidade com Plausible Analytics (se ativo)
-        if (typeof window.plausible === 'function') {
-            window.plausible(action, { props: { category: category, label: label } });
-        }
-    }
-
-    // Expor globalmente para uso modular
-    window.trackConversion = trackConversion;
-
-    // Rastrear cliques no WhatsApp flutuante e nos links diretos
-    document.querySelectorAll('a[href*="wa.me"]').forEach(waLink => {
-        waLink.addEventListener('click', () => {
-            const isFloating = waLink.classList.contains('whatsapp-float');
-            const label = isFloating ? 'whatsapp_floating_button' : (waLink.textContent || 'whatsapp_link').trim().substring(0, 50);
-            trackConversion('click_whatsapp', 'lead_contact', label);
-        });
-    });
-
-    // Rastrear cliques em chamadas telefónicas
-    document.querySelectorAll('a[href^="tel:"]').forEach(telLink => {
-        telLink.addEventListener('click', () => {
-            const tel = telLink.getAttribute('href').replace('tel:', '');
-            trackConversion('click_phone', 'lead_contact', tel);
-        });
-    });
-
-    // Rastrear cliques em envio de email direto
-    document.querySelectorAll('a[href^="mailto:"]').forEach(mailLink => {
-        mailLink.addEventListener('click', () => {
-            const email = mailLink.getAttribute('href').replace('mailto:', '');
-            trackConversion('click_email', 'lead_contact', email);
-        });
-    });
-
-    // Rastrear pedidos de orçamento via botões CTA
-    document.querySelectorAll('.hero-btn-solid, .nav-cta, .pp-btn-quote').forEach(ctaBtn => {
-        ctaBtn.addEventListener('click', () => {
-            const label = ctaBtn.textContent.trim().substring(0, 30);
-            trackConversion('click_quote_cta', 'engagement', label);
-        });
-    });
 });

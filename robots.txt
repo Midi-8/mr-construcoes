@@ -3,5 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap oficial
-Sitemap: https://midi-8.github.io/mr-construcoes/sitemap.xml
-
+Sitemap: https://marcoribeiroconstrucoes.pt/sitemap.xml

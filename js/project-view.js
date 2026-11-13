@@ -1,6 +1,7 @@
 /**
  * MR CONSTRUÇÕES — Gestor de Visualização de Projetos (project-view.js)
  * Alterna entre a página principal e a página detalhada do projeto via hash da URL
+ * Com suporte multilingue (PT, EN, DE)
  */
 
 (function () {
@@ -33,29 +34,72 @@
   const defaultWaHref = waFloat ? waFloat.href : '';
   const defaultWaLabel = waFloat ? waFloat.getAttribute('aria-label') : '';
 
+  const SPEC_LABELS = {
+    pt: {
+      project: 'Projeto',
+      location: 'Localização',
+      category: 'Categoria',
+      year: 'Ano',
+      area: 'Área'
+    },
+    en: {
+      project: 'Project',
+      location: 'Location',
+      category: 'Category',
+      year: 'Year',
+      area: 'Area'
+    },
+    de: {
+      project: 'Projekt',
+      location: 'Standort',
+      category: 'Kategorie',
+      year: 'Jahr',
+      area: 'Fläche'
+    }
+  };
+
+  function getLocalizedProject(project) {
+    const lang = window.mrCurrentLang || 'pt';
+    const tr = (lang !== 'pt' && project.i18n && project.i18n[lang]) ? project.i18n[lang] : null;
+    return {
+      title: (tr && tr.title) || project.title || '',
+      tagline: (tr && tr.tagline) || project.tagline || '',
+      categoryLabel: (tr && tr.categoryLabel) || project.categoryLabel || '',
+      description: (tr && tr.description) || project.description || '',
+      highlights: (tr && tr.highlights) || project.highlights || [],
+      location: project.location,
+      year: project.year,
+      area: project.area
+    };
+  }
+
   function renderProject(project, index, total) {
+    const lang = window.mrCurrentLang || 'pt';
+    const labels = SPEC_LABELS[lang] || SPEC_LABELS.pt;
+    const locProj = getLocalizedProject(project);
+
     // 1. Contador de projetos
     const num = String(index + 1).padStart(2, '0');
     const tot = String(total).padStart(2, '0');
-    if (elCounter) elCounter.textContent = `Projeto ${num} / ${tot}`;
+    if (elCounter) elCounter.textContent = `${labels.project} ${num} / ${tot}`;
 
-    // 2. Coluna Direita: Categoria, Título e Subtítulo
+    // 2. Categoria, Título e Subtítulo
     if (elCatTag) {
-      if (project.categoryLabel) {
-        elCatTag.textContent = project.categoryLabel;
+      if (locProj.categoryLabel) {
+        elCatTag.textContent = locProj.categoryLabel;
         elCatTag.hidden = false;
       } else {
         elCatTag.hidden = true;
       }
     }
 
-    if (elTitle) elTitle.textContent = project.title || '';
-    if (elTagline) elTagline.textContent = project.tagline || '';
+    if (elTitle) elTitle.textContent = locProj.title;
+    if (elTagline) elTagline.textContent = locProj.tagline;
 
-    // 3. Coluna Esquerda: Galeria, Miniaturas e Fotografia Principal
+    // 3. Galeria, Miniaturas e Fotografia Principal
     const rawList = Array.isArray(project.gallery) && project.gallery.length > 0
       ? project.gallery
-      : (project.heroImage ? [{ url: project.heroImage, caption: project.title }] : []);
+      : (project.heroImage ? [{ url: project.heroImage, caption: locProj.title }] : []);
 
     const photos = [];
     const seenUrls = new Set();
@@ -75,7 +119,7 @@
 
       if (elCover) {
         elCover.src = photo.url;
-        elCover.alt = photo.caption || project.title || 'Fotografia do projeto';
+        elCover.alt = photo.caption || locProj.title || 'Fotografia do projeto';
       }
 
       if (elCaption) {
@@ -105,12 +149,12 @@
           const btn = document.createElement('button');
           btn.type = 'button';
           btn.className = `pp-thumb-btn ${pIdx === 0 ? 'is-active' : ''}`;
-          btn.setAttribute('aria-label', `Ver fotografia ${pIdx + 1}: ${photo.caption || project.title}`);
+          btn.setAttribute('aria-label', `Ver fotografia ${pIdx + 1}: ${photo.caption || locProj.title}`);
           btn.setAttribute('aria-current', String(pIdx === 0));
 
           const img = document.createElement('img');
           img.src = photo.url;
-          img.alt = photo.caption || project.title;
+          img.alt = photo.caption || locProj.title;
           img.loading = 'lazy';
           img.width = 120;
           img.height = 90;
@@ -139,20 +183,19 @@
       };
     }
 
-    // 4. Descrição
+    // 4. Descrição ("Sobre a obra")
     if (elDescription) {
-      elDescription.textContent = project.description || '';
+      elDescription.textContent = locProj.description;
     }
 
     // 5. Ficha Técnica / Especificações
     if (elData) {
       elData.innerHTML = '';
       const specs = [
-        { label: 'Localização', val: project.location },
-        { label: 'Categoria', val: project.categoryLabel },
-        { label: 'Ano', val: project.year },
-        { label: 'Duração', val: project.duration },
-        { label: 'Área', val: project.area }
+        { label: labels.location, val: locProj.location },
+        { label: labels.category, val: locProj.categoryLabel },
+        { label: labels.year, val: locProj.year },
+        { label: labels.area, val: locProj.area }
       ];
 
       specs.forEach((s) => {
@@ -174,11 +217,11 @@
       });
     }
 
-    // 6. Secção Abaixo: Trabalhos Realizados & Destaques Técnicos
+    // 6. Intervenção / Execução
     if (elHighlights && elHighlightsSection) {
       elHighlights.innerHTML = '';
-      if (Array.isArray(project.highlights) && project.highlights.length > 0) {
-        project.highlights.forEach((item) => {
+      if (Array.isArray(locProj.highlights) && locProj.highlights.length > 0) {
+        locProj.highlights.forEach((item) => {
           const li = document.createElement('li');
           li.textContent = item;
           elHighlights.appendChild(li);
@@ -194,16 +237,18 @@
     const nextProj = window.PROJECTS_DATA[(index + 1) % total];
 
     if (elPrev && prevProj) {
+      const prevLoc = getLocalizedProject(prevProj);
       elPrev.href = `#projeto/${prevProj.id}`;
-      if (elPrevTitle) elPrevTitle.textContent = prevProj.title;
+      if (elPrevTitle) elPrevTitle.textContent = prevLoc.title;
     }
 
     if (elNext && nextProj) {
+      const nextLoc = getLocalizedProject(nextProj);
       elNext.href = `#projeto/${nextProj.id}`;
-      if (elNextTitle) elNextTitle.textContent = nextProj.title;
+      if (elNextTitle) elNextTitle.textContent = nextLoc.title;
     }
 
-    // 8. Pré-carregamento suave das capas do projeto anterior e seguinte
+    // 8. Pré-carregamento das capas
     if (prevProj && prevProj.heroImage) {
       const pImg = new Image();
       pImg.src = prevProj.heroImage;
@@ -228,9 +273,10 @@
       }
 
       const project = projects[index];
+      const locProj = getLocalizedProject(project);
       renderProject(project, index, projects.length);
 
-      document.title = `${project.title} | MR Construções`;
+      document.title = `${locProj.title} | MR Construções`;
 
       if (waFloat) {
         const text = encodeURIComponent(`Olá! Estive a ver o vosso projeto "${project.title}" no website e gostaria de pedir um orçamento para uma obra semelhante.`);
@@ -273,4 +319,15 @@
 
   window.addEventListener('hashchange', handleRoute);
   window.addEventListener('DOMContentLoaded', handleRoute);
+  window.addEventListener('mr:langchange', () => {
+    const hash = window.location.hash || '';
+    if (hash.startsWith('#projeto/')) {
+      const projectId = hash.replace('#projeto/', '').trim();
+      const projects = window.PROJECTS_DATA || [];
+      const index = projects.findIndex((p) => p.id === projectId);
+      if (index !== -1) {
+        renderProject(projects[index], index, projects.length);
+      }
+    }
+  });
 })();

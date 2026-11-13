@@ -1,225 +1,252 @@
 /**
- * MR CONSTRUÇÕES — Base de Dados dos Projetos
- * 
- * Ficheiro de dados dos projetos apresentados no website:
- * - 'heroImage': caminho da imagem principal de capa
- * - 'gallery': lista de fotografias que aparecem na página do projeto e abrem na galeria/lightbox
+ * MR CONSTRUÇÕES — Base de Dados dos Projetos (5 Projetos Oficiais - Págs. 3 a 5 do Relatório)
+ * Suporte Multilingue: Português (PT), Inglês (EN) e Alemão (DE)
  */
 
 window.PROJECTS_DATA = [
   {
-    id: "moradia-pedra-famalicao",
-    title: "Moradia contemporânea em pedra natural",
-    tagline: "Construção de raiz de moradia unifamiliar e arranjos paisagísticos",
-    category: "construcao",
-    categoryLabel: "Construção",
+    id: "reabilitacao-fachadas",
+    title: "Reabilitação de Fachadas",
+    tagline: "Habitação Unifamiliar",
+    category: "reabilitacao",
+    categoryLabel: "Reabilitação",
     location: "Vila Nova de Famalicão",
     year: "2024",
-    duration: "8 Meses",
-    area: "280 m²",
-    description: "Execução integral de moradia unifamiliar de traço contemporâneo com revestimento nobre em cantaria de pedra natural, vãos envidraçados com estores térmicos embutidos e integração harmoniosa com os arranjos exteriores e zonas ajardinadas. Uma obra onde a nobreza dos materiais tradicionais se funde com o rigor da construção moderna.",
+    area: "490 m²",
+    description: "Intervenção de reabilitação da fachada, com trabalhos de barramento e pintura complementados com limpeza e valorização dos elementos em pedra natural, recuperando a sua apresentação exterior.",
     highlights: [
-      "Revestimento de fachada com cantaria de pedra natural recortada",
-      "Isolamento térmico e acústico de alta performance (sistema ETICS)",
-      "Caixilharia de alumínio com corte térmico e vidro duplo com controlo solar",
-      "Sistemas de estores elétricos térmicos embutidos na alvenaria",
-      "Arranjos exteriores e modelação paisagística com elementos rochosos e relvado",
-      "Acabamentos de excelência com garantia técnica de durabilidade"
+      "Reabilitação da fachada",
+      "Barramento e pintura",
+      "Lavagem e limpeza da pedra natural"
     ],
+    i18n: {
+      en: {
+        title: "Facade Rehabilitation",
+        tagline: "Single-Family House",
+        categoryLabel: "Rehabilitation",
+        description: "Facade rehabilitation work including skim coating and painting, complemented by cleaning and enhancing the natural stone elements to restore its exterior appearance.",
+        highlights: [
+          "Facade rehabilitation",
+          "Skim coating and painting",
+          "Natural stone washing and cleaning"
+        ]
+      },
+      de: {
+        title: "Fassadensanierung",
+        tagline: "Einfamilienhaus",
+        categoryLabel: "Sanierung",
+        description: "Sanierung der Fassade mit Spachtel- und Malerarbeiten sowie Reinigung und Aufwertung der Natursteinelemente zur Wiederherstellung des äußeren Erscheinungsbildes.",
+        highlights: [
+          "Fassadensanierung",
+          "Spachtel- und Malerarbeiten",
+          "Reinigung und Pflege des Natursteins"
+        ]
+      }
+    },
     heroImage: "imagens/moradia-pedra-natural.webp",
     gallery: [
       {
         url: "imagens/moradia-pedra-natural.webp",
-        caption: "Fachada principal com revestimento em cantaria de pedra natural e arranjos paisagísticos",
-        type: "horizontal"
-      },
-      {
-        url: "imagens/moradia-fachada-verde.webp",
-        caption: "Pormenor da transição de volumes, caixilharia escura e calçada portuguesa em cubos de granito",
-        type: "horizontal"
-      },
-      {
-        url: "imagens/moradia-minimalista.webp",
-        caption: "Muros envolventes em cinzento grafite e integração arquitetónica",
+        caption: "Reabilitação da fachada, barramento, pintura e valorização da pedra natural",
         type: "horizontal"
       }
     ]
   },
   {
-    id: "moradia-minimalista",
-    title: "Moradia contemporânea minimalista",
-    tagline: "Construção residencial de arquitetura moderna e linhas retas",
-    category: "construcao",
-    categoryLabel: "Construção",
-    location: "Braga",
-    year: "2024",
-    duration: "7 Meses",
-    area: "220 m²",
-    description: "Construção de moradia unifamiliar de arquitetura contemporânea e linhas geométricas puras. O projeto destaca-se pelo contraste elegante entre a pureza do branco das fachadas e os apontamentos em cinzento antracite dos muros envolventes, estores de lâminas térmicas e caixilharias de alta gama.",
+    id: "aplicacao-sistema-etics",
+    title: "Aplicação de sistema ETICS",
+    tagline: "Habitação Unifamiliar",
+    category: "fachadas",
+    categoryLabel: "Fachadas e isolamento térmico",
+    location: "Santo Tirso",
+    year: "2025",
+    area: "190 m²",
+    description: "Intervenção na envolvente exterior de um edifício, através da aplicação de um sistema ETICS, contribuindo para a melhoria do desempenho térmico e da proteção da fachada.",
     highlights: [
-      "Estrutura em betão armado e alvenarias de elevado desempenho térmico",
-      "Aplicação de sistema ETICS (Capoto) com acabamento texturado hidrófugo",
-      "Vãos com estores de lâminas térmicas motorizadas",
-      "Muro de vedação perimetral com acabamento contemporâneo e portão integrado",
-      "Impermeabilização contínua de coberturas planas não acessíveis",
-      "Eficiência energética e conforto ambiental superior"
+      "Aplicação de EPS",
+      "Fixação mecânica",
+      "Execução das camadas de acabamento e pintura"
     ],
+    i18n: {
+      en: {
+        title: "ETICS System Application",
+        tagline: "Single-Family House",
+        categoryLabel: "Facades and Thermal Insulation",
+        description: "Intervention on the building exterior envelope through the application of an ETICS thermal insulation system, improving thermal performance and facade protection.",
+        highlights: [
+          "EPS insulation application",
+          "Mechanical fixing",
+          "Execution of finishing coats and painting"
+        ]
+      },
+      de: {
+        title: "WDVS-Fassadendämmung (ETICS)",
+        tagline: "Einfamilienhaus",
+        categoryLabel: "Fassaden und Wärmedämmung",
+        description: "Eingriff an der Gebäudehülle durch den Einbau eines Wärmedämmverbundsystems (WDVS / ETICS) zur Verbesserung der Wärmedämmung und des Fassadenschutzes.",
+        highlights: [
+          "Anbringung von EPS-Dämmplatten",
+          "Mechanische Befestigung",
+          "Ausführung der Armierungs-, Putz- und Farbschichten"
+        ]
+      }
+    },
     heroImage: "imagens/moradia-minimalista.webp",
     gallery: [
       {
         url: "imagens/moradia-minimalista.webp",
-        caption: "Arquitetura contemporânea de linhas retas e volumes geométricos em branco e antracite",
-        type: "horizontal"
-      },
-      {
-        url: "imagens/moradia-fachada-verde.webp",
-        caption: "Fachada lateral com calçada de granito cinzento e vãos envidraçados",
-        type: "horizontal"
-      },
-      {
-        url: "imagens/moradia-pedra-natural.webp",
-        caption: "Enquadramento paisagístico e relação com o espaço exterior",
+        caption: "Envolvente exterior com aplicação de sistema ETICS e acabamento contínuo",
         type: "horizontal"
       }
     ]
   },
   {
-    id: "interiores-sala-ripado",
-    title: "Remodelação de interiores e sala open space",
-    tagline: "Design de interiores, divisória ripada em madeira e acabamentos de requinte",
-    category: "remodelacao",
-    categoryLabel: "Remodelação",
+    id: "reabilitacao-integral-moradia",
+    title: "Reabilitação Integral de Moradia",
+    tagline: "Habitação Unifamiliar",
+    category: "reabilitacao",
+    categoryLabel: "Reabilitação",
     location: "Vila Nova de Famalicão",
     year: "2024",
-    duration: "4 Semanas",
-    area: "65 m²",
-    description: "Transformação e modernização integral de área social, criando um conceito fluído de open space entre a sala de estar, a zona de refeições e a cozinha. O destaque vai para a conceção e montagem da divisória ripada em madeira maciça, tetos falsos com iluminação LED técnica e pavimento flutuante de elevada resistência.",
+    area: "205 m²",
+    description: "Intervenção de reabilitação da moradia, abrangendo os espaços interiores e exteriores, com o objetivo de renovar e melhorar as condições funcionais e estéticas da habitação.",
     highlights: [
-      "Divisória personalizada com painel ripado em madeira maciça do chão ao teto",
-      "Tetos falsos em gesso cartonado com sancas e projetores LED embutidos",
-      "Instalação de pavimento flutuante com isolamento acústico de impacto",
-      "Vão de passagem e passa-pratos emoldurado em madeira",
-      "Pintura técnica de interiores lavável com acabamento mate sedoso",
-      "Otimização da luminosidade natural e amplitude visual do espaço"
+      "Trabalhos de reabilitação exterior.",
+      "Trabalhos de renovação interior.",
+      "Execução de trabalhos de construção e acabamento."
     ],
+    i18n: {
+      en: {
+        title: "Full House Rehabilitation",
+        tagline: "Single-Family House",
+        categoryLabel: "Rehabilitation",
+        description: "Comprehensive house rehabilitation covering both interior and exterior spaces, aimed at renewing and improving the functional and aesthetic conditions of the dwelling.",
+        highlights: [
+          "Exterior rehabilitation works.",
+          "Interior renovation works.",
+          "Execution of construction and finishing works."
+        ]
+      },
+      de: {
+        title: "Komplettsanierung eines Wohnhauses",
+        tagline: "Einfamilienhaus",
+        categoryLabel: "Sanierung",
+        description: "Umfassende Sanierung des Wohnhauses im Innen- und Außenbereich mit dem Ziel, die funktionalen und ästhetischen Bedingungen des Gebäudes zu erneuern und zu verbessern.",
+        highlights: [
+          "Sanierungsarbeiten im Außenbereich.",
+          "Innenrenovierung und Ausbau.",
+          "Ausführung von Bau- und Ausbauarbeiten."
+        ]
+      }
+    },
     heroImage: "imagens/interiores-sala-ripado.webp",
     gallery: [
       {
         url: "imagens/interiores-sala-ripado.webp",
-        caption: "Sala de jantar e estar em open space com elegante divisória ripada em madeira",
+        caption: "Trabalhos de renovação interior e execução de acabamentos",
         type: "vertical"
       },
-      {
-        url: "imagens/casa-banho-marmore.webp",
-        caption: "Casa de banho privativa renovada com revestimento Calacatta e iluminação indireta",
-        type: "horizontal"
-      }
-    ]
-  },
-  {
-    id: "casa-de-banho-porto",
-    title: "Casa de banho e suite de luxo",
-    tagline: "Remodelação completa com cerâmico mármore Calacatta e louças suspensas",
-    category: "remodelacao",
-    categoryLabel: "Remodelação",
-    location: "Porto",
-    year: "2023",
-    duration: "3 Semanas",
-    area: "12 m²",
-    description: "Renovação completa de casa de banho principal com substituição integral de redes técnicas de águas e esgotos. Aplicação de revestimento cerâmico Calacatta retificado de grande formato no chão e paredes com continuidade de veios, móvel suspenso à medida com cuba dupla, torneiras pretas de embutir na parede, sanitários suspensos e iluminação perimetral oculta em fita LED.",
-    highlights: [
-      "Substituição total das redes de canalização multicamada e esgotos acústicos",
-      "Impermeabilização técnica contínua nas zonas húmidas de banho e duche",
-      "Revestimento e pavimento em placas cerâmicas retificadas com efeito mármore Calacatta",
-      "Móvel de lavatório suspenso com gavetas ocultas e duas cubas de sobrepor",
-      "Torneiras de embutir na parede e acessórios em preto mate termolacado",
-      "Iluminação indireta em sanca de teto e perímetro de espelho"
-    ],
-    heroImage: "imagens/casa-banho-marmore.webp",
-    gallery: [
-      {
-        url: "imagens/casa-banho-marmore.webp",
-        caption: "Vista panorâmica com revestimento marmoreado contínuo, lavatórios suspensos duplos e torneiras embutidas",
-        type: "horizontal"
-      },
-      {
-        url: "imagens/casa-banho-porto.jpg",
-        caption: "Pormenor do alinhamento dos sanitários suspensos e iluminação perimetral oculta",
-        type: "horizontal"
-      },
-      {
-        url: "imagens/interiores-sala-ripado.webp",
-        caption: "Harmonia com os restantes acabamentos interiores da habitação",
-        type: "vertical"
-      }
-    ]
-  },
-  {
-    id: "piscina-famalicao",
-    title: "Piscina exterior e envolvente",
-    tagline: "Construção de estrutura em betão armado e arranjos exteriores",
-    category: "construcao",
-    categoryLabel: "Construção",
-    location: "Vila Nova de Famalicão",
-    year: "2024",
-    duration: "6 Semanas",
-    area: "32 m²",
-    description: "Construção de raiz de piscina exterior em betão armado com impermeabilização contínua e sistema integrado de circulação e filtração de água. A intervenção contemplou ainda a execução da envolvente exterior com pavimento antiderrapante em deck cerâmico, assegurando perfeita transição entre a habitação e o jardim.",
-    highlights: [
-      "Estrutura em betão armado com armadura dupla e reforço estrutural",
-      "Sistema de impermeabilização bicomponente de alta elasticidade",
-      "Instalação de circuito hidráulico, skimmers e ralo de fundo",
-      "Equipamento de filtração e casa das máquinas técnica",
-      "Iluminação subaquática LED de baixo consumo",
-      "Pavimento exterior envolvente antiderrapante e resistente a intempéries"
-    ],
-    heroImage: "imagens/piscina-famalicao.jpg",
-    gallery: [
-      {
-        url: "imagens/piscina-famalicao.jpg",
-        caption: "Piscina exterior concluída com estrutura em betão armado e deck cerâmico antiderrapante",
-        type: "horizontal"
-      },
-      {
-        url: "imagens/moradia-pedra-natural.webp",
-        caption: "Envolvente paisagística e arquitetura da habitação com jardim relvado",
-        type: "horizontal"
-      }
-    ]
-  },
-  {
-    id: "casa-famalicao",
-    title: "Reabilitação de moradia e fachadas",
-    tagline: "Recuperação total de moradia unifamiliar com comparação antes e depois",
-    category: "acabamentos",
-    categoryLabel: "Acabamentos",
-    location: "Vila Nova de Famalicão",
-    year: "2023",
-    duration: "2 Meses",
-    area: "180 m²",
-    description: "Obra de reabilitação e acabamentos de moradia unifamiliar. A intervenção incluiu a recuperação total de fachadas exteriores com tratamento de fissuras e pintura técnica, substituição de elementos degradados, isolamento e renovação de espaços interiores. Uma intervenção que devolveu a integridade construtiva e o conforto visual ao imóvel.",
-    highlights: [
-      "Tratamento e recuperação estrutural de alvenarias e rebocos",
-      "Esquema de pintura exterior de elevada durabilidade e proteção contra intempéries",
-      "Renovação e tratamento de pavimentos e carpintarias",
-      "Trabalhos de gesso cartonado e sanca de iluminação indireta",
-      "Acabamentos interiores executados com precisão e materiais laváveis"
-    ],
-    heroImage: "imagens/casa-famalicao-depois.jpg",
-    gallery: [
       {
         url: "imagens/casa-famalicao-depois.jpg",
-        caption: "Resultado final após obras de recuperação, isolamento e pintura",
+        caption: "Trabalhos de reabilitação exterior da moradia",
         type: "horizontal"
       },
       {
         url: "imagens/casa-famalicao-antes.jpg",
-        caption: "Estado inicial do edifício antes do início da intervenção",
+        caption: "Estado anterior à intervenção de reabilitação exterior",
         type: "horizontal"
+      }
+    ]
+  },
+  {
+    id: "reabilitacao-instalacao-sanitaria",
+    title: "Reabilitação de Instalação Sanitária",
+    tagline: "Habitação Unifamiliar",
+    category: "reabilitacao",
+    categoryLabel: "Reabilitação",
+    location: "Porto",
+    year: "2026",
+    area: "12 m²",
+    description: "Intervenção de renovação de uma instalação sanitária, com trabalhos de reabilitação e atualização dos revestimentos e elementos funcionais do espaço.",
+    highlights: [
+      "Trabalhos de reabilitação da casa de banho.",
+      "Execução de revestimentos e acabamentos."
+    ],
+    i18n: {
+      en: {
+        title: "Sanitary Facility Rehabilitation",
+        tagline: "Single-Family House",
+        categoryLabel: "Rehabilitation",
+        description: "Renovation of a sanitary installation, comprising rehabilitation works and upgrading of wall/floor coverings and functional elements.",
+        highlights: [
+          "Bathroom rehabilitation works.",
+          "Execution of coverings and finishes."
+        ]
       },
+      de: {
+        title: "Sanierung einer Sanitäranlage",
+        tagline: "Einfamilienhaus",
+        categoryLabel: "Sanierung",
+        description: "Renovierung einer Sanitäranlage mit Sanierungsarbeiten sowie Erneuerung der Wand- und Bodenbeläge und der funktionalen Ausstattung.",
+        highlights: [
+          "Badsanierungsarbeiten.",
+          "Verlegung von Belägen und Endausbau."
+        ]
+      }
+    },
+    heroImage: "imagens/casa-banho-marmore.webp",
+    gallery: [
       {
-        url: "imagens/moradia-fachada-verde.webp",
-        caption: "Pormenor do acabamento de fachada, calçada exterior e remates de caixilharia",
+        url: "imagens/casa-banho-marmore.webp",
+        caption: "Reabilitação de instalação sanitária e atualização de revestimentos e elementos funcionais",
+        type: "horizontal"
+      }
+    ]
+  },
+  {
+    id: "construcao-piscina-pavimentacao",
+    title: "Construção de Piscina e Pavimentação Exterior",
+    tagline: "Habitação Unifamiliar",
+    category: "exteriores",
+    categoryLabel: "Construção e Espaços Exteriores",
+    location: "Vila Nova de Famalicão",
+    year: "2025",
+    area: "84 m²",
+    description: "Intervenção de construção de uma piscina, complementada pela execução do pavimento cerâmico na área exterior envolvente, estabelecendo continuidade entre a zona de lazer e o espaço exterior.",
+    highlights: [
+      "Construção de piscina.",
+      "Assentamento de revestimento cerâmico exterior.",
+      "Execução de pavimentação na zona envolvente."
+    ],
+    i18n: {
+      en: {
+        title: "Swimming Pool Construction & Exterior Paving",
+        tagline: "Single-Family House",
+        categoryLabel: "Construction & Outdoor Spaces",
+        description: "Swimming pool construction complemented by ceramic paving in the surrounding outdoor area, establishing continuity between the leisure zone and the exterior space.",
+        highlights: [
+          "Swimming pool construction.",
+          "Outdoor ceramic tile installation.",
+          "Execution of paving in the surrounding area."
+        ]
+      },
+      de: {
+        title: "Poolbau und Außenpflasterung",
+        tagline: "Einfamilienhaus",
+        categoryLabel: "Bau & Außenanlagen",
+        description: "Bau eines Schwimmbeckens ergänzt durch die Verlegung von Keramikbelägen im umliegenden Außenbereich für einen nahtlosen Übergang zwischen Freizeit- und Außenbereich.",
+        highlights: [
+          "Bau des Schwimmbeckens.",
+          "Verlegung von keramischen Außenbelägen.",
+          "Ausführung der Pflasterarbeiten im Umgebungsbereich."
+        ]
+      }
+    },
+    heroImage: "imagens/piscina-famalicao.jpg",
+    gallery: [
+      {
+        url: "imagens/piscina-famalicao.jpg",
+        caption: "Construção de piscina e execução de pavimento cerâmico na zona envolvente",
         type: "horizontal"
       }
     ]
