@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             navLinks.classList.toggle('open', open);
             menuToggle.classList.toggle('is-active', open);
+            document.body.classList.toggle('menu-open', open);
             menuToggle.setAttribute('aria-expanded', String(open));
             menuToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
 
@@ -146,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         window.addEventListener('resize', () => {
-            if (window.innerWidth > 860 && navLinks.classList.contains('open')) {
+            if (window.innerWidth > 760 && navLinks.classList.contains('open')) {
                 setMenuState(false);
             }
         });
@@ -247,6 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let rafId = null;
         const syncCompare = (val) => {
             const clamped = Math.max(0, Math.min(100, Number(val)));
+            compare.style.setProperty('--split', clamped + '%');
             compare.style.setProperty('--pos', clamped + '%');
             range.value = clamped;
         };
@@ -266,8 +268,20 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         compare.addEventListener('pointerdown', (e) => {
-            if (e.target === range) return;
+            if (e.button !== undefined && e.button !== 0 && e.pointerType === 'mouse') return;
             dragging = true;
+            if (typeof compare.setPointerCapture === 'function' && e.pointerId !== undefined) {
+                try {
+                    compare.setPointerCapture(e.pointerId);
+                } catch (_) {
+                    // Ignora se o navegador não suportar captura deste ponteiro
+                }
+            }
+            updateFromPointer(e.clientX);
+        });
+
+        compare.addEventListener('pointermove', (e) => {
+            if (!dragging) return;
             updateFromPointer(e.clientX);
         });
 
@@ -276,9 +290,28 @@ document.addEventListener('DOMContentLoaded', () => {
             updateFromPointer(e.clientX);
         }, { passive: true });
 
-        window.addEventListener('pointerup', () => {
+        const stopDrag = () => {
             dragging = false;
+        };
+
+        compare.addEventListener('pointerup', stopDrag);
+        compare.addEventListener('pointercancel', stopDrag);
+        window.addEventListener('pointerup', stopDrag, { passive: true });
+        window.addEventListener('pointercancel', stopDrag, { passive: true });
+
+        compare.addEventListener('touchstart', (e) => {
+            if (e.touches && e.touches.length === 1) {
+                dragging = true;
+                updateFromPointer(e.touches[0].clientX);
+            }
         }, { passive: true });
+
+        compare.addEventListener('touchmove', (e) => {
+            if (!dragging || !e.touches || e.touches.length !== 1) return;
+            updateFromPointer(e.touches[0].clientX);
+        }, { passive: true });
+
+        compare.addEventListener('touchend', stopDrag, { passive: true });
 
         syncCompare(range.value);
     }
@@ -321,19 +354,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const toast = document.getElementById('toast');
     let toastTimer = null;
 
-    const showToast = (titleText) => {
+    const showToast = (titleText, descText) => {
         if (!toast) return;
+        const lang = window.mrCurrentLang || 'pt';
+        const dict = (window.mrTranslations && window.mrTranslations[lang]) || {};
         const strong = toast.querySelector('strong');
-        if (strong && titleText) strong.textContent = titleText;
+        const desc = toast.querySelector('.toast-text span');
+        if (strong) {
+            strong.textContent = titleText || dict['toast.title'] || strong.textContent;
+        }
+        if (desc) {
+            desc.textContent = descText || dict['toast.desc'] || desc.textContent;
+        }
 
         toast.hidden = false;
         requestAnimationFrame(() => {
-            toast.classList.add('show');
+            toast.classList.add('is-visible');
         });
 
         clearTimeout(toastTimer);
         toastTimer = setTimeout(() => {
-            toast.classList.remove('show');
+            toast.classList.remove('is-visible');
             setTimeout(() => {
                 toast.hidden = true;
             }, 350);
@@ -404,7 +445,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     contactForm.reset();
                     formStatus.className = 'form-status is-success';
                     formStatus.textContent = '';
-                    showToast('Pedido Enviado');
+                    showToast();
                     window.trackConversion('form_submit_success', 'quote_pt', type);
                 } else {
                     throw new Error(result.message || 'Submissão não confirmada.');
@@ -487,7 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     recForm.reset();
                     recStatus.className = 'form-status is-success';
                     recStatus.textContent = '';
-                    showToast('Candidatura Enviada');
+                    showToast();
                     window.trackConversion('recruitment_submit_success', 'recruitment_de', specialty);
                 } else {
                     throw new Error(result.message || 'Submissão não confirmada.');

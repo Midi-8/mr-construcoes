@@ -140,9 +140,9 @@
             </div>
             <div class="wrap hero-inner">
                 <div class="hero-copy">
-                    <span class="eyebrow" data-i18n="hero.kicker">— Construção - Reabilitação - Serviços</span>
-                    <h1 data-i18n="hero.title">Construir é Transformar.</h1>
-                    <p class="lead typewriter-target" data-i18n="hero.lead">Obras executadas com rigor, proximidade e atenção a cada detalhe. Do primeiro passo à entrega das chaves.</p>
+                    <span class="hero-kicker" data-i18n="hero.kicker">— Construção - Reabilitação - Serviços</span>
+                    <h1 class="hero-title" data-i18n="hero.title">Construir é Transformar.</h1>
+                    <p class="hero-lead typewriter-target" data-i18n="hero.lead">Obras executadas com rigor, proximidade e atenção a cada detalhe. Do primeiro passo à entrega das chaves.</p>
                     <div class="hero-actions">
                         <a class="hero-btn-solid" href="#contacto">
                             <span data-i18n="hero.cta1">Pedir orçamento</span> <span aria-hidden="true">→</span>
@@ -622,17 +622,19 @@
 
                 <!-- Coluna Direita: Galeria e Miniaturas -->
                 <div class="pp-gallery-col">
-                    <div class="pp-gallery-layout">
-                        <figure class="pp-main-figure">
+                    <div class="pp-gallery-showcase">
+                        <figure class="pp-main-photo-frame">
                             <button type="button" class="pp-zoom-btn" id="pp-zoom-btn"
                                 aria-label="Ampliar fotografia em ecrã inteiro">
                                 <img id="pp-cover" src="" alt="" width="1200" height="900">
-                                <span class="pp-zoom-badge">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                        width="15" height="15" aria-hidden="true">
-                                        <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                                <span class="pp-zoom-hint" aria-hidden="true">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                                        <line x1="8" y1="11" x2="14" y2="11"></line>
                                     </svg>
-                                    <span data-i18n="pp.zoom">Ampliar</span>
                                 </span>
                             </button>
                             <figcaption class="pp-photo-caption" id="pp-photo-caption" hidden></figcaption>
@@ -643,29 +645,31 @@
             </div>
 
             <!-- Secção Inferior: Intervenção / Execução e Ficha Técnica -->
-            <div class="pp-details-section" id="pp-highlights-section">
-                <div class="pp-details-grid">
-                    <div class="pp-detail-card">
+            <div class="pp-details-grid">
+                <section class="pp-card-block pp-highlights-card" id="pp-highlights-section" aria-labelledby="pp-highlights-heading">
+                    <div class="pp-card-header">
                         <h2 id="pp-highlights-heading" class="pp-card-title" data-i18n="pp.execution">Intervenção / Execução</h2>
-                        <ul class="pp-highlights" id="pp-highlights" aria-labelledby="pp-highlights-heading"></ul>
                     </div>
+                    <ul class="pp-highlights" id="pp-highlights"></ul>
+                </section>
 
-                    <div class="pp-detail-card">
+                <section class="pp-card-block pp-specs-card" aria-labelledby="pp-specs-heading">
+                    <div class="pp-card-header">
                         <h2 id="pp-specs-heading" class="pp-card-title" data-i18n="pp.specs">Ficha técnica</h2>
-                        <div class="pp-data" id="pp-data" aria-labelledby="pp-specs-heading"></div>
                     </div>
-                </div>
+                    <div class="pp-specs" id="pp-data"></div>
+                </section>
             </div>
 
             <!-- Navegação entre projetos -->
-            <nav class="pp-nav" aria-label="Outros projetos">
-                <a class="pp-nav-link prev" id="pp-prev" href="#projetos">
+            <nav class="pp-pager" aria-label="Outros projetos">
+                <a class="pp-pager-link" id="pp-prev" href="#projetos">
                     <span class="eyebrow" data-i18n="pp.prev">← Projeto anterior</span>
-                    <strong id="pp-prev-title"></strong>
+                    <span class="pp-pager-title" id="pp-prev-title"></span>
                 </a>
-                <a class="pp-nav-link next" id="pp-next" href="#projetos">
+                <a class="pp-pager-link next" id="pp-next" href="#projetos">
                     <span class="eyebrow" data-i18n="pp.next">Próximo projeto →</span>
-                    <strong id="pp-next-title"></strong>
+                    <span class="pp-pager-title" id="pp-next-title"></span>
                 </a>
             </nav>
         </div>
@@ -745,32 +749,18 @@
     </div>
 
     <!-- Lightbox de Fotografias em Ecrã Inteiro -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de fotografias" hidden>
-        <div class="lb-backdrop" id="lb-backdrop"></div>
-        <div class="lb-topbar">
-            <span class="lb-counter" id="lb-counter"></span>
-            <button type="button" class="lb-close" id="lb-close" aria-label="Fechar ecrã inteiro (Esc)">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"
-                    aria-hidden="true">
-                    <path d="M18 6 6 18M6 6l12 12" />
-                </svg>
-            </button>
-        </div>
-        <button type="button" class="lb-nav prev" id="lb-prev" aria-label="Fotografia anterior">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"
-                aria-hidden="true">
-                <path d="m15 18-6-6 6-6" />
-            </svg>
-        </button>
-        <button type="button" class="lb-nav next" id="lb-next" aria-label="Próxima fotografia">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"
-                aria-hidden="true">
-                <path d="m9 18 6-6-6-6" />
-            </svg>
-        </button>
-        <figure class="lb-stage">
-            <img id="lb-img" src="" alt="">
-            <figcaption class="lb-caption" id="lb-caption"></figcaption>
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotografia ampliada" hidden>
+        <button type="button" class="lightbox-btn lightbox-close" id="lightbox-close" aria-label="Fechar">×</button>
+        <button type="button" class="lightbox-btn lightbox-prev" id="lightbox-prev"
+            aria-label="Fotografia anterior">←</button>
+        <button type="button" class="lightbox-btn lightbox-next" id="lightbox-next"
+            aria-label="Fotografia seguinte">→</button>
+        <figure class="lightbox-figure">
+            <img id="lightbox-img" src="" alt="">
+            <figcaption class="lightbox-caption">
+                <span id="lightbox-caption-text"></span>
+                <span id="lightbox-counter" class="lightbox-counter"></span>
+            </figcaption>
         </figure>
     </div>
 
