@@ -1,17 +1,35 @@
 /**
- * MR CONSTRUÇÕES — Gestor de Visualização de Projetos (project-view.js)
- * Alterna entre a página principal e a página detalhada do projeto via hash da URL
- * Com suporte multilingue (PT, EN, DE)
+ * MR CONSTRUÇÕES — Gestor de Páginas de Projeto (js/project-view.js)
+ * Suporta as páginas dedicadas em projetos/<slug>.html (com tradução PT/EN/DE,
+ * galeria, Lightbox e filtro ?cat=) e mantém compatibilidade para hashes #projeto/<id>.
  */
 
 (function () {
   'use strict';
 
-  const mainContent = document.getElementById('main-content');
   const projectPage = document.getElementById('project-page');
+  const standaloneId = projectPage ? (projectPage.getAttribute('data-project-id') || '').trim() : '';
 
-  if (!projectPage) return;
+  // Compatibilidade caso chegue à homepage com #projeto/<id> antigo
+  if (!projectPage || !standaloneId) {
+    const redirectLegacyHash = () => {
+      const hash = window.location.hash || '';
+      if (!hash.startsWith('#projeto/')) return;
+      const projectId = hash.replace('#projeto/', '').trim();
+      const projects = Array.isArray(window.PROJECTS_DATA) ? window.PROJECTS_DATA : [];
+      if (projects.some((p) => p.id === projectId)) {
+        const categorySelect = document.getElementById('project-category-select');
+        const activeFilter = categorySelect ? (categorySelect.value || 'all') : 'all';
+        const suffix = activeFilter !== 'all' ? `?cat=${encodeURIComponent(activeFilter)}` : '';
+        window.location.replace(`projetos/${projectId}.html${suffix}`);
+      }
+    };
+    window.addEventListener('hashchange', redirectLegacyHash);
+    window.addEventListener('DOMContentLoaded', redirectLegacyHash);
+    return;
+  }
 
+  const assetPrefix = '../';
   const elCounter = document.getElementById('pp-counter');
   const elCatTag = document.getElementById('pp-cat-tag');
   const elTitle = document.getElementById('pp-title');
@@ -29,34 +47,41 @@
   const elNext = document.getElementById('pp-next');
   const elNextTitle = document.getElementById('pp-next-title');
 
-  const defaultTitle = document.title;
-  const waFloat = document.querySelector('.whatsapp-float');
-  const defaultWaHref = waFloat ? waFloat.href : '';
-  const defaultWaLabel = waFloat ? waFloat.getAttribute('aria-label') : '';
-
   const SPEC_LABELS = {
     pt: {
       project: 'Projeto',
       location: 'Localização',
       category: 'Categoria',
       year: 'Ano',
-      area: 'Área'
+      area: 'Área',
+      waText: (title) => `Olá! Estive a ver o vosso projeto "${title}" no website e gostaria de pedir um orçamento para uma obra semelhante.`,
+      waAria: (title) => `Pedir orçamento via WhatsApp sobre ${title}`
     },
     en: {
       project: 'Project',
       location: 'Location',
       category: 'Category',
       year: 'Year',
-      area: 'Area'
+      area: 'Area',
+      waText: (title) => `Hello! I was viewing your project "${title}" on the website and would like to request a quote for a similar project.`,
+      waAria: (title) => `Request a quote via WhatsApp about ${title}`
     },
     de: {
       project: 'Projekt',
       location: 'Standort',
       category: 'Kategorie',
       year: 'Jahr',
-      area: 'Fläche'
+      area: 'Fläche',
+      waText: (title) => `Hallo! Ich habe Ihr Projekt "${title}" auf der Website gesehen und möchte ein Angebot für ein ähnliches Bauvorhaben anfordern.`,
+      waAria: (title) => `Angebot per WhatsApp zu ${title} anfordern`
     }
   };
+
+  function resolveAssetUrl(url) {
+    if (!url) return '';
+    if (/^(https?:|data:|\/|\.\.\/)/.test(url)) return url;
+    return assetPrefix + url;
+  }
 
   function getLocalizedProject(project) {
     const lang = window.mrCurrentLang || 'pt';
@@ -73,30 +98,64 @@
     };
   }
 
-  function renderProject(project, index, total) {
+  function getActiveCategoryFilter() {
+    try {
+      const cat = new URLSearchParams(window.location.search).get('cat');
+      return cat && cat.trim() ? cat.trim() : 'all';
+    } catch (_) {
+      return 'all';
+    }
+  }
+
+  function getActiveProjectsList(currentProjectId) {
+    const allProjects = Array.isArray(window.PROJECTS_DATA) ? window.PROJECTS_DATA : [];
+    const activeFilter = getActiveCategoryFilter();
+
+    if (activeFilter === 'all') {
+      return { list: allProjects, filter: 'all' };
+    }
+
+    const filtered = allProjects.filter((p) => {
+      if (Array.isArray(p.categories)) return p.categories.includes(activeFilter);
+      return p.category === activeFilter;
+    });
+
+    if (filtered.length > 0 && filtered.some((p) => p.id === currentProjectId)) {
+      return { list: filtered, filter: activeFilter };
+    }
+
+    return { list: allProjects, filter: 'all' };
+  }
+
+  function renderStandaloneProject() {
+    const { list, filter } = getActiveProjectsList(standaloneId);
+    const index = list.findIndex((p) => p.id === standaloneId);
+    if (index === -1) return;
+
+    const project = list[index];
+    const total = list.length;
     const lang = window.mrCurrentLang || 'pt';
     const labels = SPEC_LABELS[lang] || SPEC_LABELS.pt;
     const locProj = getLocalizedProject(project);
 
-    // 1. Contador de projetos
-    const num = String(index + 1).padStart(2, '0');
-    const tot = String(total).padStart(2, '0');
-    if (elCounter) elCounter.textContent = `${labels.project} ${num} / ${tot}`;
-
-    // 2. Categoria, Título e Subtítulo
-    if (elCatTag) {
-      if (locProj.categoryLabel) {
-        elCatTag.textContent = locProj.categoryLabel;
-        elCatTag.hidden = false;
-      } else {
-        elCatTag.hidden = true;
-      }
+    // 1. Contador e título do documento
+    if (elCounter) {
+      const num = String(index + 1).padStart(2, '0');
+      const tot = String(total).padStart(2, '0');
+      elCounter.textContent = `${labels.project} ${num} / ${tot}`;
     }
+    document.title = `${locProj.title} | MR Construções`;
 
+    // 2. Cabeçalho e descrição
+    if (elCatTag) {
+      elCatTag.textContent = locProj.categoryLabel || '';
+      elCatTag.hidden = !locProj.categoryLabel;
+    }
     if (elTitle) elTitle.textContent = locProj.title;
     if (elTagline) elTagline.textContent = locProj.tagline;
+    if (elDescription) elDescription.textContent = locProj.description;
 
-    // 3. Galeria, Miniaturas e Fotografia Principal
+    // 3. Galeria e miniaturas com resolução para ../imagens/
     const rawList = Array.isArray(project.gallery) && project.gallery.length > 0
       ? project.gallery
       : (project.heroImage ? [{ url: project.heroImage, caption: locProj.title }] : []);
@@ -105,7 +164,10 @@
     const seenUrls = new Set();
     rawList.forEach((item) => {
       if (item && item.url && !seenUrls.has(item.url)) {
-        photos.push(item);
+        photos.push({
+          url: resolveAssetUrl(item.url),
+          caption: item.caption || ''
+        });
         seenUrls.add(item.url);
       }
     });
@@ -133,8 +195,7 @@
       }
 
       if (elThumbs) {
-        const thumbBtns = elThumbs.querySelectorAll('.pp-thumb-btn');
-        thumbBtns.forEach((btn, bIdx) => {
+        elThumbs.querySelectorAll('.pp-thumb-btn').forEach((btn, bIdx) => {
           const isActive = bIdx === photoIdx;
           btn.classList.toggle('is-active', isActive);
           btn.setAttribute('aria-current', String(isActive));
@@ -160,11 +221,7 @@
           img.height = 90;
 
           btn.appendChild(img);
-
-          btn.addEventListener('click', () => {
-            setMainPhoto(pIdx);
-          });
-
+          btn.addEventListener('click', () => setMainPhoto(pIdx));
           elThumbs.appendChild(btn);
         });
         elThumbs.hidden = false;
@@ -183,22 +240,15 @@
       };
     }
 
-    // 4. Descrição ("Sobre a obra")
-    if (elDescription) {
-      elDescription.textContent = locProj.description;
-    }
-
-    // 5. Ficha Técnica / Especificações
+    // 4. Ficha Técnica
     if (elData) {
       elData.innerHTML = '';
-      const specs = [
+      [
         { label: labels.location, val: locProj.location },
         { label: labels.category, val: locProj.categoryLabel },
         { label: labels.year, val: locProj.year },
         { label: labels.area, val: locProj.area }
-      ];
-
-      specs.forEach((s) => {
+      ].forEach((s) => {
         if (!s.val) return;
         const row = document.createElement('div');
         row.className = 'pp-data-row';
@@ -217,7 +267,7 @@
       });
     }
 
-    // 6. Intervenção / Execução
+    // 5. Intervenção / Execução
     if (elHighlights && elHighlightsSection) {
       elHighlights.innerHTML = '';
       if (Array.isArray(locProj.highlights) && locProj.highlights.length > 0) {
@@ -232,102 +282,46 @@
       }
     }
 
-    // 7. Navegação anterior / seguinte
-    const prevProj = window.PROJECTS_DATA[(index - 1 + total) % total];
-    const nextProj = window.PROJECTS_DATA[(index + 1) % total];
+    // 6. Paginação entre páginas individuais (respeitando ?cat= se ativo)
+    const catSuffix = filter !== 'all' ? `?cat=${encodeURIComponent(filter)}` : '';
+    const prevProj = list[(index - 1 + total) % total];
+    const nextProj = list[(index + 1) % total];
 
     if (elPrev && prevProj) {
       const prevLoc = getLocalizedProject(prevProj);
-      elPrev.href = `#projeto/${prevProj.id}`;
+      elPrev.href = `${prevProj.id}.html${catSuffix}`;
+      elPrev.hidden = total <= 1;
       if (elPrevTitle) elPrevTitle.textContent = prevLoc.title;
     }
 
     if (elNext && nextProj) {
       const nextLoc = getLocalizedProject(nextProj);
-      elNext.href = `#projeto/${nextProj.id}`;
+      elNext.href = `${nextProj.id}.html${catSuffix}`;
+      elNext.hidden = total <= 1;
       if (elNextTitle) elNextTitle.textContent = nextLoc.title;
     }
 
-    // 8. Pré-carregamento das capas
+    // 7. Personalização contextual dos links WhatsApp para esta obra
+    const waText = encodeURIComponent(labels.waText(locProj.title));
+    const waHref = `https://wa.me/351915680947?text=${waText}`;
+    document.querySelectorAll('.whatsapp-float, .mobile-action-wa').forEach((link) => {
+      link.href = waHref;
+      if (link.classList.contains('whatsapp-float')) {
+        link.setAttribute('aria-label', labels.waAria(locProj.title));
+      }
+    });
+
+    // 8. Pré-carregamento das capas adjacentes
     if (prevProj && prevProj.heroImage) {
       const pImg = new Image();
-      pImg.src = prevProj.heroImage;
+      pImg.src = resolveAssetUrl(prevProj.heroImage);
     }
     if (nextProj && nextProj.heroImage) {
       const nImg = new Image();
-      nImg.src = nextProj.heroImage;
+      nImg.src = resolveAssetUrl(nextProj.heroImage);
     }
   }
 
-  function handleRoute() {
-    const hash = window.location.hash || '';
-
-    if (hash.startsWith('#projeto/')) {
-      const projectId = hash.replace('#projeto/', '').trim();
-      const projects = window.PROJECTS_DATA || [];
-      const index = projects.findIndex((p) => p.id === projectId);
-
-      if (index === -1) {
-        window.location.hash = '#projetos';
-        return;
-      }
-
-      const project = projects[index];
-      const locProj = getLocalizedProject(project);
-      renderProject(project, index, projects.length);
-
-      document.title = `${locProj.title} | MR Construções`;
-
-      if (waFloat) {
-        const text = encodeURIComponent(`Olá! Estive a ver o vosso projeto "${project.title}" no website e gostaria de pedir um orçamento para uma obra semelhante.`);
-        waFloat.href = `https://wa.me/351915680947?text=${text}`;
-        waFloat.setAttribute('aria-label', `Pedir orçamento via WhatsApp sobre ${project.title}`);
-      }
-
-      if (mainContent) mainContent.hidden = true;
-      projectPage.hidden = false;
-      document.body.classList.add('is-project-open');
-
-      window.scrollTo(0, 0);
-      window.dispatchEvent(new Event('scroll'));
-    } else {
-      if (!projectPage.hidden) {
-        projectPage.hidden = true;
-        if (mainContent) mainContent.hidden = false;
-        document.body.classList.remove('is-project-open');
-
-        document.title = defaultTitle;
-        if (waFloat && defaultWaHref) {
-          waFloat.href = defaultWaHref;
-          waFloat.setAttribute('aria-label', defaultWaLabel || 'Pedir orçamento via WhatsApp');
-        }
-
-        if (hash && hash.length > 1) {
-          try {
-            const target = document.querySelector(hash);
-            if (target) {
-              target.scrollIntoView({ behavior: 'smooth' });
-            }
-          } catch (_) {
-            // Ignora seletor de hash inválido
-          }
-        }
-        window.dispatchEvent(new Event('scroll'));
-      }
-    }
-  }
-
-  window.addEventListener('hashchange', handleRoute);
-  window.addEventListener('DOMContentLoaded', handleRoute);
-  window.addEventListener('mr:langchange', () => {
-    const hash = window.location.hash || '';
-    if (hash.startsWith('#projeto/')) {
-      const projectId = hash.replace('#projeto/', '').trim();
-      const projects = window.PROJECTS_DATA || [];
-      const index = projects.findIndex((p) => p.id === projectId);
-      if (index !== -1) {
-        renderProject(projects[index], index, projects.length);
-      }
-    }
-  });
+  window.addEventListener('DOMContentLoaded', renderStandaloneProject);
+  window.addEventListener('mr:langchange', renderStandaloneProject);
 })();

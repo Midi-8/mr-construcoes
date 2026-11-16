@@ -10,17 +10,29 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="MR Construções — Marco Paulo Ribeiro Unipessoal, Lda.">
     <meta name="theme-color" content="#121212">
+    <!-- SEO_BASE_URL: Substituir https://midi-8.github.io/mr-construcoes por https://marcoribeiroconstrucoes.pt quando o domínio estiver ativo -->
     <link rel="canonical" href="https://midi-8.github.io/mr-construcoes/alemanha.html">
+    <link rel="alternate" hreflang="pt-PT" href="https://midi-8.github.io/mr-construcoes/alemanha.html">
+    <link rel="alternate" hreflang="en" href="https://midi-8.github.io/mr-construcoes/alemanha.html?lang=en">
+    <link rel="alternate" hreflang="de" href="https://midi-8.github.io/mr-construcoes/alemanha.html?lang=de">
+    <link rel="alternate" hreflang="x-default" href="https://midi-8.github.io/mr-construcoes/alemanha.html">
 
-    <!-- Open Graph -->
+    <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_PT">
+    <meta property="og:locale:alternate" content="en_GB">
+    <meta property="og:locale:alternate" content="de_DE">
     <meta property="og:site_name" content="MR Construções">
-    <meta property="og:title" content="Construímos além-fronteiras — Carpintaria de Cofragem na Alemanha | MR Construções">
+    <meta property="og:title" content="Alemanha · Carpintaria de Cofragem e Recrutamento | MR Construções">
     <meta property="og:description"
         content="Equipas especializadas em carpintaria de cofragem e execução de estruturas em betão armado na Alemanha. Conheça as oportunidades de integrar as nossas equipas.">
     <meta property="og:url" content="https://midi-8.github.io/mr-construcoes/alemanha.html">
     <meta property="og:image" content="https://midi-8.github.io/mr-construcoes/imagens/hero.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alemanha · Carpintaria de Cofragem e Recrutamento | MR Construções">
+    <meta name="twitter:description"
+        content="Equipas especializadas em carpintaria de cofragem e execução de estruturas em betão armado na Alemanha.">
+    <meta name="twitter:image" content="https://midi-8.github.io/mr-construcoes/imagens/hero.webp">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png">
@@ -37,7 +49,7 @@
     <header class="topbar is-scrolled">
         <nav class="nav wrap" aria-label="Navegação principal">
             <a class="brand" href="index.html" aria-label="MR Construções, página inicial">
-                <img src="imagens/logo-mr-construcoes.webp" alt="MR Construções" width="34" height="34">
+                <img src="imagens/logo-mr-construcoes.webp" alt="Logótipo da MR Construções" width="34" height="34">
                 <span class="brand-divider" aria-hidden="true"></span>
                 <span class="brand-text">MR CONSTRUÇÕES</span>
             </a>
@@ -124,7 +136,33 @@
             </div>
         </section>
 
-        <!-- Secção 3: Recrutamento ("O seu próximo desafio pode começar aqui." - Pág. 8) -->
+        <!-- Secção 3: Para Empresas e Parceiros (B2B Alemanha) -->
+        <section class="de-partners wrap" id="empresas">
+            <div class="de-partners-box reveal">
+                <div class="de-partners-copy">
+                    <span class="eyebrow-minimal" data-i18n="de.b2b.kicker">— Para empresas e parceiros</span>
+                    <h2 data-i18n="de.b2b.title">Precisa de uma equipa de cofragem?</h2>
+                    <p data-i18n="de.b2b.desc">
+                        Prestamos serviços de carpintaria de cofragem a empresas e parceiros do setor da construção na Alemanha. Fale connosco sobre o seu projeto.
+                    </p>
+                </div>
+                <div class="de-partners-actions">
+                    <a href="mailto:geral@marcoribeiroconstrucoes.pt?subject=Parceria%20%E2%80%94%20Carpintaria%20de%20Cofragem%20na%20Alemanha"
+                        data-mail-topic="b2b-de" class="btn-minimal-dark">
+                        <span data-i18n="de.b2b.email">Enviar e-mail</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                    <a href="https://wa.me/351915680947?text=Ol%C3%A1!%20Represento%20uma%20empresa%20e%20gostaria%20de%20falar%20sobre%20servi%C3%A7os%20de%20carpintaria%20de%20cofragem%20na%20Alemanha."
+                        data-wa-topic="b2b-de" class="wa-pill-btn" target="_blank" rel="noopener noreferrer">
+                        <span class="wa-dot-sm" aria-hidden="true"></span>
+                        <span data-i18n="de.b2b.wa">Falar pelo WhatsApp</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção 4: Recrutamento ("O seu próximo desafio pode começar aqui." - Pág. 8) -->
         <section class="de-recruitment wrap" id="recrutamento-alemanha">
             <div class="recruitment-container reveal">
                 <div class="recruitment-header">
@@ -158,6 +196,7 @@
                     <form class="structured-form-box" id="recruitment-form">
                         <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off"
                             aria-hidden="true">
+                        <input type="hidden" name="origem" value="Candidatura Alemanha — site">
                         <div class="form-box-title" data-i18n="de.form.boxTitle">FORMULÁRIO DE CANDIDATURA</div>
 
                         <div class="form-grid-2x2">
@@ -183,6 +222,49 @@
                             </div>
                         </div>
 
+                        <div class="form-grid-extra">
+                            <div class="field-minimal">
+                                <label for="rec-experience" class="sr-only" data-i18n="de.form.exp.label">Anos de experiência</label>
+                                <select id="rec-experience" name="experience" required>
+                                    <option value="" disabled selected data-i18n="de.form.exp.placeholder">Anos de experiência</option>
+                                    <option value="<1" data-i18n="de.form.exp.lt1">Menos de 1 ano</option>
+                                    <option value="1-3" data-i18n="de.form.exp.1_3">1–3 anos</option>
+                                    <option value="3-5" data-i18n="de.form.exp.3_5">3–5 anos</option>
+                                    <option value="5-10" data-i18n="de.form.exp.5_10">5–10 anos</option>
+                                    <option value="10+" data-i18n="de.form.exp.10plus">10+ anos</option>
+                                </select>
+                            </div>
+                            <div class="field-minimal">
+                                <label for="rec-availability" class="sr-only" data-i18n="de.form.avail.label">Disponibilidade para início</label>
+                                <select id="rec-availability" name="availability" required>
+                                    <option value="" disabled selected data-i18n="de.form.avail.placeholder">Disponibilidade para início</option>
+                                    <option value="Imediata" data-i18n="de.form.avail.immediate">Imediata</option>
+                                    <option value="Até 1 mês" data-i18n="de.form.avail.1month">Até 1 mês</option>
+                                    <option value="Mais de 1 mês" data-i18n="de.form.avail.gt1month">Mais de 1 mês</option>
+                                </select>
+                            </div>
+                            <div class="field-minimal">
+                                <label for="rec-worked-de" class="sr-only" data-i18n="de.form.deExp.label">Já trabalhou na Alemanha?</label>
+                                <select id="rec-worked-de" name="worked_in_germany">
+                                    <option value="" selected data-i18n="de.form.deExp.placeholder">Já trabalhou na Alemanha? (opcional)</option>
+                                    <option value="Não" data-i18n="de.form.deExp.no">Não</option>
+                                    <option value="Sim" data-i18n="de.form.deExp.yes">Sim</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-consent-row">
+                            <label class="form-consent-label" for="consent-rec">
+                                <input type="checkbox" id="consent-rec" name="privacy_consent" value="accepted" required>
+                                <span class="form-consent-text">
+                                    <span data-i18n="form.consent.prefix">Li e aceito a</span>
+                                    <a href="privacidade.html" class="form-consent-link"
+                                        data-i18n="form.consent.link">Política de Privacidade</a><span
+                                        data-i18n="form.consent.suffix">.</span>
+                                </span>
+                            </label>
+                        </div>
+
                         <div class="form-box-footer">
                             <button class="submit-minimal" type="submit">
                                 <span data-i18n="de.form.submit">Enviar candidatura</span> <span aria-hidden="true">↗</span>
@@ -200,7 +282,7 @@
         <div class="wrap footer-top">
             <div class="footer-col-brand">
                 <a class="brand footer-brand" href="index.html" aria-label="MR Construções, início">
-                    <img src="imagens/logo-mr-construcoes.webp" alt="MR Construções" width="38" height="38">
+                    <img src="imagens/logo-mr-construcoes.webp" alt="Logótipo da MR Construções" width="38" height="38">
                     <span class="brand-divider footer-brand-divider" aria-hidden="true"></span>
                     <span class="footer-brand-text">MR CONSTRUÇÕES</span>
                 </a>
@@ -220,6 +302,7 @@
             <div class="footer-col-links">
                 <span class="footer-heading" data-i18n="footer.contacts">Contactos &amp; Legal</span>
                 <ul class="footer-links-list">
+                    <li><a href="privacidade.html" data-i18n="footer.privacy">Política de Privacidade</a></li>
                     <li><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener noreferrer"
                             class="footer-complaints-link" data-i18n="footer.complaints">Livro de Reclamações Eletrónico ↗</a></li>
                     <li><a href="tel:+351915680947">+351 915 680 947</a></li>
@@ -257,10 +340,23 @@
         </div>
     </div>
 
+    <!-- Barra Fixa Mobile (Ligar + WhatsApp) -->
+    <div class="mobile-action-bar" role="region" aria-label="Contacto rápido" data-i18n-aria="mobile.bar.aria">
+        <a href="tel:+351915680947" class="mobile-action-btn mobile-action-call">
+            <span data-i18n="mobile.bar.call">Ligar</span>
+        </a>
+        <a href="https://wa.me/351915680947?text=Ol%C3%A1!%20Tenho%20experi%C3%AAncia%20na%20constru%C3%A7%C3%A3o%20civil%20(carpintaria%20de%20cofragem)%20e%20interesse%20em%20trabalhar%20na%20Alemanha%20com%20a%20MR%20Constru%C3%A7%C3%B5es."
+            data-wa-topic="rec-de" class="mobile-action-btn mobile-action-wa" target="_blank"
+            rel="noopener noreferrer">
+            <span class="wa-dot-sm" aria-hidden="true"></span>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+
     <!-- Botão Flutuante de Contacto WhatsApp (Alemanha Recrutamento) -->
     <a href="https://wa.me/351915680947?text=Ol%C3%A1!%20Tenho%20experi%C3%AAncia%20na%20constru%C3%A7%C3%A3o%20civil%20(carpintaria%20de%20cofragem)%20e%20interesse%20em%20trabalhar%20na%20Alemanha%20com%20a%20MR%20Constru%C3%A7%C3%B5es."
         data-wa-topic="rec-de" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
-        aria-label="Contactar via WhatsApp sobre oportunidades na Alemanha">
+        aria-label="Contactar via WhatsApp sobre oportunidades na Alemanha" data-i18n-aria="wa.float.de">
         <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
             <path
                 d="M16 2a13.9 13.9 0 0 0-12 21L2 30l7.2-1.9A13.9 13.9 0 1 0 16 2zm0 25.4c-2.3 0-4.5-.6-6.4-1.7l-.5-.3-4.3 1.1 1.2-4.2-.3-.5A11.5 11.5 0 1 1 27.5 16 11.5 11.5 0 0 1 16 27.4zm6.3-8.6c-.3-.2-2-1-2.3-1.1-.3-.1-.6-.2-.8.2s-.9 1.1-1.1 1.3-.4.2-.7.1a9.2 9.2 0 0 1-5.4-4.7c-.2-.4 0-.6.2-.8l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6s-.8-2-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.7.1-1.1.5s-1.5 1.5-1.5 3.6 1.5 4.1 1.7 4.4c.2.3 3 4.6 7.4 6.4 1 .4 1.9.7 2.5.9 1.1.3 2 .3 2.8.2.8-.1 2.5-1 2.8-2 .4-.9.4-1.8.3-2 0-.2-.3-.3-.6-.5z" />

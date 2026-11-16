@@ -1,6 +1,13 @@
 /**
- * MR CONSTRUÇÕES — Base de Dados dos Projetos (5 Projetos Oficiais - Págs. 3 a 5 do Relatório)
+ * MR CONSTRUÇÕES — Base de Dados dos Projetos
  * Suporte Multilingue: Português (PT), Inglês (EN) e Alemão (DE)
+ *
+ * COMO ADICIONAR UM NOVO PROJETO:
+ * 1. Duplique um dos objetos abaixo dentro de window.PROJECTS_DATA com um "id" único (ex.: "moradia-braga").
+ * 2. Preencha os campos PT (title, tagline, category, categories, categoryLabel, location, year, area, description, highlights)
+ *    e as traduções em i18n.en e i18n.de, definindo heroImage e gallery[] com os caminhos na pasta imagens/.
+ * 3. Crie a página projetos/SEU_ID.html (duplicando uma das páginas em projetos/), adicione o cartão <article class="project ooda-item ...">
+ *    em index.html com href="projetos/SEU_ID.html", traduza as chaves em js/i18n.js e adicione o URL ao sitemap.xml.
  */
 
 window.PROJECTS_DATA = [
@@ -9,6 +16,7 @@ window.PROJECTS_DATA = [
     title: "Reabilitação de Fachadas",
     tagline: "Habitação Unifamiliar",
     category: "reabilitacao",
+    categories: ["reabilitacao", "fachadas"],
     categoryLabel: "Reabilitação",
     location: "Vila Nova de Famalicão",
     year: "2024",
@@ -57,6 +65,7 @@ window.PROJECTS_DATA = [
     title: "Aplicação de sistema ETICS",
     tagline: "Habitação Unifamiliar",
     category: "fachadas",
+    categories: ["fachadas"],
     categoryLabel: "Fachadas e isolamento térmico",
     location: "Santo Tirso",
     year: "2025",
@@ -105,6 +114,7 @@ window.PROJECTS_DATA = [
     title: "Reabilitação Integral de Moradia",
     tagline: "Habitação Unifamiliar",
     category: "reabilitacao",
+    categories: ["reabilitacao", "construcao"],
     categoryLabel: "Reabilitação",
     location: "Vila Nova de Famalicão",
     year: "2024",
@@ -147,12 +157,12 @@ window.PROJECTS_DATA = [
         type: "vertical"
       },
       {
-        url: "imagens/casa-famalicao-depois.jpg",
+        url: "imagens/casa-famalicao-depois.webp",
         caption: "Trabalhos de reabilitação exterior da moradia",
         type: "horizontal"
       },
       {
-        url: "imagens/casa-famalicao-antes.jpg",
+        url: "imagens/casa-famalicao-antes.webp",
         caption: "Estado anterior à intervenção de reabilitação exterior",
         type: "horizontal"
       }
@@ -163,6 +173,7 @@ window.PROJECTS_DATA = [
     title: "Reabilitação de Instalação Sanitária",
     tagline: "Habitação Unifamiliar",
     category: "reabilitacao",
+    categories: ["reabilitacao"],
     categoryLabel: "Reabilitação",
     location: "Porto",
     year: "2026",
@@ -208,6 +219,7 @@ window.PROJECTS_DATA = [
     title: "Construção de Piscina e Pavimentação Exterior",
     tagline: "Habitação Unifamiliar",
     category: "exteriores",
+    categories: ["exteriores", "construcao"],
     categoryLabel: "Construção e Espaços Exteriores",
     location: "Vila Nova de Famalicão",
     year: "2025",

@@ -4,6 +4,18 @@
  * filtro discreto de projetos e submissão dos formulários (Orçamento PT e Candidatura DE).
  */
 
+/* URL BASE DO WEBSITE (SEO / Partilha)
+ * Quando o domínio próprio estiver ativo, substitua por: https://marcoribeiroconstrucoes.pt
+ * (Atualize também os blocos marcados com "SEO_BASE_URL" nos ficheiros HTML, sitemap.xml e robots.txt)
+ */
+const SITE_BASE_URL = 'https://midi-8.github.io/mr-construcoes';
+
+/* ENDPOINTS DOS FORMULÁRIOS (FORMSPREE)
+ * Substitua os IDs abaixo pelos respetivos identificadores criados no painel do Formspree.
+ */
+const FORM_ENDPOINT_ORCAMENTO = 'https://formspree.io/f/SEU_ID_ORCAMENTO_AQUI';
+const FORM_ENDPOINT_CANDIDATURA = 'https://formspree.io/f/SEU_ID_CANDIDATURA_AQUI';
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Ativa estado JS no documento
     document.body.classList.remove('no-js');
@@ -248,14 +260,35 @@ document.addEventListener('DOMContentLoaded', () => {
         let rafId = null;
         const syncCompare = (val) => {
             const clamped = Math.max(0, Math.min(100, Number(val)));
+            const rounded = Math.round(clamped);
             compare.style.setProperty('--split', clamped + '%');
             compare.style.setProperty('--pos', clamped + '%');
             range.value = clamped;
+            range.setAttribute('aria-valuenow', String(rounded));
+            range.setAttribute('aria-valuetext', `${rounded}%`);
         };
 
         range.addEventListener('input', (e) => {
             if (rafId) cancelAnimationFrame(rafId);
             rafId = requestAnimationFrame(() => syncCompare(e.target.value));
+        });
+
+        range.addEventListener('keydown', (e) => {
+            const step = e.shiftKey ? 10 : 5;
+            const current = Number(range.value) || 50;
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                syncCompare(current - step);
+            } else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                syncCompare(current + step);
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                syncCompare(0);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                syncCompare(100);
+            }
         });
 
         let dragging = false;
@@ -331,6 +364,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const rawCats = card.getAttribute('data-category') || '';
                 const cats = rawCats.split(/\s+/).filter(Boolean);
                 const match = filter === 'all' || cats.includes(filter);
+                const cardLink = card.querySelector('a.ooda-card');
+                if (cardLink) {
+                    const baseHref = cardLink.dataset.baseHref || (cardLink.getAttribute('href') || '').split('?')[0];
+                    cardLink.dataset.baseHref = baseHref;
+                    cardLink.setAttribute('href', filter === 'all' ? baseHref : `${baseHref}?cat=${encodeURIComponent(filter)}`);
+                }
                 if (match) {
                     card.classList.remove('is-hidden');
                     requestAnimationFrame(() => {
@@ -385,168 +424,152 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4500);
     };
 
-    // 11. Submissão do Formulário de Pedido de Orçamento (Portugal - index.html)
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
+    // 11. Gestor Partilhado Formspree via fetch/AJAX (sem sair da página)
+    const setupFormspreeHandler = ({ formId, statusId, endpoint, buildPayload, successKey, conversionCategory, getConversionLabel }) => {
+        const form = document.getElementById(formId);
+        const statusEl = document.getElementById(statusId);
+        if (!form || !statusEl) return;
 
-    if (contactForm && formStatus) {
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalBtnHTML = submitBtn ? submitBtn.innerHTML : 'Enviar pedido ↗';
+        const submitBtn = form.querySelector('button[type="submit"]');
 
-        contactForm.addEventListener('submit', async (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const honey = contactForm.querySelector('input[name="_honey"]');
+            const honey = form.querySelector('input[name="_honey"]');
             if (honey && honey.value.trim() !== '') return;
 
-            if (!contactForm.reportValidity()) return;
+            const lang = window.mrCurrentLang || 'pt';
+            const dict = (window.mrTranslations && window.mrTranslations[lang]) || {};
 
-            const data = new FormData(contactForm);
-            const name = String(data.get('name') || '').trim();
-            const reply = String(data.get('reply') || '').trim();
-            const location = String(data.get('location') || '').trim();
-            const type = String(data.get('type') || '').trim();
-
-            if (!name || !reply || !location || !type) {
-                formStatus.className = 'form-status is-error';
-                formStatus.textContent = 'Por favor, preencha os campos principais do pedido.';
+            const consentInput = form.querySelector('input[name="privacy_consent"]');
+            if (consentInput && !consentInput.checked) {
+                statusEl.className = 'form-status is-error';
+                statusEl.textContent = dict['form.msg.consent'] || 'Por favor, aceite a Política de Privacidade para continuar.';
+                consentInput.focus();
+                form.reportValidity();
                 return;
             }
 
+            if (!form.reportValidity()) {
+                statusEl.className = 'form-status is-error';
+                statusEl.textContent = dict['form.msg.validation'] || 'Por favor, preencha todos os campos obrigatórios.';
+                return;
+            }
+
+            const formData = new FormData(form);
+            const payload = buildPayload(formData);
+            if (!payload) {
+                statusEl.className = 'form-status is-error';
+                statusEl.textContent = dict['form.msg.validation'] || 'Por favor, preencha todos os campos obrigatórios.';
+                return;
+            }
+
+            if (!endpoint || endpoint.includes('SEU_ID_')) {
+                statusEl.className = 'form-status is-error';
+                statusEl.textContent = dict['form.msg.notConfigured'] || 'Endpoint do formulário por configurar em js/script.js. Utilize o WhatsApp ou geral@marcoribeiroconstrucoes.pt.';
+                return;
+            }
+
+            const btnHTMLBeforeSend = submitBtn ? submitBtn.innerHTML : '';
             if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.setAttribute('aria-disabled', 'true');
-                submitBtn.innerHTML = 'A enviar...';
+                submitBtn.textContent = dict['form.sending'] || 'A enviar…';
             }
-            formStatus.className = 'form-status';
-            formStatus.textContent = '';
+            statusEl.className = 'form-status';
+            statusEl.textContent = '';
 
             try {
-                const response = await fetch('https://formsubmit.co/ajax/geral@marcoribeiroconstrucoes.pt', {
+                const response = await fetch(endpoint, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json'
                     },
-                    body: JSON.stringify({
-                        Nome: name,
-                        Telefone_ou_Email: reply,
-                        Localizacao_da_Obra: location,
-                        Tipo_de_Intervencao: type,
-                        _subject: `Novo Pedido de Orçamento (PT): ${type} - ${location} (${name})`,
-                        _cc: 'mr@marcoribeiroconstrucoes.pt',
-                        _template: 'table',
-                        _captcha: 'false'
-                    })
+                    body: JSON.stringify(payload)
                 });
 
-                if (!response.ok) {
+                const result = await response.json().catch(() => ({}));
+                if (!response.ok || result.errors) {
                     throw new Error(`Erro de servidor (${response.status})`);
                 }
 
-                const result = await response.json();
-                if (result.success === 'true' || result.success === true) {
-                    contactForm.reset();
-                    formStatus.className = 'form-status is-success';
-                    formStatus.textContent = '';
-                    showToast();
-                    window.trackConversion('form_submit_success', 'quote_pt', type);
-                } else {
-                    throw new Error(result.message || 'Submissão não confirmada.');
-                }
+                form.reset();
+                statusEl.className = 'form-status is-success';
+                statusEl.textContent = dict[successKey] || dict['toast.desc'] || 'Enviado com sucesso.';
+                showToast(dict['toast.title'], dict[successKey] || dict['toast.desc']);
+                window.trackConversion('form_submit_success', conversionCategory, getConversionLabel(formData));
             } catch (_) {
-                formStatus.className = 'form-status is-error';
-                formStatus.textContent = 'Não foi possível submeter o formulário no momento. Por favor utilize o botão de WhatsApp acima ou contacte geral@marcoribeiroconstrucoes.pt.';
+                statusEl.className = 'form-status is-error';
+                statusEl.textContent = dict['form.msg.error'] || 'Não foi possível enviar no momento. Por favor utilize o botão de WhatsApp acima ou contacte geral@marcoribeiroconstrucoes.pt.';
             } finally {
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.removeAttribute('aria-disabled');
-                    submitBtn.innerHTML = originalBtnHTML;
+                    submitBtn.innerHTML = btnHTMLBeforeSend;
                 }
             }
         });
-    }
+    };
 
-    // 12. Submissão do Formulário de Candidatura (Alemanha - alemanha.html)
-    const recForm = document.getElementById('recruitment-form');
-    const recStatus = document.getElementById('rec-form-status');
+    // Formulário de Pedido de Orçamento (Portugal - index.html)
+    setupFormspreeHandler({
+        formId: 'contact-form',
+        statusId: 'form-status',
+        endpoint: FORM_ENDPOINT_ORCAMENTO,
+        successKey: 'form.msg.success',
+        conversionCategory: 'quote_pt',
+        getConversionLabel: (fd) => String(fd.get('type') || '').trim(),
+        buildPayload: (fd) => {
+            const name = String(fd.get('name') || '').trim();
+            const reply = String(fd.get('reply') || '').trim();
+            const location = String(fd.get('location') || '').trim();
+            const type = String(fd.get('type') || '').trim();
+            const origin = String(fd.get('origem') || 'Pedido de orçamento — site').trim();
+            if (!name || !reply || !location || !type) return null;
+            return {
+                origem: origin,
+                _subject: `Pedido de orçamento — site: ${type} · ${location} (${name})`,
+                Nome: name,
+                Telefone_ou_Email: reply,
+                Localizacao_da_Obra: location,
+                Tipo_de_Intervencao: type,
+                Politica_Privacidade: 'Aceite'
+            };
+        }
+    });
 
-    if (recForm && recStatus) {
-        const submitBtn = recForm.querySelector('button[type="submit"]');
-        const originalBtnHTML = submitBtn ? submitBtn.innerHTML : 'Enviar candidatura ↗';
-
-        recForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const honey = recForm.querySelector('input[name="_honey"]');
-            if (honey && honey.value.trim() !== '') return;
-
-            if (!recForm.reportValidity()) return;
-
-            const data = new FormData(recForm);
-            const name = String(data.get('name') || '').trim();
-            const phone = String(data.get('phone') || '').trim();
-            const specialty = String(data.get('specialty') || '').trim();
-            const residence = String(data.get('residence') || '').trim();
-
-            if (!name || !phone || !specialty || !residence) {
-                recStatus.className = 'form-status is-error';
-                recStatus.textContent = 'Por favor, preencha todos os campos da candidatura.';
-                return;
-            }
-
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.setAttribute('aria-disabled', 'true');
-                submitBtn.innerHTML = 'A enviar...';
-            }
-            recStatus.className = 'form-status';
-            recStatus.textContent = '';
-
-            try {
-                const response = await fetch('https://formsubmit.co/ajax/geral@marcoribeiroconstrucoes.pt', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        Candidato: name,
-                        Telefone_WhatsApp: phone,
-                        Especialidade: specialty,
-                        Local_de_Residencia: residence,
-                        Mercado: 'Alemanha — Carpintaria de Cofragem',
-                        _subject: `Nova Candidatura (Alemanha): ${specialty} - ${name}`,
-                        _cc: 'mr@marcoribeiroconstrucoes.pt',
-                        _template: 'table',
-                        _captcha: 'false'
-                    })
-                });
-
-                if (!response.ok) {
-                    throw new Error(`Erro de servidor (${response.status})`);
-                }
-
-                const result = await response.json();
-                if (result.success === 'true' || result.success === true) {
-                    recForm.reset();
-                    recStatus.className = 'form-status is-success';
-                    recStatus.textContent = '';
-                    showToast();
-                    window.trackConversion('recruitment_submit_success', 'recruitment_de', specialty);
-                } else {
-                    throw new Error(result.message || 'Submissão não confirmada.');
-                }
-            } catch (_) {
-                recStatus.className = 'form-status is-error';
-                recStatus.textContent = 'Não foi possível enviar a candidatura no momento. Por favor contacte diretamente pelo botão de WhatsApp acima.';
-            } finally {
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.removeAttribute('aria-disabled');
-                    submitBtn.innerHTML = originalBtnHTML;
-                }
-            }
-        });
-    }
+    // 12. Formulário de Candidatura (Alemanha - alemanha.html)
+    setupFormspreeHandler({
+        formId: 'recruitment-form',
+        statusId: 'rec-form-status',
+        endpoint: FORM_ENDPOINT_CANDIDATURA,
+        successKey: 'de.form.msg.success',
+        conversionCategory: 'recruitment_de',
+        getConversionLabel: (fd) => String(fd.get('specialty') || '').trim(),
+        buildPayload: (fd) => {
+            const name = String(fd.get('name') || '').trim();
+            const phone = String(fd.get('phone') || '').trim();
+            const specialty = String(fd.get('specialty') || '').trim();
+            const residence = String(fd.get('residence') || '').trim();
+            const experience = String(fd.get('experience') || '').trim();
+            const availability = String(fd.get('availability') || '').trim();
+            const workedInDe = String(fd.get('worked_in_germany') || 'Não indicado').trim();
+            const origin = String(fd.get('origem') || 'Candidatura Alemanha — site').trim();
+            if (!name || !phone || !specialty || !residence || !experience || !availability) return null;
+            return {
+                origem: origin,
+                _subject: `Candidatura Alemanha — site: ${specialty} (${name})`,
+                Candidato: name,
+                Telefone_WhatsApp: phone,
+                Especialidade: specialty,
+                Local_de_Residencia: residence,
+                Anos_de_Experiencia: experience,
+                Disponibilidade_Inicio: availability,
+                Ja_Trabalhou_na_Alemanha: workedInDe,
+                Mercado: 'Alemanha — Carpintaria de Cofragem',
+                Politica_Privacidade: 'Aceite'
+            };
+        }
+    });
 });

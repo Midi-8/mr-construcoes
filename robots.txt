@@ -1,4 +1,5 @@
 # Robots.txt - MR Construções
+# SEO_BASE_URL: Quando o domínio próprio estiver ativo, substituir https://midi-8.github.io/mr-construcoes por https://marcoribeiroconstrucoes.pt
 User-agent: *
 Allow: /
 

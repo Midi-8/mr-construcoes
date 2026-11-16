@@ -11,19 +11,34 @@
       'quote-pt': 'Olá! Gostaria de apresentar a minha obra e solicitar um orçamento à MR Construções.',
       'rec-pt': 'Olá! Tenho interesse em trabalhar com a MR Construções em Portugal e gostaria de enviar a minha candidatura.',
       'rec-de': 'Olá! Tenho experiência na construção civil (carpintaria de cofragem) e interesse em trabalhar na Alemanha com a MR Construções.',
+      'b2b-de': 'Olá! Represento uma empresa e gostaria de falar sobre serviços de carpintaria de cofragem na Alemanha.',
       'general': 'Olá! Gostaria de entrar em contacto com a MR Construções.'
     },
     en: {
       'quote-pt': 'Hello! I would like to present my construction project and request a quote from MR Construções.',
       'rec-pt': 'Hello! I am interested in working with MR Construções in Portugal and would like to submit my application.',
       'rec-de': 'Hello! I have construction experience (formwork carpentry) and am interested in working in Germany with MR Construções.',
+      'b2b-de': 'Hello! I represent a company and would like to discuss formwork carpentry services in Germany.', // REVER POR NATIVO
       'general': 'Hello! I would like to get in touch with MR Construções.'
     },
     de: {
       'quote-pt': 'Hallo! Ich möchte mein Bauprojekt vorstellen und ein Angebot bei MR Construções anfragen.',
       'rec-pt': 'Hallo! Ich interessiere mich für eine Mitarbeit bei MR Construções in Portugal und möchte meine Bewerbung senden.',
       'rec-de': 'Hallo! Ich habe Erfahrung im Baugewerbe (Schalungsbau) und Interesse, mit MR Construções in Deutschland zu arbeiten.',
+      'b2b-de': 'Hallo! Ich vertrete ein Unternehmen und möchte über Schalungsbau-Leistungen in Deutschland sprechen.', // REVER POR NATIVO
       'general': 'Hallo! Ich möchte mit MR Construções Kontakt aufnehmen.'
+    }
+  };
+
+  const MAIL_SUBJECTS = {
+    pt: {
+      'b2b-de': 'Parceria — Carpintaria de Cofragem na Alemanha'
+    },
+    en: {
+      'b2b-de': 'Partnership — Formwork Carpentry in Germany' // REVER POR NATIVO
+    },
+    de: {
+      'b2b-de': 'Partnerschaft — Schalungsbau in Deutschland' // REVER POR NATIVO
     }
   };
 
@@ -43,7 +58,7 @@
       'common.wa.sub': 'O contacto mais direto com a nossa equipa.',
 
       // Hero Homepage
-      'hero.kicker': '— Construção - Reabilitação - Serviços',
+      'hero.kicker': '— Construção · Reabilitação · Serviços',
       'hero.title': 'Construir é Transformar.',
       'hero.lead': 'Obras executadas com rigor, proximidade e atenção a cada detalhe. Do primeiro passo à entrega das chaves.',
       'hero.cta1': 'Pedir orçamento',
@@ -70,6 +85,7 @@
       'pos.pt.i3': 'Fachadas e sistemas ETICS.',
       'pos.pt.i4': 'Alvenarias e revestimentos.',
       'pos.pt.i5': 'Acabamentos e trabalhos complementares.',
+      'pos.pt.areasLink': 'Ver áreas de intervenção',
       'pos.pt.cta': 'Solicitar orçamento em Portugal',
 
       'pos.de.tag': 'ALEMANHA',
@@ -93,6 +109,8 @@
       'proj.filter.fach': 'Fachadas',
       'proj.filter.ext': 'Construção e Espaços Exteriores',
       'proj.more': 'Ver projeto →',
+      'proj.moreWorks.text': 'E muitas outras obras concluídas em Portugal.',
+      'proj.moreWorks.link': 'Fale connosco para conhecer mais referências.',
       'p.unifamiliar': 'Habitação Unifamiliar',
       'p1.title': 'Reabilitação de Fachadas',
       'p2.title': 'Aplicação de sistema ETICS',
@@ -135,10 +153,11 @@
       'spec.kicker': '— Especialidades e Serviços',
       'spec.title': 'Áreas de Intervenção',
       'spec.lead': 'Damos prioridade à construção de habitações unifamiliares completas, complementada por áreas técnicas especializadas.',
-      'spec.main.tag': 'Destaque Principal · Portugal',
-      'spec.main.title': 'CONSTRUÇÃO DE RAIZ',
-      'spec.main.desc': 'Construção de habitações unifamiliares completas, do início ao fim, com coordenação integral de todas as fases da obra.',
+      'spec.main.tag': 'Atividade Principal · Portugal',
+      'spec.main.title': 'Construção de raiz',
+      'spec.main.desc': 'Construção de habitações unifamiliares completas, do início ao fim, com acompanhamento próximo e coordenação integral de todas as fases da obra.',
       'spec.main.cta': 'Pedir orçamento',
+      'spec.secondary.title': 'Também executamos',
       'spec.sub1.title': 'Reabilitação e remodelação',
       'spec.sub1.desc': 'Remodelação e recuperação de edifícios e habitações unifamiliares.',
       'spec.sub2.title': 'Estruturas e construção civil',
@@ -207,6 +226,10 @@
       'about.ongoing.c3.loc': 'Alemanha · Mercado Internacional',
       'about.ongoing.c3.title': 'Frentes de Obra de Carpintaria de Cofragem',
       'about.ongoing.c3.desc': 'Equipas especializadas integradas na execução de estruturas em betão armado.',
+      'about.cta.title': 'Vamos construir o seu próximo projeto?',
+      'about.cta.desc': 'Entre em contacto connosco para apresentar a sua obra ou solicitar um orçamento.',
+      'about.cta.btn1': 'Pedir orçamento',
+      'about.cta.btn2': 'Falar pelo WhatsApp',
 
       // Página da Alemanha (alemanha.html - Pág. 8)
       'de.kicker': '— Alemanha · Carpintaria de Cofragem',
@@ -220,6 +243,11 @@
       'de.team.kicker': '— Execução Técnica · Estruturas em Betão Armado',
       'de.team.title': 'O trabalho faz-se em equipa.',
       'de.team.p1': 'A execução de trabalhos de cofragem exige conhecimento técnico, coordenação e capacidade de adaptação às diferentes fases de uma obra. É neste contexto que as nossas equipas desenvolvem diariamente a sua atividade, contribuindo para a execução de estruturas em betão armado.',
+      'de.b2b.kicker': '— Para empresas e parceiros',
+      'de.b2b.title': 'Precisa de uma equipa de cofragem?',
+      'de.b2b.desc': 'Prestamos serviços de carpintaria de cofragem a empresas e parceiros do setor da construção na Alemanha. Fale connosco sobre o seu projeto.',
+      'de.b2b.email': 'Enviar e-mail',
+      'de.b2b.wa': 'Falar pelo WhatsApp',
       'de.rec.kicker': '— Alemanha — Página e Recrutamento',
       'de.rec.title': 'O seu próximo desafio pode começar aqui.',
       'de.rec.desc': 'Tem experiência na construção e interesse em trabalhar na Alemanha? Conheça a MR Construções e entre em contacto connosco para saber mais sobre as oportunidades de integrar as nossas equipas.',
@@ -230,18 +258,77 @@
       'de.form.phone': 'Telefone / WhatsApp',
       'de.form.specialty': 'Especialidade',
       'de.form.residence': 'Local de Residência',
+      'de.form.exp.label': 'Anos de experiência',
+      'de.form.exp.placeholder': 'Anos de experiência',
+      'de.form.exp.lt1': 'Menos de 1 ano',
+      'de.form.exp.1_3': '1–3 anos',
+      'de.form.exp.3_5': '3–5 anos',
+      'de.form.exp.5_10': '5–10 anos',
+      'de.form.exp.10plus': '10+ anos',
+      'de.form.avail.label': 'Disponibilidade para início',
+      'de.form.avail.placeholder': 'Disponibilidade para início',
+      'de.form.avail.immediate': 'Imediata',
+      'de.form.avail.1month': 'Até 1 mês',
+      'de.form.avail.gt1month': 'Mais de 1 mês',
+      'de.form.deExp.label': 'Já trabalhou na Alemanha?',
+      'de.form.deExp.placeholder': 'Já trabalhou na Alemanha? (opcional)',
+      'de.form.deExp.no': 'Não',
+      'de.form.deExp.yes': 'Sim',
       'de.form.submit': 'Enviar candidatura',
+      'de.form.msg.success': 'Candidatura enviada com sucesso. Entraremos em contacto brevemente.',
+
+      // Consentimento e Estados de Formulário
+      'form.consent.prefix': 'Li e aceito a',
+      'form.consent.link': 'Política de Privacidade',
+      'form.consent.suffix': '.',
+      'form.sending': 'A enviar…',
+      'form.msg.validation': 'Por favor, preencha todos os campos obrigatórios.',
+      'form.msg.consent': 'Por favor, aceite a Política de Privacidade para enviar.',
+      'form.msg.success': 'Pedido enviado com sucesso. Responderemos com a maior brevidade.',
+      'form.msg.error': 'Não foi possível enviar no momento. Utilize o botão de WhatsApp acima ou contacte geral@marcoribeiroconstrucoes.pt.',
+      'form.msg.notConfigured': 'Endpoint Formspree por configurar em js/script.js. Utilize o WhatsApp acima ou geral@marcoribeiroconstrucoes.pt.',
+
+      // Política de Privacidade (privacidade.html)
+      'priv.kicker': '— Proteção de Dados · RGPD',
+      'priv.title': 'Política de Privacidade',
+      'priv.draft': 'RASCUNHO — Documento preparado para revisão jurídica antes da publicação definitiva.',
+      'priv.lead': 'Esta Política de Privacidade explica como a Marco Paulo Ribeiro Unipessoal, Lda. (MR Construções) recolhe e trata os dados pessoais submetidos através deste website, em conformidade com o Regulamento Geral sobre a Proteção de Dados (RGPD).',
+      'priv.s1.title': '1. Responsável pelo tratamento',
+      'priv.s1.body': 'Marco Paulo Ribeiro Unipessoal, Lda., NIF / NIPC 516590022, titular do Alvará IMPIC n.º 113987, com sede na Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal. Contacto para questões de privacidade: geral@marcoribeiroconstrucoes.pt.',
+      'priv.s2.title': '2. Finalidades do tratamento',
+      'priv.s2.body': 'Os dados pessoais recolhidos através dos formulários do website destinam-se exclusivamente a: (a) analisar e responder a pedidos de orçamento e contacto comercial; (b) avaliar e dar seguimento a candidaturas para integração nas nossas equipas em Portugal ou na Alemanha.',
+      'priv.s3.title': '3. Base legal',
+      'priv.s3.body': 'O tratamento dos dados assenta na execução de diligências pré-contratuais a pedido do titular (artigo 6.º, n.º 1, alínea b) do RGPD) e no consentimento explícito prestado pelo utilizador mediante a seleção da caixa de validação antes do envio do formulário (artigo 6.º, n.º 1, alínea a) do RGPD).',
+      'priv.s4.title': '4. Dados pessoais recolhidos',
+      'priv.s4.body': 'No formulário de pedido de orçamento são recolhidos: nome, telefone ou endereço de correio eletrónico, localização da obra e tipo de intervenção. No formulário de candidatura (Alemanha) são recolhidos: nome, telefone ou WhatsApp, especialidade profissional, local de residência, anos de experiência, disponibilidade para início e indicação opcional de experiência prévia na Alemanha.',
+      'priv.s5.title': '5. Destinatários dos dados',
+      'priv.s5.body': 'Os dados são tratados internamente pelos responsáveis pela orçamentação e recursos humanos da MR Construções. Para o encaminhamento técnico das mensagens enviadas pelos formulários, o website utiliza o serviço de processamento Formspree na qualidade de subcontratante técnico. Os dados não são vendidos nem cedidos a terceiros para fins publicitários.',
+      'priv.s6.title': '6. Prazo de conservação',
+      'priv.s6.body': 'Os dados relativos a pedidos de orçamento são conservados durante o período necessário ao tratamento da solicitação ou até 24 meses caso não resulte na celebração de contrato. Os dados de candidaturas espontâneas são conservados pelo prazo máximo de 12 meses após a receção, salvo retirada prévia do consentimento.',
+      'priv.s7.title': '7. Direitos dos titulares dos dados',
+      'priv.s7.body': 'O titular pode exercer a qualquer momento os direitos de acesso, retificação, apagamento, limitação do tratamento, portabilidade, oposição e retirada do consentimento (sem comprometer a licitude do tratamento efetuado até então), enviando pedido para geral@marcoribeiroconstrucoes.pt.',
+      'priv.s8.title': '8. Autoridade de controlo',
+      'priv.s8.body': 'Caso considere que o tratamento dos seus dados viola o RGPD, assiste-lhe o direito de apresentar reclamação junto da Comissão Nacional de Proteção de Dados (CNPD), através de www.cnpd.pt.',
+      'priv.s9.title': '9. Cookies e armazenamento local',
+      'priv.s9.body': 'Este website não utiliza cookies de analítica, estatística, publicidade ou rastreio de terceiros. Apenas é utilizado armazenamento técnico local do navegador (localStorage) para memorizar a preferência de idioma (PT, EN ou DE) escolhida pelo visitante.',
 
       // Rodapé & Toast
       'footer.desc': 'Construção de habitações unifamiliares em Portugal.\nCarpintaria de cofragem na Alemanha.',
       'footer.legal': 'Dados Legais',
       'footer.contacts': 'Contactos & Legal',
+      'footer.privacy': 'Política de Privacidade',
       'footer.complaints': 'Livro de Reclamações Eletrónico ↗',
       'footer.rights': 'Todos os direitos reservados.',
       'footer.credit': 'Desenvolvido por',
       'footer.top': 'Voltar ao início ↑',
       'toast.title': 'Mensagem Enviada',
-      'toast.desc': 'Agradecemos o seu contacto. Responderemos com a maior brevidade.'
+      'toast.desc': 'Agradecemos o seu contacto. Responderemos com a maior brevidade.',
+      'wa.float.quote': 'Pedir orçamento via WhatsApp',
+      'wa.float.general': 'Contactar via WhatsApp',
+      'wa.float.de': 'Contactar via WhatsApp sobre oportunidades na Alemanha',
+      'mobile.bar.aria': 'Contacto rápido',
+      'mobile.bar.call': 'Ligar',
+      'comp.sliderAria': 'Comparar fotografias antes e depois da reabilitação'
     },
 
     en: {
@@ -259,7 +346,7 @@
       'common.wa.sub': 'The most direct contact with our team.',
 
       // Hero Homepage
-      'hero.kicker': '— Construction - Rehabilitation - Services',
+      'hero.kicker': '— Construction · Rehabilitation · Services', // REVER POR NATIVO
       'hero.title': 'To Build is to Transform.',
       'hero.lead': 'Projects executed with rigor, close follow-up and attention to every detail. From the first step to turning over the keys.',
       'hero.cta1': 'Request a quote',
@@ -286,6 +373,7 @@
       'pos.pt.i3': 'Facades and ETICS thermal systems.',
       'pos.pt.i4': 'Masonry and wall/floor coverings.',
       'pos.pt.i5': 'Finishes and complementary works.',
+      'pos.pt.areasLink': 'View areas of intervention', // REVER POR NATIVO
       'pos.pt.cta': 'Request a quote in Portugal',
 
       'pos.de.tag': 'GERMANY',
@@ -309,6 +397,8 @@
       'proj.filter.fach': 'Facades',
       'proj.filter.ext': 'Construction & Outdoor Spaces',
       'proj.more': 'View project →',
+      'proj.moreWorks.text': 'And many other projects completed in Portugal.', // REVER POR NATIVO
+      'proj.moreWorks.link': 'Talk to us to see more references.', // REVER POR NATIVO
       'p.unifamiliar': 'Single-Family House',
       'p1.title': 'Facade Rehabilitation',
       'p2.title': 'ETICS System Application',
@@ -352,9 +442,10 @@
       'spec.title': 'Areas of Intervention',
       'spec.lead': 'We prioritize complete single-family home construction, complemented by specialized technical areas.',
       'spec.main.tag': 'Core Activity · Portugal',
-      'spec.main.title': 'GROUND-UP CONSTRUCTION',
-      'spec.main.desc': 'Complete single-family home construction from start to finish, with full coordination of all site phases.',
+      'spec.main.title': 'Ground-up construction', // REVER POR NATIVO
+      'spec.main.desc': 'Complete single-family home construction from start to finish, with close supervision and full coordination of all site phases.', // REVER POR NATIVO
       'spec.main.cta': 'Request a quote',
+      'spec.secondary.title': 'We also execute', // REVER POR NATIVO
       'spec.sub1.title': 'Rehabilitation and remodeling',
       'spec.sub1.desc': 'Remodeling and restoration of residential buildings and single-family homes.',
       'spec.sub2.title': 'Structures and civil construction',
@@ -423,6 +514,10 @@
       'about.ongoing.c3.loc': 'Germany · International Market',
       'about.ongoing.c3.title': 'Formwork Carpentry Work Fronts',
       'about.ongoing.c3.desc': 'Specialized teams integrated in the execution of reinforced concrete structures.',
+      'about.cta.title': 'Shall we build your next project?', // REVER POR NATIVO
+      'about.cta.desc': 'Contact us to present your project or request a quote.', // REVER POR NATIVO
+      'about.cta.btn1': 'Request a quote', // REVER POR NATIVO
+      'about.cta.btn2': 'Talk on WhatsApp', // REVER POR NATIVO
 
       // Germany Page (alemanha.html)
       'de.kicker': '— Germany · Formwork Carpentry',
@@ -436,6 +531,11 @@
       'de.team.kicker': '— Technical Execution · Reinforced Concrete Structures',
       'de.team.title': 'Work is done as a team.',
       'de.team.p1': 'Executing formwork requires technical knowledge, coordination and adaptability across the different phases of a project. In this context, our teams carry out their daily work, contributing to the execution of reinforced concrete structures.',
+      'de.b2b.kicker': '— For companies and partners', // REVER POR NATIVO
+      'de.b2b.title': 'Need a formwork team?', // REVER POR NATIVO
+      'de.b2b.desc': 'We provide formwork carpentry services to construction companies and partners in Germany. Talk to us about your project.', // REVER POR NATIVO
+      'de.b2b.email': 'Send email', // REVER POR NATIVO
+      'de.b2b.wa': 'Chat on WhatsApp', // REVER POR NATIVO
       'de.rec.kicker': '— Germany — Page & Recruitment',
       'de.rec.title': 'Your next challenge can start here.',
       'de.rec.desc': 'Do you have construction experience and an interest in working in Germany? Get to know MR Construções and contact us to learn more about opportunities to join our teams.',
@@ -446,18 +546,77 @@
       'de.form.phone': 'Phone / WhatsApp',
       'de.form.specialty': 'Specialty',
       'de.form.residence': 'Place of Residence',
+      'de.form.exp.label': 'Years of experience', // REVER POR NATIVO
+      'de.form.exp.placeholder': 'Years of experience', // REVER POR NATIVO
+      'de.form.exp.lt1': 'Under 1 year', // REVER POR NATIVO
+      'de.form.exp.1_3': '1–3 years', // REVER POR NATIVO
+      'de.form.exp.3_5': '3–5 years', // REVER POR NATIVO
+      'de.form.exp.5_10': '5–10 years', // REVER POR NATIVO
+      'de.form.exp.10plus': '10+ years', // REVER POR NATIVO
+      'de.form.avail.label': 'Availability to start', // REVER POR NATIVO
+      'de.form.avail.placeholder': 'Availability to start', // REVER POR NATIVO
+      'de.form.avail.immediate': 'Immediate', // REVER POR NATIVO
+      'de.form.avail.1month': 'Within 1 month', // REVER POR NATIVO
+      'de.form.avail.gt1month': 'More than 1 month', // REVER POR NATIVO
+      'de.form.deExp.label': 'Have you worked in Germany before?', // REVER POR NATIVO
+      'de.form.deExp.placeholder': 'Worked in Germany before? (optional)', // REVER POR NATIVO
+      'de.form.deExp.no': 'No', // REVER POR NATIVO
+      'de.form.deExp.yes': 'Yes', // REVER POR NATIVO
       'de.form.submit': 'Send application',
+      'de.form.msg.success': 'Application sent successfully. We will contact you shortly.', // REVER POR NATIVO
+
+      // Consent & Form Status
+      'form.consent.prefix': 'I have read and accept the', // REVER POR NATIVO
+      'form.consent.link': 'Privacy Policy', // REVER POR NATIVO
+      'form.consent.suffix': '.', // REVER POR NATIVO
+      'form.sending': 'Sending…', // REVER POR NATIVO
+      'form.msg.validation': 'Please fill in all required fields.', // REVER POR NATIVO
+      'form.msg.consent': 'Please accept the Privacy Policy before submitting.', // REVER POR NATIVO
+      'form.msg.success': 'Request sent successfully. We will reply shortly.', // REVER POR NATIVO
+      'form.msg.error': 'Could not send at the moment. Please use the WhatsApp button above or contact geral@marcoribeiroconstrucoes.pt.', // REVER POR NATIVO
+      'form.msg.notConfigured': 'Formspree endpoint pending configuration in js/script.js. Please use WhatsApp or geral@marcoribeiroconstrucoes.pt.', // REVER POR NATIVO
+
+      // Privacy Policy (privacidade.html)
+      'priv.kicker': '— Data Protection · GDPR', // REVER POR NATIVO
+      'priv.title': 'Privacy Policy', // REVER POR NATIVO
+      'priv.draft': 'DRAFT — Document prepared for legal review prior to final publication.', // REVER POR NATIVO
+      'priv.lead': 'This Privacy Policy explains how Marco Paulo Ribeiro Unipessoal, Lda. (MR Construções) collects and processes personal data submitted through this website, in accordance with the General Data Protection Regulation (GDPR).', // REVER POR NATIVO
+      'priv.s1.title': '1. Data Controller', // REVER POR NATIVO
+      'priv.s1.body': 'Marco Paulo Ribeiro Unipessoal, Lda., Tax ID (NIF/NIPC) 516590022, IMPIC License No. 113987, headquartered at Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal. Privacy contact: geral@marcoribeiroconstrucoes.pt.', // REVER POR NATIVO
+      'priv.s2.title': '2. Purposes of Processing', // REVER POR NATIVO
+      'priv.s2.body': 'Personal data collected through website forms are used exclusively to: (a) analyze and respond to quote and business inquiries; (b) evaluate and follow up on applications to join our teams in Portugal or Germany.', // REVER POR NATIVO
+      'priv.s3.title': '3. Legal Basis', // REVER POR NATIVO
+      'priv.s3.body': 'Data processing is based on pre-contractual steps taken at the request of the data subject (Article 6(1)(b) GDPR) and on explicit consent given by checking the consent box prior to submission (Article 6(1)(a) GDPR).', // REVER POR NATIVO
+      'priv.s4.title': '4. Personal Data Collected', // REVER POR NATIVO
+      'priv.s4.body': 'The quote request form collects: name, phone number or email address, project location and type of intervention. The application form (Germany) collects: name, phone/WhatsApp, trade specialty, place of residence, years of experience, start availability and optional prior experience in Germany.', // REVER POR NATIVO
+      'priv.s5.title': '5. Data Recipients', // REVER POR NATIVO
+      'priv.s5.body': 'Data are processed internally by MR Construções estimating and human resources staff. For technical routing of form submissions, the website uses Formspree as a technical data processor. Personal data are never sold or shared with third parties for marketing.', // REVER POR NATIVO
+      'priv.s6.title': '6. Retention Period', // REVER POR NATIVO
+      'priv.s6.body': 'Quote inquiry data are kept for the period required to process the request or up to 24 months if no contract is concluded. Unsolicited job application data are retained for up to 12 months from receipt, unless consent is withdrawn earlier.', // REVER POR NATIVO
+      'priv.s7.title': '7. Data Subject Rights', // REVER POR NATIVO
+      'priv.s7.body': 'You may at any time exercise your rights of access, rectification, erasure, restriction, portability, objection and withdrawal of consent (without affecting the lawfulness of prior processing) by emailing geral@marcoribeiroconstrucoes.pt.', // REVER POR NATIVO
+      'priv.s8.title': '8. Supervisory Authority', // REVER POR NATIVO
+      'priv.s8.body': 'If you believe the processing of your data infringes the GDPR, you have the right to lodge a complaint with the Portuguese Data Protection Authority (CNPD) at www.cnpd.pt.', // REVER POR NATIVO
+      'priv.s9.title': '9. Cookies and Local Storage', // REVER POR NATIVO
+      'priv.s9.body': 'This website does not use third-party analytics, advertising or tracking cookies. Only browser local storage (localStorage) is used technically to remember the visitor’s selected language (PT, EN or DE).', // REVER POR NATIVO
 
       // Footer & Toast
       'footer.desc': 'Single-family home construction in Portugal.\nFormwork carpentry in Germany.',
       'footer.legal': 'Legal Information',
       'footer.contacts': 'Contacts & Legal',
+      'footer.privacy': 'Privacy Policy', // REVER POR NATIVO
       'footer.complaints': 'Electronic Complaints Book ↗',
       'footer.rights': 'All rights reserved.',
       'footer.credit': 'Developed by',
       'footer.top': 'Back to top ↑',
       'toast.title': 'Message Sent',
-      'toast.desc': 'Thank you for contacting us. We will reply shortly.'
+      'toast.desc': 'Thank you for contacting us. We will reply shortly.',
+      'wa.float.quote': 'Request a quote via WhatsApp', // REVER POR NATIVO
+      'wa.float.general': 'Contact us via WhatsApp', // REVER POR NATIVO
+      'wa.float.de': 'Contact via WhatsApp about opportunities in Germany', // REVER POR NATIVO
+      'mobile.bar.aria': 'Quick contact', // REVER POR NATIVO
+      'mobile.bar.call': 'Call', // REVER POR NATIVO
+      'comp.sliderAria': 'Compare before and after rehabilitation photographs' // REVER POR NATIVO
     },
 
     de: {
@@ -475,7 +634,7 @@
       'common.wa.sub': 'Der direkteste Kontakt zu unserem Team.',
 
       // Hero Homepage
-      'hero.kicker': '— Hochbau - Sanierung - Bauleistungen',
+      'hero.kicker': '— Hochbau · Sanierung · Bauleistungen', // REVER POR NATIVO
       'hero.title': 'Bauen heißt Verwandeln.',
       'hero.lead': 'Bauprojekte ausgeführt mit Präzision, Nähe und Liebe zum Detail. Vom ersten Schritt bis zur Schlüsselübergabe.',
       'hero.cta1': 'Angebot anfordern',
@@ -502,6 +661,7 @@
       'pos.pt.i3': 'Fassaden und WDVS-Systeme (ETICS).',
       'pos.pt.i4': 'Mauerwerk und Belagsarbeiten.',
       'pos.pt.i5': 'Innenausbau und ergänzende Bauarbeiten.',
+      'pos.pt.areasLink': 'Tätigkeitsbereiche ansehen', // REVER POR NATIVO
       'pos.pt.cta': 'Angebot in Portugal anfordern',
 
       'pos.de.tag': 'DEUTSCHLAND',
@@ -525,6 +685,8 @@
       'proj.filter.fach': 'Fassaden',
       'proj.filter.ext': 'Bau & Außenanlagen',
       'proj.more': 'Projekt ansehen →',
+      'proj.moreWorks.text': 'Und viele weitere abgeschlossene Bauprojekte in Portugal.', // REVER POR NATIVO
+      'proj.moreWorks.link': 'Sprechen Sie mit uns für weitere Referenzen.', // REVER POR NATIVO
       'p.unifamiliar': 'Einfamilienhaus',
       'p1.title': 'Fassadensanierung',
       'p2.title': 'WDVS-Fassadendämmung (ETICS)',
@@ -568,9 +730,10 @@
       'spec.title': 'Einsatzbereiche',
       'spec.lead': 'Unser Schwerpunkt liegt auf dem Bau kompletter Einfamilienhäuser, ergänzt durch spezialisierte Fachbereiche.',
       'spec.main.tag': 'Haupttätigkeit · Portugal',
-      'spec.main.title': 'SCHLÜSSELFERTIGER NEUBAU',
-      'spec.main.desc': 'Kompletter Neubau von Einfamilienhäusern von Anfang bis Ende mit integraler Koordination aller Gewerke.',
+      'spec.main.title': 'Schlüsselfertiger Neubau', // REVER POR NATIVO
+      'spec.main.desc': 'Kompletter Neubau von Einfamilienhäusern von Anfang bis Ende mit enger Begleitung und integraler Koordination aller Bauphasen.', // REVER POR NATIVO
       'spec.main.cta': 'Angebot anfordern',
+      'spec.secondary.title': 'Außerdem führen wir aus', // REVER POR NATIVO
       'spec.sub1.title': 'Sanierung und Umbau',
       'spec.sub1.desc': 'Umbau und Instandsetzung von Wohngebäuden und Einfamilienhäusern.',
       'spec.sub2.title': 'Rohbau und Hochbau',
@@ -639,6 +802,10 @@
       'about.ongoing.c3.loc': 'Deutschland · Internationaler Markt',
       'about.ongoing.c3.title': 'Baustellen im Bereich Schalungsbau',
       'about.ongoing.c3.desc': 'Spezialisierte Teams im Einsatz bei der Ausführung von Stahlbetonkonstruktionen.',
+      'about.cta.title': 'Bauen wir gemeinsam Ihr nächstes Projekt?', // REVER POR NATIVO
+      'about.cta.desc': 'Kontaktieren Sie uns, um Ihr Bauvorhaben vorzustellen oder ein Angebot anzufordern.', // REVER POR NATIVO
+      'about.cta.btn1': 'Angebot anfordern', // REVER POR NATIVO
+      'about.cta.btn2': 'Über WhatsApp sprechen', // REVER POR NATIVO
 
       // Deutschland-Seite (alemanha.html)
       'de.kicker': '— Deutschland · Schalungsbau',
@@ -652,6 +819,11 @@
       'de.team.kicker': '— Technische Ausführung · Stahlbetonbau',
       'de.team.title': 'Gute Arbeit entsteht im Team.',
       'de.team.p1': 'Die Ausführung von Schalungsarbeiten erfordert technisches Fachwissen, Koordination und Anpassungsfähigkeit an die verschiedenen Phasen eines Bauprojekts. In diesem Umfeld leisten unsere Teams täglich ihren Beitrag zur Errichtung von Stahlbetonbauwerken.',
+      'de.b2b.kicker': '— Für Unternehmen und Partner', // REVER POR NATIVO
+      'de.b2b.title': 'Benötigen Sie ein Schalungsteam?', // REVER POR NATIVO
+      'de.b2b.desc': 'Wir erbringen Leistungen im Bereich Schalungsbau für Bauunternehmen und Partner in Deutschland. Sprechen Sie mit uns über Ihr Projekt.', // REVER POR NATIVO
+      'de.b2b.email': 'E-Mail senden', // REVER POR NATIVO
+      'de.b2b.wa': 'Über WhatsApp schreiben', // REVER POR NATIVO
       'de.rec.kicker': '— Deutschland — Seite & Karriere',
       'de.rec.title': 'Ihre nächste Herausforderung kann hier beginnen.',
       'de.rec.desc': 'Haben Sie Erfahrung im Baugewerbe und Interesse an einer Tätigkeit in Deutschland? Lernen Sie MR Construções kennen und kontaktieren Sie uns, um mehr über Ihre Einstiegsmöglichkeiten zu erfahren.',
@@ -662,18 +834,77 @@
       'de.form.phone': 'Telefon / WhatsApp',
       'de.form.specialty': 'Fachgebiet / Beruf',
       'de.form.residence': 'Wohnort',
+      'de.form.exp.label': 'Jahre Berufserfahrung', // REVER POR NATIVO
+      'de.form.exp.placeholder': 'Jahre Berufserfahrung', // REVER POR NATIVO
+      'de.form.exp.lt1': 'Unter 1 Jahr', // REVER POR NATIVO
+      'de.form.exp.1_3': '1–3 Jahre', // REVER POR NATIVO
+      'de.form.exp.3_5': '3–5 Jahre', // REVER POR NATIVO
+      'de.form.exp.5_10': '5–10 Jahre', // REVER POR NATIVO
+      'de.form.exp.10plus': '10+ Jahre', // REVER POR NATIVO
+      'de.form.avail.label': 'Verfügbarkeit ab', // REVER POR NATIVO
+      'de.form.avail.placeholder': 'Verfügbarkeit ab', // REVER POR NATIVO
+      'de.form.avail.immediate': 'Sofort', // REVER POR NATIVO
+      'de.form.avail.1month': 'Innerhalb 1 Monats', // REVER POR NATIVO
+      'de.form.avail.gt1month': 'Mehr als 1 Monat', // REVER POR NATIVO
+      'de.form.deExp.label': 'Haben Sie bereits in Deutschland gearbeitet?', // REVER POR NATIVO
+      'de.form.deExp.placeholder': 'Bereits in Deutschland gearbeitet? (optional)', // REVER POR NATIVO
+      'de.form.deExp.no': 'Nein', // REVER POR NATIVO
+      'de.form.deExp.yes': 'Ja', // REVER POR NATIVO
       'de.form.submit': 'Bewerbung senden',
+      'de.form.msg.success': 'Bewerbung erfolgreich gesendet. Wir melden uns in Kürze.', // REVER POR NATIVO
+
+      // Einwilligung & Formularstatus
+      'form.consent.prefix': 'Ich habe die', // REVER POR NATIVO
+      'form.consent.link': 'Datenschutzerklärung', // REVER POR NATIVO
+      'form.consent.suffix': ' gelesen und akzeptiere sie.', // REVER POR NATIVO
+      'form.sending': 'Wird gesendet…', // REVER POR NATIVO
+      'form.msg.validation': 'Bitte füllen Sie alle Pflichtfelder aus.', // REVER POR NATIVO
+      'form.msg.consent': 'Bitte akzeptieren Sie die Datenschutzerklärung vor dem Absenden.', // REVER POR NATIVO
+      'form.msg.success': 'Anfrage erfolgreich gesendet. Wir melden uns schnellstmöglich.', // REVER POR NATIVO
+      'form.msg.error': 'Derzeit konnte Ihre Nachricht nicht gesendet werden. Nutzen Sie bitte WhatsApp oben oder schreiben Sie an geral@marcoribeiroconstrucoes.pt.', // REVER POR NATIVO
+      'form.msg.notConfigured': 'Formspree-Endpunkt in js/script.js noch nicht konfiguriert. Nutzen Sie bitte WhatsApp oder geral@marcoribeiroconstrucoes.pt.', // REVER POR NATIVO
+
+      // Datenschutzerklärung (privacidade.html)
+      'priv.kicker': '— Datenschutz · DSGVO', // REVER POR NATIVO
+      'priv.title': 'Datenschutzerklärung', // REVER POR NATIVO
+      'priv.draft': 'ENTWURF — Dokument zur rechtlichen Prüfung vor der endgültigen Veröffentlichung.', // REVER POR NATIVO
+      'priv.lead': 'Diese Datenschutzerklärung erläutert, wie die Marco Paulo Ribeiro Unipessoal, Lda. (MR Construções) personenbezogene Daten über diese Website gemäß der Datenschutz-Grundverordnung (DSGVO) erhebt und verarbeitet.', // REVER POR NATIVO
+      'priv.s1.title': '1. Verantwortlicher', // REVER POR NATIVO
+      'priv.s1.body': 'Marco Paulo Ribeiro Unipessoal, Lda., Steuernummer (NIF/NIPC) 516590022, IMPIC-Zulassung Nr. 113987, mit Sitz in der Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal. Kontakt für Datenschutzfragen: geral@marcoribeiroconstrucoes.pt.', // REVER POR NATIVO
+      'priv.s2.title': '2. Zwecke der Verarbeitung', // REVER POR NATIVO
+      'priv.s2.body': 'Die über die Formulare dieser Website erhobenen personenbezogenen Daten dienen ausschließlich: (a) der Bearbeitung und Beantwortung von Angebots- und Geschäftsanfragen; (b) der Prüfung und Bearbeitung von Bewerbungen für unsere Teams in Portugal oder Deutschland.', // REVER POR NATIVO
+      'priv.s3.title': '3. Rechtsgrundlage', // REVER POR NATIVO
+      'priv.s3.body': 'Die Datenverarbeitung erfolgt zur Durchführung vorvertraglicher Maßnahmen auf Anfrage der betroffenen Person (Art. 6 Abs. 1 lit. b DSGVO) sowie auf Grundlage Ihrer ausdrücklichen Einwilligung durch Aktivierung des Kontrollkästchens (Art. 6 Abs. 1 lit. a DSGVO).', // REVER POR NATIVO
+      'priv.s4.title': '4. Erhobene personenbezogene Daten', // REVER POR NATIVO
+      'priv.s4.body': 'Im Angebotsformular werden erhoben: Name, Telefonnummer oder E-Mail-Adresse, Standort des Bauvorhabens und Art der Maßnahme. Im Bewerbungsformular (Deutschland) werden erhoben: Name, Telefon/WhatsApp, Fachgebiet, Wohnort, Jahre Berufserfahrung, Verfügbarkeit sowie optional frühere Berufserfahrung in Deutschland.', // REVER POR NATIVO
+      'priv.s5.title': '5. Empfänger der Daten', // REVER POR NATIVO
+      'priv.s5.body': 'Die Daten werden intern von den zuständigen Mitarbeitern für Kalkulation und Personalwesen bei MR Construções verarbeitet. Für die technische Übermittlung der Formularnachrichten nutzen wir den Dienst Formspree als Auftragsverarbeiter. Eine Weitergabe oder ein Verkauf an Dritte zu Werbezwecken findet nicht statt.', // REVER POR NATIVO
+      'priv.s6.title': '6. Speicherdauer', // REVER POR NATIVO
+      'priv.s6.body': 'Daten zu Angebotsanfragen werden für den zur Bearbeitung erforderlichen Zeitraum bzw. bis zu 24 Monate aufbewahrt, sofern kein Vertrag zustande kommt. Bewerbungsdaten werden höchstens 12 Monate nach Eingang gespeichert, sofern die Einwilligung nicht zuvor widerrufen wird.', // REVER POR NATIVO
+      'priv.s7.title': '7. Rechte der betroffenen Personen', // REVER POR NATIVO
+      'priv.s7.body': 'Sie können jederzeit Ihre Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch sowie Widerruf der Einwilligung (ohne die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung zu berühren) per E-Mail an geral@marcoribeiroconstrucoes.pt ausüben.', // REVER POR NATIVO
+      'priv.s8.title': '8. Aufsichtsbehörde', // REVER POR NATIVO
+      'priv.s8.body': 'Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer Daten gegen die DSGVO verstößt, haben Sie das Recht auf Beschwerde bei der portugiesischen Datenschutzbehörde (CNPD) unter www.cnpd.pt.', // REVER POR NATIVO
+      'priv.s9.title': '9. Cookies und lokale Speicherung', // REVER POR NATIVO
+      'priv.s9.body': 'Diese Website verwendet keine Analyse-, Statistik-, Werbe- oder Tracking-Cookies von Drittanbietern. Es wird lediglich technisch der lokale Browser-Speicher (localStorage) genutzt, um Ihre Sprachauswahl (PT, EN oder DE) zu speichern.', // REVER POR NATIVO
 
       // Fußzeile & Toast
       'footer.desc': 'Bau von Einfamilienhäusern in Portugal.\nSchalungsbau in Deutschland.',
       'footer.legal': 'Rechtliche Angaben',
       'footer.contacts': 'Kontakt & Rechtliches',
+      'footer.privacy': 'Datenschutzerklärung', // REVER POR NATIVO
       'footer.complaints': 'Elektronisches Beschwerdebuch ↗',
       'footer.rights': 'Alle Rechte vorbehalten.',
       'footer.credit': 'Entwickelt von',
       'footer.top': 'Nach oben ↑',
       'toast.title': 'Nachricht gesendet',
-      'toast.desc': 'Vielen Dank für Ihre Kontaktaufnahme. Wir melden uns in Kürze.'
+      'toast.desc': 'Vielen Dank für Ihre Kontaktaufnahme. Wir melden uns in Kürze.',
+      'wa.float.quote': 'Angebot über WhatsApp anfragen', // REVER POR NATIVO
+      'wa.float.general': 'Über WhatsApp kontaktieren', // REVER POR NATIVO
+      'wa.float.de': 'Über WhatsApp zu Stellenangeboten in Deutschland kontaktieren', // REVER POR NATIVO
+      'mobile.bar.aria': 'Schnellkontakt', // REVER POR NATIVO
+      'mobile.bar.call': 'Anrufen', // REVER POR NATIVO
+      'comp.sliderAria': 'Vorher- und Nachher-Fotos der Sanierung vergleichen' // REVER POR NATIVO
     }
   };
 
@@ -726,11 +957,27 @@
       }
     });
 
-    // 3. Atualiza mensagens pré-prontas de WhatsApp com [data-wa-topic] consoante o idioma
+    // 2b. Atualiza atributos aria-label traduzidos com [data-i18n-aria]
+    document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-aria');
+      if (dict[key] !== undefined) {
+        el.setAttribute('aria-label', dict[key]);
+      }
+    });
+
+    // 3. Atualiza mensagens pré-prontas de WhatsApp e assuntos de e-mail consoante o idioma
     document.querySelectorAll('[data-wa-topic]').forEach((link) => {
       const topic = link.getAttribute('data-wa-topic');
       if (topic && waDict[topic]) {
         link.href = `https://wa.me/351915680947?text=${encodeURIComponent(waDict[topic])}`;
+      }
+    });
+
+    const mailDict = MAIL_SUBJECTS[validLang] || MAIL_SUBJECTS.pt;
+    document.querySelectorAll('[data-mail-topic]').forEach((link) => {
+      const topic = link.getAttribute('data-mail-topic');
+      if (topic && mailDict[topic]) {
+        link.href = `mailto:geral@marcoribeiroconstrucoes.pt?subject=${encodeURIComponent(mailDict[topic])}`;
       }
     });
 
@@ -747,7 +994,12 @@
   document.addEventListener('DOMContentLoaded', () => {
     let savedLang = 'pt';
     try {
-      savedLang = localStorage.getItem('mr_lang') || 'pt';
+      const paramLang = new URLSearchParams(window.location.search).get('lang');
+      if (paramLang && TRANSLATIONS[paramLang]) {
+        savedLang = paramLang;
+      } else {
+        savedLang = localStorage.getItem('mr_lang') || 'pt';
+      }
     } catch (_) {
       savedLang = 'pt';
     }
