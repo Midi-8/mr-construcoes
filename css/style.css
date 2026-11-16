@@ -431,6 +431,7 @@
             flex-direction: column;
             justify-content: space-between;
             padding-top: clamp(88px, 12vh, 124px);
+            padding-bottom: clamp(24px, 3.5vh, 40px);
             color: #fff;
             isolation: isolate;
             overflow: hidden;
@@ -461,11 +462,20 @@
         }
 
         .hero-inner {
-            display: block;
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: clamp(28px, 4vh, 48px);
+            max-width: none;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .hero-copy {
+            margin: auto 0;
             max-width: 960px;
-            margin-top: clamp(16px, 4vh, 48px);
-            margin-bottom: auto;
-            padding-bottom: clamp(24px, 4vh, 40px);
         }
 
         .hero-kicker {
@@ -2553,53 +2563,47 @@ body:not(.no-js) .typewriter-target.tw-pending {
     opacity: 1;
 }
 
-.hero-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 24px;
-    width: var(--page);
-}
-
-/* Secção de Indicadores de Destaque logo abaixo do Hero (Pág. 2) */
-.highlights-strip {
-    padding: clamp(32px, 4.5vw, 56px) 0 0;
-}
-
+/* Indicadores de Destaque na base do Hero (Pág. 2) */
 .hero-indicators {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: clamp(16px, 2.5vw, 32px);
+    width: 100%;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .indicator-box {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    padding: clamp(26px, 3vw, 38px) 24px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 20px 22px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    text-align: center;
-    gap: 8px;
-    transition: border-color .25s ease, transform .25s ease;
+    text-align: left;
+    gap: 6px;
+    transition: border-color .25s ease, background .25s ease, transform .25s ease;
 }
 
 .indicator-box:hover {
-    border-color: var(--ink);
+    border-color: rgba(255, 255, 255, 0.36);
+    background: rgba(255, 255, 255, 0.12);
     transform: translateY(-2px);
 }
 
 .indicator-title {
-    font: 600 clamp(1.25rem, 1.9vw, 1.55rem)/1.2 var(--font-heading);
+    font: 600 clamp(1.2rem, 1.75vw, 1.45rem)/1.2 var(--font-heading);
     letter-spacing: -0.02em;
-    color: var(--ink);
+    color: #ffffff;
 }
 
 .indicator-desc {
-    font: 400 13px/1.5 var(--font-body);
-    color: #424240;
-    max-width: 240px;
+    font: 400 13px/1.45 var(--font-body);
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 280px;
 }
 
 /* --- Posicionamento e Estrutura: Portugal vs Alemanha (Pág. 1 e 2) --- */
