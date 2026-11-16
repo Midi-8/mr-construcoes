@@ -318,11 +318,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 8. Filtro Discreto de Projetos (Seletor Minimalista - Pág. 3 e Categorias da Pág. 5 do PDF)
     const categorySelect = document.getElementById('project-category-select');
+    const oodaGrid = document.querySelector('.ooda-grid');
     const projectItems = document.querySelectorAll('.ooda-grid article.project');
 
     if (categorySelect && projectItems.length) {
         categorySelect.addEventListener('change', () => {
             const filter = categorySelect.value || 'all';
+            if (oodaGrid) {
+                oodaGrid.classList.toggle('is-filtered', filter !== 'all');
+            }
             projectItems.forEach((card) => {
                 const rawCats = card.getAttribute('data-category') || '';
                 const cats = rawCats.split(/\s+/).filter(Boolean);
