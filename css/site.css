@@ -190,7 +190,7 @@ body.menu-open .burger i:nth-child(2) { top: 22px; transform: rotate(-45deg); }
 .prj-row[data-dir="right"] .prj-track { animation: prj-r 62s linear infinite; }
 @keyframes prj-l { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
 @keyframes prj-r { from { transform: translate3d(-50%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
-.prj-row:hover .prj-track, .prj-row:focus-within .prj-track, .prj-wall.paused .prj-track { animation-play-state: paused; }
+.prj-row:hover .prj-track, .prj-row:focus-within .prj-track, .prj-wall.paused .prj-track, .prj-wall.offscreen .prj-track { animation-play-state: paused; }
 
 .prj-card { position: relative; flex: none; width: clamp(270px, 27.5vw, 440px); aspect-ratio: 4 / 3; overflow: hidden; background: var(--ink-2); cursor: zoom-in; margin-right: 3px; display: block; }
 .prj-card img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.82) contrast(1.06) brightness(.74); transform: scale(1.01); transition: transform 1.1s var(--ease), filter .9s var(--ease); }

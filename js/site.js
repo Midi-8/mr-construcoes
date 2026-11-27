@@ -255,6 +255,12 @@
         prjToggle.textContent = t(paused ? 'p.play' : 'p.pause');
       });
     }
+    if ('IntersectionObserver' in window && !reduce) {
+      var wallIo = new IntersectionObserver(function (es) {
+        wall.classList.toggle('offscreen', !es[0].isIntersecting);
+      }, { rootMargin: '140px 0px' });
+      wallIo.observe(wall);
+    }
   }
 
   /* ------------------------------ i18n ------------------------------ */
