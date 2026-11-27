@@ -12,7 +12,7 @@
     <meta name="theme-color" content="#F6F4EF">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io mailto:; base-uri 'self'; object-src 'none';">
+        content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io mailto:; base-uri 'self'; object-src 'none';">
     <!-- SEO_BASE_URL: substituir https://midi-8.github.io/mr-construcoes por https://marcoribeiroconstrucoes.pt quando o domínio estiver ativo -->
     <link rel="canonical" href="https://midi-8.github.io/mr-construcoes/alemanha.html">
     <link rel="alternate" hreflang="pt-PT" href="https://midi-8.github.io/mr-construcoes/alemanha.html">
@@ -40,7 +40,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Jost:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/site.css">
     <script src="js/site.js" defer></script>
 </head>
@@ -83,9 +83,9 @@
                 <a class="btn" href="#empresas"><span data-i18n="d1.b2bl">Contactar para parcerias</span><span aria-hidden="true">↗</span></a>
                 <a class="link" href="emprego.html"><span data-i18n="de.jobs.link">Canal de emprego</span><span class="ar" aria-hidden="true">↗</span></a>
             </div>
-            <div class="pano">
+            <div class="pano" data-scroll-open>
                 <div class="frame" data-par style="--ar:21 / 10">
-                    <img src="imagens/hero.webp" srcset="imagens/thumbs/hero-960.webp 960w, imagens/hero.webp 1600w" sizes="100vw" width="1600" height="1200" alt="Obra de estruturas em betão armado com cofragem na Alemanha" fetchpriority="high" decoding="async">
+                    <img src="imagens/hero.webp" width="1600" height="1200" alt="Obra de estruturas em betão armado com cofragem na Alemanha" fetchpriority="high" decoding="async">
                 </div>
             </div>
         </section>
@@ -130,54 +130,87 @@
                     </ol>
                 </div>
 
-                <div class="de-map-wrap rv" style="--d:.1s">
-                    <svg class="de-map-svg" viewBox="0 0 420 520" role="img" aria-label="Mapa da Alemanha com as zonas de atuação da MR Construções: Dortmund, Munique, Berlim, Hamburgo, Brémen e Düsseldorf" data-i18n-aria="de.map.aria">
-                        <!-- Grelha de coordenadas discreta -->
-                        <line class="de-map-gridline" x1="20" y1="120" x2="400" y2="120"/>
-                        <line class="de-map-gridline" x1="20" y1="240" x2="400" y2="240"/>
-                        <line class="de-map-gridline" x1="20" y1="360" x2="400" y2="360"/>
-                        <line class="de-map-gridline" x1="110" y1="24" x2="110" y2="496"/>
-                        <line class="de-map-gridline" x1="220" y1="24" x2="220" y2="496"/>
-                        <line class="de-map-gridline" x1="330" y1="24" x2="330" y2="496"/>
+                <div class="de-map-wrap rv" style="--d:.1s" data-map-3d>
+                    <div class="de-map-stage">
+                        <div class="de-map-plane">
+                            <svg class="de-map-svg" viewBox="0 0 420 520" role="img" aria-label="Mapa 3D da Alemanha com as zonas de atuação da MR Construções: Dortmund, Munique, Berlim, Hamburgo, Brémen e Düsseldorf" data-i18n-aria="de.map.aria">
+                                <defs>
+                                    <path id="de-shape" d="M144.2 41.6 L173.4 46.3 L191.7 67.8 L228.3 71.9 L224.6 97 L246.6 91.1 L277.6 69.6 L319.7 58 L331.7 91.1 L348.9 108.6 L355.1 137.7 L350 161 L364.7 184.3 L365.4 207.6 L368.3 236.7 L377.8 254.2 L369 276.9 L347.1 275.7 L323.3 289.1 L301.4 302.5 L273.3 310.7 L285 338.6 L295.2 364.8 L321.5 388.1 L333.9 398.6 L319.7 411.4 L301.4 431.8 L296.7 449.3 L304 465.6 L288.6 463.8 L272.2 463.8 L250.2 473.7 L228.3 477.2 L204.5 484.2 L184.4 469.6 L163.6 463.2 L140.5 466.7 L106.5 467.9 L104 440.5 L116 407.3 L127.7 386.4 L107.6 380.5 L83.9 374.7 L60.5 357.8 L64.9 335.7 L51.7 318.2 L54.6 294.9 L48 279.2 L50.2 257.1 L54.6 236.7 L45.5 221 L74.7 210.5 L85.7 194.2 L72.9 174.4 L85.7 155.2 L91.2 131.9 L107.6 112.7 L125.9 116.2 L142.4 101 L154.1 85.3 L146.8 62 Z"/>
+                                    <linearGradient id="de-top-grad" x1="10%" y1="4%" x2="90%" y2="96%">
+                                        <stop offset="0%" stop-color="#F2F0EA"/>
+                                        <stop offset="52%" stop-color="#E2E0D8"/>
+                                        <stop offset="100%" stop-color="#C9C7BE"/>
+                                    </linearGradient>
+                                    <linearGradient id="de-rim-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".85"/>
+                                        <stop offset="48%" stop-color="#7B7973" stop-opacity=".6"/>
+                                        <stop offset="100%" stop-color="#1E1E1C" stop-opacity=".7"/>
+                                    </linearGradient>
+                                    <filter id="de-shadow-f" x="-22%" y="-16%" width="148%" height="148%">
+                                        <feGaussianBlur stdDeviation="8"/>
+                                    </filter>
+                                    <clipPath id="de-clip"><use href="#de-shape"/></clipPath>
+                                </defs>
 
-                        <!-- Silhueta geográfica da Alemanha (cinzento arquitetónico) -->
-                        <path class="de-map-land" d="M144.2 41.6 L173.4 46.3 L191.7 67.8 L228.3 71.9 L224.6 97 L246.6 91.1 L277.6 69.6 L319.7 58 L331.7 91.1 L348.9 108.6 L355.1 137.7 L350 161 L364.7 184.3 L365.4 207.6 L368.3 236.7 L377.8 254.2 L369 276.9 L347.1 275.7 L323.3 289.1 L301.4 302.5 L273.3 310.7 L285 338.6 L295.2 364.8 L321.5 388.1 L333.9 398.6 L319.7 411.4 L301.4 431.8 L296.7 449.3 L304 465.6 L288.6 463.8 L272.2 463.8 L250.2 473.7 L228.3 477.2 L204.5 484.2 L184.4 469.6 L163.6 463.2 L140.5 466.7 L106.5 467.9 L104 440.5 L116 407.3 L127.7 386.4 L107.6 380.5 L83.9 374.7 L60.5 357.8 L64.9 335.7 L51.7 318.2 L54.6 294.9 L48 279.2 L50.2 257.1 L54.6 236.7 L45.5 221 L74.7 210.5 L85.7 194.2 L72.9 174.4 L85.7 155.2 L91.2 131.9 L107.6 112.7 L125.9 116.2 L142.4 101 L154.1 85.3 L146.8 62 Z"/>
+                                <!-- Plano técnico de coordenadas no chão -->
+                                <line class="de-map-gridline" x1="20" y1="120" x2="400" y2="120"/>
+                                <line class="de-map-gridline" x1="20" y1="240" x2="400" y2="240"/>
+                                <line class="de-map-gridline" x1="20" y1="360" x2="400" y2="360"/>
+                                <line class="de-map-gridline" x1="110" y1="24" x2="110" y2="496"/>
+                                <line class="de-map-gridline" x1="220" y1="24" x2="220" y2="496"/>
+                                <line class="de-map-gridline" x1="330" y1="24" x2="330" y2="496"/>
 
-                        <!-- Linhas subtis de ligação operacional -->
-                        <path class="de-map-link" d="M75.8 255.4 L100.7 239 L149.7 147.6 L193.2 120.3 L317.9 180.2 L251.3 435.3 L100.7 239"/>
+                                <!-- Sombra projetada da maquete 3D -->
+                                <use href="#de-shape" class="de-map-shadow" transform="translate(8 26)" filter="url(#de-shadow-f)"/>
 
-                        <!-- Marcadores das 6 cidades reais -->
-                        <g class="de-pin" data-pin="hamburg" tabindex="0">
-                            <circle class="de-pin-ring" cx="193.2" cy="120.3" r="11"/>
-                            <circle class="de-pin-dot" cx="193.2" cy="120.3" r="4"/>
-                            <text class="de-pin-lbl" x="208" y="124" data-i18n="city.hamburg">Hamburgo</text>
-                        </g>
-                        <g class="de-pin" data-pin="bremen" tabindex="0">
-                            <circle class="de-pin-ring" cx="149.7" cy="147.6" r="11"/>
-                            <circle class="de-pin-dot" cx="149.7" cy="147.6" r="4"/>
-                            <text class="de-pin-lbl" x="135" y="151" text-anchor="end" data-i18n="city.bremen">Brémen</text>
-                        </g>
-                        <g class="de-pin" data-pin="berlin" tabindex="0">
-                            <circle class="de-pin-ring" cx="317.9" cy="180.2" r="11"/>
-                            <circle class="de-pin-dot" cx="317.9" cy="180.2" r="4"/>
-                            <text class="de-pin-lbl" x="303" y="184" text-anchor="end" data-i18n="city.berlin">Berlim</text>
-                        </g>
-                        <g class="de-pin is-active" data-pin="dortmund" tabindex="0">
-                            <circle class="de-pin-ring" cx="100.7" cy="239" r="11"/>
-                            <circle class="de-pin-dot" cx="100.7" cy="239" r="4"/>
-                            <text class="de-pin-lbl" x="115" y="242" data-i18n="city.dortmund">Dortmund</text>
-                        </g>
-                        <g class="de-pin" data-pin="dusseldorf" tabindex="0">
-                            <circle class="de-pin-ring" cx="75.8" cy="255.4" r="11"/>
-                            <circle class="de-pin-dot" cx="75.8" cy="255.4" r="4"/>
-                            <text class="de-pin-lbl" x="88" y="272" data-i18n="city.dusseldorf">Düsseldorf</text>
-                        </g>
-                        <g class="de-pin" data-pin="munich" tabindex="0">
-                            <circle class="de-pin-ring" cx="251.3" cy="435.3" r="11"/>
-                            <circle class="de-pin-dot" cx="251.3" cy="435.3" r="4"/>
-                            <text class="de-pin-lbl" x="266" y="439" data-i18n="city.munich">Munique</text>
-                        </g>
-                    </svg>
+                                <!-- Extrusão arquitetónica 3D em cinzentos e pretos -->
+                                <g class="de-map-extrude" aria-hidden="true">
+                                    <use href="#de-shape" y="15" fill="#1D1D1B"/>
+                                    <use href="#de-shape" y="13.5" fill="#272724"/>
+                                    <use href="#de-shape" y="12" fill="#32322F"/>
+                                    <use href="#de-shape" y="10.5" fill="#3F3F3B"/>
+                                    <use href="#de-shape" y="9" fill="#4D4C48"/>
+                                    <use href="#de-shape" y="7.5" fill="#5B5A55"/>
+                                    <use href="#de-shape" y="6" fill="#6A6964"/>
+                                    <use href="#de-shape" y="4.5" fill="#7B7A74"/>
+                                    <use href="#de-shape" y="3" fill="#8E8D86"/>
+                                    <use href="#de-shape" y="1.5" fill="#A5A39C"/>
+                                </g>
+
+                                <!-- Superfície superior iluminada + grelha topográfica interior -->
+                                <use href="#de-shape" class="de-map-top"/>
+                                <g clip-path="url(#de-clip)" aria-hidden="true">
+                                    <line class="de-map-topgrid" x1="20" y1="120" x2="400" y2="120"/>
+                                    <line class="de-map-topgrid" x1="20" y1="240" x2="400" y2="240"/>
+                                    <line class="de-map-topgrid" x1="20" y1="360" x2="400" y2="360"/>
+                                    <line class="de-map-topgrid" x1="110" y1="24" x2="110" y2="496"/>
+                                    <line class="de-map-topgrid" x1="220" y1="24" x2="220" y2="496"/>
+                                    <line class="de-map-topgrid" x1="330" y1="24" x2="330" y2="496"/>
+                                </g>
+
+                                <!-- Linhas subtis de ligação operacional na superfície -->
+                                <path class="de-map-link" d="M75.8 255.4 L100.7 239 L149.7 147.6 L193.2 120.3 L317.9 180.2 L251.3 435.3 L100.7 239"/>
+
+                                <!-- Bases de ancoragem no relevo 3D para cada cidade -->
+                                <g class="de-pin-base" data-pin-base="hamburg"><circle class="de-pin-ring" cx="193.2" cy="120.3" r="10"/><circle class="de-pin-dot" cx="193.2" cy="120.3" r="3.2"/></g>
+                                <g class="de-pin-base" data-pin-base="bremen"><circle class="de-pin-ring" cx="149.7" cy="147.6" r="10"/><circle class="de-pin-dot" cx="149.7" cy="147.6" r="3.2"/></g>
+                                <g class="de-pin-base" data-pin-base="berlin"><circle class="de-pin-ring" cx="317.9" cy="180.2" r="10"/><circle class="de-pin-dot" cx="317.9" cy="180.2" r="3.2"/></g>
+                                <g class="de-pin-base is-active" data-pin-base="dortmund"><circle class="de-pin-ring" cx="100.7" cy="239" r="10"/><circle class="de-pin-dot" cx="100.7" cy="239" r="3.2"/></g>
+                                <g class="de-pin-base" data-pin-base="dusseldorf"><circle class="de-pin-ring" cx="75.8" cy="255.4" r="10"/><circle class="de-pin-dot" cx="75.8" cy="255.4" r="3.2"/></g>
+                                <g class="de-pin-base" data-pin-base="munich"><circle class="de-pin-ring" cx="251.3" cy="435.3" r="10"/><circle class="de-pin-dot" cx="251.3" cy="435.3" r="3.2"/></g>
+                            </svg>
+
+                            <!-- Marcadores verticais em 3D (erguidos sobre o relevo) -->
+                            <div class="de-pins-3d">
+                                <button type="button" class="de-pin-3d" data-pin="hamburg" data-side="right" style="--x:46.00%;--y:23.13%;--h:28px"><span class="de-pin-stem" aria-hidden="true"></span><span class="de-pin-head" aria-hidden="true"></span><span class="de-pin-tag" data-i18n="city.hamburg">Hamburgo</span></button>
+                                <button type="button" class="de-pin-3d" data-pin="bremen" data-side="left" style="--x:35.64%;--y:28.38%;--h:24px"><span class="de-pin-stem" aria-hidden="true"></span><span class="de-pin-head" aria-hidden="true"></span><span class="de-pin-tag" data-i18n="city.bremen">Brémen</span></button>
+                                <button type="button" class="de-pin-3d" data-pin="berlin" data-side="right" style="--x:75.69%;--y:34.65%;--h:30px"><span class="de-pin-stem" aria-hidden="true"></span><span class="de-pin-head" aria-hidden="true"></span><span class="de-pin-tag" data-i18n="city.berlin">Berlim</span></button>
+                                <button type="button" class="de-pin-3d is-active" data-pin="dortmund" data-side="right" style="--x:23.98%;--y:45.96%;--h:38px"><span class="de-pin-stem" aria-hidden="true"></span><span class="de-pin-head" aria-hidden="true"></span><span class="de-pin-tag" data-i18n="city.dortmund">Dortmund</span></button>
+                                <button type="button" class="de-pin-3d" data-pin="dusseldorf" data-side="right" style="--x:18.05%;--y:49.12%;--h:12px"><span class="de-pin-stem" aria-hidden="true"></span><span class="de-pin-head" aria-hidden="true"></span><span class="de-pin-tag" data-i18n="city.dusseldorf">Düsseldorf</span></button>
+                                <button type="button" class="de-pin-3d" data-pin="munich" data-side="right" style="--x:59.83%;--y:83.71%;--h:28px"><span class="de-pin-stem" aria-hidden="true"></span><span class="de-pin-head" aria-hidden="true"></span><span class="de-pin-tag" data-i18n="city.munich">Munique</span></button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="de-map-meta">
                         <span class="micro" data-i18n="de.map.legend">Alemanha · 6 zonas de atuação</span>
                         <span class="micro" id="de-active-city">Dortmund · 51.51° N</span>
@@ -186,8 +219,63 @@
             </div>
         </section>
 
+        <!-- MURAL DE OBRA NA ALEMANHA (DISPOSIÇÃO MONUMENTAL À LARGURA TOTAL ESTILO S+A) -->
+        <section class="sec sec--alt wrap" id="galeria-alemanha">
+            <div class="sh rv" aria-hidden="true"></div>
+            <div class="de-gal-head rv">
+                <span class="micro" data-i18n="de.gal.kicker">Registo em estaleiro</span>
+                <h2 class="t-xl" data-i18n="de.gal.title">Em obra na Alemanha.</h2>
+                <p class="sec-lead" data-i18n="de.gal.sub">Registos reais das nossas equipas em estaleiros de betão armado e cofragem.</p>
+            </div>
+
+            <div class="de-mural">
+                <!-- Linha 1: Grande fotografia dominante (70%) + vídeo vertical de estaleiro (30%) -->
+                <div class="de-mural-r1">
+                    <a class="de-mural-tile de-photo-card rv" href="imagens/alemanha-cofragem-muro.webp" data-idx="0" data-alt="Montagem de cofragem de muro com escoras metálicas na Alemanha">
+                        <img src="imagens/alemanha-cofragem-muro.webp" width="1024" height="768" loading="lazy" decoding="async" alt="Equipa MR Construções a montar cofragem metálica de muro">
+                        <div class="mural-ov"><h3 data-i18n="de.gal.p1">Cofragem de Muro</h3><span class="micro" data-i18n="p9.m">Alemanha</span></div>
+                    </a>
+                    <div class="de-mural-tile de-mural-vid rv" style="--d:.06s">
+                        <video data-auto-video autoplay muted loop playsinline preload="metadata" poster="imagens/hero.webp" aria-label="Execução de cofragem e lajes em obra na Alemanha">
+                            <source src="videos/alemanha-cofragem.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Linha 2: 3 painéis grandes lado a lado (vista aérea + vídeo drone nítido + equipa MR) -->
+                <div class="de-mural-r2">
+                    <a class="de-mural-tile de-photo-card rv" href="imagens/alemanha-obra-aerea-1.webp" data-idx="1" data-alt="Vista aérea de obra estrutural de grande escala na Alemanha">
+                        <img src="imagens/alemanha-obra-aerea-1.webp" width="1024" height="576" loading="lazy" decoding="async" alt="Vista aérea de edifícios em construção com gruas na Alemanha">
+                        <div class="mural-ov"><h3 data-i18n="de.gal.p2">Obra de Grande Escala</h3><span class="micro" data-i18n="p9.m">Alemanha</span></div>
+                    </a>
+                    <div class="de-mural-tile de-mural-vid rv" style="--d:.06s">
+                        <video data-auto-video autoplay muted loop playsinline preload="metadata" poster="imagens/alemanha-obra-aerea-2.webp" aria-label="Vista aérea de obra de cofragem e betão armado na Alemanha">
+                            <source src="videos/alemanha-drone.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <a class="de-mural-tile de-photo-card rv" style="--d:.12s" href="imagens/equipa-mr-cofragem.webp" data-idx="2" data-alt="Profissional MR Construções em verificação de prumo de muro em betão">
+                        <img src="imagens/equipa-mr-cofragem.webp" width="576" height="1024" loading="lazy" decoding="async" alt="Equipa MR Construções em verificação técnica de betão armado" style="object-position:50% 28%">
+                        <div class="mural-ov"><h3 data-i18n="de.gal.p4">Equipa MR em Obra</h3><span class="micro" data-i18n="p9.m">Alemanha</span></div>
+                    </a>
+                </div>
+
+                <!-- Linha 3: Vídeo vertical (30%) + grande vista panorâmica dominante (70%) -->
+                <div class="de-mural-r3">
+                    <div class="de-mural-tile de-mural-vid rv">
+                        <video data-auto-video autoplay muted loop playsinline preload="metadata" poster="imagens/alemanha-cofragem-muro.webp" aria-label="Fundações e armaduras de betão armado na Alemanha">
+                            <source src="videos/alemanha-estrutura.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <a class="de-mural-tile de-photo-card rv" style="--d:.06s" href="imagens/alemanha-obra-aerea-2.webp" data-idx="3" data-alt="Perspetiva panorâmica de complexo em betão armado na Alemanha">
+                        <img src="imagens/alemanha-obra-aerea-2.webp" width="1024" height="576" loading="lazy" decoding="async" alt="Perspetiva aérea de complexo estrutural em execução na Alemanha">
+                        <div class="mural-ov"><h3 data-i18n="de.gal.p3">Estruturas em Betão Armado</h3><span class="micro" data-i18n="p9.m">Alemanha</span></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- PARA EMPRESAS E PARCEIROS (B2B) -->
-        <section class="sec sec--alt wrap" id="empresas">
+        <section class="sec wrap" id="empresas">
             <div class="b2b-box rv">
                 <div>
                     <span class="micro" data-i18n="de.b2b.kicker">Para empresas e parceiros</span>
@@ -258,11 +346,28 @@
         <div class="foot-bot">
             <span>© <span id="year">2026</span> MR Construções. <span data-i18n="f.rights">Todos os direitos reservados.</span></span>
             <div class="foot-bot-r">
-                <span><span data-i18n="f.credit">Desenvolvido por</span> <a href="https://midi8-web.vercel.app" target="_blank" rel="noopener noreferrer">MIDI8</a></span>
+                <span><span data-i18n="f.credit">Desenvolvido por</span> <a href="https://midi8.pt" target="_blank" rel="noopener noreferrer">midi8</a></span>
                 <a class="top" href="#conteudo"><span data-i18n="f.top">Voltar ao topo</span> <span aria-hidden="true">↑</span></a>
             </div>
         </div>
     </footer>
+
+    <!-- LIGHTBOX -->
+    <dialog class="lb" id="lb" aria-label="Fotografia ampliada" data-i18n-aria="p.lb.aria">
+        <button class="x" type="button" data-lb-close><span data-i18n="p.close">Fechar</span></button>
+        <figure>
+            <img src="" alt="">
+            <figcaption>
+                <span class="micro lb-cap"></span>
+                <div class="lb-nav">
+                    <button type="button" class="lb-btn" data-lb-prev aria-label="Projeto anterior" data-i18n-aria="p.prev">←</button>
+                    <span class="micro lb-count"></span>
+                    <button type="button" class="lb-btn" data-lb-next aria-label="Próximo projeto" data-i18n-aria="p.next">→</button>
+                </div>
+            </figcaption>
+        </figure>
+    </dialog>
+
     <noscript><style>.rv,.clip{opacity:1!important;transform:none!important;clip-path:none!important}</style></noscript>
 </body>
 

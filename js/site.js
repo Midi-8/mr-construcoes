@@ -32,20 +32,20 @@
       'n.empresa': 'Empresa', 'n.servicos': 'Serviços', 'n.projetos': 'Projetos', 'n.alemanha': 'Alemanha', 'n.emprego': 'Emprego', 'n.orcamento': 'Orçamento',
       'burger': 'Abrir menu', 'burger.x': 'Fechar menu', 'menu.aria': 'Navegação principal',
       'h.tag': 'Construir com rigor. Criar com propósito.', 'h.scroll': 'Scroll',
-      'e.title': 'Construímos mais do que estruturas.',
+      'e.title': 'Construímos mais do que estruturas.', 'e.sub': 'Solidez construtiva e acompanhamento próximo, do primeiro passo à entrega.',
       'e.body': 'Obras executadas com rigor, proximidade e atenção a cada detalhe. Do primeiro passo à entrega das chaves — em Portugal e na Alemanha.',
       'e.id1': 'Desde', 'e.id2': 'Atuação', 'e.id2v': 'Portugal · Alemanha', 'e.id3': 'Alvará IMPIC', 'e.id4': 'Coordenadas',
       'e.de': 'Conhecer atuação na Alemanha',
       'ba.before': 'Antes', 'ba.after': 'Depois', 'ba.aria': 'Comparar antes e depois', 'ba.cap': 'Reabilitação de Moradia · V. N. Famalicão', 'ba.drag': 'Arrastar para comparar',
       'ph.arch': '[Fotografia arquitetónica]', 'ph.detail': '[Detalhe de obra]', 'ph.site': '[Obra em curso]',
-      's.title': 'O que fazemos.',
+      's.title': 'O que fazemos.', 's.sub': 'Da construção de raiz à reabilitação integral, com rigor em cada fase da obra.',
       's1.n': 'Construção de raiz', 's1.d': 'Moradias unifamiliares completas, do primeiro passo à entrega das chaves.',
       's2.n': 'Reabilitação e remodelação', 's2.d': 'Recuperação e renovação de edifícios e habitações existentes.',
       's3.n': 'Estruturas e construção civil', 's3.d': 'Execução estrutural em betão armado e trabalhos gerais de construção civil.',
       's4.n': 'Fachadas e isolamento térmico', 's4.d': 'Sistemas ETICS, revestimentos e proteção da envolvente exterior.',
       's5.n': 'Acabamentos e revestimentos', 's5.d': 'Alvenarias, revestimentos cerâmicos, pinturas e trabalhos complementares.',
       's6.n': 'Espaços exteriores', 's6.d': 'Piscinas, pavimentos cerâmicos ou em pedra e arranjos exteriores.',
-      'p.title': 'Trabalho que permanece.',
+      'p.title': 'Trabalho que permanece.', 'p.sub': 'Uma seleção de obras executadas em Portugal e na Alemanha.',
       'p1.n': 'Reabilitação de Fachadas', 'p2.n': 'Aplicação de sistema ETICS', 'p3.n': 'Reabilitação Integral de Moradia', 'p4.n': 'Reabilitação de Instalação Sanitária', 'p5.n': 'Piscina e Pavimentação Exterior', 'p6.n': 'Fachada e Isolamento Térmico', 'p7.n': 'Acabamentos e Revestimentos', 'p8.n': 'Reabilitação Exterior de Moradia', 'p9.n': 'Estruturas e Cofragem em Betão', 'p9.m': 'Alemanha',
       'p.more': 'E muitas outras obras concluídas em Portugal. Fale connosco para conhecer mais referências.', 'p.cta': 'Pedir orçamento', 'p.close': 'Fechar', 'p.lb.aria': 'Fotografia ampliada', 'p.prev': 'Projeto anterior', 'p.next': 'Próximo projeto',
       'c.title': 'Peça o seu orçamento.', 'c.lead': 'Fale connosco sobre o seu projeto de construção ou reabilitação em Portugal. Respondemos com clareza e rigor.',
@@ -59,6 +59,11 @@
       'd2.title': 'Uma presença que constrói.', 'd2.lead': 'Experiência operacional, coordenação em estaleiro e capacidade de integração em equipas de obra, contribuindo diariamente para a execução rigorosa de estruturas em betão armado.',
       'de.map.kicker': 'Presença geográfica', 'de.map.title': 'Zonas onde atuamos.', 'de.map.desc': 'Equipas mobilizadas em vários polos construtivos da Alemanha, respondendo com flexibilidade às exigências de cada obra.',
       'de.map.aria': 'Mapa da Alemanha com as zonas de atuação da MR Construções: Dortmund, Munique, Berlim, Hamburgo, Brémen e Düsseldorf', 'de.map.legend': 'Alemanha · 6 zonas de atuação',
+      'de.gal.kicker': 'Registo em estaleiro', 'de.gal.title': 'Em obra na Alemanha.', 'de.gal.sub': 'Registos reais das nossas equipas em estaleiros de betão armado e cofragem.',
+      'de.gal.v0': 'Vista aérea de obra em curso · Alemanha',
+      'de.gal.v1': 'Execução de cofragem e lajes em obra', 'de.gal.v2': 'Fundações e armaduras de betão armado',
+      'de.gal.p1': 'Cofragem de Muro', 'de.gal.p2': 'Obra de Grande Escala', 'de.gal.p3': 'Estruturas em Betão Armado', 'de.gal.p4': 'Equipa MR em Obra',
+      'vid.pause': 'Pausar', 'vid.play': 'Reproduzir',
       'city.dortmund': 'Dortmund', 'city.munich': 'Munique', 'city.berlin': 'Berlim', 'city.hamburg': 'Hamburgo', 'city.bremen': 'Brémen', 'city.dusseldorf': 'Düsseldorf',
       'de.b2b.kicker': 'Para empresas e parceiros', 'd1.b2b': 'Precisa de uma equipa de cofragem?', 'de.b2b.desc': 'Prestamos serviços de carpintaria de cofragem a empresas e parceiros do setor da construção na Alemanha. Fale connosco sobre o seu projeto.',
       'd1.b2bl': 'Contactar para parcerias', 'de.b2b.email': 'Enviar email', 'b2b.subj': 'Parceria — Carpintaria de Cofragem na Alemanha',
@@ -106,20 +111,20 @@
       'n.empresa': 'Company', 'n.servicos': 'Services', 'n.projetos': 'Projects', 'n.alemanha': 'Germany', 'n.emprego': 'Careers', 'n.orcamento': 'Quote',
       'burger': 'Open menu', 'burger.x': 'Close menu', 'menu.aria': 'Main navigation',
       'h.tag': 'Build with rigour. Create with purpose.', 'h.scroll': 'Scroll',
-      'e.title': 'We build more than structures.',
+      'e.title': 'We build more than structures.', 'e.sub': 'Structural solidity and close follow-up, from the first step to handover.',
       'e.body': 'Works delivered with rigour, proximity and attention to every detail. From the first step to the handover of the keys — in Portugal and Germany.',
       'e.id1': 'Since', 'e.id2': 'Operating in', 'e.id2v': 'Portugal · Germany', 'e.id3': 'IMPIC licence', 'e.id4': 'Coordinates',
       'e.de': 'Explore our work in Germany',
       'ba.before': 'Before', 'ba.after': 'After', 'ba.aria': 'Compare before and after', 'ba.cap': 'House Rehabilitation · V. N. Famalicão', 'ba.drag': 'Drag to compare',
       'ph.arch': '[Architectural photography]', 'ph.detail': '[Project detail]', 'ph.site': '[Construction site]',
-      's.title': 'What we do.',
+      's.title': 'What we do.', 's.sub': 'From new builds to full rehabilitation, with rigour at every stage of the project.',
       's1.n': 'New build', 's1.d': 'Complete single-family homes, from the first step to the handover of the keys.',
       's2.n': 'Rehabilitation and remodelling', 's2.d': 'Restoration and renovation of existing buildings and homes.',
       's3.n': 'Structures and civil construction', 's3.d': 'Reinforced concrete structures and general civil construction works.',
       's4.n': 'Facades and thermal insulation', 's4.d': 'ETICS systems, claddings and protection of the building envelope.',
       's5.n': 'Finishes and coverings', 's5.d': 'Masonry, ceramic tiling, painting and complementary works.',
       's6.n': 'Outdoor spaces', 's6.d': 'Swimming pools, ceramic or stone paving and exterior landscaping.',
-      'p.title': 'Work that remains.',
+      'p.title': 'Work that remains.', 'p.sub': 'A selection of projects delivered in Portugal and Germany.',
       'p1.n': 'Facade Rehabilitation', 'p2.n': 'ETICS System Application', 'p3.n': 'Full House Rehabilitation', 'p4.n': 'Sanitary Facility Rehabilitation', 'p5.n': 'Swimming Pool and Exterior Paving', 'p6.n': 'Facade and Thermal Insulation', 'p7.n': 'Finishes and Coverings', 'p8.n': 'Exterior House Rehabilitation', 'p9.n': 'Concrete Structures & Formwork', 'p9.m': 'Germany',
       'p.more': 'And many other completed projects in Portugal. Talk to us to see more references.', 'p.cta': 'Request a quote', 'p.close': 'Close', 'p.lb.aria': 'Enlarged photograph', 'p.prev': 'Previous project', 'p.next': 'Next project',
       'c.title': 'Request your quote.', 'c.lead': 'Tell us about your construction or rehabilitation project in Portugal. We respond with clarity and rigour.',
@@ -133,6 +138,11 @@
       'd2.title': 'A presence that builds.', 'd2.lead': 'Operational experience, site coordination and seamless integration into construction teams, contributing daily to rigorous reinforced concrete execution.',
       'de.map.kicker': 'Geographic presence', 'de.map.title': 'Areas where we operate.', 'de.map.desc': 'Teams mobilised across key construction hubs in Germany, responding flexibly to the demands of each site.',
       'de.map.aria': 'Map of Germany showing MR Construções operating areas: Dortmund, Munich, Berlin, Hamburg, Bremen and Düsseldorf', 'de.map.legend': 'Germany · 6 operating hubs',
+      'de.gal.kicker': 'On-site documentation', 'de.gal.title': 'On site in Germany.', 'de.gal.sub': 'Real footage and photography of our teams on reinforced concrete and formwork sites.',
+      'de.gal.v0': 'Aerial view of active site · Germany',
+      'de.gal.v1': 'Slab formwork execution on site', 'de.gal.v2': 'Foundations and reinforced concrete',
+      'de.gal.p1': 'Wall Formwork', 'de.gal.p2': 'Large-Scale Structure', 'de.gal.p3': 'Reinforced Concrete Structures', 'de.gal.p4': 'MR Team on Site',
+      'vid.pause': 'Pause', 'vid.play': 'Play',
       'city.dortmund': 'Dortmund', 'city.munich': 'Munich', 'city.berlin': 'Berlin', 'city.hamburg': 'Hamburg', 'city.bremen': 'Bremen', 'city.dusseldorf': 'Düsseldorf',
       'de.b2b.kicker': 'For companies & partners', 'd1.b2b': 'Need a formwork team?', 'de.b2b.desc': 'We provide formwork carpentry services to construction companies and partners in Germany. Talk to us about your project.',
       'd1.b2bl': 'Contact us for partnerships', 'de.b2b.email': 'Send email', 'b2b.subj': 'Partnership — Formwork Carpentry in Germany',
@@ -180,20 +190,20 @@
       'n.empresa': 'Unternehmen', 'n.servicos': 'Leistungen', 'n.projetos': 'Projekte', 'n.alemanha': 'Deutschland', 'n.emprego': 'Karriere', 'n.orcamento': 'Angebot',
       'burger': 'Menü öffnen', 'burger.x': 'Menü schließen', 'menu.aria': 'Hauptnavigation',
       'h.tag': 'Mit Präzision bauen. Mit Haltung gestalten.', 'h.scroll': 'Scroll',
-      'e.title': 'Wir bauen mehr als Strukturen.',
+      'e.title': 'Wir bauen mehr als Strukturen.', 'e.sub': 'Konstruktive Solidität und persönliche Begleitung vom ersten Schritt bis zur Übergabe.',
       'e.body': 'Bauprojekte, ausgeführt mit Präzision, Nähe und Liebe zum Detail. Vom ersten Schritt bis zur Schlüsselübergabe — in Portugal und in Deutschland.',
       'e.id1': 'Seit', 'e.id2': 'Tätig in', 'e.id2v': 'Portugal · Deutschland', 'e.id3': 'IMPIC-Zulassung', 'e.id4': 'Koordinaten',
       'e.de': 'Unsere Arbeit in Deutschland entdecken',
       'ba.before': 'Vorher', 'ba.after': 'Nachher', 'ba.aria': 'Vorher und Nachher vergleichen', 'ba.cap': 'Haussanierung · V. N. Famalicão', 'ba.drag': 'Zum Vergleichen ziehen',
       'ph.arch': '[Architekturfotografie]', 'ph.detail': '[Projektdetail]', 'ph.site': '[Baustelle]',
-      's.title': 'Was wir tun.',
+      's.title': 'Was wir tun.', 's.sub': 'Vom Neubau bis zur Komplettsanierung — präzise Ausführung in jeder Bauphase.',
       's1.n': 'Neubau', 's1.d': 'Komplette Einfamilienhäuser, vom ersten Schritt bis zur Schlüsselübergabe.',
       's2.n': 'Sanierung und Umbau', 's2.d': 'Instandsetzung und Erneuerung bestehender Gebäude und Wohnhäuser.',
       's3.n': 'Rohbau und Hochbau', 's3.d': 'Stahlbetonbau und allgemeine Hochbauarbeiten.',
       's4.n': 'Fassaden und Wärmedämmung', 's4.d': 'WDVS-Systeme (ETICS), Verkleidungen und Schutz der Gebäudehülle.',
       's5.n': 'Ausbau und Beläge', 's5.d': 'Mauerwerk, Fliesenarbeiten, Malerarbeiten und ergänzende Ausbauarbeiten.',
       's6.n': 'Außenanlagen', 's6.d': 'Pools, Keramik- oder Natursteinbeläge und Gestaltung des Außenbereichs.',
-      'p.title': 'Arbeit, die bleibt.',
+      'p.title': 'Arbeit, die bleibt.', 'p.sub': 'Eine Auswahl realisierter Projekte in Portugal und Deutschland.',
       'p1.n': 'Fassadensanierung', 'p2.n': 'WDVS-Fassadendämmung (ETICS)', 'p3.n': 'Komplettsanierung eines Wohnhauses', 'p4.n': 'Sanierung einer Sanitäranlage', 'p5.n': 'Poolbau und Außenpflasterung', 'p6.n': 'Fassade und Wärmedämmung', 'p7.n': 'Ausbau und Beläge', 'p8.n': 'Außensanierung eines Wohnhauses', 'p9.n': 'Stahlbeton & Schalungsbau', 'p9.m': 'Deutschland',
       'p.more': 'Und viele weitere abgeschlossene Projekte in Portugal. Sprechen Sie mit uns für weitere Referenzen.', 'p.cta': 'Angebot anfragen', 'p.close': 'Schließen', 'p.lb.aria': 'Vergrößerte Aufnahme', 'p.prev': 'Vorheriges Projekt', 'p.next': 'Nächstes Projekt',
       'c.title': 'Fordern Sie Ihr Angebot an.', 'c.lead': 'Sprechen Sie mit uns über Ihr Bau- oder Sanierungsprojekt in Portugal. Wir antworten klar und zuverlässig.',
@@ -207,6 +217,11 @@
       'd2.title': 'Eine Präsenz, die baut.', 'd2.lead': 'Operative Erfahrung, Baustellenkoordination und reibungslose Integration in Projektteams für präzise Stahlbetonarbeiten.',
       'de.map.kicker': 'Geografische Präsenz', 'de.map.title': 'Unsere Einsatzgebiete.', 'de.map.desc': 'Flexible Teams im Einsatz in zentralen Bauregionen Deutschlands — angepasst an die Anforderungen jedes Projekts.',
       'de.map.aria': 'Deutschlandkarte mit Einsatzgebieten von MR Construções: Dortmund, München, Berlin, Hamburg, Bremen und Düsseldorf', 'de.map.legend': 'Deutschland · 6 Einsatzregionen',
+      'de.gal.kicker': 'Einblicke von der Baustelle', 'de.gal.title': 'Im Einsatz in Deutschland.', 'de.gal.sub': 'Reale Einblicke unserer Teams auf Stahlbeton- und Schalungsbaustellen.',
+      'de.gal.v0': 'Luftaufnahme einer Baustelle · Deutschland',
+      'de.gal.v1': 'Deckenschalung auf der Baustelle', 'de.gal.v2': 'Fundamente und Stahlbetonarbeiten',
+      'de.gal.p1': 'Wandschalung', 'de.gal.p2': 'Großprojekt im Hochbau', 'de.gal.p3': 'Stahlbetonkonstruktionen', 'de.gal.p4': 'MR-Team im Einsatz',
+      'vid.pause': 'Pausieren', 'vid.play': 'Abspielen',
       'city.dortmund': 'Dortmund', 'city.munich': 'München', 'city.berlin': 'Berlin', 'city.hamburg': 'Hamburg', 'city.bremen': 'Bremen', 'city.dusseldorf': 'Düsseldorf',
       'de.b2b.kicker': 'Für Unternehmen & Partner', 'd1.b2b': 'Benötigen Sie ein Schalungsteam?', 'de.b2b.desc': 'Wir bieten Schalungsbauleistungen für Bauunternehmen und Partner in Deutschland. Sprechen Sie mit uns über Ihr Projekt.',
       'd1.b2bl': 'Kontakt für Partnerschaften', 'de.b2b.email': 'E-Mail senden', 'b2b.subj': 'Partnerschaft — Schalungsbau in Deutschland',
@@ -406,17 +421,75 @@
     }
   }
 
-  /* ------------------------------ Mapa interativo da Alemanha ------------------------------ */
+  /* ------------------------------ Mapa 3D interativo da Alemanha ------------------------------ */
   var cityBtns = $$('[data-city]');
   var mapPins = $$('[data-pin]');
+  var mapPinBases = $$('[data-pin-base]');
   var activeCityOut = $('#de-active-city');
+  var map3dWrap = $('[data-map-3d]');
+  var map3dPlane = map3dWrap ? $('.de-map-plane', map3dWrap) : null;
+  var CITY_TILT = {
+    hamburg: { rx: 38, ry: -2, rz: -5 },
+    bremen: { rx: 37, ry: -6, rz: -7 },
+    berlin: { rx: 36, ry: 8, rz: -3 },
+    dortmund: { rx: 34, ry: -7, rz: -7 },
+    dusseldorf: { rx: 33, ry: -9, rz: -8 },
+    munich: { rx: 28, ry: 4, rz: -4 }
+  };
+  var tiltCur = { rx: 34, ry: -7, rz: -7 };
+  var tiltDst = { rx: 34, ry: -7, rz: -7 };
+  var tiltRaf = 0;
+
+  function applyTilt(rx, ry, rz) {
+    if (!map3dPlane) return;
+    map3dPlane.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+    map3dPlane.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+    map3dPlane.style.setProperty('--rz', rz.toFixed(2) + 'deg');
+  }
+  function tickTilt() {
+    tiltRaf = 0;
+    tiltCur.rx += (tiltDst.rx - tiltCur.rx) * 0.1;
+    tiltCur.ry += (tiltDst.ry - tiltCur.ry) * 0.1;
+    tiltCur.rz += (tiltDst.rz - tiltCur.rz) * 0.1;
+    var done = Math.abs(tiltDst.rx - tiltCur.rx) < 0.03 &&
+      Math.abs(tiltDst.ry - tiltCur.ry) < 0.03 &&
+      Math.abs(tiltDst.rz - tiltCur.rz) < 0.03;
+    if (done) {
+      tiltCur.rx = tiltDst.rx; tiltCur.ry = tiltDst.ry; tiltCur.rz = tiltDst.rz;
+    } else {
+      tiltRaf = requestAnimationFrame(tickTilt);
+    }
+    applyTilt(tiltCur.rx, tiltCur.ry, tiltCur.rz);
+  }
+  function setTiltTarget(rx, ry, rz) {
+    if (!map3dPlane || reduce) return;
+    tiltDst.rx = rx; tiltDst.ry = ry; tiltDst.rz = rz;
+    if (!tiltRaf) tiltRaf = requestAnimationFrame(tickTilt);
+  }
+
+  if (map3dWrap && map3dPlane && !reduce) {
+    map3dWrap.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      var r = map3dWrap.getBoundingClientRect();
+      var nx = clamp(((e.clientX - r.left) / r.width) * 2 - 1, -1, 1);
+      var ny = clamp(((e.clientY - r.top) / r.height) * 2 - 1, -1, 1);
+      setTiltTarget(34 - ny * 11, nx * 13, -6 + nx * 4);
+    });
+    map3dWrap.addEventListener('pointerleave', function () {
+      var ct = CITY_TILT[activeCity] || CITY_TILT.dortmund;
+      setTiltTarget(ct.rx, ct.ry, ct.rz);
+    });
+  }
 
   function setCity(id) {
     if (!CITY_COORDS[id]) return;
     activeCity = id;
     cityBtns.forEach(function (b) { b.classList.toggle('is-active', b.getAttribute('data-city') === id); });
     mapPins.forEach(function (p) { p.classList.toggle('is-active', p.getAttribute('data-pin') === id); });
+    mapPinBases.forEach(function (b) { b.classList.toggle('is-active', b.getAttribute('data-pin-base') === id); });
     if (activeCityOut) activeCityOut.textContent = t('city.' + id) + ' · ' + CITY_COORDS[id];
+    var ct = CITY_TILT[id];
+    if (ct && !reduce) setTiltTarget(ct.rx, ct.ry, ct.rz);
   }
 
   cityBtns.forEach(function (b) {
@@ -493,11 +566,39 @@
   /* ------------------------------ Scroll: nav, parallax, spy ------------------------------ */
   var nav = $('.nav'), heroImg = $('.hero-img');
   var frames = $$('.frame[data-par]');
+  var openPano = $('.pano[data-scroll-open]');
+  var openTarget = 1, openCur = 1, openRaf = 0;
   var secs = $$('main section[id]');
   var links = $$('[data-sec]');
   var ticking = false;
 
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+  function stepOpenPano() {
+    openRaf = 0;
+    if (!openPano) return;
+    openCur += (openTarget - openCur) * 0.14;
+    if (Math.abs(openTarget - openCur) < 0.001) openCur = openTarget;
+    else openRaf = requestAnimationFrame(stepOpenPano);
+    openPano.style.setProperty('--open', openCur.toFixed(4));
+  }
+  function syncOpenPano(immediate) {
+    if (!openPano) return;
+    if (reduce) { openPano.style.setProperty('--open', '1'); return; }
+    var y = window.scrollY || window.pageYOffset, vh = window.innerHeight;
+    var r = openPano.getBoundingClientRect();
+    var docTop = r.top + y;
+    var travel = Math.max(220, Math.min(vh * 0.58, docTop - vh * 0.14));
+    var p = clamp(y / travel, 0, 1);
+    openTarget = p * p * (3 - 2 * p);
+    if (immediate) {
+      openCur = openTarget;
+      openPano.style.setProperty('--open', openCur.toFixed(4));
+    } else if (!openRaf) {
+      openRaf = requestAnimationFrame(stepOpenPano);
+    }
+  }
+  if (openPano) syncOpenPano(true);
+
   function frame() {
     ticking = false;
     var y = window.scrollY || window.pageYOffset, vh = window.innerHeight;
@@ -507,6 +608,7 @@
       heroImg.style.setProperty('--hy', (y * 0.22).toFixed(1) + 'px');
     }
     if (!reduce) {
+      syncOpenPano(false);
       frames.forEach(function (f) {
         var r = f.getBoundingClientRect();
         if (r.bottom < -80 || r.top > vh + 80) return;
@@ -533,12 +635,48 @@
   window.addEventListener('load', function () { requestAnimationFrame(function () { root.classList.add('ready'); }); });
   setTimeout(function () { root.classList.add('ready'); }, 1200);
 
-  /* ------------------------------ Lightbox de projetos ------------------------------ */
+  /* ------------------------------ Vídeos em obra (reprodução inteligente no viewport) ------------------------------ */
+  var autoVids = $$('video[data-auto-video]');
+  if (autoVids.length && !reduce && 'IntersectionObserver' in window) {
+    var vidIo = new IntersectionObserver(function (es) {
+      es.forEach(function (entry) {
+        var v = entry.target;
+        if (v.getAttribute('data-user-paused') === 'true') return;
+        if (entry.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        else v.pause();
+      });
+    }, { threshold: 0.2 });
+    autoVids.forEach(function (v) { vidIo.observe(v); });
+  }
+  $$('[data-vid-toggle]').forEach(function (btn) {
+    var box = btn.closest('.pano-vid');
+    var v = box ? $('video', box) : null;
+    if (!v) return;
+    if (reduce) {
+      btn.setAttribute('aria-pressed', 'true');
+      btn.setAttribute('data-i18n', 'vid.play');
+    }
+    btn.addEventListener('click', function () {
+      var paused = !v.paused;
+      if (paused) {
+        v.setAttribute('data-user-paused', 'true');
+        v.pause();
+      } else {
+        v.removeAttribute('data-user-paused');
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      }
+      btn.setAttribute('aria-pressed', String(paused));
+      btn.setAttribute('data-i18n', paused ? 'vid.play' : 'vid.pause');
+      btn.textContent = t(paused ? 'vid.play' : 'vid.pause');
+    });
+  });
+
+  /* ------------------------------ Lightbox de projetos e galeria Alemanha ------------------------------ */
   var lb = $('#lb');
   if (lb && lb.showModal) {
     var lbImg = $('img', lb), lbCap = $('.lb-cap', lb), lbCount = $('.lb-count', lb);
     var seen = {};
-    var projects = $$('.prj-card:not(.prj-clone)').filter(function (el) {
+    var projects = $$('.prj-card:not(.prj-clone), .de-photo-card').filter(function (el) {
       var id = el.getAttribute('data-idx');
       if (seen[id]) return false;
       seen[id] = true;
@@ -560,17 +698,27 @@
       if (lbCount) lbCount.textContent = String(lbIdx + 1).padStart(2, '0') + ' / ' + String(projects.length).padStart(2, '0');
     }
 
+    function openCard(card) {
+      renderLb(Number(card.getAttribute('data-idx')) || 0);
+      lb.showModal();
+      body.classList.add('dlg-open');
+    }
+
     if (wall) {
       wall.addEventListener('click', function (e) {
         var card = e.target.closest('.prj-card');
         if (!card) return;
         e.preventDefault();
         if (wallDragged) return;
-        renderLb(Number(card.getAttribute('data-idx')) || 0);
-        lb.showModal();
-        body.classList.add('dlg-open');
+        openCard(card);
       });
     }
+    $$('.de-photo-card').forEach(function (card) {
+      card.addEventListener('click', function (e) {
+        e.preventDefault();
+        openCard(card);
+      });
+    });
 
     var prevBtn = $('[data-lb-prev]', lb), nextBtn = $('[data-lb-next]', lb), closeBtn = $('[data-lb-close]', lb);
     if (prevBtn) prevBtn.addEventListener('click', function (e) { e.stopPropagation(); renderLb(lbIdx - 1); });

@@ -72,7 +72,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Jost:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/site.css">
     <link rel="preload" as="image" href="imagens/moradia-minimalista.webp">
     <script src="js/site.js" defer></script>
@@ -125,15 +125,16 @@
         <!-- 01 — EMPRESA -->
         <section class="sec wrap" id="empresa">
             <div class="sh rv" aria-hidden="true"></div>
-            <div class="grid">
-                <h2 class="t-xl emp-title rv" data-i18n="e.title">Construímos mais do que estruturas.</h2>
+            <div class="sec-head rv">
+                <h2 class="t-xl" data-i18n="e.title">Construímos mais do que estruturas.</h2>
+                <p class="sec-lead" data-i18n="e.sub">Solidez construtiva e acompanhamento próximo, do primeiro passo à entrega.</p>
             </div>
             <div class="grid emp-grid">
                 <div class="emp-big">
                     <div class="ba clip" data-ba style="--pos:52%">
-                        <img class="ba-after" src="imagens/thumbs/casa-famalicao-depois-960.webp" srcset="imagens/thumbs/casa-famalicao-depois-960.webp 960w, imagens/casa-famalicao-depois.webp 1440w" sizes="(max-width: 900px) 100vw, 56vw" width="960" height="723" loading="lazy" decoding="async" alt="Moradia em Vila Nova de Famalicão após reabilitação integral">
+                        <img class="ba-after" src="imagens/casa-famalicao-depois.webp" width="1440" height="1085" loading="lazy" decoding="async" alt="Moradia em Vila Nova de Famalicão após reabilitação integral">
                         <div class="ba-before">
-                            <img src="imagens/thumbs/casa-famalicao-antes-960.webp" srcset="imagens/thumbs/casa-famalicao-antes-960.webp 960w, imagens/casa-famalicao-antes.webp 1440w" sizes="(max-width: 900px) 100vw, 56vw" width="960" height="723" loading="lazy" decoding="async" alt="Moradia em Vila Nova de Famalicão antes da intervenção">
+                            <img src="imagens/casa-famalicao-antes.webp" width="1440" height="1085" loading="lazy" decoding="async" alt="Moradia em Vila Nova de Famalicão antes da intervenção">
                         </div>
                         <span class="ba-lbl ba-lbl-l" data-i18n="ba.before">Antes</span>
                         <span class="ba-lbl ba-lbl-r" data-i18n="ba.after">Depois</span>
@@ -161,31 +162,34 @@
         <!-- 02 — SERVIÇOS -->
         <section class="sec sec--alt wrap" id="servicos">
             <div class="sh rv" aria-hidden="true"></div>
-            <div class="grid"><h2 class="t-xl svc-title rv" data-i18n="s.title">O que fazemos.</h2></div>
+            <div class="sec-head svc-head rv">
+                <h2 class="t-xl" data-i18n="s.title">O que fazemos.</h2>
+                <p class="sec-lead" data-i18n="s.sub">Da construção de raiz à reabilitação integral, com rigor em cada fase da obra.</p>
+            </div>
             <div class="grid svc-list">
                 <figure class="svc s1 rv" style="margin:0">
-                    <div class="frame"><div class="ph"><span data-i18n="ph.arch">[Fotografia arquitetónica]</span><small>16:10</small><em aria-hidden="true">01</em></div></div>
-                    <figcaption><span class="micro">01</span><h3 data-i18n="s1.n">Construção de raiz</h3><p data-i18n="s1.d">Moradias unifamiliares completas, do primeiro passo à entrega das chaves.</p></figcaption>
+                    <div class="frame" data-par><img src="imagens/moradia-minimalista.webp" width="1440" height="1085" loading="lazy" decoding="async" alt="Moradia unifamiliar contemporânea construída pela MR Construções"></div>
+                    <figcaption><h3 data-i18n="s1.n">Construção de raiz</h3><p data-i18n="s1.d">Moradias unifamiliares completas, do primeiro passo à entrega das chaves.</p></figcaption>
                 </figure>
                 <figure class="svc s2 rv" style="margin:0;--d:.08s">
-                    <div class="frame"><div class="ph"><span data-i18n="ph.detail">[Detalhe de obra]</span><small>4:5</small><em aria-hidden="true">02</em></div></div>
-                    <figcaption><span class="micro">02</span><h3 data-i18n="s2.n">Reabilitação e remodelação</h3><p data-i18n="s2.d">Recuperação e renovação de edifícios e habitações existentes.</p></figcaption>
+                    <div class="frame" data-par><img src="imagens/interiores-sala-ripado.webp" width="1064" height="1329" loading="lazy" decoding="async" alt="Reabilitação integral de interior com ripado de madeira"></div>
+                    <figcaption><h3 data-i18n="s2.n">Reabilitação e remodelação</h3><p data-i18n="s2.d">Recuperação e renovação de edifícios e habitações existentes.</p></figcaption>
                 </figure>
                 <figure class="svc s3 rv" style="margin:0">
-                    <div class="frame"><div class="ph"><span data-i18n="ph.site">[Obra em curso]</span><small>1:1</small><em aria-hidden="true">03</em></div></div>
-                    <figcaption><span class="micro">03</span><h3 data-i18n="s3.n">Estruturas e construção civil</h3><p data-i18n="s3.d">Execução estrutural em betão armado e trabalhos gerais de construção civil.</p></figcaption>
+                    <div class="frame" data-par><img src="imagens/alemanha-cofragem-muro.webp" width="1024" height="768" loading="lazy" decoding="async" alt="Execução de estruturas em betão armado e cofragem metálica"></div>
+                    <figcaption><h3 data-i18n="s3.n">Estruturas e construção civil</h3><p data-i18n="s3.d">Execução estrutural em betão armado e trabalhos gerais de construção civil.</p></figcaption>
                 </figure>
                 <figure class="svc s4 rv" style="margin:0;--d:.08s">
-                    <div class="frame"><div class="ph"><span data-i18n="ph.arch">[Fotografia arquitetónica]</span><small>16:10</small><em aria-hidden="true">04</em></div></div>
-                    <figcaption><span class="micro">04</span><h3 data-i18n="s4.n">Fachadas e isolamento térmico</h3><p data-i18n="s4.d">Sistemas ETICS, revestimentos e proteção da envolvente exterior.</p></figcaption>
+                    <div class="frame" data-par><img src="imagens/moradia-fachada-verde.webp" width="1440" height="1379" loading="lazy" decoding="async" alt="Fachada exterior revestida com sistema ETICS e caixilharia escura"></div>
+                    <figcaption><h3 data-i18n="s4.n">Fachadas e isolamento térmico</h3><p data-i18n="s4.d">Sistemas ETICS, revestimentos e proteção da envolvente exterior.</p></figcaption>
                 </figure>
                 <figure class="svc s5 rv" style="margin:0">
-                    <div class="frame"><div class="ph"><span data-i18n="ph.detail">[Detalhe de obra]</span><small>4:5</small><em aria-hidden="true">05</em></div></div>
-                    <figcaption><span class="micro">05</span><h3 data-i18n="s5.n">Acabamentos e revestimentos</h3><p data-i18n="s5.d">Alvenarias, revestimentos cerâmicos, pinturas e trabalhos complementares.</p></figcaption>
+                    <div class="frame" data-par><img src="imagens/casa-banho-porto.webp" width="1181" height="872" loading="lazy" decoding="async" alt="Acabamentos interiores e revestimentos cerâmicos marmorizados"></div>
+                    <figcaption><h3 data-i18n="s5.n">Acabamentos e revestimentos</h3><p data-i18n="s5.d">Alvenarias, revestimentos cerâmicos, pinturas e trabalhos complementares.</p></figcaption>
                 </figure>
                 <figure class="svc s6 rv" style="margin:0;--d:.08s">
-                    <div class="frame"><div class="ph"><span data-i18n="ph.arch">[Fotografia arquitetónica]</span><small>1:1</small><em aria-hidden="true">06</em></div></div>
-                    <figcaption><span class="micro">06</span><h3 data-i18n="s6.n">Espaços exteriores</h3><p data-i18n="s6.d">Piscinas, pavimentos cerâmicos ou em pedra e arranjos exteriores.</p></figcaption>
+                    <div class="frame" data-par><img src="imagens/piscina-famalicao.webp" width="1296" height="1050" loading="lazy" decoding="async" alt="Piscina e pavimento exterior em moradia unifamiliar"></div>
+                    <figcaption><h3 data-i18n="s6.n">Espaços exteriores</h3><p data-i18n="s6.d">Piscinas, pavimentos cerâmicos ou em pedra e arranjos exteriores.</p></figcaption>
                 </figure>
             </div>
         </section>
@@ -193,8 +197,9 @@
         <!-- 03 — PROJETOS (carrossel contínuo 3 linhas; arrastável com dedo/rato e clicável para ampliar) -->
         <section class="sec wrap" id="projetos">
             <div class="sh rv" aria-hidden="true"></div>
-            <div class="prj-head">
-                <h2 class="t-xl prj-title rv" data-i18n="p.title">Trabalho que permanece.</h2>
+            <div class="sec-head prj-head rv">
+                <h2 class="t-xl" data-i18n="p.title">Trabalho que permanece.</h2>
+                <p class="sec-lead" data-i18n="p.sub">Uma seleção de obras executadas em Portugal e na Alemanha.</p>
             </div>
 
             <div class="prj-wall" data-prj-wall>
@@ -202,28 +207,28 @@
                 <div class="prj-row" data-dir="left">
                     <div class="prj-track">
                         <a class="prj prj-card" href="imagens/moradia-pedra-natural.webp" data-idx="0" data-alt="Moradia com fachada em pedra natural reabilitada">
-                            <img src="imagens/thumbs/moradia-pedra-natural.webp" width="720" height="540" loading="lazy" decoding="async" alt="Moradia unifamiliar com fachada em pedra natural, reabilitada pela MR Construções">
+                            <img src="imagens/moradia-pedra-natural.webp" width="1440" height="1080" loading="lazy" decoding="async" alt="Moradia unifamiliar com fachada em pedra natural, reabilitada pela MR Construções">
                             <div class="prj-ov">
                                 <span class="micro">Vila Nova de Famalicão · 2024</span>
                                 <div><h3 data-i18n="p1.n">Reabilitação de Fachadas</h3><span class="ar" aria-hidden="true">↗</span></div>
                             </div>
                         </a>
                         <a class="prj prj-card" href="imagens/moradia-minimalista.webp" data-idx="1" data-alt="Moradia branca com sistema ETICS">
-                            <img src="imagens/thumbs/moradia-minimalista.webp" width="720" height="542" loading="lazy" decoding="async" alt="Moradia de volumes brancos com sistema ETICS aplicado, em Santo Tirso">
+                            <img src="imagens/moradia-minimalista.webp" width="1440" height="1085" loading="lazy" decoding="async" alt="Moradia de volumes brancos com sistema ETICS aplicado, em Santo Tirso">
                             <div class="prj-ov">
                                 <span class="micro">Santo Tirso · 2025</span>
                                 <div><h3 data-i18n="p2.n">Aplicação de sistema ETICS</h3><span class="ar" aria-hidden="true">↗</span></div>
                             </div>
                         </a>
                         <a class="prj prj-card" href="imagens/interiores-sala-ripado.webp" data-idx="2" data-alt="Sala com divisória em ripado de madeira">
-                            <img src="imagens/thumbs/interiores-sala-ripado.webp" width="720" height="899" loading="lazy" decoding="async" alt="Sala de estar e jantar renovada, com divisória em ripado de madeira">
+                            <img src="imagens/interiores-sala-ripado.webp" width="1064" height="1329" loading="lazy" decoding="async" alt="Sala de estar e jantar renovada, com divisória em ripado de madeira">
                             <div class="prj-ov">
                                 <span class="micro">Vila Nova de Famalicão · 2024</span>
                                 <div><h3 data-i18n="p3.n">Reabilitação Integral de Moradia</h3><span class="ar" aria-hidden="true">↗</span></div>
                             </div>
                         </a>
                         <a class="prj prj-card" href="imagens/moradia-fachada-verde.webp" data-idx="3" data-alt="Moradia com fachada revestida e caixilharia escura">
-                            <img src="imagens/thumbs/moradia-fachada-verde.webp" width="720" height="690" loading="lazy" decoding="async" alt="Moradia contemporânea com revestimento exterior e caixilharias escuras">
+                            <img src="imagens/moradia-fachada-verde.webp" width="1440" height="1379" loading="lazy" decoding="async" alt="Moradia contemporânea com revestimento exterior e caixilharias escuras">
                             <div class="prj-ov">
                                 <span class="micro">Portugal</span>
                                 <div><h3 data-i18n="p6.n">Fachada e Isolamento Térmico</h3><span class="ar" aria-hidden="true">↗</span></div>
@@ -236,28 +241,28 @@
                 <div class="prj-row" data-dir="right">
                     <div class="prj-track">
                         <a class="prj prj-card" href="imagens/casa-banho-marmore.webp" data-idx="4" data-alt="Casa de banho com revestimento em mármore">
-                            <img src="imagens/thumbs/casa-banho-marmore.webp" width="720" height="532" loading="lazy" decoding="async" alt="Casa de banho reabilitada com revestimentos em mármore, no Porto">
+                            <img src="imagens/casa-banho-marmore.webp" width="1181" height="872" loading="lazy" decoding="async" alt="Casa de banho reabilitada com revestimentos em mármore, no Porto">
                             <div class="prj-ov">
                                 <span class="micro">Porto · 2026</span>
                                 <div><h3 data-i18n="p4.n">Reabilitação de Instalação Sanitária</h3><span class="ar" aria-hidden="true">↗</span></div>
                             </div>
                         </a>
                         <a class="prj prj-card" href="imagens/piscina-famalicao.webp" data-idx="5" data-alt="Piscina com pavimento cerâmico exterior">
-                            <img src="imagens/thumbs/piscina-famalicao.webp" width="720" height="583" loading="lazy" decoding="async" alt="Piscina com pavimento cerâmico exterior em moradia unifamiliar">
+                            <img src="imagens/piscina-famalicao.webp" width="1296" height="1050" loading="lazy" decoding="async" alt="Piscina com pavimento cerâmico exterior em moradia unifamiliar">
                             <div class="prj-ov">
                                 <span class="micro">Vila Nova de Famalicão · 2025</span>
                                 <div><h3 data-i18n="p5.n">Piscina e Pavimentação Exterior</h3><span class="ar" aria-hidden="true">↗</span></div>
                             </div>
                         </a>
                         <a class="prj prj-card" href="imagens/casa-banho-porto.webp" data-idx="6" data-alt="Instalação sanitária moderna com revestimento marmorizado e iluminação indireta">
-                            <img src="imagens/thumbs/casa-banho-porto.webp" width="720" height="532" loading="lazy" decoding="async" alt="Instalação sanitária renovada com revestimento cerâmico marmorizado e iluminação LED">
+                            <img src="imagens/casa-banho-porto.webp" width="1181" height="872" loading="lazy" decoding="async" alt="Instalação sanitária renovada com revestimento cerâmico marmorizado e iluminação LED">
                             <div class="prj-ov">
                                 <span class="micro">Porto · 2026</span>
                                 <div><h3 data-i18n="p7.n">Acabamentos e Revestimentos</h3><span class="ar" aria-hidden="true">↗</span></div>
                             </div>
                         </a>
                         <a class="prj prj-card" href="imagens/casa-famalicao-depois.webp" data-idx="7" data-alt="Moradia reabilitada com fachada renovada e muro exterior">
-                            <img src="imagens/thumbs/casa-famalicao-depois.webp" width="720" height="542" loading="lazy" decoding="async" alt="Moradia unifamiliar após intervenção completa de reabilitação exterior">
+                            <img src="imagens/casa-famalicao-depois.webp" width="1440" height="1085" loading="lazy" decoding="async" alt="Moradia unifamiliar após intervenção completa de reabilitação exterior">
                             <div class="prj-ov">
                                 <span class="micro">Vila Nova de Famalicão</span>
                                 <div><h3 data-i18n="p8.n">Reabilitação Exterior de Moradia</h3><span class="ar" aria-hidden="true">↗</span></div>
@@ -266,35 +271,35 @@
                     </div>
                 </div>
 
-                <!-- Faixa 3 -->
+                <!-- Faixa 3 (novas obras reais na Alemanha — 12 obras únicas no carrossel) -->
                 <div class="prj-row" data-dir="left-alt">
                     <div class="prj-track">
-                        <a class="prj prj-card" href="imagens/hero.webp" data-idx="8" data-alt="Obra de estruturas em betão armado com cofragem na Alemanha">
-                            <img src="imagens/thumbs/hero-960.webp" width="960" height="720" loading="lazy" decoding="async" alt="Obra de estruturas em betão armado e carpintaria de cofragem na Alemanha">
+                        <a class="prj prj-card" href="imagens/alemanha-obra-aerea-2.webp" data-idx="8" data-alt="Vista aérea de complexo estrutural em execução na Alemanha">
+                            <img src="imagens/alemanha-obra-aerea-2.webp" width="1024" height="576" loading="lazy" decoding="async" alt="Vista aérea de complexo de edifícios em betão armado na Alemanha">
                             <div class="prj-ov">
                                 <span class="micro" data-i18n="p9.m">Alemanha</span>
                                 <div><h3 data-i18n="p9.n">Estruturas e Cofragem em Betão</h3><span class="ar" aria-hidden="true">↗</span></div>
                             </div>
                         </a>
-                        <a class="prj prj-card" href="imagens/interiores-sala-ripado.webp" data-idx="2" data-alt="Sala com divisória em ripado de madeira">
-                            <img src="imagens/thumbs/interiores-sala-ripado.webp" width="720" height="899" loading="lazy" decoding="async" alt="Sala de estar e jantar renovada, com divisória em ripado de madeira">
+                        <a class="prj prj-card" href="imagens/alemanha-cofragem-muro.webp" data-idx="9" data-alt="Cofragem metálica de muro com escoras na Alemanha">
+                            <img src="imagens/alemanha-cofragem-muro.webp" width="1024" height="768" loading="lazy" decoding="async" alt="Equipa MR Construções em montagem de cofragem de muro">
                             <div class="prj-ov">
-                                <span class="micro">Vila Nova de Famalicão · 2024</span>
-                                <div><h3 data-i18n="p3.n">Reabilitação Integral de Moradia</h3><span class="ar" aria-hidden="true">↗</span></div>
+                                <span class="micro" data-i18n="p9.m">Alemanha</span>
+                                <div><h3 data-i18n="de.gal.p1">Cofragem de Muro</h3><span class="ar" aria-hidden="true">↗</span></div>
                             </div>
                         </a>
-                        <a class="prj prj-card" href="imagens/piscina-famalicao.webp" data-idx="5" data-alt="Piscina com pavimento cerâmico exterior">
-                            <img src="imagens/thumbs/piscina-famalicao.webp" width="720" height="583" loading="lazy" decoding="async" alt="Piscina com pavimento cerâmico exterior em moradia unifamiliar">
+                        <a class="prj prj-card" href="imagens/alemanha-obra-aerea-1.webp" data-idx="10" data-alt="Obra estrutural de grande escala com gruas na Alemanha">
+                            <img src="imagens/alemanha-obra-aerea-1.webp" width="1024" height="576" loading="lazy" decoding="async" alt="Vista aérea de estaleiro de grande escala na Alemanha">
                             <div class="prj-ov">
-                                <span class="micro">Vila Nova de Famalicão · 2025</span>
-                                <div><h3 data-i18n="p5.n">Piscina e Pavimentação Exterior</h3><span class="ar" aria-hidden="true">↗</span></div>
+                                <span class="micro" data-i18n="p9.m">Alemanha</span>
+                                <div><h3 data-i18n="de.gal.p2">Obra de Grande Escala</h3><span class="ar" aria-hidden="true">↗</span></div>
                             </div>
                         </a>
-                        <a class="prj prj-card" href="imagens/moradia-pedra-natural.webp" data-idx="0" data-alt="Moradia com fachada em pedra natural reabilitada">
-                            <img src="imagens/thumbs/moradia-pedra-natural.webp" width="720" height="540" loading="lazy" decoding="async" alt="Moradia unifamiliar com fachada em pedra natural, reabilitada pela MR Construções">
+                        <a class="prj prj-card" href="imagens/equipa-mr-cofragem.webp" data-idx="11" data-alt="Colaborador MR Construções em verificação técnica de betão armado">
+                            <img src="imagens/equipa-mr-cofragem.webp" width="576" height="1024" loading="lazy" decoding="async" alt="Equipa MR Construções em obra de betão armado na Alemanha" style="object-position:50% 35%">
                             <div class="prj-ov">
-                                <span class="micro">Vila Nova de Famalicão · 2024</span>
-                                <div><h3 data-i18n="p1.n">Reabilitação de Fachadas</h3><span class="ar" aria-hidden="true">↗</span></div>
+                                <span class="micro" data-i18n="p9.m">Alemanha</span>
+                                <div><h3 data-i18n="de.gal.p4">Equipa MR em Obra</h3><span class="ar" aria-hidden="true">↗</span></div>
                             </div>
                         </a>
                     </div>
@@ -427,7 +432,7 @@
         <div class="foot-bot">
             <span>© <span id="year">2026</span> MR Construções. <span data-i18n="f.rights">Todos os direitos reservados.</span></span>
             <div class="foot-bot-r">
-                <span><span data-i18n="f.credit">Desenvolvido por</span> <a href="https://midi8-web.vercel.app" target="_blank" rel="noopener noreferrer">MIDI8</a></span>
+                <span><span data-i18n="f.credit">Desenvolvido por</span> <a href="https://midi8.pt" target="_blank" rel="noopener noreferrer">midi8</a></span>
                 <a class="top" href="#inicio"><span data-i18n="f.top">Voltar ao topo</span> <span aria-hidden="true">↑</span></a>
             </div>
         </div>
