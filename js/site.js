@@ -20,6 +20,10 @@
      ------------------------------------------------------------------ */
   var T = {
     pt: {
+      'meta.title': 'MR Construções | Construção e Reabilitação em Portugal · Cofragem na Alemanha',
+      'meta.desc': 'MR Construções — construção de habitações unifamiliares e reabilitação em Portugal; carpintaria de cofragem na Alemanha. Construir com rigor. Criar com propósito.',
+      'priv.meta.title': 'Política de Privacidade | MR Construções',
+      'priv.meta.desc': 'Política de Privacidade e tratamento de dados pessoais da MR Construções — Marco Paulo Ribeiro Unipessoal, Lda.',
       'n.empresa': 'Empresa', 'n.servicos': 'Serviços', 'n.projetos': 'Projetos', 'n.alemanha': 'Alemanha',
       'n.sub.s': 'Serviços', 'n.sub.a': 'Atuação', 'n.oport': 'Oportunidades', 'n.contactos': 'Contactos',
       'burger': 'Abrir menu', 'burger.x': 'Fechar menu', 'menu.aria': 'Navegação principal',
@@ -28,7 +32,7 @@
       'e.body': 'Obras executadas com rigor, proximidade e atenção a cada detalhe. Do primeiro passo à entrega das chaves — em Portugal e na Alemanha.',
       'e.id1': 'Desde', 'e.id2': 'Atuação', 'e.id2v': 'Portugal · Alemanha', 'e.id3': 'Alvará IMPIC',
       'ph.arch': '[Fotografia arquitetónica]', 'ph.detail': '[Detalhe de obra]', 'ph.proj': '[Projeto]', 'ph.site': '[Obra em curso]', 'ph.de': '[Projeto na Alemanha]',
-      's.title': 'O que fazemos.',
+      's.title': 'O que fazemos.', 's.intro': 'Da construção de raiz à reabilitação integral — execução rigorosa em cada fase da obra.',
       's1.n': 'Construção de raiz', 's1.d': 'Moradias unifamiliares completas, do primeiro passo à entrega das chaves.',
       's2.n': 'Reabilitação e remodelação', 's2.d': 'Recuperação e renovação de edifícios e habitações existentes.',
       's3.n': 'Estruturas e construção civil', 's3.d': 'Execução estrutural em betão armado e trabalhos gerais de construção civil.',
@@ -60,9 +64,34 @@
       'a.c1': 'Li e aceito a', 'a.c2': '.', 'a.send': 'Enviar candidatura', 'a.sending': 'A enviar…',
       'a.ok': 'Candidatura enviada. Entraremos em contacto brevemente.', 'a.err': 'Não foi possível enviar. Tente por WhatsApp ou geral@marcoribeiroconstrucoes.pt.',
       'a.val': 'Preencha todos os campos obrigatórios.', 'a.cons': 'Aceite a Política de Privacidade para continuar.', 'a.mail': 'Formulário ainda sem endpoint: a abrir o seu cliente de email.',
-      'wa.text': 'Olá! Gostaria de falar com a MR Construções.', 'wa.aria': 'Falar com a MR Construções via WhatsApp'
+      'wa.text': 'Olá! Gostaria de falar com a MR Construções.', 'wa.aria': 'Falar com a MR Construções via WhatsApp',
+      'priv.back': 'Voltar ao site', 'priv.kicker': 'Proteção de Dados · RGPD', 'priv.title': 'Política de Privacidade',
+      'priv.draft': 'RASCUNHO — Documento preparado para revisão jurídica antes da publicação definitiva.',
+      'priv.lead': 'Esta Política de Privacidade explica como a Marco Paulo Ribeiro Unipessoal, Lda. (MR Construções) recolhe e trata os dados pessoais submetidos através deste website, em conformidade com o Regulamento Geral sobre a Proteção de Dados (RGPD).',
+      'priv.s1.title': 'Responsável pelo tratamento',
+      'priv.s1.body': 'Marco Paulo Ribeiro Unipessoal, Lda., NIF / NIPC 516590022, titular do Alvará IMPIC n.º 113987, com sede na Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal. Contacto para questões de privacidade: geral@marcoribeiroconstrucoes.pt.',
+      'priv.s2.title': 'Finalidades do tratamento',
+      'priv.s2.body': 'Os dados pessoais recolhidos através dos formulários do website destinam-se exclusivamente a: (a) analisar e responder a pedidos de orçamento e contacto comercial; (b) avaliar e dar seguimento a candidaturas para integração nas nossas equipas em Portugal ou na Alemanha.',
+      'priv.s3.title': 'Base legal',
+      'priv.s3.body': 'O tratamento dos dados assenta na execução de diligências pré-contratuais a pedido do titular (artigo 6.º, n.º 1, alínea b) do RGPD) e no consentimento explícito prestado pelo utilizador mediante a seleção da caixa de validação antes do envio do formulário (artigo 6.º, n.º 1, alínea a) do RGPD).',
+      'priv.s4.title': 'Dados pessoais recolhidos',
+      'priv.s4.body': 'No formulário de contacto são recolhidos: nome, endereço de correio eletrónico, telefone (opcional), tipo de pedido e mensagem. No formulário de candidatura são recolhidos: nome, telefone ou WhatsApp, local de residência, especialidade profissional, anos de experiência, disponibilidade para início e mercado de interesse.',
+      'priv.s5.title': 'Destinatários dos dados',
+      'priv.s5.body': 'Os dados são tratados internamente pelos responsáveis pela orçamentação e recursos humanos da MR Construções. Para o encaminhamento técnico das mensagens enviadas pelos formulários, o website utiliza o serviço de processamento Formspree na qualidade de subcontratante técnico. Os dados não são vendidos nem cedidos a terceiros para fins publicitários.',
+      'priv.s6.title': 'Prazo de conservação',
+      'priv.s6.body': 'Os dados relativos a pedidos de orçamento são conservados durante o período necessário ao tratamento da solicitação ou até 24 meses caso não resulte na celebração de contrato. Os dados de candidaturas espontâneas são conservados pelo prazo máximo de 12 meses após a receção, salvo retirada prévia do consentimento.',
+      'priv.s7.title': 'Direitos dos titulares dos dados',
+      'priv.s7.body': 'O titular pode exercer a qualquer momento os direitos de acesso, retificação, apagamento, limitação do tratamento, portabilidade, oposição e retirada do consentimento (sem comprometer a licitude do tratamento efetuado até então), enviando pedido para geral@marcoribeiroconstrucoes.pt.',
+      'priv.s8.title': 'Autoridade de controlo',
+      'priv.s8.body': 'Caso considere que o tratamento dos seus dados viola o RGPD, assiste-lhe o direito de apresentar reclamação junto da Comissão Nacional de Proteção de Dados (CNPD), através de www.cnpd.pt.',
+      'priv.s9.title': 'Cookies e armazenamento local',
+      'priv.s9.body': 'Este website não utiliza cookies de analítica, estatística, publicidade ou rastreio de terceiros. Apenas é utilizado armazenamento técnico local do navegador (localStorage) para memorizar a preferência de idioma (PT, EN ou DE) escolhida pelo visitante.'
     },
     en: {
+      'meta.title': 'MR Construções | Construction & Rehabilitation in Portugal · Formwork in Germany',
+      'meta.desc': 'MR Construções — single-family homes and rehabilitation in Portugal; formwork carpentry in Germany. Build with rigour. Create with purpose.',
+      'priv.meta.title': 'Privacy Policy | MR Construções',
+      'priv.meta.desc': 'Privacy Policy and personal data processing of MR Construções — Marco Paulo Ribeiro Unipessoal, Lda.',
       'n.empresa': 'Company', 'n.servicos': 'Services', 'n.projetos': 'Projects', 'n.alemanha': 'Germany',
       'n.sub.s': 'Services', 'n.sub.a': 'Presence', 'n.oport': 'Careers', 'n.contactos': 'Contact',
       'burger': 'Open menu', 'burger.x': 'Close menu', 'menu.aria': 'Main navigation',
@@ -71,7 +100,7 @@
       'e.body': 'Works delivered with rigour, proximity and attention to every detail. From the first step to the handover of the keys — in Portugal and Germany.',
       'e.id1': 'Since', 'e.id2': 'Operating in', 'e.id2v': 'Portugal · Germany', 'e.id3': 'IMPIC licence',
       'ph.arch': '[Architectural photography]', 'ph.detail': '[Project detail]', 'ph.proj': '[Project]', 'ph.site': '[Construction site]', 'ph.de': '[Germany project]',
-      's.title': 'What we do.',
+      's.title': 'What we do.', 's.intro': 'From new builds to full rehabilitation — rigorous execution at every stage of the project.',
       's1.n': 'New build', 's1.d': 'Complete single-family homes, from the first step to the handover of the keys.',
       's2.n': 'Rehabilitation and remodelling', 's2.d': 'Restoration and renovation of existing buildings and homes.',
       's3.n': 'Structures and civil construction', 's3.d': 'Reinforced concrete structures and general civil construction works.',
@@ -103,9 +132,34 @@
       'a.c1': 'I have read and accept the', 'a.c2': '.', 'a.send': 'Send application', 'a.sending': 'Sending…',
       'a.ok': 'Application sent. We will be in touch shortly.', 'a.err': 'Could not send. Please try WhatsApp or geral@marcoribeiroconstrucoes.pt.',
       'a.val': 'Please fill in all required fields.', 'a.cons': 'Please accept the Privacy Policy to continue.', 'a.mail': 'Form endpoint not configured yet: opening your email client.',
-      'wa.text': 'Hello! I would like to talk to MR Construções.', 'wa.aria': 'Talk to MR Construções on WhatsApp'
+      'wa.text': 'Hello! I would like to talk to MR Construções.', 'wa.aria': 'Talk to MR Construções on WhatsApp',
+      'priv.back': 'Back to website', 'priv.kicker': 'Data Protection · GDPR', 'priv.title': 'Privacy Policy',
+      'priv.draft': 'DRAFT — Document prepared for legal review prior to final publication.',
+      'priv.lead': 'This Privacy Policy explains how Marco Paulo Ribeiro Unipessoal, Lda. (MR Construções) collects and processes personal data submitted through this website, in accordance with the General Data Protection Regulation (GDPR).',
+      'priv.s1.title': 'Data Controller',
+      'priv.s1.body': 'Marco Paulo Ribeiro Unipessoal, Lda., Tax ID (NIF/NIPC) 516590022, IMPIC License No. 113987, headquartered at Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal. Privacy contact: geral@marcoribeiroconstrucoes.pt.',
+      'priv.s2.title': 'Purposes of Processing',
+      'priv.s2.body': 'Personal data collected through website forms are used exclusively to: (a) analyze and respond to quote and business inquiries; (b) evaluate and follow up on applications to join our teams in Portugal or Germany.',
+      'priv.s3.title': 'Legal Basis',
+      'priv.s3.body': 'Data processing is based on pre-contractual steps taken at the request of the data subject (Article 6(1)(b) GDPR) and on explicit consent given by checking the consent box prior to submission (Article 6(1)(a) GDPR).',
+      'priv.s4.title': 'Personal Data Collected',
+      'priv.s4.body': 'The contact form collects: name, email address, phone number (optional), type of enquiry and message. The application form collects: name, phone or WhatsApp, place of residence, trade specialty, years of experience, start availability and market of interest.',
+      'priv.s5.title': 'Data Recipients',
+      'priv.s5.body': 'Data are processed internally by MR Construções estimating and human resources staff. For technical routing of form submissions, the website uses Formspree as a technical data processor. Personal data are never sold or shared with third parties for marketing.',
+      'priv.s6.title': 'Retention Period',
+      'priv.s6.body': 'Quote inquiry data are kept for the period required to process the request or up to 24 months if no contract is concluded. Unsolicited job application data are retained for up to 12 months from receipt, unless consent is withdrawn earlier.',
+      'priv.s7.title': 'Data Subject Rights',
+      'priv.s7.body': 'You may at any time exercise your rights of access, rectification, erasure, restriction, portability, objection and withdrawal of consent (without affecting the lawfulness of prior processing) by emailing geral@marcoribeiroconstrucoes.pt.',
+      'priv.s8.title': 'Supervisory Authority',
+      'priv.s8.body': 'If you believe the processing of your data infringes the GDPR, you have the right to lodge a complaint with the Portuguese Data Protection Authority (CNPD) at www.cnpd.pt.',
+      'priv.s9.title': 'Cookies and Local Storage',
+      'priv.s9.body': 'This website does not use third-party analytics, advertising or tracking cookies. Only browser local storage (localStorage) is used technically to remember the visitor’s selected language (PT, EN or DE).'
     },
     de: {
+      'meta.title': 'MR Construções | Bau & Sanierung in Portugal · Schalungsbau in Deutschland',
+      'meta.desc': 'MR Construções — Neubau und Sanierung von Wohnhäusern in Portugal; Schalungsbau in Deutschland. Mit Präzision bauen. Mit Haltung gestalten.',
+      'priv.meta.title': 'Datenschutzerklärung | MR Construções',
+      'priv.meta.desc': 'Datenschutzerklärung und Verarbeitung personenbezogener Daten von MR Construções — Marco Paulo Ribeiro Unipessoal, Lda.',
       'n.empresa': 'Unternehmen', 'n.servicos': 'Leistungen', 'n.projetos': 'Projekte', 'n.alemanha': 'Deutschland',
       'n.sub.s': 'Leistungen', 'n.sub.a': 'Präsenz', 'n.oport': 'Karriere', 'n.contactos': 'Kontakt',
       'burger': 'Menü öffnen', 'burger.x': 'Menü schließen', 'menu.aria': 'Hauptnavigation',
@@ -114,7 +168,7 @@
       'e.body': 'Bauprojekte, ausgeführt mit Präzision, Nähe und Liebe zum Detail. Vom ersten Schritt bis zur Schlüsselübergabe — in Portugal und in Deutschland.',
       'e.id1': 'Seit', 'e.id2': 'Tätig in', 'e.id2v': 'Portugal · Deutschland', 'e.id3': 'IMPIC-Zulassung',
       'ph.arch': '[Architekturfotografie]', 'ph.detail': '[Projektdetail]', 'ph.proj': '[Projekt]', 'ph.site': '[Baustelle]', 'ph.de': '[Projekt in Deutschland]',
-      's.title': 'Was wir tun.',
+      's.title': 'Was wir tun.', 's.intro': 'Vom Neubau bis zur Komplettsanierung — präzise Ausführung in jeder Bauphase.',
       's1.n': 'Neubau', 's1.d': 'Komplette Einfamilienhäuser, vom ersten Schritt bis zur Schlüsselübergabe.',
       's2.n': 'Sanierung und Umbau', 's2.d': 'Instandsetzung und Erneuerung bestehender Gebäude und Wohnhäuser.',
       's3.n': 'Rohbau und Hochbau', 's3.d': 'Stahlbetonbau und allgemeine Hochbauarbeiten.',
@@ -146,7 +200,28 @@
       'a.c1': 'Ich habe die', 'a.c2': ' gelesen und akzeptiere sie.', 'a.send': 'Bewerbung senden', 'a.sending': 'Wird gesendet…',
       'a.ok': 'Bewerbung gesendet. Wir melden uns in Kürze.', 'a.err': 'Senden nicht möglich. Bitte WhatsApp oder geral@marcoribeiroconstrucoes.pt nutzen.',
       'a.val': 'Bitte füllen Sie alle Pflichtfelder aus.', 'a.cons': 'Bitte akzeptieren Sie die Datenschutzerklärung.', 'a.mail': 'Formular-Endpunkt noch nicht konfiguriert: Ihr E-Mail-Programm wird geöffnet.',
-      'wa.text': 'Hallo! Ich möchte mit MR Construções sprechen.', 'wa.aria': 'MR Construções über WhatsApp kontaktieren'
+      'wa.text': 'Hallo! Ich möchte mit MR Construções sprechen.', 'wa.aria': 'MR Construções über WhatsApp kontaktieren',
+      'priv.back': 'Zurück zur Website', 'priv.kicker': 'Datenschutz · DSGVO', 'priv.title': 'Datenschutzerklärung',
+      'priv.draft': 'ENTWURF — Dokument zur rechtlichen Prüfung vor der endgültigen Veröffentlichung.',
+      'priv.lead': 'Diese Datenschutzerklärung erläutert, wie die Marco Paulo Ribeiro Unipessoal, Lda. (MR Construções) personenbezogene Daten über diese Website gemäß der Datenschutz-Grundverordnung (DSGVO) erhebt und verarbeitet.',
+      'priv.s1.title': 'Verantwortlicher',
+      'priv.s1.body': 'Marco Paulo Ribeiro Unipessoal, Lda., Steuernummer (NIF/NIPC) 516590022, IMPIC-Zulassung Nr. 113987, mit Sitz in der Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal. Kontakt für Datenschutzfragen: geral@marcoribeiroconstrucoes.pt.',
+      'priv.s2.title': 'Zwecke der Verarbeitung',
+      'priv.s2.body': 'Die über die Formulare dieser Website erhobenen personenbezogenen Daten dienen ausschließlich: (a) der Bearbeitung und Beantwortung von Angebots- und Geschäftsanfragen; (b) der Prüfung und Bearbeitung von Bewerbungen für unsere Teams in Portugal oder Deutschland.',
+      'priv.s3.title': 'Rechtsgrundlage',
+      'priv.s3.body': 'Die Datenverarbeitung erfolgt zur Durchführung vorvertraglicher Maßnahmen auf Anfrage der betroffenen Person (Art. 6 Abs. 1 lit. b DSGVO) sowie auf Grundlage Ihrer ausdrücklichen Einwilligung durch Aktivierung des Kontrollkästchens (Art. 6 Abs. 1 lit. a DSGVO).',
+      'priv.s4.title': 'Erhobene personenbezogene Daten',
+      'priv.s4.body': 'Im Kontaktformular werden erhoben: Name, E-Mail-Adresse, Telefonnummer (optional), Art der Anfrage und Nachricht. Im Bewerbungsformular werden erhoben: Name, Telefon/WhatsApp, Wohnort, Fachgebiet, Jahre Berufserfahrung, Verfügbarkeit und gewünschter Markt.',
+      'priv.s5.title': 'Empfänger der Daten',
+      'priv.s5.body': 'Die Daten werden intern von den zuständigen Mitarbeitern für Kalkulation und Personalwesen bei MR Construções verarbeitet. Für die technische Übermittlung der Formularnachrichten nutzen wir den Dienst Formspree als Auftragsverarbeiter. Eine Weitergabe oder ein Verkauf an Dritte zu Werbezwecken findet nicht statt.',
+      'priv.s6.title': 'Speicherdauer',
+      'priv.s6.body': 'Daten zu Angebotsanfragen werden für den zur Bearbeitung erforderlichen Zeitraum bzw. bis zu 24 Monate aufbewahrt, sofern kein Vertrag zustande kommt. Bewerbungsdaten werden höchstens 12 Monate nach Eingang gespeichert, sofern die Einwilligung nicht zuvor widerrufen wird.',
+      'priv.s7.title': 'Rechte der betroffenen Personen',
+      'priv.s7.body': 'Sie können jederzeit Ihre Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch sowie Widerruf der Einwilligung (ohne die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung zu berühren) per E-Mail an geral@marcoribeiroconstrucoes.pt ausüben.',
+      'priv.s8.title': 'Aufsichtsbehörde',
+      'priv.s8.body': 'Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer Daten gegen die DSGVO verstößt, haben Sie das Recht auf Beschwerde bei der portugiesischen Datenschutzbehörde (CNPD) unter www.cnpd.pt.',
+      'priv.s9.title': 'Cookies und lokale Speicherung',
+      'priv.s9.body': 'Diese Website verwendet keine Analyse-, Statistik-, Werbe- oder Tracking-Cookies von Drittanbietern. Es wird lediglich technisch der lokale Browser-Speicher (localStorage) genutzt, um Ihre Sprachauswahl (PT, EN oder DE) zu speichern.'
     }
   };
 
@@ -183,10 +258,21 @@
   }
 
   /* ------------------------------ i18n ------------------------------ */
+  var isPrivacy = body.getAttribute('data-page') === 'privacy';
+  var metaDesc = $('meta[name="description"]');
   function applyLang(l, persist) {
     lang = T[l] ? l : 'pt';
-    if (persist) { try { localStorage.setItem('mr_lang', lang); } catch (e) {} }
+    if (persist) {
+      try { localStorage.setItem('mr_lang', lang); } catch (e) {}
+      try {
+        var u = new URL(location.href);
+        if (lang === 'pt') u.searchParams.delete('lang'); else u.searchParams.set('lang', lang);
+        history.replaceState(null, '', u.pathname + u.search + u.hash);
+      } catch (e) {}
+    }
     root.lang = lang === 'pt' ? 'pt-PT' : lang;
+    doc.title = t(isPrivacy ? 'priv.meta.title' : 'meta.title') || doc.title;
+    if (metaDesc) metaDesc.setAttribute('content', t(isPrivacy ? 'priv.meta.desc' : 'meta.desc') || metaDesc.getAttribute('content'));
     $$('[data-i18n]').forEach(function (el) { var v = t(el.getAttribute('data-i18n')); if (v) el.textContent = v; });
     $$('[data-i18n-aria]').forEach(function (el) { el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria'))); });
     $$('[data-i18n-label]').forEach(function (el) { el.setAttribute('data-label', t(el.getAttribute('data-i18n-label'))); });
@@ -238,7 +324,7 @@
   function frame() {
     ticking = false;
     var y = window.scrollY || window.pageYOffset, vh = window.innerHeight;
-    if (nav) nav.classList.toggle('solid', y > 60);
+    if (nav) nav.classList.toggle('solid', isPrivacy || y > 60);
 
     if (heroImg && !reduce && y < vh * 1.2) {
       heroImg.style.setProperty('--hy', (y * 0.22).toFixed(1) + 'px');

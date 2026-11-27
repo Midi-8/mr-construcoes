@@ -1,11 +1,11 @@
 {
   "name": "MR Construções",
   "short_name": "MR Construções",
-  "description": "MR Construções - Construção civil, remodelação e reparações em Vila Nova de Famalicão",
+  "description": "MR Construções — Construção e reabilitação em Portugal; carpintaria de cofragem na Alemanha.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#F6F4F0",
-  "theme_color": "#F6F4F0",
+  "background_color": "#080808",
+  "theme_color": "#080808",
   "icons": [
     {
       "src": "imagens/icon-192.png",
@@ -19,4 +19,3 @@
     }
   ]
 }
-
