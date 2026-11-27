@@ -78,25 +78,28 @@
 
 <body>
     <a class="skip" href="#empresa">Saltar para o conteúdo</a>
-    <div class="progress" aria-hidden="true"><i></i></div>
 
     <!-- NAVEGAÇÃO -->
     <header class="nav">
-        <a class="brand" href="#inicio" aria-label="MR Construções — início"><b>MR</b><span>Construções</span></a>
+        <a class="brand" href="#inicio" aria-label="MR Construções — início">
+            <img src="imagens/logo-mr-construcoes.webp" width="28" height="28" alt="" decoding="async">
+            <i class="brand-sep" aria-hidden="true"></i>
+            <span>MR Construções</span>
+        </a>
         <nav style="display:contents" aria-label="Navegação principal" data-i18n-aria="menu.aria">
             <ul class="menu" id="menu">
-                <li><a href="#empresa" data-sec="empresa"><i>01</i><span data-i18n="n.empresa">Empresa</span></a></li>
-                <li><a href="#servicos" data-sec="servicos"><i>02</i><span data-i18n="n.servicos">Serviços</span></a></li>
-                <li><a href="#projetos" data-sec="projetos"><i>03</i><span data-i18n="n.projetos">Projetos</span></a></li>
+                <li><a href="#empresa" data-sec="empresa"><span data-i18n="n.empresa">Empresa</span></a></li>
+                <li><a href="#servicos" data-sec="servicos"><span data-i18n="n.servicos">Serviços</span></a></li>
+                <li><a href="#projetos" data-sec="projetos"><span data-i18n="n.projetos">Projetos</span></a></li>
                 <li class="has-sub">
-                    <a href="#alemanha-servicos" data-sec="alemanha-servicos" data-sec-group="alemanha"><i>04</i><span data-i18n="n.alemanha">Alemanha</span><em class="sub-cue" aria-hidden="true">+</em></a>
+                    <a href="#alemanha-servicos" data-sec="alemanha-servicos" data-sec-group="alemanha"><span data-i18n="n.alemanha">Alemanha</span><em class="sub-cue" aria-hidden="true">+</em></a>
                     <ul class="sub">
-                        <li><a href="#alemanha-servicos" data-sec="alemanha-servicos"><i>04.1</i><span data-i18n="n.sub.s">Serviços</span></a></li>
-                        <li><a href="#alemanha-atuacao" data-sec="alemanha-atuacao"><i>04.2</i><span data-i18n="n.sub.a">Atuação</span></a></li>
+                        <li><a href="#alemanha-servicos" data-sec="alemanha-servicos"><span data-i18n="n.sub.s">Serviços</span></a></li>
+                        <li><a href="#alemanha-atuacao" data-sec="alemanha-atuacao"><span data-i18n="n.sub.a">Atuação</span></a></li>
                     </ul>
                 </li>
-                <li><a href="#oportunidades" data-sec="oportunidades"><i>05</i><span data-i18n="n.oport">Oportunidades</span></a></li>
-                <li><a href="#contactos" data-sec="contactos"><i>06</i><span data-i18n="n.contactos">Contactos</span></a></li>
+                <li><a href="#oportunidades" data-sec="oportunidades"><span data-i18n="n.oport">Oportunidades</span></a></li>
+                <li><a href="#contactos" data-sec="contactos"><span data-i18n="n.contactos">Contactos</span></a></li>
             </ul>
         </nav>
         <div class="lang" role="group" aria-label="Idioma / Language">
@@ -106,17 +109,6 @@
         </div>
         <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><i></i><i></i></button>
     </header>
-
-    <!-- Indicador lateral de secções -->
-    <aside class="rail" aria-label="Secções">
-        <a href="#empresa" data-sec="empresa"><em>01</em><b></b></a>
-        <a href="#servicos" data-sec="servicos"><em>02</em><b></b></a>
-        <a href="#projetos" data-sec="projetos"><em>03</em><b></b></a>
-        <a href="#alemanha-servicos" data-sec="alemanha-servicos"><em>04.1</em><b></b></a>
-        <a href="#alemanha-atuacao" data-sec="alemanha-atuacao"><em>04.2</em><b></b></a>
-        <a href="#oportunidades" data-sec="oportunidades"><em>05</em><b></b></a>
-        <a href="#contactos" data-sec="contactos"><em>06</em><b></b></a>
-    </aside>
 
     <main>
         <!-- HERO -->
@@ -132,16 +124,12 @@
                 </h1>
                 <p class="hero-tag" data-i18n="h.tag">Construir com rigor. Criar com propósito.</p>
             </div>
-            <div class="hero-meta">
-                <span class="micro" data-i18n="h.m1">Portugal — Alemanha</span>
-                <span class="micro" data-i18n="h.m2">Construção · Reabilitação · Serviços</span>
-            </div>
-            <a class="scroll" href="#empresa" aria-label="Scroll"><span data-i18n="h.scroll">Scroll</span><i></i></a>
+            <a class="scroll" href="#empresa" aria-label="Scroll"><span data-i18n="h.scroll">Scroll</span></a>
         </section>
 
         <!-- 01 — EMPRESA -->
         <section class="sec wrap" id="empresa">
-            <div class="sh rv"><span class="micro">01</span><span class="micro" data-i18n="l.emp">Empresa</span></div>
+            <div class="sh rv" aria-hidden="true"></div>
             <div class="grid">
                 <h2 class="t-xl emp-title rv" data-i18n="e.title">Construímos mais do que estruturas.</h2>
             </div>
@@ -166,7 +154,7 @@
 
         <!-- 02 — SERVIÇOS -->
         <section class="sec sec--alt wrap" id="servicos">
-            <div class="sh rv"><span class="micro">02</span><span class="micro" data-i18n="l.svc">Serviços</span></div>
+            <div class="sh rv" aria-hidden="true"></div>
             <div class="grid"><h2 class="t-xl svc-title rv" data-i18n="s.title">O que fazemos.</h2></div>
             <div class="grid svc-list">
                 <figure class="svc s1 rv" style="margin:0">
@@ -196,52 +184,97 @@
             </div>
         </section>
 
-        <!-- 03 — PROJETOS (fotografias reais de obras MR; clicar abre a imagem ampliada) -->
-        <!-- Para acrescentar uma obra: duplicar um bloco figure da grelha e ajustar href, alt, local, ano e título. -->
+        <!-- 03 — PROJETOS (grelha contínua à largura total; clicar abre a fotografia ampliada) -->
+        <!-- Para acrescentar uma obra: adicionar um item .prj-card numa das faixas .prj-track (o loop contínuo é gerado automaticamente pelo JS). -->
         <section class="sec wrap" id="projetos">
-            <div class="sh rv"><span class="micro">03</span><span class="micro" data-i18n="l.prj">Projetos</span></div>
-            <div class="grid"><h2 class="t-xl prj-title rv" data-i18n="p.title">Trabalho que permanece.</h2></div>
-            <div class="grid prj-list">
-                <figure class="p1 rv" style="margin:0">
-                    <a class="prj" href="imagens/moradia-pedra-natural.webp" data-cap="Reabilitação de Fachadas — Vila Nova de Famalicão, 2024" data-alt="Moradia com fachada em pedra natural reabilitada">
-                        <div class="frame" data-par style="--ar:16 / 10"><img src="imagens/moradia-pedra-natural.webp" width="1440" height="1080" loading="lazy" decoding="async" alt="Moradia unifamiliar com fachada em pedra natural, reabilitada pela MR Construções"></div>
-                        <figcaption><div><span class="micro">01 — Vila Nova de Famalicão · 2024</span><h3 data-i18n="p1.n">Reabilitação de Fachadas</h3></div><span class="arrow" aria-hidden="true">↗</span></figcaption>
-                    </a>
-                </figure>
-                <figure class="p2 rv" style="margin:0;--d:.12s">
-                    <a class="prj" href="imagens/moradia-minimalista.webp" data-cap="Aplicação de sistema ETICS — Santo Tirso, 2025" data-alt="Moradia branca com sistema ETICS">
-                        <div class="frame" data-par style="--ar:4 / 5"><img src="imagens/moradia-minimalista.webp" width="1440" height="1085" loading="lazy" decoding="async" alt="Moradia de volumes brancos com sistema ETICS aplicado, em Santo Tirso" style="object-position:38% 50%"></div>
-                        <figcaption><div><span class="micro">02 — Santo Tirso · 2025</span><h3 data-i18n="p2.n">Aplicação de sistema ETICS</h3></div><span class="arrow" aria-hidden="true">↗</span></figcaption>
-                    </a>
-                </figure>
-                <figure class="p3 rv" style="margin:0">
-                    <a class="prj" href="imagens/interiores-sala-ripado.webp" data-cap="Reabilitação Integral de Moradia — Vila Nova de Famalicão, 2024" data-alt="Sala com divisória em ripado de madeira">
-                        <div class="frame" data-par style="--ar:4 / 5"><img src="imagens/interiores-sala-ripado.webp" width="1064" height="1329" loading="lazy" decoding="async" alt="Sala de estar e jantar renovada, com divisória em ripado de madeira"></div>
-                        <figcaption><div><span class="micro">03 — Vila Nova de Famalicão · 2024</span><h3 data-i18n="p3.n">Reabilitação Integral de Moradia</h3></div><span class="arrow" aria-hidden="true">↗</span></figcaption>
-                    </a>
-                </figure>
-                <figure class="p4 rv" style="margin:0;--d:.12s">
-                    <a class="prj" href="imagens/casa-banho-marmore.webp" data-cap="Reabilitação de Instalação Sanitária — Porto, 2026" data-alt="Casa de banho com revestimento em mármore">
-                        <div class="frame" data-par style="--ar:16 / 10"><img src="imagens/casa-banho-marmore.webp" width="1181" height="872" loading="lazy" decoding="async" alt="Casa de banho reabilitada com revestimentos em mármore, no Porto"></div>
-                        <figcaption><div><span class="micro">04 — Porto · 2026</span><h3 data-i18n="p4.n">Reabilitação de Instalação Sanitária</h3></div><span class="arrow" aria-hidden="true">↗</span></figcaption>
-                    </a>
-                </figure>
-                <figure class="p5 rv" style="margin:0">
-                    <a class="prj" href="imagens/piscina-famalicao.jpg" data-cap="Piscina e Pavimentação Exterior — Vila Nova de Famalicão, 2025" data-alt="Piscina com pavimento cerâmico exterior">
-                        <div class="frame" data-par style="--ar:1 / 1"><img src="imagens/piscina-famalicao.jpg" width="1296" height="1050" loading="lazy" decoding="async" alt="Piscina com pavimento cerâmico exterior em moradia unifamiliar"></div>
-                        <figcaption><div><span class="micro">05 — Vila Nova de Famalicão · 2025</span><h3 data-i18n="p5.n">Piscina e Pavimentação Exterior</h3></div><span class="arrow" aria-hidden="true">↗</span></figcaption>
-                    </a>
-                </figure>
-                <div class="prj-more rv">
-                    <p class="t-l" data-i18n="p.more">E muitas outras obras concluídas em Portugal. Fale connosco para conhecer mais referências.</p>
-                    <a class="link" href="#contactos"><span data-i18n="p.cta">Falar connosco</span><span class="ar" aria-hidden="true">↗</span></a>
+            <div class="sh rv" aria-hidden="true"></div>
+            <div class="prj-head">
+                <h2 class="t-xl prj-title rv" data-i18n="p.title">Trabalho que permanece.</h2>
+                <div class="prj-ctrl rv" style="--d:.1s">
+                    <span class="micro" data-i18n="p.hint">Arquivo de obras · Clicar para ampliar</span>
+                    <button type="button" class="prj-toggle" data-prj-toggle aria-pressed="false" data-i18n="p.pause">Pausar</button>
                 </div>
+            </div>
+
+            <div class="prj-wall" data-prj-wall>
+                <!-- Faixa 1 (deslocação contínua para a esquerda) -->
+                <div class="prj-row" data-dir="left">
+                    <div class="prj-track">
+                        <a class="prj prj-card" href="imagens/moradia-pedra-natural.webp" data-idx="0" data-alt="Moradia com fachada em pedra natural reabilitada">
+                            <img src="imagens/moradia-pedra-natural.webp" width="1440" height="1080" loading="lazy" decoding="async" alt="Moradia unifamiliar com fachada em pedra natural, reabilitada pela MR Construções">
+                            <div class="prj-ov">
+                                <span class="micro">Vila Nova de Famalicão · 2024</span>
+                                <div><h3 data-i18n="p1.n">Reabilitação de Fachadas</h3><span class="ar" aria-hidden="true">↗</span></div>
+                            </div>
+                        </a>
+                        <a class="prj prj-card" href="imagens/moradia-minimalista.webp" data-idx="1" data-alt="Moradia branca com sistema ETICS">
+                            <img src="imagens/moradia-minimalista.webp" width="1440" height="1085" loading="lazy" decoding="async" alt="Moradia de volumes brancos com sistema ETICS aplicado, em Santo Tirso">
+                            <div class="prj-ov">
+                                <span class="micro">Santo Tirso · 2025</span>
+                                <div><h3 data-i18n="p2.n">Aplicação de sistema ETICS</h3><span class="ar" aria-hidden="true">↗</span></div>
+                            </div>
+                        </a>
+                        <a class="prj prj-card" href="imagens/interiores-sala-ripado.webp" data-idx="2" data-alt="Sala com divisória em ripado de madeira">
+                            <img src="imagens/interiores-sala-ripado.webp" width="1064" height="1329" loading="lazy" decoding="async" alt="Sala de estar e jantar renovada, com divisória em ripado de madeira">
+                            <div class="prj-ov">
+                                <span class="micro">Vila Nova de Famalicão · 2024</span>
+                                <div><h3 data-i18n="p3.n">Reabilitação Integral de Moradia</h3><span class="ar" aria-hidden="true">↗</span></div>
+                            </div>
+                        </a>
+                        <a class="prj prj-card" href="imagens/moradia-fachada-verde.webp" data-idx="3" data-alt="Moradia com fachada revestida e caixilharia escura">
+                            <img src="imagens/moradia-fachada-verde.webp" width="1440" height="1379" loading="lazy" decoding="async" alt="Moradia contemporânea com revestimento exterior e caixilharias escuras">
+                            <div class="prj-ov">
+                                <span class="micro">Portugal</span>
+                                <div><h3 data-i18n="p6.n">Fachada e Isolamento Térmico</h3><span class="ar" aria-hidden="true">↗</span></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Faixa 2 (deslocação contínua para a direita) -->
+                <div class="prj-row" data-dir="right">
+                    <div class="prj-track">
+                        <a class="prj prj-card" href="imagens/casa-banho-marmore.webp" data-idx="4" data-alt="Casa de banho com revestimento em mármore">
+                            <img src="imagens/casa-banho-marmore.webp" width="1181" height="872" loading="lazy" decoding="async" alt="Casa de banho reabilitada com revestimentos em mármore, no Porto">
+                            <div class="prj-ov">
+                                <span class="micro">Porto · 2026</span>
+                                <div><h3 data-i18n="p4.n">Reabilitação de Instalação Sanitária</h3><span class="ar" aria-hidden="true">↗</span></div>
+                            </div>
+                        </a>
+                        <a class="prj prj-card" href="imagens/piscina-famalicao.jpg" data-idx="5" data-alt="Piscina com pavimento cerâmico exterior">
+                            <img src="imagens/piscina-famalicao.jpg" width="1296" height="1050" loading="lazy" decoding="async" alt="Piscina com pavimento cerâmico exterior em moradia unifamiliar">
+                            <div class="prj-ov">
+                                <span class="micro">Vila Nova de Famalicão · 2025</span>
+                                <div><h3 data-i18n="p5.n">Piscina e Pavimentação Exterior</h3><span class="ar" aria-hidden="true">↗</span></div>
+                            </div>
+                        </a>
+                        <a class="prj prj-card" href="imagens/casa-banho-porto.jpg" data-idx="6" data-alt="Instalação sanitária moderna com revestimento marmorizado e iluminação indireta">
+                            <img src="imagens/casa-banho-porto.jpg" width="1181" height="886" loading="lazy" decoding="async" alt="Instalação sanitária renovada com revestimento cerâmico marmorizado e iluminação LED">
+                            <div class="prj-ov">
+                                <span class="micro">Porto · 2026</span>
+                                <div><h3 data-i18n="p7.n">Acabamentos e Revestimentos</h3><span class="ar" aria-hidden="true">↗</span></div>
+                            </div>
+                        </a>
+                        <a class="prj prj-card" href="imagens/casa-famalicao-depois.webp" data-idx="7" data-alt="Moradia reabilitada com fachada renovada e muro exterior">
+                            <img src="imagens/casa-famalicao-depois.webp" width="1440" height="1085" loading="lazy" decoding="async" alt="Moradia unifamiliar após intervenção completa de reabilitação exterior">
+                            <div class="prj-ov">
+                                <span class="micro">Vila Nova de Famalicão</span>
+                                <div><h3 data-i18n="p8.n">Reabilitação Exterior de Moradia</h3><span class="ar" aria-hidden="true">↗</span></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prj-foot rv">
+                <p class="body" data-i18n="p.more">E muitas outras obras concluídas em Portugal. Fale connosco para conhecer mais referências.</p>
+                <a class="link" href="#contactos"><span data-i18n="p.cta">Falar connosco</span><span class="ar" aria-hidden="true">↗</span></a>
             </div>
         </section>
 
         <!-- 04.1 — ALEMANHA | SERVIÇOS -->
         <section class="sec de1 wrap" id="alemanha-servicos">
-            <div class="sh rv"><span class="micro">04.1</span><span class="micro" data-i18n="l.de1">Alemanha — Serviços</span></div>
+            <div class="sh rv" aria-hidden="true"></div>
             <div class="grid"><h2 class="t-xl de1-title rv" data-i18n="d1.title">Além-fronteiras.</h2></div>
             <div class="pano" data-expand>
                 <div class="frame" data-par style="--ar:16 / 9"><img src="imagens/hero.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Obra de estruturas em betão armado com cofragem na Alemanha"></div>
@@ -271,7 +304,7 @@
 
         <!-- 04.2 — ALEMANHA | ATUAÇÃO -->
         <section class="sec sec--alt de2 wrap" id="alemanha-atuacao">
-            <div class="sh rv"><span class="micro">04.2</span><span class="micro" data-i18n="l.de2">Alemanha — Atuação</span></div>
+            <div class="sh rv" aria-hidden="true"></div>
             <div class="grid de2-grid">
                 <div class="de2-img">
                     <div class="frame clip" style="--ar:4 / 5"><div class="ph"><span data-i18n="ph.de">[Projeto na Alemanha]</span><small>4:5</small><em aria-hidden="true">FIG. 09</em></div></div>
@@ -293,7 +326,7 @@
 
         <!-- 05 — OPORTUNIDADES -->
         <section class="sec wrap" id="oportunidades">
-            <div class="sh rv"><span class="micro">05</span><span class="micro" data-i18n="l.op">Oportunidades</span></div>
+            <div class="sh rv" aria-hidden="true"></div>
             <div class="grid op-grid">
                 <div class="op-txt">
                     <div>
@@ -319,37 +352,126 @@
         </section>
 
         <!-- 06 — CONTACTOS -->
-        <section class="sec sec--alt ct" id="contactos">
-            <div class="wrap">
-                <div class="sh rv"><span class="micro">06</span><span class="micro" data-i18n="l.ct">Contactos</span></div>
-                <h2 class="t-xl ct-title rv" data-i18n="c.title">Vamos construir algo?</h2>
-                <div class="grid ct-grid">
-                    <div class="ct-col rv"><span class="micro" data-i18n="c.tel">Telefone</span><a href="tel:+351915680947">+351 915 680 947</a><a data-wa href="https://wa.me/351915680947" target="_blank" rel="noopener noreferrer" data-i18n="c.wa" aria-label="WhatsApp">WhatsApp</a></div>
-                    <div class="ct-col rv" style="--d:.08s"><span class="micro" data-i18n="c.mail">Email</span><a href="mailto:geral@marcoribeiroconstrucoes.pt">geral@marcoribeiroconstrucoes.pt</a><a href="mailto:mr@marcoribeiroconstrucoes.pt">mr@marcoribeiroconstrucoes.pt</a></div>
-                    <div class="ct-col rv" style="--d:.16s"><span class="micro" data-i18n="c.loc">Localização</span><address data-i18n="c.addr">Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão</address></div>
-                    <div class="ct-col rv" style="--d:.24s"><span class="micro" data-i18n="c.soc">Redes</span><a href="https://www.instagram.com/_mr_construcoes_/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/p/MR-Constru%C3%A7%C3%B5es-100077550159685/" target="_blank" rel="noopener noreferrer">Facebook ↗</a></div>
+        <section class="sec sec--alt ct wrap" id="contactos">
+            <div class="sh rv" aria-hidden="true"></div>
+            <div class="grid ct-layout">
+                <div class="ct-info">
+                    <h2 class="t-xl ct-title rv" data-i18n="c.title">Vamos construir algo?</h2>
+                    <p class="body rv" style="--d:.08s" data-i18n="c.lead">Fale connosco sobre o seu projeto em Portugal ou sobre equipas de cofragem na Alemanha.</p>
+                    <dl class="ct-list rv" style="--d:.14s">
+                        <div>
+                            <dt class="micro" data-i18n="c.tel">Telefone</dt>
+                            <dd>
+                                <a href="tel:+351915680947">+351 915 680 947</a>
+                                <a class="ct-sub" data-wa href="https://wa.me/351915680947" target="_blank" rel="noopener noreferrer"><span data-i18n="c.wa">WhatsApp</span> <span aria-hidden="true">↗</span></a>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt class="micro" data-i18n="c.mail">Email</dt>
+                            <dd>
+                                <a href="mailto:geral@marcoribeiroconstrucoes.pt">geral@marcoribeiroconstrucoes.pt</a>
+                                <a class="ct-sub" href="mailto:mr@marcoribeiroconstrucoes.pt">mr@marcoribeiroconstrucoes.pt</a>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt class="micro" data-i18n="c.loc">Localização</dt>
+                            <dd><address data-i18n="c.addr">Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão</address></dd>
+                        </div>
+                        <div>
+                            <dt class="micro" data-i18n="c.soc">Redes</dt>
+                            <dd class="ct-soc">
+                                <a href="https://www.instagram.com/_mr_construcoes_/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+                                <a href="https://www.facebook.com/p/MR-Constru%C3%A7%C3%B5es-100077550159685/" target="_blank" rel="noopener noreferrer">Facebook <span aria-hidden="true">↗</span></a>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="ct-panel rv" style="--d:.12s">
+                    <span class="micro ct-kicker" data-i18n="c.fk">Pedido de contacto</span>
+                    <form id="contact-form" novalidate>
+                        <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <label class="fld"><span data-i18n="a.name">Nome</span><input name="nome" type="text" autocomplete="name" required></label>
+                        <div class="row2">
+                            <label class="fld"><span data-i18n="c.mail">Email</span><input name="email" type="email" autocomplete="email" required></label>
+                            <label class="fld"><span data-i18n="c.tel">Telefone</span><input name="telefone" type="tel" autocomplete="tel"></label>
+                        </div>
+                        <label class="fld"><span data-i18n="c.subj">Tipo de pedido</span>
+                            <select name="assunto" required>
+                                <option value="" data-i18n="a.sel">Selecionar</option>
+                                <option value="Construção de raiz" data-i18n="c.s1">Construção de raiz</option>
+                                <option value="Reabilitação e remodelação" data-i18n="c.s2">Reabilitação e remodelação</option>
+                                <option value="Fachadas e isolamento térmico" data-i18n="c.s3">Fachadas e isolamento térmico</option>
+                                <option value="Parceria — Alemanha" data-i18n="c.s4">Parceria — Alemanha</option>
+                                <option value="Outro" data-i18n="c.s5">Outro</option>
+                            </select>
+                        </label>
+                        <label class="fld"><span data-i18n="c.msg">Mensagem</span><textarea name="mensagem" rows="3" required></textarea></label>
+                        <label class="chk"><input type="checkbox" name="consent" required><span><span data-i18n="a.c1">Li e aceito a</span> <a href="privacidade.html" target="_blank" rel="noopener" data-i18n="f.priv">Política de Privacidade</a><span data-i18n="a.c2">.</span></span></label>
+                        <button class="btn" type="submit"><span data-i18n="c.send">Enviar mensagem</span><span aria-hidden="true">↗</span></button>
+                        <p class="status" id="contact-status" role="status" aria-live="polite"></p>
+                    </form>
                 </div>
             </div>
-            <div class="ct-ghost" aria-hidden="true">MR</div>
         </section>
     </main>
 
     <footer class="foot">
-        <div>
-            <a class="brand" href="#inicio"><b>MR</b><span>Construções</span></a>
+        <div class="foot-top">
+            <div class="foot-brand">
+                <a class="brand" href="#inicio" aria-label="MR Construções — início">
+                    <img src="imagens/logo-mr-construcoes.webp" width="24" height="24" alt="" loading="lazy" decoding="async">
+                    <i class="brand-sep" aria-hidden="true"></i>
+                    <span>MR Construções</span>
+                </a>
+                <p class="foot-tag" data-i18n="h.tag">Construir com rigor. Criar com propósito.</p>
+                <span class="micro" data-i18n="e.id2v">Portugal · Alemanha</span>
+            </div>
+
+            <div class="foot-col">
+                <span class="micro foot-h" data-i18n="f.nav">Navegação</span>
+                <ul>
+                    <li><a href="#empresa" data-i18n="n.empresa">Empresa</a></li>
+                    <li><a href="#servicos" data-i18n="n.servicos">Serviços</a></li>
+                    <li><a href="#projetos" data-i18n="n.projetos">Projetos</a></li>
+                    <li><a href="#alemanha-servicos" data-i18n="f.de1">Alemanha — Serviços</a></li>
+                    <li><a href="#alemanha-atuacao" data-i18n="f.de2">Alemanha — Atuação</a></li>
+                    <li><a href="#oportunidades" data-i18n="n.oport">Oportunidades</a></li>
+                    <li><a href="#contactos" data-i18n="n.contactos">Contactos</a></li>
+                </ul>
+            </div>
+
+            <div class="foot-col">
+                <span class="micro foot-h" data-i18n="n.contactos">Contactos</span>
+                <ul>
+                    <li><a href="tel:+351915680947">+351 915 680 947</a></li>
+                    <li><a data-wa href="https://wa.me/351915680947" target="_blank" rel="noopener noreferrer" data-i18n="c.wa">WhatsApp</a></li>
+                    <li><a href="mailto:geral@marcoribeiroconstrucoes.pt">geral@marcoribeiroconstrucoes.pt</a></li>
+                    <li><a href="mailto:mr@marcoribeiroconstrucoes.pt">mr@marcoribeiroconstrucoes.pt</a></li>
+                    <li><a href="https://www.instagram.com/_mr_construcoes_/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/p/MR-Constru%C3%A7%C3%B5es-100077550159685/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                </ul>
+            </div>
+
+            <div class="foot-col">
+                <span class="micro foot-h" data-i18n="f.legal">Dados legais</span>
+                <ul>
+                    <li class="foot-co">Marco Paulo Ribeiro Unipessoal, Lda.</li>
+                    <li>NIF / NIPC 516590022</li>
+                    <li>Alvará IMPIC 113987</li>
+                    <li data-i18n="f.seat">Sede: Rua do Casino n.º 94 E, 4765-063 Bairro, V. N. Famalicão</li>
+                    <li class="foot-gap"><a href="privacidade.html" data-i18n="f.priv">Política de Privacidade</a></li>
+                    <li><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener noreferrer" data-i18n="f.compl">Livro de Reclamações Eletrónico</a></li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <ul class="micro">
-                <li><strong style="font-weight:400;color:var(--paper)">Marco Paulo Ribeiro Unipessoal, Lda.</strong></li>
-                <li>NIF / NIPC 516590022 · Alvará IMPIC 113987</li>
-                <li data-i18n="f.seat">Sede: Rua do Casino n.º 94 E, 4765-063 Bairro, V. N. Famalicão</li>
-            </ul>
-        </div>
-        <div class="foot-r micro">
-            <a href="privacidade.html" data-i18n="f.priv">Política de Privacidade</a>
-            <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener noreferrer" data-i18n="f.compl">Livro de Reclamações Eletrónico</a>
-            <span>© <span id="year">2026</span> MR Construções · <span data-i18n="f.credit">Desenvolvido por</span> <a href="https://midi8-web.vercel.app" target="_blank" rel="noopener noreferrer" style="color:var(--paper)">MIDI8</a></span>
-            <a class="top" href="#inicio" data-i18n="f.top">Voltar ao topo</a>
+
+        <div class="foot-bot">
+            <span>© <span id="year">2026</span> MR Construções. <span data-i18n="f.rights">Todos os direitos reservados.</span></span>
+            <div class="foot-bot-r">
+                <span><span data-i18n="f.credit">Desenvolvido por</span> <a href="https://midi8-web.vercel.app" target="_blank" rel="noopener noreferrer">MIDI8</a></span>
+                <a class="top" href="#inicio"><span data-i18n="f.top">Voltar ao topo</span> <span aria-hidden="true">↑</span></a>
+            </div>
         </div>
     </footer>
 
@@ -406,7 +528,7 @@
         </form>
     </dialog>
 
-    <noscript><style>.rv,.clip{opacity:1!important;transform:none!important;clip-path:none!important}.hero-img,.hero-tag,.hero-meta,.scroll{opacity:1!important}.hero .ln>span{transform:none!important}</style></noscript>
+    <noscript><style>.rv,.clip{opacity:1!important;transform:none!important;clip-path:none!important}.hero-img,.hero-tag,.scroll{opacity:1!important}.hero .ln>span{transform:none!important}</style></noscript>
 </body>
 
 </html>
