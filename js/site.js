@@ -1,0 +1,337 @@
+/**
+ * MR CONSTRUÇÕES — Landing page (js/site.js)
+ * Sem dependências: i18n PT/EN/DE, navegação, parallax, expansão de imagem,
+ * lightbox de projetos e formulário de candidatura (Formspree).
+ */
+(function () {
+  'use strict';
+
+  /* ------------------------------------------------------------------
+     CONFIGURAÇÃO — editar aqui
+     ------------------------------------------------------------------ */
+  // Cole o ID do formulário criado em https://formspree.io (ex.: https://formspree.io/f/abcdwxyz)
+  var FORM_ENDPOINT_CANDIDATURA = 'https://formspree.io/f/SEU_ID_AQUI';
+  var CONTACT_EMAIL = 'geral@marcoribeiroconstrucoes.pt';
+  var WHATSAPP = '351915680947';
+
+  /* ------------------------------------------------------------------
+     TRADUÇÕES (EN e DE: REVER POR NATIVO)
+     ------------------------------------------------------------------ */
+  var T = {
+    pt: {
+      'n.empresa': 'Empresa', 'n.servicos': 'Serviços', 'n.projetos': 'Projetos', 'n.alemanha': 'Alemanha',
+      'n.sub.s': 'Serviços', 'n.sub.a': 'Atuação', 'n.oport': 'Oportunidades', 'n.contactos': 'Contactos',
+      'burger': 'Abrir menu', 'burger.x': 'Fechar menu', 'menu.aria': 'Navegação principal',
+      'h.tag': 'Construir com rigor. Criar com propósito.', 'h.m1': 'Portugal — Alemanha', 'h.m2': 'Construção · Reabilitação · Serviços', 'h.scroll': 'Scroll',
+      'l.emp': 'Empresa', 'l.svc': 'Serviços', 'l.prj': 'Projetos', 'l.de1': 'Alemanha — Serviços', 'l.de2': 'Alemanha — Atuação', 'l.op': 'Oportunidades', 'l.ct': 'Contactos',
+      'e.title': 'Construímos mais do que estruturas.',
+      'e.body': 'Obras executadas com rigor, proximidade e atenção a cada detalhe. Do primeiro passo à entrega das chaves — em Portugal e na Alemanha.',
+      'e.id1': 'Desde', 'e.id2': 'Atuação', 'e.id2v': 'Portugal · Alemanha', 'e.id3': 'Alvará IMPIC',
+      'ph.arch': '[Fotografia arquitetónica]', 'ph.detail': '[Detalhe de obra]', 'ph.proj': '[Projeto]', 'ph.site': '[Obra em curso]', 'ph.de': '[Projeto na Alemanha]',
+      's.title': 'O que fazemos.',
+      's1.n': 'Construção de raiz', 's1.d': 'Moradias unifamiliares completas, do primeiro passo à entrega das chaves.',
+      's2.n': 'Reabilitação e remodelação', 's2.d': 'Recuperação e renovação de edifícios e habitações existentes.',
+      's3.n': 'Estruturas e construção civil', 's3.d': 'Execução estrutural em betão armado e trabalhos gerais de construção civil.',
+      's4.n': 'Fachadas e isolamento térmico', 's4.d': 'Sistemas ETICS, revestimentos e proteção da envolvente exterior.',
+      's5.n': 'Acabamentos e revestimentos', 's5.d': 'Alvenarias, revestimentos cerâmicos, pinturas e trabalhos complementares.',
+      's6.n': 'Espaços exteriores', 's6.d': 'Piscinas, pavimentos cerâmicos ou em pedra e arranjos exteriores.',
+      'p.title': 'Trabalho que permanece.',
+      'p1.n': 'Reabilitação de Fachadas', 'p2.n': 'Aplicação de sistema ETICS', 'p3.n': 'Reabilitação Integral de Moradia', 'p4.n': 'Reabilitação de Instalação Sanitária', 'p5.n': 'Piscina e Pavimentação Exterior',
+      'p.more': 'E muitas outras obras concluídas em Portugal. Fale connosco para conhecer mais referências.', 'p.cta': 'Falar connosco', 'p.close': 'Fechar', 'p.lb.aria': 'Fotografia ampliada', 'p.prev': 'Projeto anterior', 'p.next': 'Próximo projeto',
+      'd1.title': 'Além-fronteiras.',
+      'd1.lead': 'Carpintaria de cofragem na Alemanha. Equipas especializadas, integradas em obras de estruturas em betão armado de diferentes dimensões.',
+      'd1.h': 'Serviços na Alemanha', 'd1.1': 'Carpintaria de cofragem', 'd1.2': 'Execução de cofragem em obra', 'd1.3': 'Estruturas em betão armado', 'd1.4': 'Serviços a empresas e parceiros do setor',
+      'd1.a': 'Áreas de atuação', 'd1.tbc': 'A confirmar', 'd1.b2b': 'Precisa de uma equipa de cofragem?', 'd1.b2bl': 'Contactar para parcerias', 'b2b.subj': 'Parceria — Carpintaria de Cofragem na Alemanha',
+      'd2.title': 'Uma presença que constrói.',
+      'd2.lead': 'Experiência operacional e capacidade de integração em equipas de obra, em projetos de diferentes dimensões e exigências técnicas.',
+      'd2.refs': 'Referências', 'd2.ref': 'Projeto — a confirmar',
+      'o.title': 'Constrói o teu futuro connosco.', 'o.lead': 'Equipas em Portugal e na Alemanha.', 'o.cta': 'Junta-te à equipa', 'o.v': 'Vagas abertas', 'o.none': 'Sem vagas publicadas neste momento. Envia-nos a tua candidatura.', 'o.slot': 'Vaga — a publicar',
+      'c.title': 'Vamos construir algo?', 'c.tel': 'Telefone', 'c.mail': 'Email', 'c.loc': 'Localização', 'c.soc': 'Redes', 'c.addr': 'Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão', 'c.wa': 'WhatsApp',
+      'f.legal': 'Dados legais', 'f.seat': 'Sede: Rua do Casino n.º 94 E, 4765-063 Bairro, V. N. Famalicão', 'f.priv': 'Política de Privacidade', 'f.compl': 'Livro de Reclamações Eletrónico', 'f.rights': 'Todos os direitos reservados.', 'f.credit': 'Desenvolvido por', 'f.top': 'Voltar ao topo',
+      'a.kicker': 'Candidatura', 'a.title': 'Junta-te à equipa.', 'a.close': 'Fechar',
+      'a.name': 'Nome', 'a.phone': 'Telefone / WhatsApp', 'a.spec': 'Especialidade', 'a.res': 'Local de residência',
+      'a.exp': 'Anos de experiência', 'a.exp.1': 'Menos de 1 ano', 'a.exp.2': '1–3 anos', 'a.exp.3': '3–5 anos', 'a.exp.4': '5–10 anos', 'a.exp.5': '10+ anos',
+      'a.av': 'Disponibilidade para início', 'a.av.1': 'Imediata', 'a.av.2': 'Até 1 mês', 'a.av.3': 'Mais de 1 mês',
+      'a.mk': 'Mercado de interesse', 'a.mk.1': 'Portugal', 'a.mk.2': 'Alemanha', 'a.mk.3': 'Indiferente', 'a.sel': 'Selecionar',
+      'a.c1': 'Li e aceito a', 'a.c2': '.', 'a.send': 'Enviar candidatura', 'a.sending': 'A enviar…',
+      'a.ok': 'Candidatura enviada. Entraremos em contacto brevemente.', 'a.err': 'Não foi possível enviar. Tente por WhatsApp ou geral@marcoribeiroconstrucoes.pt.',
+      'a.val': 'Preencha todos os campos obrigatórios.', 'a.cons': 'Aceite a Política de Privacidade para continuar.', 'a.mail': 'Formulário ainda sem endpoint: a abrir o seu cliente de email.',
+      'wa.text': 'Olá! Gostaria de falar com a MR Construções.', 'wa.aria': 'Falar com a MR Construções via WhatsApp'
+    },
+    en: {
+      'n.empresa': 'Company', 'n.servicos': 'Services', 'n.projetos': 'Projects', 'n.alemanha': 'Germany',
+      'n.sub.s': 'Services', 'n.sub.a': 'Presence', 'n.oport': 'Careers', 'n.contactos': 'Contact',
+      'burger': 'Open menu', 'burger.x': 'Close menu', 'menu.aria': 'Main navigation',
+      'h.tag': 'Build with rigour. Create with purpose.', 'h.m1': 'Portugal — Germany', 'h.m2': 'Construction · Rehabilitation · Services', 'h.scroll': 'Scroll',
+      'l.emp': 'Company', 'l.svc': 'Services', 'l.prj': 'Projects', 'l.de1': 'Germany — Services', 'l.de2': 'Germany — Presence', 'l.op': 'Careers', 'l.ct': 'Contact',
+      'e.title': 'We build more than structures.',
+      'e.body': 'Works delivered with rigour, proximity and attention to every detail. From the first step to the handover of the keys — in Portugal and Germany.',
+      'e.id1': 'Since', 'e.id2': 'Operating in', 'e.id2v': 'Portugal · Germany', 'e.id3': 'IMPIC licence',
+      'ph.arch': '[Architectural photography]', 'ph.detail': '[Project detail]', 'ph.proj': '[Project]', 'ph.site': '[Construction site]', 'ph.de': '[Germany project]',
+      's.title': 'What we do.',
+      's1.n': 'New build', 's1.d': 'Complete single-family homes, from the first step to the handover of the keys.',
+      's2.n': 'Rehabilitation and remodelling', 's2.d': 'Restoration and renovation of existing buildings and homes.',
+      's3.n': 'Structures and civil construction', 's3.d': 'Reinforced concrete structures and general civil construction works.',
+      's4.n': 'Facades and thermal insulation', 's4.d': 'ETICS systems, claddings and protection of the building envelope.',
+      's5.n': 'Finishes and coverings', 's5.d': 'Masonry, ceramic tiling, painting and complementary works.',
+      's6.n': 'Outdoor spaces', 's6.d': 'Swimming pools, ceramic or stone paving and exterior landscaping.',
+      'p.title': 'Work that remains.',
+      'p1.n': 'Facade Rehabilitation', 'p2.n': 'ETICS System Application', 'p3.n': 'Full House Rehabilitation', 'p4.n': 'Sanitary Facility Rehabilitation', 'p5.n': 'Swimming Pool and Exterior Paving',
+      'p.more': 'And many other completed projects in Portugal. Talk to us to see more references.', 'p.cta': 'Talk to us', 'p.close': 'Close', 'p.lb.aria': 'Enlarged photograph', 'p.prev': 'Previous project', 'p.next': 'Next project',
+      'd1.title': 'Beyond borders.',
+      'd1.lead': 'Formwork carpentry in Germany. Specialised teams integrated into reinforced concrete structure projects of different scales.',
+      'd1.h': 'Services in Germany', 'd1.1': 'Formwork carpentry', 'd1.2': 'On-site formwork execution', 'd1.3': 'Reinforced concrete structures', 'd1.4': 'Services to companies and sector partners',
+      'd1.a': 'Areas of operation', 'd1.tbc': 'To be confirmed', 'd1.b2b': 'Need a formwork team?', 'd1.b2bl': 'Contact us for partnerships', 'b2b.subj': 'Partnership — Formwork Carpentry in Germany',
+      'd2.title': 'A presence that builds.',
+      'd2.lead': 'Operational experience and the ability to integrate into site teams, on projects of different scales and technical demands.',
+      'd2.refs': 'References', 'd2.ref': 'Project — to be confirmed',
+      'o.title': 'Build your future with us.', 'o.lead': 'Teams in Portugal and Germany.', 'o.cta': 'Join the team', 'o.v': 'Open positions', 'o.none': 'No positions published at the moment. Send us your application.', 'o.slot': 'Position — to be published',
+      'c.title': 'Shall we build something?', 'c.tel': 'Phone', 'c.mail': 'Email', 'c.loc': 'Location', 'c.soc': 'Social', 'c.addr': 'Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal', 'c.wa': 'WhatsApp',
+      'f.legal': 'Legal information', 'f.seat': 'Registered office: Rua do Casino n.º 94 E, 4765-063 Bairro, V. N. Famalicão', 'f.priv': 'Privacy Policy', 'f.compl': 'Electronic Complaints Book', 'f.rights': 'All rights reserved.', 'f.credit': 'Developed by', 'f.top': 'Back to top',
+      'a.kicker': 'Application', 'a.title': 'Join the team.', 'a.close': 'Close',
+      'a.name': 'Name', 'a.phone': 'Phone / WhatsApp', 'a.spec': 'Trade / specialty', 'a.res': 'Place of residence',
+      'a.exp': 'Years of experience', 'a.exp.1': 'Under 1 year', 'a.exp.2': '1–3 years', 'a.exp.3': '3–5 years', 'a.exp.4': '5–10 years', 'a.exp.5': '10+ years',
+      'a.av': 'Availability to start', 'a.av.1': 'Immediate', 'a.av.2': 'Within 1 month', 'a.av.3': 'More than 1 month',
+      'a.mk': 'Market of interest', 'a.mk.1': 'Portugal', 'a.mk.2': 'Germany', 'a.mk.3': 'Either', 'a.sel': 'Select',
+      'a.c1': 'I have read and accept the', 'a.c2': '.', 'a.send': 'Send application', 'a.sending': 'Sending…',
+      'a.ok': 'Application sent. We will be in touch shortly.', 'a.err': 'Could not send. Please try WhatsApp or geral@marcoribeiroconstrucoes.pt.',
+      'a.val': 'Please fill in all required fields.', 'a.cons': 'Please accept the Privacy Policy to continue.', 'a.mail': 'Form endpoint not configured yet: opening your email client.',
+      'wa.text': 'Hello! I would like to talk to MR Construções.', 'wa.aria': 'Talk to MR Construções on WhatsApp'
+    },
+    de: {
+      'n.empresa': 'Unternehmen', 'n.servicos': 'Leistungen', 'n.projetos': 'Projekte', 'n.alemanha': 'Deutschland',
+      'n.sub.s': 'Leistungen', 'n.sub.a': 'Präsenz', 'n.oport': 'Karriere', 'n.contactos': 'Kontakt',
+      'burger': 'Menü öffnen', 'burger.x': 'Menü schließen', 'menu.aria': 'Hauptnavigation',
+      'h.tag': 'Mit Präzision bauen. Mit Haltung gestalten.', 'h.m1': 'Portugal — Deutschland', 'h.m2': 'Bau · Sanierung · Dienstleistungen', 'h.scroll': 'Scroll',
+      'l.emp': 'Unternehmen', 'l.svc': 'Leistungen', 'l.prj': 'Projekte', 'l.de1': 'Deutschland — Leistungen', 'l.de2': 'Deutschland — Präsenz', 'l.op': 'Karriere', 'l.ct': 'Kontakt',
+      'e.title': 'Wir bauen mehr als Strukturen.',
+      'e.body': 'Bauprojekte, ausgeführt mit Präzision, Nähe und Liebe zum Detail. Vom ersten Schritt bis zur Schlüsselübergabe — in Portugal und in Deutschland.',
+      'e.id1': 'Seit', 'e.id2': 'Tätig in', 'e.id2v': 'Portugal · Deutschland', 'e.id3': 'IMPIC-Zulassung',
+      'ph.arch': '[Architekturfotografie]', 'ph.detail': '[Projektdetail]', 'ph.proj': '[Projekt]', 'ph.site': '[Baustelle]', 'ph.de': '[Projekt in Deutschland]',
+      's.title': 'Was wir tun.',
+      's1.n': 'Neubau', 's1.d': 'Komplette Einfamilienhäuser, vom ersten Schritt bis zur Schlüsselübergabe.',
+      's2.n': 'Sanierung und Umbau', 's2.d': 'Instandsetzung und Erneuerung bestehender Gebäude und Wohnhäuser.',
+      's3.n': 'Rohbau und Hochbau', 's3.d': 'Stahlbetonbau und allgemeine Hochbauarbeiten.',
+      's4.n': 'Fassaden und Wärmedämmung', 's4.d': 'WDVS-Systeme (ETICS), Verkleidungen und Schutz der Gebäudehülle.',
+      's5.n': 'Ausbau und Beläge', 's5.d': 'Mauerwerk, Fliesenarbeiten, Malerarbeiten und ergänzende Ausbauarbeiten.',
+      's6.n': 'Außenanlagen', 's6.d': 'Pools, Keramik- oder Natursteinbeläge und Gestaltung des Außenbereichs.',
+      'p.title': 'Arbeit, die bleibt.',
+      'p1.n': 'Fassadensanierung', 'p2.n': 'WDVS-Fassadendämmung (ETICS)', 'p3.n': 'Komplettsanierung eines Wohnhauses', 'p4.n': 'Sanierung einer Sanitäranlage', 'p5.n': 'Poolbau und Außenpflasterung',
+      'p.more': 'Und viele weitere abgeschlossene Projekte in Portugal. Sprechen Sie mit uns für weitere Referenzen.', 'p.cta': 'Kontakt aufnehmen', 'p.close': 'Schließen', 'p.lb.aria': 'Vergrößerte Aufnahme', 'p.prev': 'Vorheriges Projekt', 'p.next': 'Nächstes Projekt',
+      'd1.title': 'Über Grenzen hinweg.',
+      'd1.lead': 'Schalungsbau in Deutschland. Spezialisierte Teams, eingebunden in Stahlbetonbauprojekte unterschiedlicher Größe.',
+      'd1.h': 'Leistungen in Deutschland', 'd1.1': 'Schalungsbau', 'd1.2': 'Schalungsarbeiten auf der Baustelle', 'd1.3': 'Stahlbetonkonstruktionen', 'd1.4': 'Leistungen für Unternehmen und Partner der Branche',
+      'd1.a': 'Einsatzgebiete', 'd1.tbc': 'Wird bestätigt', 'd1.b2b': 'Benötigen Sie ein Schalungsteam?', 'd1.b2bl': 'Kontakt für Partnerschaften', 'b2b.subj': 'Partnerschaft — Schalungsbau in Deutschland',
+      'd2.title': 'Eine Präsenz, die baut.',
+      'd2.lead': 'Operative Erfahrung und die Fähigkeit, sich in Baustellenteams zu integrieren — bei Projekten unterschiedlicher Größe und technischer Anforderungen.',
+      'd2.refs': 'Referenzen', 'd2.ref': 'Projekt — wird bestätigt',
+      'o.title': 'Baue deine Zukunft mit uns.', 'o.lead': 'Teams in Portugal und Deutschland.', 'o.cta': 'Werde Teil des Teams', 'o.v': 'Offene Stellen', 'o.none': 'Derzeit keine Stellen ausgeschrieben. Senden Sie uns Ihre Bewerbung.', 'o.slot': 'Stelle — wird veröffentlicht',
+      'c.title': 'Bauen wir etwas?', 'c.tel': 'Telefon', 'c.mail': 'E-Mail', 'c.loc': 'Standort', 'c.soc': 'Soziale Medien', 'c.addr': 'Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal', 'c.wa': 'WhatsApp',
+      'f.legal': 'Rechtliche Angaben', 'f.seat': 'Sitz: Rua do Casino n.º 94 E, 4765-063 Bairro, V. N. Famalicão', 'f.priv': 'Datenschutzerklärung', 'f.compl': 'Elektronisches Beschwerdebuch', 'f.rights': 'Alle Rechte vorbehalten.', 'f.credit': 'Entwickelt von', 'f.top': 'Nach oben',
+      'a.kicker': 'Bewerbung', 'a.title': 'Werde Teil des Teams.', 'a.close': 'Schließen',
+      'a.name': 'Name', 'a.phone': 'Telefon / WhatsApp', 'a.spec': 'Fachgebiet / Beruf', 'a.res': 'Wohnort',
+      'a.exp': 'Jahre Berufserfahrung', 'a.exp.1': 'Unter 1 Jahr', 'a.exp.2': '1–3 Jahre', 'a.exp.3': '3–5 Jahre', 'a.exp.4': '5–10 Jahre', 'a.exp.5': '10+ Jahre',
+      'a.av': 'Verfügbar ab', 'a.av.1': 'Sofort', 'a.av.2': 'Innerhalb 1 Monats', 'a.av.3': 'Mehr als 1 Monat',
+      'a.mk': 'Gewünschter Markt', 'a.mk.1': 'Portugal', 'a.mk.2': 'Deutschland', 'a.mk.3': 'Egal', 'a.sel': 'Auswählen',
+      'a.c1': 'Ich habe die', 'a.c2': ' gelesen und akzeptiere sie.', 'a.send': 'Bewerbung senden', 'a.sending': 'Wird gesendet…',
+      'a.ok': 'Bewerbung gesendet. Wir melden uns in Kürze.', 'a.err': 'Senden nicht möglich. Bitte WhatsApp oder geral@marcoribeiroconstrucoes.pt nutzen.',
+      'a.val': 'Bitte füllen Sie alle Pflichtfelder aus.', 'a.cons': 'Bitte akzeptieren Sie die Datenschutzerklärung.', 'a.mail': 'Formular-Endpunkt noch nicht konfiguriert: Ihr E-Mail-Programm wird geöffnet.',
+      'wa.text': 'Hallo! Ich möchte mit MR Construções sprechen.', 'wa.aria': 'MR Construções über WhatsApp kontaktieren'
+    }
+  };
+
+  var doc = document, root = doc.documentElement, body = doc.body;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lang = 'pt';
+  var $ = function (s, c) { return (c || doc).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || doc).querySelectorAll(s)); };
+  var t = function (k) { return (T[lang] && T[lang][k]) || T.pt[k] || ''; };
+
+  root.classList.remove('no-js'); root.classList.add('js');
+
+  /* ------------------------------ i18n ------------------------------ */
+  function applyLang(l, persist) {
+    lang = T[l] ? l : 'pt';
+    if (persist) { try { localStorage.setItem('mr_lang', lang); } catch (e) {} }
+    root.lang = lang === 'pt' ? 'pt-PT' : lang;
+    $$('[data-i18n]').forEach(function (el) { var v = t(el.getAttribute('data-i18n')); if (v) el.textContent = v; });
+    $$('[data-i18n-aria]').forEach(function (el) { el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria'))); });
+    $$('[data-i18n-label]').forEach(function (el) { el.setAttribute('data-label', t(el.getAttribute('data-i18n-label'))); });
+    $$('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
+    var wa = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(t('wa.text'));
+    $$('[data-wa]').forEach(function (a) { a.href = wa; });
+    var b2b = $('[data-b2b]');
+    if (b2b) b2b.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(t('b2b.subj'));
+    syncBurger();
+  }
+  (function initLang() {
+    var q = null;
+    try { q = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+    var saved = null; try { saved = localStorage.getItem('mr_lang'); } catch (e) {}
+    applyLang(T[q] ? q : (T[saved] ? saved : 'pt'), false);
+    $$('.lang button').forEach(function (b) { b.addEventListener('click', function () { applyLang(b.getAttribute('data-lang'), true); }); });
+  })();
+
+  /* ------------------------------ Menu mobile ------------------------------ */
+  var burger = $('#burger');
+  function syncBurger() { if (burger) burger.setAttribute('aria-label', t(body.classList.contains('menu-open') ? 'burger.x' : 'burger')); }
+  function setMenu(open) {
+    body.classList.toggle('menu-open', open);
+    if (burger) burger.setAttribute('aria-expanded', String(open));
+    syncBurger();
+  }
+  if (burger) burger.addEventListener('click', function () { setMenu(!body.classList.contains('menu-open')); });
+  $$('.menu a').forEach(function (a, i) { a.style.setProperty('--i', i); a.addEventListener('click', function () { setMenu(false); }); });
+  doc.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 900) setMenu(false); });
+
+  /* ------------------------------ Revelação ------------------------------ */
+  var revealEls = $$('.rv, .clip');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else { revealEls.forEach(function (el) { el.classList.add('in'); }); }
+
+  /* ------------------------------ Scroll: nav, progresso, parallax, expansão ------------------------------ */
+  var nav = $('.nav'), heroImg = $('.hero-img'), hero = $('.hero');
+  var frames = $$('.frame[data-par]'), expands = $$('[data-expand]');
+  var secs = $$('main section[id]');
+  var links = $$('[data-sec]');
+  var ticking = false;
+
+  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+  function frame() {
+    ticking = false;
+    var y = window.scrollY || window.pageYOffset, vh = window.innerHeight;
+    var max = Math.max(1, root.scrollHeight - vh);
+    root.style.setProperty('--sp', clamp(y / max, 0, 1).toFixed(4));
+    if (nav) nav.classList.toggle('solid', y > 60);
+
+    if (heroImg && !reduce && y < vh * 1.2) {
+      heroImg.style.setProperty('--hy', (y * 0.22).toFixed(1) + 'px');
+    }
+    if (!reduce) {
+      frames.forEach(function (f) {
+        var r = f.getBoundingClientRect();
+        if (r.bottom < -80 || r.top > vh + 80) return;
+        var v = ((r.top + r.height / 2) - vh / 2) / (vh / 2 + r.height / 2);
+        f.style.setProperty('--r', clamp(v, -1, 1).toFixed(3));
+      });
+      expands.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        var p = clamp((vh * 0.92 - r.top) / (vh * 0.62), 0, 1);
+        el.style.setProperty('--p', p.toFixed(3));
+      });
+    } else { expands.forEach(function (el) { el.style.setProperty('--p', 1); }); }
+
+    var cur = secs[0] ? secs[0].id : '';
+    secs.forEach(function (s) { if (s.getBoundingClientRect().top <= vh * 0.42) cur = s.id; });
+    links.forEach(function (a) {
+      var grp = a.getAttribute('data-sec-group');
+      var on = a.getAttribute('data-sec') === cur || (grp && cur.indexOf(grp + '-') === 0);
+      if (a.closest('.rail')) a.classList.toggle('on', on);
+      else if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+    });
+  }
+  function req() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+  window.addEventListener('scroll', req, { passive: true });
+  window.addEventListener('resize', req);
+  frame();
+
+  /* Entrada do hero */
+  window.addEventListener('load', function () { requestAnimationFrame(function () { root.classList.add('ready'); }); });
+  setTimeout(function () { root.classList.add('ready'); }, 1400);
+
+  /* ------------------------------ Lightbox de projetos ------------------------------ */
+  var lb = $('#lb');
+  if (lb && lb.showModal) {
+    var lbImg = $('img', lb), lbCap = $('.lb-cap', lb), lbCount = $('.lb-count', lb);
+    var projects = $$('.prj');
+    var lbIdx = 0;
+
+    function renderLb(i) {
+      lbIdx = (i + projects.length) % projects.length;
+      var a = projects[lbIdx];
+      var title = $('h3', a) ? $('h3', a).textContent.trim() : '';
+      var meta = $('.micro', a) ? $('.micro', a).textContent.replace(/^\d+\s*—\s*/, '').trim() : '';
+      lbImg.src = a.getAttribute('href');
+      lbImg.alt = a.getAttribute('data-alt') || title;
+      lbCap.textContent = title && meta ? title + ' — ' + meta : (a.getAttribute('data-cap') || title);
+      if (lbCount) lbCount.textContent = String(lbIdx + 1).padStart(2, '0') + ' / ' + String(projects.length).padStart(2, '0');
+    }
+
+    projects.forEach(function (a, i) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        renderLb(i);
+        lb.showModal();
+        body.classList.add('dlg-open');
+      });
+    });
+
+    var prevBtn = $('[data-lb-prev]', lb), nextBtn = $('[data-lb-next]', lb), closeBtn = $('[data-lb-close]', lb);
+    if (prevBtn) prevBtn.addEventListener('click', function (e) { e.stopPropagation(); renderLb(lbIdx - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function (e) { e.stopPropagation(); renderLb(lbIdx + 1); });
+    if (closeBtn) closeBtn.addEventListener('click', function () { lb.close(); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+    lb.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); renderLb(lbIdx - 1); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); renderLb(lbIdx + 1); }
+    });
+    lb.addEventListener('close', function () { body.classList.remove('dlg-open'); });
+  }
+
+  /* ------------------------------ Candidatura ------------------------------ */
+  var dlg = $('#apply');
+  if (dlg && dlg.showModal) {
+    var form = $('#apply-form'), status = $('#apply-status'), btn = $('button[type=submit]', form);
+    var opener = null;
+    $$('[data-open-apply]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        opener = b;
+        status.textContent = '';
+        status.className = 'status';
+        dlg.showModal();
+        body.classList.add('dlg-open');
+      });
+    });
+    $$('[data-close-apply]').forEach(function (b) { b.addEventListener('click', function () { dlg.close(); }); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('close', function () { body.classList.remove('dlg-open'); if (opener) opener.focus(); });
+
+    var setStatus = function (k, cls) { status.className = 'status ' + (cls || ''); status.textContent = k ? t(k) : ''; };
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if ($('[name=_honey]', form).value) return;
+      if (!$('[name=consent]', form).checked) { setStatus('a.cons', 'err'); return; }
+      if (!form.checkValidity()) { form.reportValidity(); setStatus('a.val', 'err'); return; }
+
+      var fd = new FormData(form), data = {};
+      fd.forEach(function (v, k) { if (k !== '_honey' && k !== 'consent') data[k] = String(v).trim(); });
+      data.origem = 'Candidatura — landing page';
+      data._subject = 'Candidatura — site: ' + data.especialidade + ' (' + data.nome + ')';
+      data.politica_privacidade = 'Aceite';
+
+      /* Endpoint por configurar: fallback para email pré-preenchido */
+      if (FORM_ENDPOINT_CANDIDATURA.indexOf('SEU_ID') !== -1) {
+        var lines = Object.keys(data).filter(function (k) { return k[0] !== '_'; }).map(function (k) { return k + ': ' + data[k]; });
+        setStatus('a.mail', 'ok');
+        location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(data._subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+        return;
+      }
+
+      btn.disabled = true; var label = btn.firstElementChild; var old = label.textContent;
+      label.textContent = t('a.sending'); setStatus('');
+      fetch(FORM_ENDPOINT_CANDIDATURA, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json().catch(function () { return {}; }); })
+        .then(function () { form.reset(); setStatus('a.ok', 'ok'); })
+        .catch(function () { setStatus('a.err', 'err'); })
+        .then(function () { btn.disabled = false; label.textContent = t('a.send'); void old; });
+    });
+  }
+
+  var yr = $('#year'); if (yr) yr.textContent = new Date().getFullYear();
+})();
