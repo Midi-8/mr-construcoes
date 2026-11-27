@@ -9,8 +9,7 @@
         content="MR Construções — construção de habitações unifamiliares e reabilitação em Portugal; carpintaria de cofragem na Alemanha. Construir com rigor. Criar com propósito.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="MR Construções — Marco Paulo Ribeiro Unipessoal, Lda.">
-    <meta name="theme-color" content="#080808">
-    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#F6F4EF">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io mailto:; base-uri 'self'; object-src 'none';">
@@ -73,13 +72,13 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Jost:wght@100;200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/site.css">
     <link rel="preload" as="image" href="imagens/moradia-minimalista.webp">
     <script src="js/site.js" defer></script>
 </head>
 
-<body>
+<body data-page="home">
     <a class="skip" href="#empresa">Saltar para o conteúdo</a>
 
     <!-- NAVEGAÇÃO -->
@@ -94,15 +93,9 @@
                 <li><a href="#empresa" data-sec="empresa"><span data-i18n="n.empresa">Empresa</span></a></li>
                 <li><a href="#servicos" data-sec="servicos"><span data-i18n="n.servicos">Serviços</span></a></li>
                 <li><a href="#projetos" data-sec="projetos"><span data-i18n="n.projetos">Projetos</span></a></li>
-                <li class="has-sub">
-                    <a href="#alemanha-servicos" data-sec="alemanha-servicos" data-sec-group="alemanha"><span data-i18n="n.alemanha">Alemanha</span><em class="sub-cue" aria-hidden="true">+</em></a>
-                    <ul class="sub">
-                        <li><a href="#alemanha-servicos" data-sec="alemanha-servicos"><span data-i18n="n.sub.s">Serviços</span></a></li>
-                        <li><a href="#alemanha-atuacao" data-sec="alemanha-atuacao"><span data-i18n="n.sub.a">Atuação</span></a></li>
-                    </ul>
-                </li>
-                <li><a href="#oportunidades" data-sec="oportunidades"><span data-i18n="n.oport">Oportunidades</span></a></li>
-                <li><a href="#contactos" data-sec="contactos"><span data-i18n="n.contactos">Contactos</span></a></li>
+                <li><a href="alemanha.html"><span data-i18n="n.alemanha">Alemanha</span></a></li>
+                <li><a href="emprego.html"><span data-i18n="n.emprego">Emprego</span></a></li>
+                <li><a href="#orcamento" data-sec="orcamento"><span data-i18n="n.orcamento">Orçamento</span></a></li>
             </ul>
         </nav>
         <div class="lang" role="group" aria-label="Idioma / Language">
@@ -119,7 +112,6 @@
             <div class="hero-img" aria-hidden="true">
                 <img src="imagens/moradia-minimalista.webp" width="1440" height="1085" alt="" fetchpriority="high" decoding="async">
             </div>
-            <div class="grain" aria-hidden="true"></div>
             <div class="hero-core">
                 <h1>
                     <span class="ln"><span class="hero-mr" style="--d:.15s">MR</span></span>
@@ -137,97 +129,76 @@
                 <h2 class="t-xl emp-title rv" data-i18n="e.title">Construímos mais do que estruturas.</h2>
             </div>
             <div class="grid emp-grid">
-                <!-- Substituir o .ph por imagem mantendo o .frame (proporção 3:2) -->
                 <div class="emp-big">
-                    <div class="frame clip" style="--ar:3 / 2"><div class="ph"><span data-i18n="ph.arch">[Fotografia arquitetónica]</span><small>3:2</small><em aria-hidden="true">FIG. 01</em></div></div>
+                    <div class="ba clip" data-ba style="--pos:52%">
+                        <img class="ba-after" src="imagens/thumbs/casa-famalicao-depois-960.webp" srcset="imagens/thumbs/casa-famalicao-depois-960.webp 960w, imagens/casa-famalicao-depois.webp 1440w" sizes="(max-width: 900px) 100vw, 56vw" width="960" height="723" loading="lazy" decoding="async" alt="Moradia em Vila Nova de Famalicão após reabilitação integral">
+                        <div class="ba-before">
+                            <img src="imagens/thumbs/casa-famalicao-antes-960.webp" srcset="imagens/thumbs/casa-famalicao-antes-960.webp 960w, imagens/casa-famalicao-antes.webp 1440w" sizes="(max-width: 900px) 100vw, 56vw" width="960" height="723" loading="lazy" decoding="async" alt="Moradia em Vila Nova de Famalicão antes da intervenção">
+                        </div>
+                        <span class="ba-lbl ba-lbl-l" data-i18n="ba.before">Antes</span>
+                        <span class="ba-lbl ba-lbl-r" data-i18n="ba.after">Depois</span>
+                        <div class="ba-line" aria-hidden="true"><span>‹ ›</span></div>
+                        <input class="ba-range" type="range" min="4" max="96" value="52" aria-label="Comparar antes e depois" data-i18n-aria="ba.aria">
+                    </div>
+                    <div class="ba-cap">
+                        <span class="micro" data-i18n="ba.cap">Reabilitação de Moradia · V. N. Famalicão</span>
+                        <span class="micro" data-i18n="ba.drag">Arrastar para comparar</span>
+                    </div>
                 </div>
                 <div class="emp-body rv">
-                    <p class="body" data-i18n="e.body">Obras executadas com rigor, proximidade e atenção a cada detalhe. Do primeiro passo à entrega das chaves — em Portugal e na Alemanha.</p>
+                    <p class="body body--ink" data-i18n="e.body">Obras executadas com rigor, proximidade e atenção a cada detalhe. Do primeiro passo à entrega das chaves — em Portugal e na Alemanha.</p>
                     <ul class="emp-id micro">
                         <li><span data-i18n="e.id1">Desde</span><b>2021</b></li>
                         <li><span data-i18n="e.id2">Atuação</span><b data-i18n="e.id2v">Portugal · Alemanha</b></li>
                         <li><span data-i18n="e.id3">Alvará IMPIC</span><b>113987</b></li>
+                        <li><span data-i18n="e.id4">Coordenadas</span><b>41.40° N · 8.43° W</b></li>
                     </ul>
-                </div>
-                <div class="emp-sq">
-                    <div class="frame clip" style="--ar:1 / 1;--d:.2s"><div class="ph"><span data-i18n="ph.detail">[Detalhe de obra]</span><small>1:1</small><em aria-hidden="true">FIG. 02</em></div></div>
+                    <a class="link emp-de-cta" href="alemanha.html"><span data-i18n="e.de">Conhecer atuação na Alemanha</span><span class="ar" aria-hidden="true">↗</span></a>
                 </div>
             </div>
         </section>
 
-        <!-- 02 — SERVIÇOS (lista editorial arquitetónica) -->
+        <!-- 02 — SERVIÇOS -->
         <section class="sec sec--alt wrap" id="servicos">
             <div class="sh rv" aria-hidden="true"></div>
-            <div class="grid svc-head">
-                <h2 class="t-xl svc-title rv" data-i18n="s.title">O que fazemos.</h2>
-                <p class="body svc-intro rv" style="--d:.1s" data-i18n="s.intro">Da construção de raiz à reabilitação integral — execução rigorosa em cada fase da obra.</p>
+            <div class="grid"><h2 class="t-xl svc-title rv" data-i18n="s.title">O que fazemos.</h2></div>
+            <div class="grid svc-list">
+                <figure class="svc s1 rv" style="margin:0">
+                    <div class="frame"><div class="ph"><span data-i18n="ph.arch">[Fotografia arquitetónica]</span><small>16:10</small><em aria-hidden="true">01</em></div></div>
+                    <figcaption><span class="micro">01</span><h3 data-i18n="s1.n">Construção de raiz</h3><p data-i18n="s1.d">Moradias unifamiliares completas, do primeiro passo à entrega das chaves.</p></figcaption>
+                </figure>
+                <figure class="svc s2 rv" style="margin:0;--d:.08s">
+                    <div class="frame"><div class="ph"><span data-i18n="ph.detail">[Detalhe de obra]</span><small>4:5</small><em aria-hidden="true">02</em></div></div>
+                    <figcaption><span class="micro">02</span><h3 data-i18n="s2.n">Reabilitação e remodelação</h3><p data-i18n="s2.d">Recuperação e renovação de edifícios e habitações existentes.</p></figcaption>
+                </figure>
+                <figure class="svc s3 rv" style="margin:0">
+                    <div class="frame"><div class="ph"><span data-i18n="ph.site">[Obra em curso]</span><small>1:1</small><em aria-hidden="true">03</em></div></div>
+                    <figcaption><span class="micro">03</span><h3 data-i18n="s3.n">Estruturas e construção civil</h3><p data-i18n="s3.d">Execução estrutural em betão armado e trabalhos gerais de construção civil.</p></figcaption>
+                </figure>
+                <figure class="svc s4 rv" style="margin:0;--d:.08s">
+                    <div class="frame"><div class="ph"><span data-i18n="ph.arch">[Fotografia arquitetónica]</span><small>16:10</small><em aria-hidden="true">04</em></div></div>
+                    <figcaption><span class="micro">04</span><h3 data-i18n="s4.n">Fachadas e isolamento térmico</h3><p data-i18n="s4.d">Sistemas ETICS, revestimentos e proteção da envolvente exterior.</p></figcaption>
+                </figure>
+                <figure class="svc s5 rv" style="margin:0">
+                    <div class="frame"><div class="ph"><span data-i18n="ph.detail">[Detalhe de obra]</span><small>4:5</small><em aria-hidden="true">05</em></div></div>
+                    <figcaption><span class="micro">05</span><h3 data-i18n="s5.n">Acabamentos e revestimentos</h3><p data-i18n="s5.d">Alvenarias, revestimentos cerâmicos, pinturas e trabalhos complementares.</p></figcaption>
+                </figure>
+                <figure class="svc s6 rv" style="margin:0;--d:.08s">
+                    <div class="frame"><div class="ph"><span data-i18n="ph.arch">[Fotografia arquitetónica]</span><small>1:1</small><em aria-hidden="true">06</em></div></div>
+                    <figcaption><span class="micro">06</span><h3 data-i18n="s6.n">Espaços exteriores</h3><p data-i18n="s6.d">Piscinas, pavimentos cerâmicos ou em pedra e arranjos exteriores.</p></figcaption>
+                </figure>
             </div>
-            <ol class="svc-rows">
-                <li class="svc-row rv">
-                    <a href="#contactos">
-                        <span class="micro svc-num">01</span>
-                        <h3 data-i18n="s1.n">Construção de raiz</h3>
-                        <p data-i18n="s1.d">Moradias unifamiliares completas, do primeiro passo à entrega das chaves.</p>
-                        <span class="svc-ar" aria-hidden="true">↗</span>
-                    </a>
-                </li>
-                <li class="svc-row rv" style="--d:.04s">
-                    <a href="#contactos">
-                        <span class="micro svc-num">02</span>
-                        <h3 data-i18n="s2.n">Reabilitação e remodelação</h3>
-                        <p data-i18n="s2.d">Recuperação e renovação de edifícios e habitações existentes.</p>
-                        <span class="svc-ar" aria-hidden="true">↗</span>
-                    </a>
-                </li>
-                <li class="svc-row rv" style="--d:.08s">
-                    <a href="#contactos">
-                        <span class="micro svc-num">03</span>
-                        <h3 data-i18n="s3.n">Estruturas e construção civil</h3>
-                        <p data-i18n="s3.d">Execução estrutural em betão armado e trabalhos gerais de construção civil.</p>
-                        <span class="svc-ar" aria-hidden="true">↗</span>
-                    </a>
-                </li>
-                <li class="svc-row rv" style="--d:.12s">
-                    <a href="#contactos">
-                        <span class="micro svc-num">04</span>
-                        <h3 data-i18n="s4.n">Fachadas e isolamento térmico</h3>
-                        <p data-i18n="s4.d">Sistemas ETICS, revestimentos e proteção da envolvente exterior.</p>
-                        <span class="svc-ar" aria-hidden="true">↗</span>
-                    </a>
-                </li>
-                <li class="svc-row rv" style="--d:.16s">
-                    <a href="#contactos">
-                        <span class="micro svc-num">05</span>
-                        <h3 data-i18n="s5.n">Acabamentos e revestimentos</h3>
-                        <p data-i18n="s5.d">Alvenarias, revestimentos cerâmicos, pinturas e trabalhos complementares.</p>
-                        <span class="svc-ar" aria-hidden="true">↗</span>
-                    </a>
-                </li>
-                <li class="svc-row rv" style="--d:.2s">
-                    <a href="#contactos">
-                        <span class="micro svc-num">06</span>
-                        <h3 data-i18n="s6.n">Espaços exteriores</h3>
-                        <p data-i18n="s6.d">Piscinas, pavimentos cerâmicos ou em pedra e arranjos exteriores.</p>
-                        <span class="svc-ar" aria-hidden="true">↗</span>
-                    </a>
-                </li>
-            </ol>
         </section>
 
-        <!-- 03 — PROJETOS (grelha contínua à largura total; clicar abre a fotografia ampliada) -->
-        <!-- Para acrescentar uma obra: adicionar um item .prj-card numa das faixas .prj-track (o loop contínuo é gerado automaticamente pelo JS). -->
+        <!-- 03 — PROJETOS (carrossel contínuo 3 linhas; arrastável com dedo/rato e clicável para ampliar) -->
         <section class="sec wrap" id="projetos">
             <div class="sh rv" aria-hidden="true"></div>
             <div class="prj-head">
                 <h2 class="t-xl prj-title rv" data-i18n="p.title">Trabalho que permanece.</h2>
-                <div class="prj-ctrl rv" style="--d:.1s">
-                    <span class="micro" data-i18n="p.hint">Arquivo de obras · Clicar para ampliar</span>
-                    <button type="button" class="prj-toggle" data-prj-toggle aria-pressed="false" data-i18n="p.pause">Pausar</button>
-                </div>
             </div>
 
             <div class="prj-wall" data-prj-wall>
-                <!-- Faixa 1 (deslocação contínua para a esquerda) -->
+                <!-- Faixa 1 -->
                 <div class="prj-row" data-dir="left">
                     <div class="prj-track">
                         <a class="prj prj-card" href="imagens/moradia-pedra-natural.webp" data-idx="0" data-alt="Moradia com fachada em pedra natural reabilitada">
@@ -261,7 +232,7 @@
                     </div>
                 </div>
 
-                <!-- Faixa 2 (deslocação contínua para a direita) -->
+                <!-- Faixa 2 -->
                 <div class="prj-row" data-dir="right">
                     <div class="prj-track">
                         <a class="prj prj-card" href="imagens/casa-banho-marmore.webp" data-idx="4" data-alt="Casa de banho com revestimento em mármore">
@@ -294,101 +265,56 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- Faixa 3 -->
+                <div class="prj-row" data-dir="left-alt">
+                    <div class="prj-track">
+                        <a class="prj prj-card" href="imagens/hero.webp" data-idx="8" data-alt="Obra de estruturas em betão armado com cofragem na Alemanha">
+                            <img src="imagens/thumbs/hero-960.webp" width="960" height="720" loading="lazy" decoding="async" alt="Obra de estruturas em betão armado e carpintaria de cofragem na Alemanha">
+                            <div class="prj-ov">
+                                <span class="micro" data-i18n="p9.m">Alemanha</span>
+                                <div><h3 data-i18n="p9.n">Estruturas e Cofragem em Betão</h3><span class="ar" aria-hidden="true">↗</span></div>
+                            </div>
+                        </a>
+                        <a class="prj prj-card" href="imagens/interiores-sala-ripado.webp" data-idx="2" data-alt="Sala com divisória em ripado de madeira">
+                            <img src="imagens/thumbs/interiores-sala-ripado.webp" width="720" height="899" loading="lazy" decoding="async" alt="Sala de estar e jantar renovada, com divisória em ripado de madeira">
+                            <div class="prj-ov">
+                                <span class="micro">Vila Nova de Famalicão · 2024</span>
+                                <div><h3 data-i18n="p3.n">Reabilitação Integral de Moradia</h3><span class="ar" aria-hidden="true">↗</span></div>
+                            </div>
+                        </a>
+                        <a class="prj prj-card" href="imagens/piscina-famalicao.webp" data-idx="5" data-alt="Piscina com pavimento cerâmico exterior">
+                            <img src="imagens/thumbs/piscina-famalicao.webp" width="720" height="583" loading="lazy" decoding="async" alt="Piscina com pavimento cerâmico exterior em moradia unifamiliar">
+                            <div class="prj-ov">
+                                <span class="micro">Vila Nova de Famalicão · 2025</span>
+                                <div><h3 data-i18n="p5.n">Piscina e Pavimentação Exterior</h3><span class="ar" aria-hidden="true">↗</span></div>
+                            </div>
+                        </a>
+                        <a class="prj prj-card" href="imagens/moradia-pedra-natural.webp" data-idx="0" data-alt="Moradia com fachada em pedra natural reabilitada">
+                            <img src="imagens/thumbs/moradia-pedra-natural.webp" width="720" height="540" loading="lazy" decoding="async" alt="Moradia unifamiliar com fachada em pedra natural, reabilitada pela MR Construções">
+                            <div class="prj-ov">
+                                <span class="micro">Vila Nova de Famalicão · 2024</span>
+                                <div><h3 data-i18n="p1.n">Reabilitação de Fachadas</h3><span class="ar" aria-hidden="true">↗</span></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div class="prj-foot rv">
                 <p class="body" data-i18n="p.more">E muitas outras obras concluídas em Portugal. Fale connosco para conhecer mais referências.</p>
-                <a class="link" href="#contactos"><span data-i18n="p.cta">Falar connosco</span><span class="ar" aria-hidden="true">↗</span></a>
+                <a class="link" href="#orcamento"><span data-i18n="p.cta">Pedir orçamento</span><span class="ar" aria-hidden="true">↗</span></a>
             </div>
         </section>
 
-        <!-- 04.1 — ALEMANHA | SERVIÇOS -->
-        <section class="sec de1 wrap" id="alemanha-servicos">
-            <div class="sh rv" aria-hidden="true"></div>
-            <div class="grid"><h2 class="t-xl de1-title rv" data-i18n="d1.title">Além-fronteiras.</h2></div>
-            <div class="pano" data-expand>
-                <div class="frame" data-par style="--ar:16 / 9"><img src="imagens/hero.webp" srcset="imagens/thumbs/hero-960.webp 960w, imagens/hero.webp 1600w" sizes="100vw" width="1600" height="1200" loading="lazy" decoding="async" alt="Obra de estruturas em betão armado com cofragem na Alemanha"></div>
-            </div>
-            <div class="grid de1-cols">
-                <div class="de1-lead rv"><p class="body body--paper" data-i18n="d1.lead">Carpintaria de cofragem na Alemanha. Equipas especializadas, integradas em obras de estruturas em betão armado de diferentes dimensões.</p></div>
-                <div class="de1-svc rv" style="--d:.1s">
-                    <span class="micro" data-i18n="d1.h" style="display:block;margin-bottom:18px">Serviços na Alemanha</span>
-                    <ul class="lst">
-                        <li><span class="micro">01</span><span data-i18n="d1.1">Carpintaria de cofragem</span></li>
-                        <li><span class="micro">02</span><span data-i18n="d1.2">Execução de cofragem em obra</span></li>
-                        <li><span class="micro">03</span><span data-i18n="d1.3">Estruturas em betão armado</span></li>
-                        <li><span class="micro">04</span><span data-i18n="d1.4">Serviços a empresas e parceiros do setor</span></li>
-                    </ul>
-                </div>
-                <div class="de1-areas rv" style="--d:.2s">
-                    <span class="micro" data-i18n="d1.a">Áreas de atuação</span>
-                    <!-- Preencher quando as localizações estiverem confirmadas -->
-                    <div class="slots"><div class="slot" data-i18n="d1.tbc">A confirmar</div><div class="slot" data-i18n="d1.tbc">A confirmar</div></div>
-                </div>
-            </div>
-            <div class="b2b rv">
-                <p class="t-m" data-i18n="d1.b2b">Precisa de uma equipa de cofragem?</p>
-                <a class="link" data-b2b href="mailto:geral@marcoribeiroconstrucoes.pt?subject=Parceria"><span data-i18n="d1.b2bl">Contactar para parcerias</span><span class="ar" aria-hidden="true">↗</span></a>
-            </div>
-        </section>
-
-        <!-- 04.2 — ALEMANHA | ATUAÇÃO -->
-        <section class="sec sec--alt de2 wrap" id="alemanha-atuacao">
-            <div class="sh rv" aria-hidden="true"></div>
-            <div class="grid de2-grid">
-                <div class="de2-img">
-                    <div class="frame clip" style="--ar:4 / 5"><div class="ph"><span data-i18n="ph.de">[Projeto na Alemanha]</span><small>4:5</small><em aria-hidden="true">FIG. 03</em></div></div>
-                </div>
-                <div class="de2-txt">
-                    <div>
-                        <h2 class="t-xl rv" data-i18n="d2.title">Uma presença que constrói.</h2>
-                        <p class="body body--paper rv" style="margin-top:32px;--d:.1s" data-i18n="d2.lead">Experiência operacional e capacidade de integração em equipas de obra, em projetos de diferentes dimensões e exigências técnicas.</p>
-                    </div>
-                    <div class="rv" style="--d:.15s">
-                        <span class="micro" data-i18n="d2.refs">Referências</span>
-                        <!-- Preencher com projetos, intervenções e referências reais na Alemanha -->
-                        <div class="slots"><div class="slot">01 — <span data-i18n="d2.ref">Projeto — a confirmar</span></div><div class="slot">02 — <span data-i18n="d2.ref">Projeto — a confirmar</span></div><div class="slot">03 — <span data-i18n="d2.ref">Projeto — a confirmar</span></div></div>
-                    </div>
-                    <div class="de2-no" aria-hidden="true">DE</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 05 — OPORTUNIDADES -->
-        <section class="sec wrap" id="oportunidades">
-            <div class="sh rv" aria-hidden="true"></div>
-            <div class="grid op-grid">
-                <div class="op-txt">
-                    <div>
-                        <h2 class="t-xl rv" data-i18n="o.title">Constrói o teu futuro connosco.</h2>
-                        <p class="body rv" style="margin-top:32px;--d:.1s" data-i18n="o.lead">Equipas em Portugal e na Alemanha.</p>
-                    </div>
-                    <div class="rv" style="--d:.15s">
-                        <button class="btn" type="button" data-open-apply><span data-i18n="o.cta">Junta-te à equipa</span><span aria-hidden="true">↗</span></button>
-                    </div>
-                    <div class="vagas rv" style="--d:.2s">
-                        <span class="micro" data-i18n="o.v">Vagas abertas</span>
-                        <!-- Publicar vagas reais aqui: duplicar .slot e substituir pelo título da vaga -->
-                        <div class="slots">
-                            <div class="slot" data-i18n="o.none" style="line-height:1.8">Sem vagas publicadas neste momento. Envia-nos a tua candidatura.</div>
-                            <div class="slot"><span data-i18n="o.slot">Vaga — a publicar</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="op-img">
-                    <div class="frame clip" data-par style="--ar:4 / 5"><img src="imagens/thumbs/hero-960.webp" srcset="imagens/thumbs/hero-960.webp 960w, imagens/hero.webp 1600w" sizes="(max-width: 900px) 100vw, 42vw" width="960" height="720" loading="lazy" decoding="async" alt="Pormenor de cofragem em obra de betão armado"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 06 — CONTACTOS -->
-        <section class="sec sec--alt ct wrap" id="contactos">
+        <!-- 04 — PEDIDO DE ORÇAMENTO & CONTACTOS -->
+        <section class="sec sec--alt wrap" id="orcamento">
             <div class="sh rv" aria-hidden="true"></div>
             <div class="grid ct-layout">
                 <div class="ct-info">
-                    <h2 class="t-xl ct-title rv" data-i18n="c.title">Vamos construir algo?</h2>
-                    <p class="body rv" style="--d:.08s" data-i18n="c.lead">Fale connosco sobre o seu projeto em Portugal ou sobre equipas de cofragem na Alemanha.</p>
-                    <dl class="ct-list rv" style="--d:.14s">
+                    <h2 class="t-xl ct-title rv" data-i18n="c.title">Peça o seu orçamento.</h2>
+                    <p class="body rv" style="--d:.06s" data-i18n="c.lead">Fale connosco sobre o seu projeto de construção ou reabilitação em Portugal. Respondemos com clareza e rigor.</p>
+                    <dl class="ct-list rv" style="--d:.12s">
                         <div>
                             <dt class="micro" data-i18n="c.tel">Telefone</dt>
                             <dd>
@@ -417,29 +343,32 @@
                     </dl>
                 </div>
 
-                <div class="ct-panel rv" style="--d:.12s">
-                    <span class="micro ct-kicker" data-i18n="c.fk">Pedido de contacto</span>
-                    <form id="contact-form" novalidate>
+                <div class="ct-panel rv" style="--d:.1s">
+                    <span class="micro ct-kicker" data-i18n="c.fk">Pedido de orçamento</span>
+                    <form id="quote-form" novalidate>
                         <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
                         <label class="fld"><span data-i18n="a.name">Nome</span><input name="nome" type="text" autocomplete="name" required></label>
                         <div class="row2">
                             <label class="fld"><span data-i18n="c.mail">Email</span><input name="email" type="email" autocomplete="email" required></label>
-                            <label class="fld"><span data-i18n="c.tel">Telefone</span><input name="telefone" type="tel" autocomplete="tel"></label>
+                            <label class="fld"><span data-i18n="c.tel">Telefone</span><input name="telefone" type="tel" autocomplete="tel" required></label>
                         </div>
-                        <label class="fld"><span data-i18n="c.subj">Tipo de pedido</span>
-                            <select name="assunto" required>
-                                <option value="" data-i18n="a.sel">Selecionar</option>
-                                <option value="Construção de raiz" data-i18n="c.s1">Construção de raiz</option>
-                                <option value="Reabilitação e remodelação" data-i18n="c.s2">Reabilitação e remodelação</option>
-                                <option value="Fachadas e isolamento térmico" data-i18n="c.s3">Fachadas e isolamento térmico</option>
-                                <option value="Parceria — Alemanha" data-i18n="c.s4">Parceria — Alemanha</option>
-                                <option value="Outro" data-i18n="c.s5">Outro</option>
-                            </select>
-                        </label>
-                        <label class="fld"><span data-i18n="c.msg">Mensagem</span><textarea name="mensagem" rows="3" required></textarea></label>
+                        <div class="row2">
+                            <label class="fld"><span data-i18n="c.place">Localização da obra</span><input name="localizacao" type="text" required></label>
+                            <label class="fld"><span data-i18n="c.subj">Tipo de intervenção</span>
+                                <select name="tipo_obra" required>
+                                    <option value="" data-i18n="a.sel">Selecionar</option>
+                                    <option value="Construção de raiz" data-i18n="c.s1">Construção de raiz</option>
+                                    <option value="Reabilitação e remodelação" data-i18n="c.s2">Reabilitação e remodelação</option>
+                                    <option value="Fachadas e isolamento térmico" data-i18n="c.s3">Fachadas e isolamento térmico</option>
+                                    <option value="Espaços exteriores" data-i18n="s6.n">Espaços exteriores</option>
+                                    <option value="Outro" data-i18n="c.s5">Outro</option>
+                                </select>
+                            </label>
+                        </div>
+                        <label class="fld"><span data-i18n="c.msg">Descrição do projeto</span><textarea name="mensagem" rows="3" required></textarea></label>
                         <label class="chk"><input type="checkbox" name="consent" required><span><span data-i18n="a.c1">Li e aceito a</span> <a href="privacidade.html" target="_blank" rel="noopener" data-i18n="f.priv">Política de Privacidade</a><span data-i18n="a.c2">.</span></span></label>
-                        <button class="btn" type="submit"><span data-i18n="c.send">Enviar mensagem</span><span aria-hidden="true">↗</span></button>
-                        <p class="status" id="contact-status" role="status" aria-live="polite"></p>
+                        <button class="btn" type="submit"><span data-i18n="c.send">Pedir orçamento</span><span aria-hidden="true">↗</span></button>
+                        <p class="status" id="quote-status" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
@@ -464,15 +393,14 @@
                     <li><a href="#empresa" data-i18n="n.empresa">Empresa</a></li>
                     <li><a href="#servicos" data-i18n="n.servicos">Serviços</a></li>
                     <li><a href="#projetos" data-i18n="n.projetos">Projetos</a></li>
-                    <li><a href="#alemanha-servicos" data-i18n="f.de1">Alemanha — Serviços</a></li>
-                    <li><a href="#alemanha-atuacao" data-i18n="f.de2">Alemanha — Atuação</a></li>
-                    <li><a href="#oportunidades" data-i18n="n.oport">Oportunidades</a></li>
-                    <li><a href="#contactos" data-i18n="n.contactos">Contactos</a></li>
+                    <li><a href="alemanha.html" data-i18n="n.alemanha">Alemanha</a></li>
+                    <li><a href="emprego.html" data-i18n="n.emprego">Emprego</a></li>
+                    <li><a href="#orcamento" data-i18n="n.orcamento">Orçamento</a></li>
                 </ul>
             </div>
 
             <div class="foot-col">
-                <span class="micro foot-h" data-i18n="n.contactos">Contactos</span>
+                <span class="micro foot-h" data-i18n="f.ct">Contactos</span>
                 <ul>
                     <li><a href="tel:+351915680947">+351 915 680 947</a></li>
                     <li><a data-wa href="https://wa.me/351915680947" target="_blank" rel="noopener noreferrer" data-i18n="c.wa">WhatsApp</a></li>
@@ -519,43 +447,6 @@
                 </div>
             </figcaption>
         </figure>
-    </dialog>
-
-    <!-- CANDIDATURA -->
-    <dialog class="apply" id="apply" aria-labelledby="apply-t">
-        <button class="x" type="button" data-close-apply><span data-i18n="a.close">Fechar</span></button>
-        <span class="micro" data-i18n="a.kicker">Candidatura</span>
-        <h2 id="apply-t" data-i18n="a.title">Junta-te à equipa.</h2>
-        <form id="apply-form" novalidate>
-            <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <label class="fld"><span data-i18n="a.name">Nome</span><input name="nome" type="text" autocomplete="name" required></label>
-            <div class="row2">
-                <label class="fld"><span data-i18n="a.phone">Telefone / WhatsApp</span><input name="telefone" type="tel" autocomplete="tel" required></label>
-                <label class="fld"><span data-i18n="a.res">Local de residência</span><input name="residencia" type="text" required></label>
-            </div>
-            <label class="fld"><span data-i18n="a.spec">Especialidade</span><input name="especialidade" type="text" required></label>
-            <div class="row2">
-                <label class="fld"><span data-i18n="a.exp">Anos de experiência</span>
-                    <select name="experiencia" required>
-                        <option value="" data-i18n="a.sel">Selecionar</option>
-                        <option value="<1" data-i18n="a.exp.1">Menos de 1 ano</option><option value="1-3" data-i18n="a.exp.2">1–3 anos</option>
-                        <option value="3-5" data-i18n="a.exp.3">3–5 anos</option><option value="5-10" data-i18n="a.exp.4">5–10 anos</option><option value="10+" data-i18n="a.exp.5">10+ anos</option>
-                    </select></label>
-                <label class="fld"><span data-i18n="a.av">Disponibilidade para início</span>
-                    <select name="disponibilidade" required>
-                        <option value="" data-i18n="a.sel">Selecionar</option>
-                        <option value="Imediata" data-i18n="a.av.1">Imediata</option><option value="Até 1 mês" data-i18n="a.av.2">Até 1 mês</option><option value="Mais de 1 mês" data-i18n="a.av.3">Mais de 1 mês</option>
-                    </select></label>
-            </div>
-            <label class="fld"><span data-i18n="a.mk">Mercado de interesse</span>
-                <select name="mercado" required>
-                    <option value="" data-i18n="a.sel">Selecionar</option>
-                    <option value="Portugal" data-i18n="a.mk.1">Portugal</option><option value="Alemanha" data-i18n="a.mk.2">Alemanha</option><option value="Indiferente" data-i18n="a.mk.3">Indiferente</option>
-                </select></label>
-            <label class="chk"><input type="checkbox" name="consent" required><span><span data-i18n="a.c1">Li e aceito a</span> <a href="privacidade.html" target="_blank" rel="noopener" data-i18n="f.priv">Política de Privacidade</a><span data-i18n="a.c2">.</span></span></label>
-            <button class="btn" type="submit"><span data-i18n="a.send">Enviar candidatura</span><span aria-hidden="true">↗</span></button>
-            <p class="status" id="apply-status" role="status" aria-live="polite"></p>
-        </form>
     </dialog>
 
     <noscript><style>.rv,.clip{opacity:1!important;transform:none!important;clip-path:none!important}.hero-img,.hero-tag,.scroll{opacity:1!important}.hero .ln>span{transform:none!important}</style></noscript>
