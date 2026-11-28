@@ -182,24 +182,6 @@ p {
   color: var(--ink);
 }
 
-.t-l {
-  font-family: var(--f);
-  font-weight: 500;
-  letter-spacing: -.02em;
-  line-height: 1.25;
-  font-size: clamp(1.15rem, 1.75vw, 1.55rem);
-  color: var(--ink);
-}
-
-.t-m {
-  font-family: var(--f);
-  font-weight: 500;
-  letter-spacing: -.01em;
-  font-size: clamp(1rem, 1.15vw, 1.12rem);
-  line-height: 1.45;
-  color: var(--ink);
-}
-
 .micro {
   font-family: var(--mono);
   font-size: 10.5px;
@@ -603,10 +585,6 @@ body.menu-open .burger i:nth-child(2) {
   background: var(--bg-alt);
 }
 
-.sec--soft {
-  background: var(--bg-soft);
-}
-
 .sec+.sec {
   border-top: 1px solid var(--line);
 }
@@ -643,10 +621,6 @@ body.menu-open .burger i:nth-child(2) {
 .page-hero {
   padding: clamp(120px, 13vw, 172px) var(--m) clamp(56px, 7vw, 96px);
   background: var(--bg);
-}
-
-.page-hero--alt {
-  background: var(--bg-alt);
 }
 
 .page-hero .micro {
@@ -692,42 +666,6 @@ body.menu-open .burger i:nth-child(2) {
   transform: translate3d(0, calc(var(--r, 0) * -5%), 0) scale(var(--z, 1));
   transition: filter .85s var(--ease), transform 1.2s var(--ease);
   will-change: transform;
-}
-
-.ph {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  border: 1px solid var(--line);
-  background: var(--bg-soft);
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  padding: 20px;
-  transition: border-color .4s var(--ease), color .4s var(--ease);
-}
-
-.ph small {
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  font-size: 9px;
-  letter-spacing: .16em;
-  color: var(--muted-2);
-}
-
-.ph em {
-  position: absolute;
-  bottom: 14px;
-  left: 16px;
-  font-style: normal;
-  font-size: 9px;
-  letter-spacing: .18em;
-  color: var(--muted-2);
 }
 
 /* Ligações e botões clean */
@@ -829,10 +767,6 @@ body.menu-open .burger i:nth-child(2) {
 }
 
 /* — 01 EMPRESA — */
-.emp-title {
-  grid-column: 1 / 10;
-}
-
 .emp-grid {
   margin-top: clamp(36px, 5vw, 72px);
   row-gap: var(--gap);
@@ -1042,11 +976,6 @@ body.menu-open .burger i:nth-child(2) {
 }
 
 /* — 02 SERVIÇOS (grelha assimétrica clean, sem números) — */
-.svc-title {
-  grid-column: 1 / 9;
-  margin-bottom: clamp(44px, 6.5vw, 96px);
-}
-
 .svc-list {
   row-gap: clamp(44px, 6vw, 96px);
 }
@@ -1160,13 +1089,9 @@ body.menu-open .burger i:nth-child(2) {
   transform: translate3d(0, calc((1 - var(--reveal, 1)) * 12px), 0);
 }
 
-/* — 03 PROJETOS (carrossel contínuo 3 linhas, fotos grandes à largura total) — */
+/* — 03 PROJETOS (carrossel contínuo, fotos grandes à largura total) — */
 .prj-head {
   margin-bottom: clamp(32px, 4.5vw, 56px);
-}
-
-.prj-title {
-  max-width: 16ch;
 }
 
 .prj-wall {
@@ -1391,32 +1316,6 @@ body.menu-open .burger i:nth-child(2) {
   gap: 8px;
 }
 
-.ct-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 13px;
-  border-radius: 6px;
-  border: 1px solid var(--line);
-  background: var(--bg);
-  font-size: .84rem;
-  font-weight: 500;
-  color: var(--ink);
-  transition: border-color .25s, background .25s, color .25s;
-}
-
-.ct-pill:hover,
-.ct-pill:focus-visible {
-  border-color: var(--ink);
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.ct-pill:hover .ar,
-.ct-pill:focus-visible .ar {
-  transform: translateX(3px);
-}
-
 .ct-panel {
   grid-column: 7 / 13;
   background: var(--bg-alt);
@@ -1487,150 +1386,10 @@ body.menu-open .burger i:nth-child(2) {
   transition: none;
 }
 
-.pano-vid {
-  background: var(--dark);
-  border: 1px solid var(--line);
-}
-
-.pano-vid video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.vid-btn {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  z-index: 3;
-  padding: 7px 13px;
-  background: rgba(13, 13, 13, .78);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(244, 242, 236, .26);
-  border-radius: 999px;
-  color: var(--paper);
-  font-family: var(--mono);
-  font-size: 9.5px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  transition: border-color .25s, background .25s;
-}
-
-.vid-btn:hover,
-.vid-btn:focus-visible {
-  border-color: var(--orange);
-  background: rgba(13, 13, 13, .94);
-}
-
-/* Mural monumental da Alemanha à largura total (alinhado com o mural da landing page) */
 .de-gal-head {
   display: grid;
   gap: 12px;
   margin-bottom: clamp(32px, 4.5vw, 56px);
-}
-
-.de-mural {
-  margin-inline: calc(var(--m) * -1);
-  padding-inline: 8px;
-  display: grid;
-  gap: 8px;
-}
-
-.de-mural-r1 {
-  display: grid;
-  grid-template-columns: 2.35fr 1fr;
-  gap: 8px;
-}
-
-.de-mural-r2 {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr 1fr;
-  gap: 8px;
-}
-
-.de-mural-r3 {
-  display: grid;
-  grid-template-columns: 1fr 2.35fr;
-  gap: 8px;
-}
-
-.de-mural-r1 .de-mural-tile {
-  height: clamp(360px, 48vw, 640px);
-}
-
-.de-mural-r2 .de-mural-tile {
-  height: clamp(250px, 30vw, 420px);
-}
-
-.de-mural-r3 .de-mural-tile {
-  height: clamp(280px, 34vw, 460px);
-}
-
-.de-mural-tile {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: var(--bg-soft);
-  display: block;
-  border-radius: 4px;
-  isolation: isolate;
-  transform: translateZ(0);
-}
-
-.de-mural-tile img,
-.de-mural-tile video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: inherit;
-  transform: scale(1.01);
-  transition: transform 1s var(--ease);
-}
-
-.de-photo-card {
-  cursor: pointer;
-}
-
-.de-photo-card:hover img,
-.de-photo-card:focus-visible img {
-  transform: scale(1.05);
-}
-
-.mural-ov {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 56px 24px 20px;
-  display: grid;
-  gap: 4px;
-  background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 10, .86) 100%);
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity .38s var(--ease), transform .38s var(--ease);
-  z-index: 1;
-}
-
-.de-photo-card:hover .mural-ov,
-.de-photo-card:focus-visible .mural-ov {
-  opacity: 1;
-  transform: none;
-}
-
-.mural-ov h3 {
-  font-weight: 500;
-  font-size: clamp(.98rem, 1.2vw, 1.15rem);
-  line-height: 1.3;
-  color: #FFFFFF;
-}
-
-.mural-ov .micro {
-  color: rgba(244, 242, 236, .78);
 }
 
 /* Cantos arredondados na página Alemanha (lista de cidades, mapa e caixa B2B) */
@@ -1811,17 +1570,6 @@ body[data-page="germany"] .b2b-box {
   border-color: rgba(244, 242, 236, .32);
 }
 
-.de-jobs-bar {
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
 /* — PÁGINA RECRUTAMENTO (hero full-viewport + índice brutalista de soft skills) — */
 .jobs-hero {
   position: relative;
@@ -1941,36 +1689,6 @@ body[data-page="germany"] .b2b-box {
   transform: translate(-50%, 2px);
 }
 
-.emp-pillars {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--gap);
-}
-
-.pillar {
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-  display: grid;
-  gap: 10px;
-  align-content: start;
-}
-
-.pillar .micro {
-  color: var(--orange);
-}
-
-.pillar h3 {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--ink);
-}
-
-.pillar p {
-  font-size: .93rem;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
 .jobs-grid {
   row-gap: 44px;
   align-items: start;
@@ -2009,20 +1727,6 @@ body[data-page="germany"] .b2b-box {
 .sec--alt .jobs-form-wrap .fld select,
 .sec--alt .jobs-form-wrap .fld textarea {
   background: var(--bg-alt);
-}
-
-.slots {
-  display: grid;
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.slot {
-  border: 1px dashed var(--line-2);
-  padding: 14px 16px;
-  font-size: .9rem;
-  color: var(--muted);
-  line-height: 1.55;
 }
 
 .jobs-photos {
@@ -2194,50 +1898,6 @@ body[data-page="germany"] .b2b-box {
   outline-offset: 2px;
 }
 
-.chk {
-  display: flex;
-  gap: 11px;
-  align-items: flex-start;
-  font-size: 13px;
-  color: var(--muted);
-  margin: 6px 0 24px;
-  cursor: pointer;
-  line-height: 1.55;
-}
-
-.chk input {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 17px;
-  height: 17px;
-  border: 1px solid var(--line-2);
-  border-radius: 4px;
-  margin: 2px 0 0;
-  flex: none;
-  position: relative;
-  cursor: pointer;
-  background: var(--bg-alt);
-  transition: background .2s, border-color .2s;
-}
-
-.chk input:checked {
-  background: var(--ink);
-  border-color: var(--ink);
-}
-
-.chk input:checked::after {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: 0;
-  width: 4px;
-  height: 9px;
-  border: solid var(--bg-alt);
-  border-width: 0 1.5px 1.5px 0;
-  transform: rotate(40deg);
-}
-
-.chk a,
 .form-note a {
   color: var(--ink);
   text-decoration: underline;
@@ -2293,18 +1953,6 @@ body[data-page="germany"] .b2b-box {
 
 .priv-lead {
   max-width: 64ch;
-}
-
-.priv-draft {
-  margin-top: 8px;
-  padding: 12px 16px;
-  border: 1px dashed var(--line-2);
-  background: var(--bg-soft);
-  font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--muted);
 }
 
 .priv-list {
@@ -2632,21 +2280,8 @@ body.dlg-open .whatsapp-float {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .emp-pillars {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
   .b2b-box {
     grid-template-columns: 1fr;
-  }
-
-  .de-mural-r2 {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .de-mural-r2 .de-mural-tile:last-child {
-    grid-column: 1 / -1;
   }
 
   .ct-panel,
@@ -2896,8 +2531,6 @@ body.dlg-open .whatsapp-float {
     color: var(--orange);
   }
 
-  .emp-title,
-  .svc-title,
   .emp-big,
   .emp-body,
   .ct-info,
@@ -3049,58 +2682,6 @@ body.dlg-open .whatsapp-float {
   .prj-row:first-child .prj-card {
     width: clamp(330px, 92vw, 540px);
     aspect-ratio: 4 / 3;
-  }
-
-  .de-mural {
-    padding-inline: 0;
-    gap: 8px;
-  }
-
-  .de-mural-r1,
-  .de-mural-r2,
-  .de-mural-r3 {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    scroll-snap-type: x proximity;
-  }
-
-  .de-mural-r1::-webkit-scrollbar,
-  .de-mural-r2::-webkit-scrollbar,
-  .de-mural-r3::-webkit-scrollbar {
-    display: none;
-  }
-
-  .de-mural-r1 .de-mural-tile {
-    flex: none;
-    width: clamp(290px, 82vw, 480px);
-    height: clamp(210px, 58vw, 330px);
-    aspect-ratio: auto;
-    scroll-snap-align: start;
-  }
-
-  .de-mural-r2 .de-mural-tile {
-    flex: none;
-    width: clamp(230px, 66vw, 370px);
-    height: clamp(175px, 48vw, 270px);
-    aspect-ratio: auto;
-    scroll-snap-align: start;
-  }
-
-  .de-mural-r3 .de-mural-tile {
-    flex: none;
-    width: clamp(260px, 76vw, 420px);
-    height: clamp(190px, 54vw, 300px);
-    aspect-ratio: auto;
-    scroll-snap-align: start;
-  }
-
-  .de-mural-vid,
-  .de-mural-r2 .de-mural-vid {
-    aspect-ratio: auto !important;
   }
 
   .pano .frame {
@@ -3286,8 +2867,7 @@ body.dlg-open .whatsapp-float {
 }
 
 @media (hover: none) {
-  .prj-ov,
-  .mural-ov {
+  .prj-ov {
     opacity: 1;
     transform: none;
   }

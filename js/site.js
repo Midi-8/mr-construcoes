@@ -38,8 +38,7 @@
       'e.body': 'Obras executadas com rigor, proximidade e atenção a cada detalhe. Do primeiro passo à entrega das chaves - em Portugal e na Alemanha.',
       'e.id1': 'Desde', 'e.id2': 'Atuação', 'e.id2v': 'Portugal · Alemanha', 'e.id3': 'Alvará IMPIC', 'e.id4': 'Coordenadas',
       'e.de': 'Conhecer atuação na Alemanha',
-      'ba.before': 'Antes', 'ba.after': 'Depois', 'ba.aria': 'Comparar antes e depois', 'ba.cap': 'Reabilitação de Moradia · V. N. Famalicão', 'ba.drag': 'Arrastar para comparar',
-      'ph.arch': '[Fotografia arquitetónica]', 'ph.detail': '[Detalhe de obra]', 'ph.site': '[Obra em curso]',
+      'ba.aria': 'Comparar antes e depois', 'ba.cap': 'Reabilitação de Moradia · V. N. Famalicão',
       's.title': 'O que fazemos.', 's.sub': 'Da construção de raiz à reabilitação integral, com rigor em cada fase da obra.',
       's1.n': 'Construção de raiz', 's1.d': 'Moradias unifamiliares completas, do primeiro passo à entrega das chaves.',
       's2.n': 'Reabilitação e remodelação', 's2.d': 'Recuperação e renovação de edifícios e habitações existentes.',
@@ -49,43 +48,34 @@
       's6.n': 'Espaços exteriores', 's6.d': 'Piscinas, pavimentos cerâmicos ou em pedra e arranjos exteriores.',
       'p.title': 'Trabalho que permanece.', 'p.sub': 'Uma seleção de obras executadas em Portugal e na Alemanha.',
       'p1.n': 'Reabilitação de Fachadas', 'p2.n': 'Aplicação de sistema ETICS', 'p3.n': 'Reabilitação Integral de Moradia', 'p4.n': 'Reabilitação de Instalação Sanitária', 'p5.n': 'Piscina e Pavimentação Exterior', 'p6.n': 'Fachada e Isolamento Térmico', 'p7.n': 'Acabamentos e Revestimentos', 'p8.n': 'Reabilitação Exterior de Moradia', 'p9.n': 'Estruturas e Cofragem em Betão', 'p9.m': 'Alemanha',
-      'p.more': 'Cada obra reflete o mesmo compromisso com o rigor construtivo e o detalhe, em Portugal e na Alemanha.', 'p.cta': 'Pedir orçamento', 'p.close': 'Fechar', 'p.lb.aria': 'Fotografia ampliada', 'p.prev': 'Projeto anterior', 'p.next': 'Próximo projeto',
+      'p.more': 'Cada obra reflete o mesmo compromisso com o rigor construtivo e o detalhe, em Portugal e na Alemanha.', 'p.close': 'Fechar', 'p.lb.aria': 'Fotografia ampliada', 'p.prev': 'Projeto anterior', 'p.next': 'Próximo projeto',
       'c.title': 'Peça o seu orçamento.', 'c.lead': 'Fale connosco sobre o seu projeto de construção ou reabilitação em Portugal.',
       'c.tel': 'Telefone', 'c.mail': 'Email', 'c.loc': 'Localização', 'c.soc': 'Redes', 'c.addr': 'Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão', 'c.wa': 'WhatsApp',
-      'c.fk': 'Pedido de orçamento', 'c.place': 'Localização da obra', 'c.subj': 'Tipo de intervenção', 'c.subj.hint': 'Pode selecionar várias',
+      'c.fk': 'Pedido de orçamento', 'c.place': 'Localização da obra', 'c.subj': 'Tipo de intervenção',
       'c.s1': 'Construção de raiz', 'c.s2': 'Reabilitação e remodelação', 'c.s3': 'Fachadas e isolamento térmico', 'c.s5': 'Outro',
       'c.msg': 'Descrição do projeto', 'c.send': 'Pedir orçamento', 'c.ok': 'Pedido enviado. Entraremos em contacto brevemente.',
       'de.kicker': 'Alemanha · Carpintaria de Cofragem',
       'd1.title': 'Além-fronteiras.', 'd1.lead': 'Carpintaria de cofragem na Alemanha. Equipas especializadas, integradas em obras de estruturas em betão armado de diferentes dimensões e exigências técnicas.',
-      'd1.h': 'Serviços na Alemanha', 'd1.1': 'Carpintaria de cofragem', 'd1.2': 'Execução de cofragem em obra', 'd1.3': 'Estruturas em betão armado', 'd1.4': 'Serviços a empresas e parceiros do setor',
+      'd1.1': 'Carpintaria de cofragem', 'd1.2': 'Execução de cofragem em obra', 'd1.3': 'Estruturas em betão armado', 'd1.4': 'Serviços a empresas e parceiros do setor',
       'd2.title': 'Uma presença que constrói.', 'd2.lead': 'Experiência operacional, coordenação em estaleiro e capacidade de integração em equipas de obra, contribuindo diariamente para a execução rigorosa de estruturas em betão armado.',
-      'de.map.kicker': 'Presença geográfica', 'de.map.title': 'Zonas onde atuamos.', 'de.map.desc': 'Equipas mobilizadas em vários polos construtivos da Alemanha, respondendo com flexibilidade às exigências de cada obra.',
-      'de.map.aria': 'Mapa da Alemanha com as zonas de atuação da MR Construções: Dortmund, Munique, Berlim, Hamburgo, Brémen e Düsseldorf', 'de.map.legend': 'Alemanha · 6 zonas de atuação',
-      'de.gal.kicker': 'Registo em estaleiro', 'de.gal.title': 'Em obra na Alemanha.', 'de.gal.sub': 'Registos reais das nossas equipas em estaleiros de betão armado e cofragem.',
-      'de.gal.v0': 'Vista aérea de obra em curso · Alemanha',
-      'de.gal.v1': 'Execução de cofragem e lajes em obra', 'de.gal.v2': 'Fundações e armaduras de betão armado',
+      'de.map.title': 'Zonas onde atuamos.', 'de.map.desc': 'Equipas mobilizadas em vários polos construtivos da Alemanha, respondendo com flexibilidade às exigências de cada obra.',
+      'de.gal.title': 'Em obra na Alemanha.', 'de.gal.sub': 'Registos reais das nossas equipas em estaleiros de betão armado e cofragem.',
       'de.gal.p1': 'Cofragem de Muro', 'de.gal.p2': 'Obra de Grande Escala', 'de.gal.p3': 'Estruturas em Betão Armado', 'de.gal.p4': 'Equipa MR em Obra', 'de.gal.p5': 'Estaleiro em Betão Armado', 'de.gal.more': 'Equipas preparadas para integrar projetos em qualquer ponto da Alemanha.',
-      'vid.pause': 'Pausar', 'vid.play': 'Reproduzir',
       'city.dortmund': 'Dortmund', 'city.munich': 'Munique', 'city.berlin': 'Berlim', 'city.hamburg': 'Hamburgo', 'city.bremen': 'Brémen', 'city.dusseldorf': 'Düsseldorf',
       'reg.nrw': 'Renânia do Norte-Vestfália', 'reg.bavaria': 'Baviera', 'reg.berlin': 'Berlim', 'reg.hamburg': 'Hamburgo', 'reg.bremen': 'Brémen',
-      'de.map.drag': 'Arrastar para rodar em 3D', 'de.map.reset': 'Repor vista 3D', 'de.map.toggle': 'Alternar vista 3D / 2D',
       'de.b2b.kicker': 'Para empresas e parceiros', 'd1.b2b': 'Precisa de uma equipa de cofragem?', 'de.b2b.desc': 'Prestamos serviços de carpintaria de cofragem a empresas e parceiros do setor da construção na Alemanha. Fale connosco sobre o seu projeto.',
       'd1.b2bl': 'Contactar para parcerias', 'de.b2b.email': 'Enviar email', 'b2b.subj': 'Parceria - Carpintaria de Cofragem na Alemanha',
       'wa.b2b.text': 'Olá! Represento uma empresa e gostaria de falar sobre serviços de carpintaria de cofragem na Alemanha.',
-      'de.jobs.link': 'Recrutamento', 'de.jobs.prompt': 'Tem experiência em construção ou carpintaria de cofragem e procura trabalhar na Alemanha?', 'de.jobs.cta': 'Aceder ao recrutamento',
-      'j.kicker': 'Recrutamento · Portugal & Alemanha', 'o.title': 'Constrói o teu futuro connosco.', 'j.lead': 'Procuramos profissionais dedicados para integrar as nossas equipas de construção em Portugal e de carpintaria de cofragem na Alemanha.', 'j.de.link': 'Ver atuação na Alemanha',
-      'j.p1.t': 'Rigor técnico em obra', 'j.p1.d': 'Trabalhamos em projetos de habitação unifamiliar, reabilitação e estruturas de betão armado com foco na precisão de execução.',
-      'j.p2.t': 'Espírito de equipa', 'j.p2.d': 'Valorizamos coordenação, responsabilidade e respeito mútuo em estaleiro - o trabalho faz-se em equipa.',
-      'j.p3.t': 'Portugal e Alemanha', 'j.p3.d': 'Oportunidades tanto em obras no Norte de Portugal como em equipas de carpintaria de cofragem na Alemanha.',
-      'j.sk.aria': 'Competências humanas valorizadas em obra', 'j.sk.kicker': 'O que valorizamos', 'j.sk.core': 'Equipa', 'j.sk.list': 'Soft skills valorizadas', 'j.scroll.aria': 'Ir para o formulário de candidatura',
-      'j.sk1.s': 'Rigor', 'j.sk1.t': 'Rigor no detalhe', 'j.sk1.d': 'Atenção a cada medida, alinhamento e acabamento - o padrão que define cada obra.',
-      'j.sk2.s': 'Equipa', 'j.sk2.t': 'Espírito de equipa', 'j.sk2.d': 'Coordenação, entreajuda e respeito diário em estaleiro - nenhuma estrutura se levanta sozinha.',
-      'j.sk3.s': 'Compromisso', 'j.sk3.t': 'Compromisso e pontualidade', 'j.sk3.d': 'Seriedade, presença assídua e responsabilidade total pelo trabalho que se assume.',
-      'j.sk4.s': 'Segurança', 'j.sk4.t': 'Segurança e método', 'j.sk4.d': 'Organização em obra, disciplina técnica e cuidado constante com toda a equipa.',
-      'j.sk5.s': 'Iniciativa', 'j.sk5.t': 'Autonomia e iniciativa', 'j.sk5.d': 'Proatividade no terreno e capacidade prática para antecipar e resolver imprevistos.',
-      'j.sk6.s': 'Evolução', 'j.sk6.t': 'Vontade de evoluir', 'j.sk6.d': 'Abertura para aprender novas técnicas e crescer connosco em Portugal e na Alemanha.',
-      'o.v': 'Vagas abertas', 'j.side.desc': 'Mesmo sem vaga específica aberta, analisamos todas as candidaturas espontâneas para futuras mobilizações.',
-      'o.none': 'Sem vagas específicas publicadas neste momento. Envia-nos a tua candidatura espontânea.',
+      'de.jobs.link': 'Recrutamento',
+      'j.kicker': 'Recrutamento · Portugal & Alemanha', 'o.title': 'Constrói o teu futuro connosco.', 'j.lead': 'Procuramos profissionais dedicados para integrar as nossas equipas de construção em Portugal e de carpintaria de cofragem na Alemanha.',
+      'j.sk.aria': 'Competências humanas valorizadas em obra', 'j.sk.kicker': 'O que valorizamos', 'j.sk.list': 'Soft skills valorizadas', 'j.scroll.aria': 'Ir para o formulário de candidatura',
+      'j.sk1.t': 'Rigor no detalhe', 'j.sk1.d': 'Atenção a cada medida, alinhamento e acabamento - o padrão que define cada obra.',
+      'j.sk2.t': 'Espírito de equipa', 'j.sk2.d': 'Coordenação, entreajuda e respeito diário em estaleiro - nenhuma estrutura se levanta sozinha.',
+      'j.sk3.t': 'Compromisso e pontualidade', 'j.sk3.d': 'Seriedade, presença assídua e responsabilidade total pelo trabalho que se assume.',
+      'j.sk4.t': 'Segurança e método', 'j.sk4.d': 'Organização em obra, disciplina técnica e cuidado constante com toda a equipa.',
+      'j.sk5.t': 'Autonomia e iniciativa', 'j.sk5.d': 'Proatividade no terreno e capacidade prática para antecipar e resolver imprevistos.',
+      'j.sk6.t': 'Vontade de evoluir', 'j.sk6.d': 'Abertura para aprender novas técnicas e crescer connosco em Portugal e na Alemanha.',
+      'j.side.desc': 'Mesmo sem vaga específica aberta, analisamos todas as candidaturas espontâneas para futuras mobilizações.',
       'a.kicker': 'Candidatura', 'a.title': 'Junta-te à equipa.',
       'a.name': 'Nome', 'a.phone': 'Telefone / WhatsApp', 'a.spec': 'Especialidade', 'a.res': 'Local de residência',
       'a.exp': 'Anos de experiência', 'a.exp.1': 'Menos de 1 ano', 'a.exp.2': '1-3 anos', 'a.exp.3': '3-5 anos', 'a.exp.4': '5-10 anos', 'a.exp.5': '10+ anos',
@@ -94,11 +84,10 @@
       'a.deexp': 'Já trabalhou na Alemanha?', 'a.yes': 'Sim', 'a.no': 'Não', 'a.notes': 'Notas / Experiência (opcional)',
       'a.c1': 'Usamos os seus dados apenas para responder a este pedido, nos termos da', 'a.c2': '.', 'a.send': 'Enviar candidatura', 'a.sending': 'A enviar…',
       'a.ok': 'Candidatura enviada. Entraremos em contacto brevemente.', 'a.err': 'Não foi possível enviar. Tente por WhatsApp ou geral@marcoribeiroconstrucoes.pt.',
-      'a.val': 'Preencha todos os campos obrigatórios.', 'a.cons': 'Aceite a Política de Privacidade para continuar.', 'a.mail': 'Formulário ainda sem endpoint: a abrir o seu cliente de email.',
+      'a.val': 'Preencha todos os campos obrigatórios.', 'a.mail': 'Formulário ainda sem endpoint: a abrir o seu cliente de email.',
       'f.nav': 'Navegação', 'f.ct': 'Contactos', 'f.legal': 'Dados legais', 'f.seat': 'Sede: Rua do Casino n.º 94 E, 4765-063 Bairro, V. N. Famalicão', 'f.priv': 'Política de Privacidade', 'f.terms': 'Termos e Condições', 'f.compl': 'Livro de Reclamações Eletrónico', 'f.rights': 'Todos os direitos reservados.', 'f.credit': 'Desenvolvido por', 'f.top': 'Topo',
       'wa.text': 'Olá! Gostaria de falar com a MR Construções.', 'wa.float.aria': 'Contactar via WhatsApp',
       'priv.back': 'Voltar ao site', 'priv.kicker': 'Proteção de Dados · RGPD', 'priv.title': 'Política de Privacidade',
-      'priv.draft': 'RASCUNHO - Documento preparado para revisão jurídica antes da publicação definitiva.',
       'priv.lead': 'Esta Política de Privacidade explica como a Marco Paulo Ribeiro Unipessoal, Lda. (MR Construções) recolhe e trata os dados pessoais submetidos através deste website, em conformidade com o Regulamento Geral sobre a Proteção de Dados (RGPD).',
       'priv.s1.title': 'Responsável pelo tratamento', 'priv.s1.body': 'Marco Paulo Ribeiro Unipessoal, Lda., NIF / NIPC 516590022, titular do Alvará IMPIC n.º 113987, com sede na Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal. Contacto para questões de privacidade: geral@marcoribeiroconstrucoes.pt.',
       'priv.s2.title': 'Finalidades do tratamento', 'priv.s2.body': 'Os dados pessoais recolhidos através dos formulários do website destinam-se exclusivamente a: (a) analisar e responder a pedidos de orçamento e contacto comercial; (b) avaliar e dar seguimento a candidaturas para integração nas nossas equipas em Portugal ou na Alemanha.',
@@ -137,8 +126,7 @@
       'e.body': 'Works delivered with rigour, proximity and attention to every detail. From the first step to the handover of the keys - in Portugal and Germany.',
       'e.id1': 'Since', 'e.id2': 'Operating in', 'e.id2v': 'Portugal · Germany', 'e.id3': 'IMPIC licence', 'e.id4': 'Coordinates',
       'e.de': 'Explore our work in Germany',
-      'ba.before': 'Before', 'ba.after': 'After', 'ba.aria': 'Compare before and after', 'ba.cap': 'House Rehabilitation · V. N. Famalicão', 'ba.drag': 'Drag to compare',
-      'ph.arch': '[Architectural photography]', 'ph.detail': '[Project detail]', 'ph.site': '[Construction site]',
+      'ba.aria': 'Compare before and after', 'ba.cap': 'House Rehabilitation · V. N. Famalicão',
       's.title': 'What we do.', 's.sub': 'From new builds to full rehabilitation, with rigour at every stage of the project.',
       's1.n': 'New build', 's1.d': 'Complete single-family homes, from the first step to the handover of the keys.',
       's2.n': 'Rehabilitation and remodelling', 's2.d': 'Restoration and renovation of existing buildings and homes.',
@@ -148,43 +136,34 @@
       's6.n': 'Outdoor spaces', 's6.d': 'Swimming pools, ceramic or stone paving and exterior landscaping.',
       'p.title': 'Work that remains.', 'p.sub': 'A selection of projects delivered in Portugal and Germany.',
       'p1.n': 'Facade Rehabilitation', 'p2.n': 'ETICS System Application', 'p3.n': 'Full House Rehabilitation', 'p4.n': 'Sanitary Facility Rehabilitation', 'p5.n': 'Swimming Pool and Exterior Paving', 'p6.n': 'Facade and Thermal Insulation', 'p7.n': 'Finishes and Coverings', 'p8.n': 'Exterior House Rehabilitation', 'p9.n': 'Concrete Structures & Formwork', 'p9.m': 'Germany',
-      'p.more': 'Every project reflects the same commitment to structural rigour and detail, in Portugal and Germany.', 'p.cta': 'Request a quote', 'p.close': 'Close', 'p.lb.aria': 'Enlarged photograph', 'p.prev': 'Previous project', 'p.next': 'Next project',
+      'p.more': 'Every project reflects the same commitment to structural rigour and detail, in Portugal and Germany.', 'p.close': 'Close', 'p.lb.aria': 'Enlarged photograph', 'p.prev': 'Previous project', 'p.next': 'Next project',
       'c.title': 'Request your quote.', 'c.lead': 'Tell us about your construction or rehabilitation project in Portugal.',
       'c.tel': 'Phone', 'c.mail': 'Email', 'c.loc': 'Location', 'c.soc': 'Social', 'c.addr': 'Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal', 'c.wa': 'WhatsApp',
-      'c.fk': 'Quote request', 'c.place': 'Project location', 'c.subj': 'Type of work', 'c.subj.hint': 'Select one or more',
+      'c.fk': 'Quote request', 'c.place': 'Project location', 'c.subj': 'Type of work',
       'c.s1': 'New build', 'c.s2': 'Rehabilitation and remodelling', 'c.s3': 'Facades and thermal insulation', 'c.s5': 'Other',
       'c.msg': 'Project description', 'c.send': 'Request a quote', 'c.ok': 'Request sent. We will be in touch shortly.',
       'de.kicker': 'Germany · Formwork Carpentry',
       'd1.title': 'Beyond borders.', 'd1.lead': 'Formwork carpentry in Germany. Specialised teams integrated into reinforced concrete structure projects of different scales and technical demands.',
-      'd1.h': 'Services in Germany', 'd1.1': 'Formwork carpentry', 'd1.2': 'On-site formwork execution', 'd1.3': 'Reinforced concrete structures', 'd1.4': 'Services to companies and sector partners',
+      'd1.1': 'Formwork carpentry', 'd1.2': 'On-site formwork execution', 'd1.3': 'Reinforced concrete structures', 'd1.4': 'Services to companies and sector partners',
       'd2.title': 'A presence that builds.', 'd2.lead': 'Operational experience, site coordination and seamless integration into construction teams, contributing daily to rigorous reinforced concrete execution.',
-      'de.map.kicker': 'Geographic presence', 'de.map.title': 'Areas where we operate.', 'de.map.desc': 'Teams mobilised across key construction hubs in Germany, responding flexibly to the demands of each site.',
-      'de.map.aria': 'Map of Germany showing MR Construções operating areas: Dortmund, Munich, Berlin, Hamburg, Bremen and Düsseldorf', 'de.map.legend': 'Germany · 6 operating hubs',
-      'de.gal.kicker': 'On-site documentation', 'de.gal.title': 'On site in Germany.', 'de.gal.sub': 'Real footage and photography of our teams on reinforced concrete and formwork sites.',
-      'de.gal.v0': 'Aerial view of active site · Germany',
-      'de.gal.v1': 'Slab formwork execution on site', 'de.gal.v2': 'Foundations and reinforced concrete',
+      'de.map.title': 'Areas where we operate.', 'de.map.desc': 'Teams mobilised across key construction hubs in Germany, responding flexibly to the demands of each site.',
+      'de.gal.title': 'On site in Germany.', 'de.gal.sub': 'Real footage and photography of our teams on reinforced concrete and formwork sites.',
       'de.gal.p1': 'Wall Formwork', 'de.gal.p2': 'Large-Scale Structure', 'de.gal.p3': 'Reinforced Concrete Structures', 'de.gal.p4': 'MR Team on Site', 'de.gal.p5': 'Reinforced Concrete Site', 'de.gal.more': 'Teams ready to integrate into projects across Germany.',
-      'vid.pause': 'Pause', 'vid.play': 'Play',
       'city.dortmund': 'Dortmund', 'city.munich': 'Munich', 'city.berlin': 'Berlin', 'city.hamburg': 'Hamburg', 'city.bremen': 'Bremen', 'city.dusseldorf': 'Düsseldorf',
       'reg.nrw': 'North Rhine-Westphalia', 'reg.bavaria': 'Bavaria', 'reg.berlin': 'Berlin', 'reg.hamburg': 'Hamburg', 'reg.bremen': 'Bremen',
-      'de.map.drag': 'Drag to rotate in 3D', 'de.map.reset': 'Reset 3D view', 'de.map.toggle': 'Toggle 3D / 2D view',
       'de.b2b.kicker': 'For companies & partners', 'd1.b2b': 'Need a formwork team?', 'de.b2b.desc': 'We provide formwork carpentry services to construction companies and partners in Germany. Talk to us about your project.',
       'd1.b2bl': 'Contact us for partnerships', 'de.b2b.email': 'Send email', 'b2b.subj': 'Partnership - Formwork Carpentry in Germany',
       'wa.b2b.text': 'Hello! I represent a company and would like to discuss formwork carpentry services in Germany.',
-      'de.jobs.link': 'Recruitment', 'de.jobs.prompt': 'Experienced in construction or formwork carpentry and looking to work in Germany?', 'de.jobs.cta': 'Go to recruitment',
-      'j.kicker': 'Recruitment · Portugal & Germany', 'o.title': 'Build your future with us.', 'j.lead': 'We are looking for dedicated professionals to join our construction teams in Portugal and formwork carpentry teams in Germany.', 'j.de.link': 'See our work in Germany',
-      'j.p1.t': 'Technical rigour on site', 'j.p1.d': 'We work on single-family homes, rehabilitations and reinforced concrete structures with a focus on execution precision.',
-      'j.p2.t': 'Team spirit', 'j.p2.d': 'We value coordination, responsibility and mutual respect on site - great structures are built together.',
-      'j.p3.t': 'Portugal & Germany', 'j.p3.d': 'Opportunities both on projects in Northern Portugal and with our formwork carpentry teams across Germany.',
-      'j.sk.aria': 'Valued soft skills on site', 'j.sk.kicker': 'What we value', 'j.sk.core': 'Team', 'j.sk.list': 'Valued soft skills', 'j.scroll.aria': 'Scroll to application form',
-      'j.sk1.s': 'Rigour', 'j.sk1.t': 'Attention to detail', 'j.sk1.d': 'Precision in every measurement, alignment and finish - the standard behind every build.',
-      'j.sk2.s': 'Teamwork', 'j.sk2.t': 'Team spirit', 'j.sk2.d': 'Coordination, mutual support and daily respect on site - no structure is built alone.',
-      'j.sk3.s': 'Commitment', 'j.sk3.t': 'Commitment & punctuality', 'j.sk3.d': 'Reliability, consistent presence and full ownership of every task undertaken.',
-      'j.sk4.s': 'Safety', 'j.sk4.t': 'Safety & method', 'j.sk4.d': 'Site organisation, technical discipline and constant care for everyone around you.',
-      'j.sk5.s': 'Initiative', 'j.sk5.t': 'Autonomy & initiative', 'j.sk5.d': 'Proactive mindset on site with the practical judgement to solve challenges early.',
-      'j.sk6.s': 'Growth', 'j.sk6.t': 'Drive to grow', 'j.sk6.d': 'Openness to learn new techniques and grow with our teams in Portugal and Germany.',
-      'o.v': 'Open positions', 'j.side.desc': 'Even when no specific position is listed, we review every spontaneous application for upcoming mobilisations.',
-      'o.none': 'No specific positions published at the moment. Send us your spontaneous application.',
+      'de.jobs.link': 'Recruitment',
+      'j.kicker': 'Recruitment · Portugal & Germany', 'o.title': 'Build your future with us.', 'j.lead': 'We are looking for dedicated professionals to join our construction teams in Portugal and formwork carpentry teams in Germany.',
+      'j.sk.aria': 'Valued soft skills on site', 'j.sk.kicker': 'What we value', 'j.sk.list': 'Valued soft skills', 'j.scroll.aria': 'Scroll to application form',
+      'j.sk1.t': 'Attention to detail', 'j.sk1.d': 'Precision in every measurement, alignment and finish - the standard behind every build.',
+      'j.sk2.t': 'Team spirit', 'j.sk2.d': 'Coordination, mutual support and daily respect on site - no structure is built alone.',
+      'j.sk3.t': 'Commitment & punctuality', 'j.sk3.d': 'Reliability, consistent presence and full ownership of every task undertaken.',
+      'j.sk4.t': 'Safety & method', 'j.sk4.d': 'Site organisation, technical discipline and constant care for everyone around you.',
+      'j.sk5.t': 'Autonomy & initiative', 'j.sk5.d': 'Proactive mindset on site with the practical judgement to solve challenges early.',
+      'j.sk6.t': 'Drive to grow', 'j.sk6.d': 'Openness to learn new techniques and grow with our teams in Portugal and Germany.',
+      'j.side.desc': 'Even when no specific position is listed, we review every spontaneous application for upcoming mobilisations.',
       'a.kicker': 'Application', 'a.title': 'Join the team.',
       'a.name': 'Name', 'a.phone': 'Phone / WhatsApp', 'a.spec': 'Trade / specialty', 'a.res': 'Place of residence',
       'a.exp': 'Years of experience', 'a.exp.1': 'Under 1 year', 'a.exp.2': '1-3 years', 'a.exp.3': '3-5 years', 'a.exp.4': '5-10 years', 'a.exp.5': '10+ years',
@@ -193,11 +172,10 @@
       'a.deexp': 'Worked in Germany before?', 'a.yes': 'Yes', 'a.no': 'No', 'a.notes': 'Notes / Experience (optional)',
       'a.c1': 'We use your details only to respond to this inquiry, under our', 'a.c2': '.', 'a.send': 'Send application', 'a.sending': 'Sending…',
       'a.ok': 'Application sent. We will be in touch shortly.', 'a.err': 'Could not send. Please try WhatsApp or geral@marcoribeiroconstrucoes.pt.',
-      'a.val': 'Please fill in all required fields.', 'a.cons': 'Please accept the Privacy Policy to continue.', 'a.mail': 'Form endpoint not configured yet: opening your email client.',
+      'a.val': 'Please fill in all required fields.', 'a.mail': 'Form endpoint not configured yet: opening your email client.',
       'f.nav': 'Navigation', 'f.ct': 'Contact', 'f.legal': 'Legal information', 'f.seat': 'Registered office: Rua do Casino n.º 94 E, 4765-063 Bairro, V. N. Famalicão', 'f.priv': 'Privacy Policy', 'f.terms': 'Terms & Conditions', 'f.compl': 'Electronic Complaints Book', 'f.rights': 'All rights reserved.', 'f.credit': 'Developed by', 'f.top': 'Top',
       'wa.text': 'Hello! I would like to talk to MR Construções.', 'wa.float.aria': 'Contact via WhatsApp',
       'priv.back': 'Back to website', 'priv.kicker': 'Data Protection · GDPR', 'priv.title': 'Privacy Policy',
-      'priv.draft': 'DRAFT - Document prepared for legal review prior to final publication.',
       'priv.lead': 'This Privacy Policy explains how Marco Paulo Ribeiro Unipessoal, Lda. (MR Construções) collects and processes personal data submitted through this website, in accordance with the General Data Protection Regulation (GDPR).',
       'priv.s1.title': 'Data Controller', 'priv.s1.body': 'Marco Paulo Ribeiro Unipessoal, Lda., Tax ID (NIF/NIPC) 516590022, IMPIC License No. 113987, headquartered at Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal. Privacy contact: geral@marcoribeiroconstrucoes.pt.',
       'priv.s2.title': 'Purposes of Processing', 'priv.s2.body': 'Personal data collected through website forms are used exclusively to: (a) analyze and respond to quote and business inquiries; (b) evaluate and follow up on applications to join our teams in Portugal or Germany.',
@@ -236,8 +214,7 @@
       'e.body': 'Bauprojekte, ausgeführt mit Präzision, Nähe und Liebe zum Detail. Vom ersten Schritt bis zur Schlüsselübergabe - in Portugal und in Deutschland.',
       'e.id1': 'Seit', 'e.id2': 'Tätig in', 'e.id2v': 'Portugal · Deutschland', 'e.id3': 'IMPIC-Zulassung', 'e.id4': 'Koordinaten',
       'e.de': 'Unsere Arbeit in Deutschland entdecken',
-      'ba.before': 'Vorher', 'ba.after': 'Nachher', 'ba.aria': 'Vorher und Nachher vergleichen', 'ba.cap': 'Haussanierung · V. N. Famalicão', 'ba.drag': 'Zum Vergleichen ziehen',
-      'ph.arch': '[Architekturfotografie]', 'ph.detail': '[Projektdetail]', 'ph.site': '[Baustelle]',
+      'ba.aria': 'Vorher und Nachher vergleichen', 'ba.cap': 'Haussanierung · V. N. Famalicão',
       's.title': 'Was wir tun.', 's.sub': 'Vom Neubau bis zur Komplettsanierung - präzise Ausführung in jeder Bauphase.',
       's1.n': 'Neubau', 's1.d': 'Komplette Einfamilienhäuser, vom ersten Schritt bis zur Schlüsselübergabe.',
       's2.n': 'Sanierung und Umbau', 's2.d': 'Instandsetzung und Erneuerung bestehender Gebäude und Wohnhäuser.',
@@ -247,43 +224,34 @@
       's6.n': 'Außenanlagen', 's6.d': 'Pools, Keramik- oder Natursteinbeläge und Gestaltung des Außenbereichs.',
       'p.title': 'Arbeit, die bleibt.', 'p.sub': 'Eine Auswahl realisierter Projekte in Portugal und Deutschland.',
       'p1.n': 'Fassadensanierung', 'p2.n': 'WDVS-Fassadendämmung (ETICS)', 'p3.n': 'Komplettsanierung eines Wohnhauses', 'p4.n': 'Sanierung einer Sanitäranlage', 'p5.n': 'Poolbau und Außenpflasterung', 'p6.n': 'Fassade und Wärmedämmung', 'p7.n': 'Ausbau und Beläge', 'p8.n': 'Außensanierung eines Wohnhauses', 'p9.n': 'Stahlbeton & Schalungsbau', 'p9.m': 'Deutschland',
-      'p.more': 'Jedes Projekt spiegelt denselben Anspruch an bauliche Präzision und Detailtreue wider - in Portugal und in Deutschland.', 'p.cta': 'Angebot anfragen', 'p.close': 'Schließen', 'p.lb.aria': 'Vergrößerte Aufnahme', 'p.prev': 'Vorheriges Projekt', 'p.next': 'Nächstes Projekt',
+      'p.more': 'Jedes Projekt spiegelt denselben Anspruch an bauliche Präzision und Detailtreue wider - in Portugal und in Deutschland.', 'p.close': 'Schließen', 'p.lb.aria': 'Vergrößerte Aufnahme', 'p.prev': 'Vorheriges Projekt', 'p.next': 'Nächstes Projekt',
       'c.title': 'Fordern Sie Ihr Angebot an.', 'c.lead': 'Sprechen Sie mit uns über Ihr Bau- oder Sanierungsprojekt in Portugal.',
       'c.tel': 'Telefon', 'c.mail': 'E-Mail', 'c.loc': 'Standort', 'c.soc': 'Soziale Medien', 'c.addr': 'Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal', 'c.wa': 'WhatsApp',
-      'c.fk': 'Angebotsanfrage', 'c.place': 'Bauort', 'c.subj': 'Art der Maßnahme', 'c.subj.hint': 'Mehrfachauswahl möglich',
+      'c.fk': 'Angebotsanfrage', 'c.place': 'Bauort', 'c.subj': 'Art der Maßnahme',
       'c.s1': 'Neubau', 'c.s2': 'Sanierung und Umbau', 'c.s3': 'Fassaden und Wärmedämmung', 'c.s5': 'Sonstiges',
       'c.msg': 'Projektbeschreibung', 'c.send': 'Angebot anfragen', 'c.ok': 'Anfrage gesendet. Wir melden uns in Kürze.',
       'de.kicker': 'Deutschland · Schalungsbau',
       'd1.title': 'Über Grenzen hinweg.', 'd1.lead': 'Schalungsbau in Deutschland. Spezialisierte Teams, eingebunden in Stahlbetonbauprojekte unterschiedlicher Größe und technischer Anforderungen.',
-      'd1.h': 'Leistungen in Deutschland', 'd1.1': 'Schalungsbau', 'd1.2': 'Schalungsarbeiten auf der Baustelle', 'd1.3': 'Stahlbetonkonstruktionen', 'd1.4': 'Leistungen für Unternehmen und Partner der Branche',
+      'd1.1': 'Schalungsbau', 'd1.2': 'Schalungsarbeiten auf der Baustelle', 'd1.3': 'Stahlbetonkonstruktionen', 'd1.4': 'Leistungen für Unternehmen und Partner der Branche',
       'd2.title': 'Eine Präsenz, die baut.', 'd2.lead': 'Operative Erfahrung, Baustellenkoordination und reibungslose Integration in Projektteams für präzise Stahlbetonarbeiten.',
-      'de.map.kicker': 'Geografische Präsenz', 'de.map.title': 'Unsere Einsatzgebiete.', 'de.map.desc': 'Flexible Teams im Einsatz in zentralen Bauregionen Deutschlands - angepasst an die Anforderungen jedes Projekts.',
-      'de.map.aria': 'Deutschlandkarte mit Einsatzgebieten von MR Construções: Dortmund, München, Berlin, Hamburg, Bremen und Düsseldorf', 'de.map.legend': 'Deutschland · 6 Einsatzregionen',
-      'de.gal.kicker': 'Einblicke von der Baustelle', 'de.gal.title': 'Im Einsatz in Deutschland.', 'de.gal.sub': 'Reale Einblicke unserer Teams auf Stahlbeton- und Schalungsbaustellen.',
-      'de.gal.v0': 'Luftaufnahme einer Baustelle · Deutschland',
-      'de.gal.v1': 'Deckenschalung auf der Baustelle', 'de.gal.v2': 'Fundamente und Stahlbetonarbeiten',
+      'de.map.title': 'Unsere Einsatzgebiete.', 'de.map.desc': 'Flexible Teams im Einsatz in zentralen Bauregionen Deutschlands - angepasst an die Anforderungen jedes Projekts.',
+      'de.gal.title': 'Im Einsatz in Deutschland.', 'de.gal.sub': 'Reale Einblicke unserer Teams auf Stahlbeton- und Schalungsbaustellen.',
       'de.gal.p1': 'Wandschalung', 'de.gal.p2': 'Großprojekt im Hochbau', 'de.gal.p3': 'Stahlbetonkonstruktionen', 'de.gal.p4': 'MR-Team im Einsatz', 'de.gal.p5': 'Stahlbeton-Baustelle', 'de.gal.more': 'Teams bereit für den Einsatz in Projekten in ganz Deutschland.',
-      'vid.pause': 'Pausieren', 'vid.play': 'Abspielen',
       'city.dortmund': 'Dortmund', 'city.munich': 'München', 'city.berlin': 'Berlin', 'city.hamburg': 'Hamburg', 'city.bremen': 'Bremen', 'city.dusseldorf': 'Düsseldorf',
       'reg.nrw': 'Nordrhein-Westfalen', 'reg.bavaria': 'Bayern', 'reg.berlin': 'Berlin', 'reg.hamburg': 'Hamburg', 'reg.bremen': 'Bremen',
-      'de.map.drag': 'Ziehen zum Drehen in 3D', 'de.map.reset': '3D-Ansicht zurücksetzen', 'de.map.toggle': '3D- / 2D-Ansicht wechseln',
       'de.b2b.kicker': 'Für Unternehmen & Partner', 'd1.b2b': 'Benötigen Sie ein Schalungsteam?', 'de.b2b.desc': 'Wir bieten Schalungsbauleistungen für Bauunternehmen und Partner in Deutschland. Sprechen Sie mit uns über Ihr Projekt.',
       'd1.b2bl': 'Kontakt für Partnerschaften', 'de.b2b.email': 'E-Mail senden', 'b2b.subj': 'Partnerschaft - Schalungsbau in Deutschland',
       'wa.b2b.text': 'Hallo! Ich vertrete ein Unternehmen und möchte über Schalungsbauleistungen in Deutschland sprechen.',
-      'de.jobs.link': 'Karriereportal', 'de.jobs.prompt': 'Erfahrung im Bauwesen oder Schalungsbau und Interesse an Arbeit in Deutschland?', 'de.jobs.cta': 'Zum Karriereportal',
-      'j.kicker': 'Karriere · Rekrutierung', 'o.title': 'Baue deine Zukunft mit uns.', 'j.lead': 'Wir suchen engagierte Fachkräfte für unsere Bauteams in Portugal sowie für unsere Schalungsbauteams in Deutschland.', 'j.de.link': 'Unsere Arbeit in Deutschland',
-      'j.p1.t': 'Technische Präzision', 'j.p1.d': 'Wir arbeiten an Einfamilienhäusern, Sanierungen und Stahlbetonkonstruktionen mit höchstem Qualitätsanspruch.',
-      'j.p2.t': 'Teamgeist auf der Baustelle', 'j.p2.d': 'Wir schätzen Koordination, Verlässlichkeit und gegenseitigen Respekt - starke Bauwerke entstehen im Team.',
-      'j.p3.t': 'Portugal & Deutschland', 'j.p3.d': 'Einsatzmöglichkeiten sowohl auf Baustellen im Norden Portugals als auch in unseren Schalungsteams in Deutschland.',
-      'j.sk.aria': 'Geschätzte Soft Skills auf der Baustelle', 'j.sk.kicker': 'Was wir schätzen', 'j.sk.core': 'Team', 'j.sk.list': 'Geschätzte Soft Skills', 'j.scroll.aria': 'Zum Bewerbungsformular scrollen',
-      'j.sk1.s': 'Präzision', 'j.sk1.t': 'Präzision im Detail', 'j.sk1.d': 'Sorgfalt bei jedem Maß, jeder Ausrichtung und jedem Finish - unser Anspruch auf jeder Baustelle.',
-      'j.sk2.s': 'Teamgeist', 'j.sk2.t': 'Teamgeist auf der Baustelle', 'j.sk2.d': 'Koordination, Zusammenhalt und täglicher Respekt - kein Bauwerk entsteht allein.',
-      'j.sk3.s': 'Verlässlichkeit', 'j.sk3.t': 'Verlässlichkeit & Pünktlichkeit', 'j.sk3.d': 'Zuverlässigkeit, Verbindlichkeit und volle Verantwortung für die übernommene Arbeit.',
-      'j.sk4.s': 'Sicherheit', 'j.sk4.t': 'Sicherheit & Struktur', 'j.sk4.d': 'Ordnung am Arbeitsplatz, methodisches Vorgehen und ständige Achtsamkeit im Team.',
-      'j.sk5.s': 'Initiative', 'j.sk5.t': 'Eigeninitiative vor Ort', 'j.sk5.d': 'Selbstständiges Handeln auf der Baustelle und pragmatische Lösungen im richtigen Moment.',
-      'j.sk6.s': 'Entwicklung', 'j.sk6.t': 'Wille zur Weiterentwicklung', 'j.sk6.d': 'Offenheit für neue Techniken und gemeinsame Entwicklung in Portugal und Deutschland.',
-      'o.v': 'Offene Stellen', 'j.side.desc': 'Auch ohne ausgeschriebene Stelle prüfen wir jede Initiativbewerbung für kommende Projekte.',
-      'o.none': 'Derzeit keine konkreten Stellen ausgeschrieben. Senden Sie uns gerne Ihre Initiativbewerbung.',
+      'de.jobs.link': 'Karriereportal',
+      'j.kicker': 'Karriere · Rekrutierung', 'o.title': 'Baue deine Zukunft mit uns.', 'j.lead': 'Wir suchen engagierte Fachkräfte für unsere Bauteams in Portugal sowie für unsere Schalungsbauteams in Deutschland.',
+      'j.sk.aria': 'Geschätzte Soft Skills auf der Baustelle', 'j.sk.kicker': 'Was wir schätzen', 'j.sk.list': 'Geschätzte Soft Skills', 'j.scroll.aria': 'Zum Bewerbungsformular scrollen',
+      'j.sk1.t': 'Präzision im Detail', 'j.sk1.d': 'Sorgfalt bei jedem Maß, jeder Ausrichtung und jedem Finish - unser Anspruch auf jeder Baustelle.',
+      'j.sk2.t': 'Teamgeist auf der Baustelle', 'j.sk2.d': 'Koordination, Zusammenhalt und täglicher Respekt - kein Bauwerk entsteht allein.',
+      'j.sk3.t': 'Verlässlichkeit & Pünktlichkeit', 'j.sk3.d': 'Zuverlässigkeit, Verbindlichkeit und volle Verantwortung für die übernommene Arbeit.',
+      'j.sk4.t': 'Sicherheit & Struktur', 'j.sk4.d': 'Ordnung am Arbeitsplatz, methodisches Vorgehen und ständige Achtsamkeit im Team.',
+      'j.sk5.t': 'Eigeninitiative vor Ort', 'j.sk5.d': 'Selbstständiges Handeln auf der Baustelle und pragmatische Lösungen im richtigen Moment.',
+      'j.sk6.t': 'Wille zur Weiterentwicklung', 'j.sk6.d': 'Offenheit für neue Techniken und gemeinsame Entwicklung in Portugal und Deutschland.',
+      'j.side.desc': 'Auch ohne ausgeschriebene Stelle prüfen wir jede Initiativbewerbung für kommende Projekte.',
       'a.kicker': 'Bewerbung', 'a.title': 'Werde Teil des Teams.',
       'a.name': 'Name', 'a.phone': 'Telefon / WhatsApp', 'a.spec': 'Fachgebiet / Beruf', 'a.res': 'Wohnort',
       'a.exp': 'Jahre Berufserfahrung', 'a.exp.1': 'Unter 1 Jahr', 'a.exp.2': '1-3 Jahre', 'a.exp.3': '3-5 Jahre', 'a.exp.4': '5-10 Jahre', 'a.exp.5': '10+ Jahre',
@@ -292,11 +260,10 @@
       'a.deexp': 'Bereits in Deutschland gearbeitet?', 'a.yes': 'Ja', 'a.no': 'Nein', 'a.notes': 'Hinweise / Erfahrung (optional)',
       'a.c1': 'Wir verwenden Ihre Angaben ausschließlich zur Beantwortung dieser Anfrage gemäß unserer', 'a.c2': '.', 'a.send': 'Bewerbung senden', 'a.sending': 'Wird gesendet…',
       'a.ok': 'Bewerbung gesendet. Wir melden uns in Kürze.', 'a.err': 'Senden nicht möglich. Bitte WhatsApp oder geral@marcoribeiroconstrucoes.pt nutzen.',
-      'a.val': 'Bitte füllen Sie alle Pflichtfelder aus.', 'a.cons': 'Bitte akzeptieren Sie die Datenschutzerklärung.', 'a.mail': 'Formular-Endpunkt noch nicht konfiguriert: Ihr E-Mail-Programm wird geöffnet.',
+      'a.val': 'Bitte füllen Sie alle Pflichtfelder aus.', 'a.mail': 'Formular-Endpunkt noch nicht konfiguriert: Ihr E-Mail-Programm wird geöffnet.',
       'f.nav': 'Navigation', 'f.ct': 'Kontakt', 'f.legal': 'Rechtliche Angaben', 'f.seat': 'Sitz: Rua do Casino n.º 94 E, 4765-063 Bairro, V. N. Famalicão', 'f.priv': 'Datenschutzerklärung', 'f.terms': 'Nutzungsbedingungen & Impressum', 'f.compl': 'Elektronisches Beschwerdebuch', 'f.rights': 'Alle Rechte vorbehalten.', 'f.credit': 'Entwickelt von', 'f.top': 'Oben',
       'wa.text': 'Hallo! Ich möchte mit MR Construções sprechen.', 'wa.float.aria': 'Über WhatsApp kontaktieren',
       'priv.back': 'Zurück zur Website', 'priv.kicker': 'Datenschutz · DSGVO', 'priv.title': 'Datenschutzerklärung',
-      'priv.draft': 'ENTWURF - Dokument zur rechtlichen Prüfung vor der endgültigen Veröffentlichung.',
       'priv.lead': 'Diese Datenschutzerklärung erläutert, wie die Marco Paulo Ribeiro Unipessoal, Lda. (MR Construções) personenbezogene Daten über diese Website gemäß der Datenschutz-Grundverordnung (DSGVO) erhebt und verarbeitet.',
       'priv.s1.title': 'Verantwortlicher', 'priv.s1.body': 'Marco Paulo Ribeiro Unipessoal, Lda., Steuernummer (NIF/NIPC) 516590022, IMPIC-Zulassung Nr. 113987, mit Sitz in der Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal. Kontakt für Datenschutzfragen: geral@marcoribeiroconstrucoes.pt.',
       'priv.s2.title': 'Zwecke der Verarbeitung', 'priv.s2.body': 'Die über die Formulare dieser Website erhobenen personenbezogenen Daten dienen ausschließlich: (a) der Bearbeitung und Beantwortung von Angebots- und Geschäftsanfragen; (b) der Prüfung und Bearbeitung von Bewerbungen für unsere Teams in Portugal oder Deutschland.',
@@ -803,28 +770,6 @@
     }, { threshold: 0.2 });
     autoVids.forEach(function (v) { vidIo.observe(v); });
   }
-  $$('[data-vid-toggle]').forEach(function (btn) {
-    var box = btn.closest('.pano-vid');
-    var v = box ? $('video', box) : null;
-    if (!v) return;
-    if (reduce) {
-      btn.setAttribute('aria-pressed', 'true');
-      btn.setAttribute('data-i18n', 'vid.play');
-    }
-    btn.addEventListener('click', function () {
-      var paused = !v.paused;
-      if (paused) {
-        v.setAttribute('data-user-paused', 'true');
-        v.pause();
-      } else {
-        v.removeAttribute('data-user-paused');
-        var p = v.play(); if (p && p.catch) p.catch(function () {});
-      }
-      btn.setAttribute('aria-pressed', String(paused));
-      btn.setAttribute('data-i18n', paused ? 'vid.play' : 'vid.pause');
-      btn.textContent = t(paused ? 'vid.play' : 'vid.pause');
-    });
-  });
 
   /* ------------------------------ Lightbox de projetos e galeria Alemanha ------------------------------ */
   var lb = $('#lb');
@@ -868,13 +813,6 @@
         openCard(card);
       });
     }
-    $$('a.de-photo-card').forEach(function (card) {
-      if (card.closest('[data-prj-wall]')) return;
-      card.addEventListener('click', function (e) {
-        e.preventDefault();
-        openCard(card);
-      });
-    });
 
     var prevBtn = $('[data-lb-prev]', lb), nextBtn = $('[data-lb-next]', lb), closeBtn = $('[data-lb-close]', lb);
     if (prevBtn) prevBtn.addEventListener('click', function (e) { e.stopPropagation(); renderLb(lbIdx - 1); });
@@ -963,8 +901,6 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if ($('[name=_honey]', form).value) return;
-      var consentEl = $('[name=consent]', form);
-      if (consentEl && !consentEl.checked) { setStatus('a.cons', 'err'); return; }
       if (!form.checkValidity()) { form.reportValidity(); setStatus('a.val', 'err'); return; }
       var multi = $('[data-multi-group]', form);
       if (multi && !$$('input[type=checkbox]:checked', multi).length) {
@@ -976,7 +912,7 @@
 
       var fd = new FormData(form), data = {};
       fd.forEach(function (v, k) {
-        if (k === '_honey' || k === 'consent') return;
+        if (k === '_honey') return;
         var val = String(v).trim();
         if (!val) return;
         data[k] = data[k] ? data[k] + ', ' + val : val;
