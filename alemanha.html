@@ -8,11 +8,11 @@
     <meta name="description"
         content="Equipas especializadas em carpintaria de cofragem e estruturas em betão armado na Alemanha: Dortmund, Munique, Berlim, Hamburgo, Brémen e Düsseldorf.">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="MR Construções — Marco Paulo Ribeiro Unipessoal, Lda.">
+    <meta name="author" content="MR Construções - Marco Paulo Ribeiro Unipessoal, Lda.">
     <meta name="theme-color" content="#F6F4EF">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io mailto:; base-uri 'self'; object-src 'none';">
+        content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io mailto:; base-uri 'self'; object-src 'none';">
     <!-- SEO_BASE_URL: substituir https://midi-8.github.io/mr-construcoes por https://marcoribeiroconstrucoes.pt quando o domínio estiver ativo -->
     <link rel="canonical" href="https://midi-8.github.io/mr-construcoes/alemanha.html">
     <link rel="alternate" hreflang="pt-PT" href="https://midi-8.github.io/mr-construcoes/alemanha.html">
@@ -29,20 +29,56 @@
     <meta property="og:description"
         content="Equipas especializadas em carpintaria de cofragem e execução de estruturas em betão armado na Alemanha.">
     <meta property="og:url" content="https://midi-8.github.io/mr-construcoes/alemanha.html">
-    <meta property="og:image" content="https://midi-8.github.io/mr-construcoes/imagens/hero.webp">
+    <meta property="og:image" content="https://midi-8.github.io/mr-construcoes/imagens/og-alemanha.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Alemanha | Carpintaria de Cofragem · MR Construções">
     <meta name="twitter:description" content="Carpintaria de cofragem e estruturas em betão armado na Alemanha.">
-    <meta name="twitter:image" content="https://midi-8.github.io/mr-construcoes/imagens/hero.webp">
+    <meta name="twitter:image" content="https://midi-8.github.io/mr-construcoes/imagens/og-alemanha.jpg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "name": "Carpintaria de Cofragem e Estruturas em Betão Armado na Alemanha",
+                "serviceType": "Formwork Carpentry / Schalungsbau",
+                "provider": {
+                    "@type": "GeneralContractor",
+                    "@id": "https://midi-8.github.io/mr-construcoes/#empresa",
+                    "name": "MR Construções",
+                    "legalName": "Marco Paulo Ribeiro Unipessoal, Lda."
+                },
+                "areaServed": [
+                    { "@type": "City", "name": "Hamburg" },
+                    { "@type": "City", "name": "Berlin" },
+                    { "@type": "City", "name": "Munich" },
+                    { "@type": "City", "name": "Düsseldorf" },
+                    { "@type": "City", "name": "Dortmund" },
+                    { "@type": "City", "name": "Bremen" }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://midi-8.github.io/mr-construcoes/" },
+                    { "@type": "ListItem", "position": 2, "name": "Alemanha", "item": "https://midi-8.github.io/mr-construcoes/alemanha.html" }
+                ]
+            }
+        ]
+    }
+    </script>
 
     <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="imagens/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
     <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/germany-map.css">
     <script src="js/site.js" defer></script>
+    <script src="js/germany-map.js" defer></script>
 </head>
 
 <body data-page="germany">
@@ -50,7 +86,7 @@
 
     <!-- NAVEGAÇÃO -->
     <header class="nav solid">
-        <a class="brand" href="index.html#inicio" aria-label="MR Construções — início">
+        <a class="brand" href="index.html#inicio" aria-label="MR Construções - início">
             <img src="imagens/logo-mr-96.webp" width="28" height="28" alt="" decoding="async">
             <i class="brand-sep" aria-hidden="true"></i>
             <span>MR Construções</span>
@@ -61,7 +97,7 @@
                 <li><a href="index.html#servicos"><span data-i18n="n.servicos">Serviços</span></a></li>
                 <li><a href="index.html#projetos"><span data-i18n="n.projetos">Projetos</span></a></li>
                 <li><a href="alemanha.html" aria-current="page"><span data-i18n="n.alemanha">Alemanha</span></a></li>
-                <li><a href="emprego.html"><span data-i18n="n.emprego">Emprego</span></a></li>
+                <li><a href="recrutamento.html"><span data-i18n="n.emprego">Recrutamento</span></a></li>
                 <li><a href="index.html#orcamento"><span data-i18n="n.orcamento">Orçamento</span></a></li>
             </ul>
         </nav>
@@ -80,8 +116,8 @@
             <h1 class="t-xl" data-i18n="d1.title">Além-fronteiras.</h1>
             <p class="body body--ink" data-i18n="d1.lead">Carpintaria de cofragem na Alemanha. Equipas especializadas, integradas em obras de estruturas em betão armado de diferentes dimensões e exigências técnicas.</p>
             <div class="page-hero-actions">
-                <a class="btn" href="#empresas"><span data-i18n="d1.b2bl">Contactar para parcerias</span><span aria-hidden="true">↗</span></a>
-                <a class="link" href="emprego.html"><span data-i18n="de.jobs.link">Canal de emprego</span><span class="ar" aria-hidden="true">↗</span></a>
+                <a class="btn" href="#empresas"><span data-i18n="d1.b2bl">Contactar para parcerias</span></a>
+                <a class="link" href="recrutamento.html"><span data-i18n="de.jobs.link">Recrutamento</span><svg class="ico-ar ar" viewBox="0 0 14 10" aria-hidden="true"><path d="M1.5 5h11M9 1.5L12.5 5 9 8.5"/></svg></a>
             </div>
             <div class="pano" data-scroll-open>
                 <div class="frame" data-par style="--ar:21 / 10">
@@ -95,7 +131,6 @@
             <div class="sh rv" aria-hidden="true"></div>
             <div class="grid de-svc-grid">
                 <div class="de-svc-left rv">
-                    <span class="micro" data-i18n="d1.h">Serviços na Alemanha</span>
                     <h2 class="t-xl" data-i18n="d2.title">Uma presença que constrói.</h2>
                     <p class="body" data-i18n="d2.lead">Experiência operacional, coordenação em estaleiro e capacidade de integração em equipas de obra, contribuindo diariamente para a execução rigorosa de estruturas em betão armado.</p>
                 </div>
@@ -110,167 +145,94 @@
             </div>
         </section>
 
-        <!-- MAPA DE ATUAÇÃO NA ALEMANHA (PRETOS E CINZENTOS CLEAN) -->
+        <!-- MAPA 3D/2D INTERATIVO DE ATUAÇÃO NA ALEMANHA -->
         <section class="sec wrap" id="atuacao">
             <div class="sh rv" aria-hidden="true"></div>
             <div class="grid de-map-grid">
                 <div class="de-map-info rv">
                     <div>
-                        <span class="micro" data-i18n="de.map.kicker">Presença geográfica</span>
-                        <h2 class="t-xl" style="margin-top:12px" data-i18n="de.map.title">Zonas onde atuamos.</h2>
+                        <h2 class="t-xl" data-i18n="de.map.title">Zonas onde atuamos.</h2>
                         <p class="body" style="margin-top:16px" data-i18n="de.map.desc">Equipas mobilizadas em vários polos construtivos da Alemanha, respondendo com flexibilidade às exigências de cada obra.</p>
                     </div>
                     <ol class="de-cities" data-de-cities>
-                        <li><button type="button" class="de-city-btn is-active" data-city="dortmund"><span class="micro">01</span><strong data-i18n="city.dortmund">Dortmund</strong><em>51.51° N · 7.46° E</em></button></li>
-                        <li><button type="button" class="de-city-btn" data-city="munich"><span class="micro">02</span><strong data-i18n="city.munich">Munique</strong><em>48.14° N · 11.58° E</em></button></li>
-                        <li><button type="button" class="de-city-btn" data-city="berlin"><span class="micro">03</span><strong data-i18n="city.berlin">Berlim</strong><em>52.52° N · 13.40° E</em></button></li>
-                        <li><button type="button" class="de-city-btn" data-city="hamburg"><span class="micro">04</span><strong data-i18n="city.hamburg">Hamburgo</strong><em>53.55° N · 9.99° E</em></button></li>
-                        <li><button type="button" class="de-city-btn" data-city="bremen"><span class="micro">05</span><strong data-i18n="city.bremen">Brémen</strong><em>53.08° N · 8.80° E</em></button></li>
-                        <li><button type="button" class="de-city-btn" data-city="dusseldorf"><span class="micro">06</span><strong data-i18n="city.dusseldorf">Düsseldorf</strong><em>51.23° N · 6.78° E</em></button></li>
+                        <li><button type="button" class="de-city-btn is-active" data-city="hamburg"><span class="micro">01</span><span class="de-city-meta"><strong data-i18n="city.hamburg">Hamburgo</strong><small data-i18n="reg.hamburg">Hamburgo</small></span><em>53.55° N · 9.99° E</em></button></li>
+                        <li><button type="button" class="de-city-btn" data-city="berlin"><span class="micro">02</span><span class="de-city-meta"><strong data-i18n="city.berlin">Berlim</strong><small data-i18n="reg.berlin">Berlim</small></span><em>52.52° N · 13.40° E</em></button></li>
+                        <li><button type="button" class="de-city-btn" data-city="munich"><span class="micro">03</span><span class="de-city-meta"><strong data-i18n="city.munich">Munique</strong><small data-i18n="reg.bavaria">Baviera</small></span><em>48.14° N · 11.58° E</em></button></li>
+                        <li><button type="button" class="de-city-btn" data-city="dusseldorf"><span class="micro">04</span><span class="de-city-meta"><strong data-i18n="city.dusseldorf">Düsseldorf</strong><small data-i18n="reg.nrw">Renânia do Norte-Vestfália</small></span><em>51.23° N · 6.77° E</em></button></li>
+                        <li><button type="button" class="de-city-btn" data-city="dortmund"><span class="micro">05</span><span class="de-city-meta"><strong data-i18n="city.dortmund">Dortmund</strong><small data-i18n="reg.nrw">Renânia do Norte-Vestfália</small></span><em>51.51° N · 7.47° E</em></button></li>
+                        <li><button type="button" class="de-city-btn" data-city="bremen"><span class="micro">06</span><span class="de-city-meta"><strong data-i18n="city.bremen">Brémen</strong><small data-i18n="reg.bremen">Brémen</small></span><em>53.08° N · 8.80° E</em></button></li>
                     </ol>
                 </div>
 
-                <div class="de-map-wrap rv" style="--d:.1s" data-map-3d>
-                    <div class="de-map-stage">
-                        <div class="de-map-plane">
-                            <svg class="de-map-svg" viewBox="0 0 420 520" role="img" aria-label="Mapa 3D da Alemanha com as zonas de atuação da MR Construções: Dortmund, Munique, Berlim, Hamburgo, Brémen e Düsseldorf" data-i18n-aria="de.map.aria">
-                                <defs>
-                                    <path id="de-shape" d="M144.2 41.6 L173.4 46.3 L191.7 67.8 L228.3 71.9 L224.6 97 L246.6 91.1 L277.6 69.6 L319.7 58 L331.7 91.1 L348.9 108.6 L355.1 137.7 L350 161 L364.7 184.3 L365.4 207.6 L368.3 236.7 L377.8 254.2 L369 276.9 L347.1 275.7 L323.3 289.1 L301.4 302.5 L273.3 310.7 L285 338.6 L295.2 364.8 L321.5 388.1 L333.9 398.6 L319.7 411.4 L301.4 431.8 L296.7 449.3 L304 465.6 L288.6 463.8 L272.2 463.8 L250.2 473.7 L228.3 477.2 L204.5 484.2 L184.4 469.6 L163.6 463.2 L140.5 466.7 L106.5 467.9 L104 440.5 L116 407.3 L127.7 386.4 L107.6 380.5 L83.9 374.7 L60.5 357.8 L64.9 335.7 L51.7 318.2 L54.6 294.9 L48 279.2 L50.2 257.1 L54.6 236.7 L45.5 221 L74.7 210.5 L85.7 194.2 L72.9 174.4 L85.7 155.2 L91.2 131.9 L107.6 112.7 L125.9 116.2 L142.4 101 L154.1 85.3 L146.8 62 Z"/>
-                                    <linearGradient id="de-top-grad" x1="10%" y1="4%" x2="90%" y2="96%">
-                                        <stop offset="0%" stop-color="#F2F0EA"/>
-                                        <stop offset="52%" stop-color="#E2E0D8"/>
-                                        <stop offset="100%" stop-color="#C9C7BE"/>
-                                    </linearGradient>
-                                    <linearGradient id="de-rim-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".85"/>
-                                        <stop offset="48%" stop-color="#7B7973" stop-opacity=".6"/>
-                                        <stop offset="100%" stop-color="#1E1E1C" stop-opacity=".7"/>
-                                    </linearGradient>
-                                    <filter id="de-shadow-f" x="-22%" y="-16%" width="148%" height="148%">
-                                        <feGaussianBlur stdDeviation="8"/>
-                                    </filter>
-                                    <clipPath id="de-clip"><use href="#de-shape"/></clipPath>
-                                </defs>
-
-                                <!-- Plano técnico de coordenadas no chão -->
-                                <line class="de-map-gridline" x1="20" y1="120" x2="400" y2="120"/>
-                                <line class="de-map-gridline" x1="20" y1="240" x2="400" y2="240"/>
-                                <line class="de-map-gridline" x1="20" y1="360" x2="400" y2="360"/>
-                                <line class="de-map-gridline" x1="110" y1="24" x2="110" y2="496"/>
-                                <line class="de-map-gridline" x1="220" y1="24" x2="220" y2="496"/>
-                                <line class="de-map-gridline" x1="330" y1="24" x2="330" y2="496"/>
-
-                                <!-- Sombra projetada da maquete 3D -->
-                                <use href="#de-shape" class="de-map-shadow" transform="translate(8 26)" filter="url(#de-shadow-f)"/>
-
-                                <!-- Extrusão arquitetónica 3D em cinzentos e pretos -->
-                                <g class="de-map-extrude" aria-hidden="true">
-                                    <use href="#de-shape" y="15" fill="#1D1D1B"/>
-                                    <use href="#de-shape" y="13.5" fill="#272724"/>
-                                    <use href="#de-shape" y="12" fill="#32322F"/>
-                                    <use href="#de-shape" y="10.5" fill="#3F3F3B"/>
-                                    <use href="#de-shape" y="9" fill="#4D4C48"/>
-                                    <use href="#de-shape" y="7.5" fill="#5B5A55"/>
-                                    <use href="#de-shape" y="6" fill="#6A6964"/>
-                                    <use href="#de-shape" y="4.5" fill="#7B7A74"/>
-                                    <use href="#de-shape" y="3" fill="#8E8D86"/>
-                                    <use href="#de-shape" y="1.5" fill="#A5A39C"/>
-                                </g>
-
-                                <!-- Superfície superior iluminada + grelha topográfica interior -->
-                                <use href="#de-shape" class="de-map-top"/>
-                                <g clip-path="url(#de-clip)" aria-hidden="true">
-                                    <line class="de-map-topgrid" x1="20" y1="120" x2="400" y2="120"/>
-                                    <line class="de-map-topgrid" x1="20" y1="240" x2="400" y2="240"/>
-                                    <line class="de-map-topgrid" x1="20" y1="360" x2="400" y2="360"/>
-                                    <line class="de-map-topgrid" x1="110" y1="24" x2="110" y2="496"/>
-                                    <line class="de-map-topgrid" x1="220" y1="24" x2="220" y2="496"/>
-                                    <line class="de-map-topgrid" x1="330" y1="24" x2="330" y2="496"/>
-                                </g>
-
-                                <!-- Linhas subtis de ligação operacional na superfície -->
-                                <path class="de-map-link" d="M75.8 255.4 L100.7 239 L149.7 147.6 L193.2 120.3 L317.9 180.2 L251.3 435.3 L100.7 239"/>
-
-                                <!-- Bases de ancoragem no relevo 3D para cada cidade -->
-                                <g class="de-pin-base" data-pin-base="hamburg"><circle class="de-pin-ring" cx="193.2" cy="120.3" r="10"/><circle class="de-pin-dot" cx="193.2" cy="120.3" r="3.2"/></g>
-                                <g class="de-pin-base" data-pin-base="bremen"><circle class="de-pin-ring" cx="149.7" cy="147.6" r="10"/><circle class="de-pin-dot" cx="149.7" cy="147.6" r="3.2"/></g>
-                                <g class="de-pin-base" data-pin-base="berlin"><circle class="de-pin-ring" cx="317.9" cy="180.2" r="10"/><circle class="de-pin-dot" cx="317.9" cy="180.2" r="3.2"/></g>
-                                <g class="de-pin-base is-active" data-pin-base="dortmund"><circle class="de-pin-ring" cx="100.7" cy="239" r="10"/><circle class="de-pin-dot" cx="100.7" cy="239" r="3.2"/></g>
-                                <g class="de-pin-base" data-pin-base="dusseldorf"><circle class="de-pin-ring" cx="75.8" cy="255.4" r="10"/><circle class="de-pin-dot" cx="75.8" cy="255.4" r="3.2"/></g>
-                                <g class="de-pin-base" data-pin-base="munich"><circle class="de-pin-ring" cx="251.3" cy="435.3" r="10"/><circle class="de-pin-dot" cx="251.3" cy="435.3" r="3.2"/></g>
-                            </svg>
-
-                            <!-- Marcadores verticais em 3D (erguidos sobre o relevo) -->
-                            <div class="de-pins-3d">
-                                <button type="button" class="de-pin-3d" data-pin="hamburg" data-side="right" style="--x:46.00%;--y:23.13%;--h:28px"><span class="de-pin-stem" aria-hidden="true"></span><span class="de-pin-head" aria-hidden="true"></span><span class="de-pin-tag" data-i18n="city.hamburg">Hamburgo</span></button>
-                                <button type="button" class="de-pin-3d" data-pin="bremen" data-side="left" style="--x:35.64%;--y:28.38%;--h:24px"><span class="de-pin-stem" aria-hidden="true"></span><span class="de-pin-head" aria-hidden="true"></span><span class="de-pin-tag" data-i18n="city.bremen">Brémen</span></button>
-                                <button type="button" class="de-pin-3d" data-pin="berlin" data-side="right" style="--x:75.69%;--y:34.65%;--h:30px"><span class="de-pin-stem" aria-hidden="true"></span><span class="de-pin-head" aria-hidden="true"></span><span class="de-pin-tag" data-i18n="city.berlin">Berlim</span></button>
-                                <button type="button" class="de-pin-3d is-active" data-pin="dortmund" data-side="right" style="--x:23.98%;--y:45.96%;--h:38px"><span class="de-pin-stem" aria-hidden="true"></span><span class="de-pin-head" aria-hidden="true"></span><span class="de-pin-tag" data-i18n="city.dortmund">Dortmund</span></button>
-                                <button type="button" class="de-pin-3d" data-pin="dusseldorf" data-side="right" style="--x:18.05%;--y:49.12%;--h:12px"><span class="de-pin-stem" aria-hidden="true"></span><span class="de-pin-head" aria-hidden="true"></span><span class="de-pin-tag" data-i18n="city.dusseldorf">Düsseldorf</span></button>
-                                <button type="button" class="de-pin-3d" data-pin="munich" data-side="right" style="--x:59.83%;--y:83.71%;--h:28px"><span class="de-pin-stem" aria-hidden="true"></span><span class="de-pin-head" aria-hidden="true"></span><span class="de-pin-tag" data-i18n="city.munich">Munique</span></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="de-map-meta">
-                        <span class="micro" data-i18n="de.map.legend">Alemanha · 6 zonas de atuação</span>
-                        <span class="micro" id="de-active-city">Dortmund · 51.51° N</span>
-                    </div>
+                <div class="de-map-wrap rv" style="--d:.08s">
+                    <div id="germany-map-root"></div>
                 </div>
             </div>
         </section>
 
-        <!-- MURAL DE OBRA NA ALEMANHA (DISPOSIÇÃO MONUMENTAL À LARGURA TOTAL ESTILO S+A) -->
+        <!-- MURAL DE OBRA NA ALEMANHA (CARROSSEL CONTÍNUO INFINITO EM 2 LINHAS) -->
         <section class="sec sec--alt wrap" id="galeria-alemanha">
             <div class="sh rv" aria-hidden="true"></div>
             <div class="de-gal-head rv">
-                <span class="micro" data-i18n="de.gal.kicker">Registo em estaleiro</span>
                 <h2 class="t-xl" data-i18n="de.gal.title">Em obra na Alemanha.</h2>
                 <p class="sec-lead" data-i18n="de.gal.sub">Registos reais das nossas equipas em estaleiros de betão armado e cofragem.</p>
             </div>
 
-            <div class="de-mural">
-                <!-- Linha 1: Grande fotografia dominante (70%) + vídeo vertical de estaleiro (30%) -->
-                <div class="de-mural-r1">
-                    <a class="de-mural-tile de-photo-card rv" href="imagens/alemanha-cofragem-muro.webp" data-idx="0" data-alt="Montagem de cofragem de muro com escoras metálicas na Alemanha">
-                        <img src="imagens/alemanha-cofragem-muro.webp" width="1024" height="768" loading="lazy" decoding="async" alt="Equipa MR Construções a montar cofragem metálica de muro">
-                        <div class="mural-ov"><h3 data-i18n="de.gal.p1">Cofragem de Muro</h3><span class="micro" data-i18n="p9.m">Alemanha</span></div>
-                    </a>
-                    <div class="de-mural-tile de-mural-vid rv" style="--d:.06s">
-                        <video data-auto-video autoplay muted loop playsinline preload="metadata" poster="imagens/hero.webp" aria-label="Execução de cofragem e lajes em obra na Alemanha">
-                            <source src="videos/alemanha-cofragem.mp4" type="video/mp4">
-                        </video>
+            <div class="prj-wall de-wall" data-prj-wall>
+                <!-- Linha 1: deslocação contínua para a esquerda -->
+                <div class="prj-row" data-dir="left">
+                    <div class="prj-track">
+                        <a class="prj-card de-photo-card" href="imagens/alemanha-cofragem-muro.webp" data-idx="0" data-alt="Montagem de cofragem de muro com escoras metálicas na Alemanha">
+                            <img src="imagens/alemanha-cofragem-muro.webp" width="1024" height="768" loading="lazy" decoding="async" alt="Equipa MR Construções a montar cofragem metálica de muro">
+                            <div class="prj-ov"><span class="micro" data-i18n="p9.m">Alemanha</span><h3 data-i18n="de.gal.p1">Cofragem de Muro</h3></div>
+                        </a>
+                        <div class="prj-card prj-card--vid">
+                            <video data-auto-video autoplay muted loop playsinline preload="metadata" poster="imagens/alemanha-obra-aerea-2.webp" aria-label="Vista aérea de obra de cofragem e betão armado na Alemanha">
+                                <source src="videos/alemanha-drone.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <a class="prj-card de-photo-card" href="imagens/alemanha-obra-aerea-1.webp" data-idx="1" data-alt="Vista aérea de obra estrutural de grande escala na Alemanha">
+                            <img src="imagens/alemanha-obra-aerea-1.webp" width="1024" height="576" loading="lazy" decoding="async" alt="Vista aérea de edifícios em construção com gruas na Alemanha">
+                            <div class="prj-ov"><span class="micro" data-i18n="p9.m">Alemanha</span><h3 data-i18n="de.gal.p2">Obra de Grande Escala</h3></div>
+                        </a>
+                        <a class="prj-card de-photo-card" href="imagens/hero.webp" data-idx="2" data-alt="Estaleiro de cofragem e betão armado na Alemanha">
+                            <img src="imagens/hero.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Vista aérea de estaleiro de cofragem e estruturas em betão armado na Alemanha">
+                            <div class="prj-ov"><span class="micro" data-i18n="p9.m">Alemanha</span><h3 data-i18n="de.gal.p5">Estaleiro em Betão Armado</h3></div>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Linha 2: 3 painéis grandes lado a lado (vista aérea + vídeo drone nítido + equipa MR) -->
-                <div class="de-mural-r2">
-                    <a class="de-mural-tile de-photo-card rv" href="imagens/alemanha-obra-aerea-1.webp" data-idx="1" data-alt="Vista aérea de obra estrutural de grande escala na Alemanha">
-                        <img src="imagens/alemanha-obra-aerea-1.webp" width="1024" height="576" loading="lazy" decoding="async" alt="Vista aérea de edifícios em construção com gruas na Alemanha">
-                        <div class="mural-ov"><h3 data-i18n="de.gal.p2">Obra de Grande Escala</h3><span class="micro" data-i18n="p9.m">Alemanha</span></div>
-                    </a>
-                    <div class="de-mural-tile de-mural-vid rv" style="--d:.06s">
-                        <video data-auto-video autoplay muted loop playsinline preload="metadata" poster="imagens/alemanha-obra-aerea-2.webp" aria-label="Vista aérea de obra de cofragem e betão armado na Alemanha">
-                            <source src="videos/alemanha-drone.mp4" type="video/mp4">
-                        </video>
+                <!-- Linha 2: deslocação contínua para a direita -->
+                <div class="prj-row" data-dir="right">
+                    <div class="prj-track">
+                        <div class="prj-card prj-card--vid">
+                            <video data-auto-video autoplay muted loop playsinline preload="metadata" poster="imagens/hero.webp" aria-label="Execução de cofragem e lajes em obra na Alemanha">
+                                <source src="videos/alemanha-cofragem.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <a class="prj-card de-photo-card" href="imagens/alemanha-obra-aerea-2.webp" data-idx="3" data-alt="Perspetiva panorâmica de complexo em betão armado na Alemanha">
+                            <img src="imagens/alemanha-obra-aerea-2.webp" width="1024" height="576" loading="lazy" decoding="async" alt="Perspetiva aérea de complexo estrutural em execução na Alemanha">
+                            <div class="prj-ov"><span class="micro" data-i18n="p9.m">Alemanha</span><h3 data-i18n="de.gal.p3">Estruturas em Betão Armado</h3></div>
+                        </a>
+                        <a class="prj-card de-photo-card" href="imagens/equipa-mr-cofragem.webp" data-idx="4" data-alt="Profissional MR Construções em verificação de prumo de muro em betão">
+                            <img src="imagens/equipa-mr-cofragem.webp" width="576" height="1024" loading="lazy" decoding="async" alt="Equipa MR Construções em verificação técnica de betão armado" style="object-position:50% 28%">
+                            <div class="prj-ov"><span class="micro" data-i18n="p9.m">Alemanha</span><h3 data-i18n="de.gal.p4">Equipa MR em Obra</h3></div>
+                        </a>
+                        <div class="prj-card prj-card--vid">
+                            <video data-auto-video autoplay muted loop playsinline preload="metadata" poster="imagens/alemanha-cofragem-muro.webp" aria-label="Fundações e armaduras de betão armado na Alemanha">
+                                <source src="videos/alemanha-estrutura.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <a class="prj-card de-photo-card" href="imagens/alemanha-cofragem-muro.webp" data-idx="0" data-alt="Montagem de cofragem de muro com escoras metálicas na Alemanha">
+                            <img src="imagens/alemanha-cofragem-muro.webp" width="1024" height="768" loading="lazy" decoding="async" alt="Equipa MR Construções a montar cofragem metálica de muro">
+                            <div class="prj-ov"><span class="micro" data-i18n="p9.m">Alemanha</span><h3 data-i18n="de.gal.p1">Cofragem de Muro</h3></div>
+                        </a>
                     </div>
-                    <a class="de-mural-tile de-photo-card rv" style="--d:.12s" href="imagens/equipa-mr-cofragem.webp" data-idx="2" data-alt="Profissional MR Construções em verificação de prumo de muro em betão">
-                        <img src="imagens/equipa-mr-cofragem.webp" width="576" height="1024" loading="lazy" decoding="async" alt="Equipa MR Construções em verificação técnica de betão armado" style="object-position:50% 28%">
-                        <div class="mural-ov"><h3 data-i18n="de.gal.p4">Equipa MR em Obra</h3><span class="micro" data-i18n="p9.m">Alemanha</span></div>
-                    </a>
                 </div>
+            </div>
 
-                <!-- Linha 3: Vídeo vertical (30%) + grande vista panorâmica dominante (70%) -->
-                <div class="de-mural-r3">
-                    <div class="de-mural-tile de-mural-vid rv">
-                        <video data-auto-video autoplay muted loop playsinline preload="metadata" poster="imagens/alemanha-cofragem-muro.webp" aria-label="Fundações e armaduras de betão armado na Alemanha">
-                            <source src="videos/alemanha-estrutura.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <a class="de-mural-tile de-photo-card rv" style="--d:.06s" href="imagens/alemanha-obra-aerea-2.webp" data-idx="3" data-alt="Perspetiva panorâmica de complexo em betão armado na Alemanha">
-                        <img src="imagens/alemanha-obra-aerea-2.webp" width="1024" height="576" loading="lazy" decoding="async" alt="Perspetiva aérea de complexo estrutural em execução na Alemanha">
-                        <div class="mural-ov"><h3 data-i18n="de.gal.p3">Estruturas em Betão Armado</h3><span class="micro" data-i18n="p9.m">Alemanha</span></div>
-                    </a>
-                </div>
+            <div class="prj-foot rv">
+                <p class="body" data-i18n="de.gal.more">Equipas preparadas para integrar projetos em qualquer ponto da Alemanha.</p>
             </div>
         </section>
 
@@ -283,13 +245,9 @@
                     <p data-i18n="de.b2b.desc">Prestamos serviços de carpintaria de cofragem a empresas e parceiros do setor da construção na Alemanha. Fale connosco sobre o seu projeto.</p>
                 </div>
                 <div class="b2b-actions">
-                    <a class="btn" data-b2b href="mailto:geral@marcoribeiroconstrucoes.pt?subject=Parceria"><span data-i18n="de.b2b.email">Enviar email</span><span aria-hidden="true">↗</span></a>
-                    <a class="btn btn--ghost" data-wa-b2b href="https://wa.me/351915680947" target="_blank" rel="noopener noreferrer"><span data-i18n="c.wa">WhatsApp</span><span aria-hidden="true">↗</span></a>
+                    <a class="btn" data-b2b href="mailto:geral@marcoribeiroconstrucoes.pt?subject=Parceria"><span data-i18n="de.b2b.email">Enviar email</span></a>
+                    <a class="btn btn--ghost" data-wa-b2b href="https://wa.me/351915680947" target="_blank" rel="noopener noreferrer"><span data-i18n="c.wa">WhatsApp</span></a>
                 </div>
-            </div>
-            <div class="de-jobs-bar rv">
-                <p class="body" data-i18n="de.jobs.prompt">Tem experiência em construção ou carpintaria de cofragem e procura trabalhar na Alemanha?</p>
-                <a class="link" href="emprego.html"><span data-i18n="de.jobs.cta">Aceder ao canal de emprego</span><span class="ar" aria-hidden="true">↗</span></a>
             </div>
         </section>
     </main>
@@ -297,7 +255,7 @@
     <footer class="foot">
         <div class="foot-top">
             <div class="foot-brand">
-                <a class="brand" href="index.html#inicio" aria-label="MR Construções — início">
+                <a class="brand" href="index.html#inicio" aria-label="MR Construções - início">
                     <img src="imagens/logo-mr-96.webp" width="24" height="24" alt="" loading="lazy" decoding="async">
                     <i class="brand-sep" aria-hidden="true"></i>
                     <span>MR Construções</span>
@@ -313,7 +271,7 @@
                     <li><a href="index.html#servicos" data-i18n="n.servicos">Serviços</a></li>
                     <li><a href="index.html#projetos" data-i18n="n.projetos">Projetos</a></li>
                     <li><a href="alemanha.html" aria-current="page" data-i18n="n.alemanha">Alemanha</a></li>
-                    <li><a href="emprego.html" data-i18n="n.emprego">Emprego</a></li>
+                    <li><a href="recrutamento.html" data-i18n="n.emprego">Recrutamento</a></li>
                     <li><a href="index.html#orcamento" data-i18n="n.orcamento">Orçamento</a></li>
                 </ul>
             </div>
@@ -338,6 +296,7 @@
                     <li>Alvará IMPIC 113987</li>
                     <li data-i18n="f.seat">Sede: Rua do Casino n.º 94 E, 4765-063 Bairro, V. N. Famalicão</li>
                     <li class="foot-gap"><a href="privacidade.html" data-i18n="f.priv">Política de Privacidade</a></li>
+                    <li><a href="termos.html" data-i18n="f.terms">Termos e Condições</a></li>
                     <li><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener noreferrer" data-i18n="f.compl">Livro de Reclamações Eletrónico</a></li>
                 </ul>
             </div>
@@ -345,24 +304,27 @@
 
         <div class="foot-bot">
             <span>© <span id="year">2026</span> MR Construções. <span data-i18n="f.rights">Todos os direitos reservados.</span></span>
-            <div class="foot-bot-r">
-                <span><span data-i18n="f.credit">Desenvolvido por</span> <a href="https://midi8.pt" target="_blank" rel="noopener noreferrer">midi8</a></span>
-                <a class="top" href="#conteudo"><span data-i18n="f.top">Voltar ao topo</span> <span aria-hidden="true">↑</span></a>
-            </div>
+            <span class="foot-credit"><span data-i18n="f.credit">Desenvolvido por</span> <a href="https://midi8.pt" target="_blank" rel="noopener noreferrer">midi8</a></span>
+            <a class="top" href="#conteudo"><span data-i18n="f.top">Topo</span><svg class="ico-ar ico-ar--v" viewBox="0 0 10 14" aria-hidden="true"><path d="M5 12.5V1.5M1.5 5L5 1.5 8.5 5"/></svg></a>
         </div>
     </footer>
 
+    <!-- Botão flutuante WhatsApp -->
+    <a class="whatsapp-float" data-wa-b2b href="https://wa.me/351915680947" target="_blank" rel="noopener noreferrer" aria-label="Contactar via WhatsApp" data-i18n-aria="wa.float.aria">
+        <svg viewBox="0 0 32 32" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M16 2a13.9 13.9 0 0 0-12 21L2 30l7.2-1.9A13.9 13.9 0 1 0 16 2zm0 25.4c-2.3 0-4.5-.6-6.4-1.7l-.5-.3-4.3 1.1 1.2-4.2-.3-.5A11.5 11.5 0 1 1 27.5 16 11.5 11.5 0 0 1 16 27.4zm6.3-8.6c-.3-.2-2-1-2.3-1.1-.3-.1-.6-.2-.8.2s-.9 1.1-1.1 1.3-.4.2-.7.1a9.2 9.2 0 0 1-5.4-4.7c-.2-.4 0-.6.2-.8l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6s-.8-2-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.7.1-1.1.5s-1.5 1.5-1.5 3.6 1.5 4.1 1.7 4.4c.2.3 3 4.6 7.4 6.4 1 .4 1.9.7 2.5.9 1.1.3 2 .3 2.8.2.8-.1 2.5-1 2.8-2 .4-.9.4-1.8.3-2 0-.2-.3-.3-.6-.5z"/></svg>
+    </a>
+
     <!-- LIGHTBOX -->
     <dialog class="lb" id="lb" aria-label="Fotografia ampliada" data-i18n-aria="p.lb.aria">
-        <button class="x" type="button" data-lb-close><span data-i18n="p.close">Fechar</span></button>
+        <button class="x" type="button" data-lb-close aria-label="Fechar" data-i18n-aria="p.close"><svg class="ico-x" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg></button>
         <figure>
-            <img src="" alt="">
+            <img src="" width="1200" height="800" alt="">
             <figcaption>
                 <span class="micro lb-cap"></span>
                 <div class="lb-nav">
-                    <button type="button" class="lb-btn" data-lb-prev aria-label="Projeto anterior" data-i18n-aria="p.prev">←</button>
+                    <button type="button" class="lb-btn" data-lb-prev aria-label="Projeto anterior" data-i18n-aria="p.prev"><svg class="ico-ar" viewBox="0 0 14 10" aria-hidden="true"><path d="M12.5 5H1.5M5 1.5L1.5 5 5 8.5"/></svg></button>
                     <span class="micro lb-count"></span>
-                    <button type="button" class="lb-btn" data-lb-next aria-label="Próximo projeto" data-i18n-aria="p.next">→</button>
+                    <button type="button" class="lb-btn" data-lb-next aria-label="Próximo projeto" data-i18n-aria="p.next"><svg class="ico-ar" viewBox="0 0 14 10" aria-hidden="true"><path d="M1.5 5h11M9 1.5L12.5 5 9 8.5"/></svg></button>
                 </div>
             </figcaption>
         </figure>

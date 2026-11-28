@@ -1,102 +1,92 @@
-# MR Construções — Website Institucional
+# MR Construções - Website Institucional
 
-Website institucional da MR Construções (Marco Paulo Ribeiro Unipessoal, Lda.), empresa de construção civil, remodelação e reparações com sede em Vila Nova de Famalicão, Portugal.
+Website institucional da **MR Construções** (*Marco Paulo Ribeiro Unipessoal, Lda.*), empresa de construção e reabilitação de habitações em Portugal com equipas especializadas em carpintaria de cofragem e estruturas em betão armado na Alemanha.
 
-Desenvolvido em Vanilla HTML5, CSS3 e JavaScript moderno, sem dependências externas nem frameworks pesadas, otimizado para carregamento rápido, SEO local e utilização em dispositivos móveis e desktop.
+Projeto estático de elevada performance, multilingue (**PT / EN / DE**), sem cookies de rastreio e com tipografia alojada localmente em conformidade com o RGPD.
 
 ---
 
-## Estrutura do Projeto
+## Arquitetura e Estrutura
 
 ```text
 mr-construcoes/
+├── index.html                  Página principal (Hero responsivo, Empresa, Serviços, Mural de Projetos, Orçamento)
+├── alemanha.html               Atuação na Alemanha (Serviços, Mapa 2D interativo, Mural contínuo de obra, B2B)
+├── recrutamento.html           Canal de recrutamento (Hero + competências valorizadas + formulário de candidatura)
+├── privacidade.html            Política de Privacidade (RGPD)
+├── termos.html                 Termos e Condições, Aviso Legal e Resolução Alternativa de Litígios (RAL)
 ├── css/
-│   └── style.css       Folha de estilos principal, variáveis de design e regras responsivas
+│   ├── site.css                Sistema visual principal (tokens, layout, animações, responsivo, @font-face local)
+│   └── germany-map.css         Estilos compilados do componente de mapa da Alemanha
 ├── js/
-│   ├── script.js       Lógica da página principal (menu mobile, scroll, formulário, toast)
-│   ├── project-data.js Base de dados em JavaScript com as informações e galerias dos projetos
-│   ├── project-view.js Gestor de rotas por hash (#projeto/id) e preenchimento da vista do projeto
-│   └── lightbox.js     Visualizador de imagens em ecrã inteiro (acessível, com teclado e gestos de swipe)
-├── imagens/            Fotografias, logotipo oficial e recursos gráficos
-├── index.html          Estrutura HTML5 semântica (página principal e template do projeto)
-├── alemanha.html       Página dedicada para serviços internacionais e subempreitadas na Alemanha
-├── robots.txt          Instruções de indexação para motores de busca (Google, Bing)
-├── sitemap.xml         Mapa do site para indexação SEO
-├── site.webmanifest    Manifest de aplicação web móvel e ícones
-└── README.md           Documentação técnica e instruções de manutenção
+│   ├── site.js                 Motor unificado (i18n PT/EN/DE, comparador antes/depois, murais, lightbox, formulários)
+│   └── germany-map.js          Bundle compilado do mapa interativo 2D da Alemanha
+├── src/
+│   └── germany-map/            Código-fonte React + TypeScript + d3-geo + Framer Motion do mapa da Alemanha
+├── fonts/
+│   ├── inter-latin.woff2       Tipografia variável Inter (300-600, alojamento local)
+│   └── inter-latin-ext.woff2   Extensão latina da tipografia Inter
+├── imagens/                    Fotografias otimizadas em WebP, ícones PWA e miniaturas Open Graph (JPEG 1200x630)
+├── videos/                     Registos reais em obra na Alemanha (MP4 H.264 otimizados com fast-start)
+├── robots.txt                  Diretivas de indexação para motores de busca
+├── sitemap.xml                 Mapa XML das páginas ativas
+└── site.webmanifest            Manifesto PWA e metadados móveis
 ```
 
 ---
 
-## Funcionalidades Principais
+## Principais Características
 
-### Navegação e Apresentação de Projetos
-- **Filtros Interativos por Categoria**: Filtragem em tempo real na grelha de portfólio (Todos, Construção, Remodelação, Acabamentos) com contadores automáticos.
-- **Cartões de Projeto no Portfólio**: Cada cartão da página inicial liga diretamente à página detalhada da respetiva obra via hash da URL (`#projeto/moradia-pedra-famalicao`, `#projeto/moradia-minimalista`, `#projeto/interiores-sala-ripado`, `#projeto/casa-de-banho-porto`, `#projeto/piscina-famalicao`, `#projeto/casa-famalicao`).
-- **Vista Detalhada Dinâmica**: Layout moderno em duas colunas — texto, descrição e botão de pedido de orçamento à esquerda; galeria com fotografia principal e miniaturas verticais à direita; blocos estruturados de "Rigor e Execução" e "Ficha Técnica" lado a lado.
-- **Título de Separador e Histórico**: Ao entrar num projeto, o título da aba do navegador é atualizado dinamicamente e restaurado ao regressar à página principal.
-- **WhatsApp Contextual**: O botão flutuante de contacto adapta automaticamente a mensagem com o nome do projeto que o visitante está a consultar.
+### Experiência e Design
+- **Hero Responsivo Dedicado**: Fotografia arquitetónica em formato panorâmico para desktop (`moradia-minimalista.webp`) e versão vertical `9:16` dedicada a mobile (`moradia-minimalista-mobile.webp`) via `<picture>`.
+- **Comparador Antes / Depois**: Controlo direto por toque, rato e teclado com inércia suave e revelação progressiva sincronizada com o scroll.
+- **Murais Contínuos Infinitos**: Carrosséis horizontais multi-linha em loop contínuo (Portugal na página inicial; 2 linhas de fotos e vídeos reais na página Alemanha), com suporte para arrasto, trackpad, scroll e ampliação em Lightbox acessível (`<dialog>`).
+- **Mapa Interativo 2D da Alemanha**: Desenvolvido em React, TypeScript, `d3-geo` (`geoMercator`) e Framer Motion, com as 6 zonas reais de atuação (Hamburgo, Berlim, Munique, Düsseldorf, Dortmund e Brémen), arcos animados, coordenadas precisas e sincronização bidirecional com a lista lateral e o seletor de idioma.
+- **Internacionalização (PT / EN / DE)**: Tradução integral de conteúdos, atributos ARIA, metadados e links contextuais de WhatsApp/email, com persistência técnica via `localStorage` e parâmetro `?lang=`.
 
-### Galeria e Lightbox
-- Ampliação de fotografias em ecrã inteiro.
-- Navegação entre fotos através de botões, setas do teclado (esquerda/direita), tecla Escape para fechar ou gestos táteis de deslize (swipe) em telemóveis.
-- Contador de imagens e legenda descritiva integrada.
-
-### Identidade Visual e Outras Ferramentas
-- **Tipografia Técnica (Inter)**: Tipografia minimalista, técnica e industrial inspirada na arquitetura contemporânea (Inter 400, 500 e 600), com espaçamentos condensados em títulos e caixa alta aberta em botões e etiquetas técnicas.
-- **Comparador Antes / Depois**: Controlo tátil deslizante em proporção 4:3 (`1440/1085`) sem cortes nas imagens, com alinhamento milimétrico referenciado ao muro frontal da moradia.
-- **Formulário de Contacto Seguro**: Envio assíncrono via FormSubmit com proteção anti-spam por campo honeypot oculto e notificação visual Toast.
-- **ScrollSpy**: Indicador visual na barra de navegação superior que acompanha a secção visível no ecrã.
-- **Otimização Mobile**: Hero estático à prova de saltos no scroll táctil, filtros de projetos com espaçamento ergonómico e botões com acabamento técnico unificado.
+### Performance, Segurança e Conformidade
+- **Tipografia Local (Zero Pedidos Externos)**: Fonte `Inter` servida localmente em `.woff2`, eliminando chamadas a servidores externos de fontes (maior velocidade LCP e conformidade estrita com o RGPD em Portugal e na Alemanha).
+- **Política de Segurança (CSP)**: `Content-Security-Policy` restritiva (`script-src 'self'`, `font-src 'self'`, `object-src 'none'`, `base-uri 'self'`), `referrer="strict-origin-when-cross-origin"` e `rel="noopener noreferrer"` em todas as ligações externas.
+- **Privacidade e Enquadramento Legal**: Zero cookies de analítica ou publicidade; páginas dedicadas de [Política de Privacidade](privacidade.html) (RGPD) e [Termos e Condições](termos.html) com divulgação obrigatória das entidades RAL (Lei n.º 144/2015) e ligação ao Livro de Reclamações Eletrónico.
+- **SEO Técnico**: Metadados completos (`canonical`, `hreflang` PT/EN/DE, Open Graph com imagens `1200x630` em JPEG, Twitter Cards), dados estruturados JSON-LD (`GeneralContractor`, `Service`, `BreadcrumbList`), `robots.txt` e `sitemap.xml`.
 
 ---
 
-## Como Adicionar ou Atualizar Projetos e Fotografias
+## Desenvolvimento e Compilação
 
-Toda a informação dos projetos e galerias está centralizada no ficheiro `js/project-data.js`. Não é necessário alterar a estrutura do HTML para adicionar ou editar imagens de obras.
+### Visualização Local
+O website publicado é 100% estático e pode ser servido diretamente a partir da raiz do repositório:
 
-### 1. Adicionar uma nova fotografia a um projeto existente
-1. Copie o ficheiro de imagem para a pasta `imagens/` (formato JPG ou WebP, resolução recomendada ~1200x900px).
-2. Abra `js/project-data.js` e localize o projeto correspondente pelo seu `id`.
-3. Adicione um novo objeto na lista `gallery`:
-
-```javascript
-{
-  url: "imagens/nome-da-sua-foto.jpg",
-  caption: "Descrição breve da fotografia",
-  type: "horizontal"
-}
-```
-
-### 2. Adicionar um novo projeto
-1. Adicione um novo bloco no array `window.PROJECTS_DATA` em `js/project-data.js` com os campos: `id`, `title`, `tagline`, `category`, `categoryLabel`, `location`, `year`, `duration`, `area`, `description`, `highlights`, `heroImage` e `gallery`.
-2. Em `index.html`, adicione o cartão correspondente dentro da secção `<section class="projects">` com o link a apontar para `#projeto/seu-id`.
-
----
-
-## Execução Local
-
-O projeto é estático e não requer instalação de dependências ou Node.js.
-
-### Opção 1: Abertura direta
-Abra o ficheiro `index.html` em qualquer navegador web.
-
-### Opção 2: Servidor HTTP local (Python)
-No terminal, dentro da pasta do projeto:
 ```bash
 python3 -m http.server 8000
 ```
-Aceda no navegador ao endereço: `http://localhost:8000`
+
+Aceder em `http://localhost:8000`.
+
+### Recompilar o Mapa da Alemanha
+O componente do mapa em `src/germany-map/` é compilado com Vite e TypeScript para `js/germany-map.js` e `css/germany-map.css`:
+
+```bash
+npm install
+npm run build:map
+```
 
 ---
 
-## Conformidade e Dados Legais
+## Configuração Antes de Produção
+
+1. **Endpoints dos Formulários (Formspree)**: Em `js/site.js`, substituir os identificadores provisórios em `FORM_ENDPOINT_ORCAMENTO` e `FORM_ENDPOINT_CANDIDATURA` pelos endpoints reais criados no Formspree. Enquanto não estiverem configurados, os formulários utilizam fallback seguro via `mailto:`.
+2. **Ativação do Domínio Próprio (`marcoribeiroconstrucoes.pt`)**: Substituir todas as ocorrências marcadas com `SEO_BASE_URL` (`https://midi-8.github.io/mr-construcoes` -> `https://marcoribeiroconstrucoes.pt`) nos ficheiros HTML, `robots.txt` e `sitemap.xml`.
+3. **Cabeçalhos HTTP de Segurança**: Ao associar o domínio próprio (recomendado via Cloudflare), configurar cabeçalhos HTTP `Strict-Transport-Security`, `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY` e `Permissions-Policy`.
+
+---
+
+## Dados Legais
 
 - **Denominação Social**: Marco Paulo Ribeiro Unipessoal, Lda.
 - **Marca Comercial**: MR Construções
 - **NIF / NIPC**: 516590022
-- **Alvará IMPIC N.º**: 113987
+- **Alvará IMPIC**: n.º 113987
 - **Sede**: Rua do Casino n.º 94 E, 4765-063 Bairro, Vila Nova de Famalicão, Portugal
-- **Telefone**: +351 915 680 947
-- **Email**: geral@marcoribeiroconstrucoes.pt / mr@marcoribeiroconstrucoes.pt
+- **Contactos**: +351 915 680 947 · `geral@marcoribeiroconstrucoes.pt` · `mr@marcoribeiroconstrucoes.pt`
 - **Livro de Reclamações Eletrónico**: https://www.livroreclamacoes.pt
